@@ -48,9 +48,9 @@ const IndexEnhanced = () => {
             {/* Hero Typography - Confident & Emotional */}
             <div className="space-y-8">
               <h1 className="font-display text-7xl md:text-8xl lg:text-9xl font-light text-pearl leading-[0.9] tracking-tight">
-                Feel every
+                Power without
                 <br />
-                <span className="text-gradient-energy">moment</span>
+                <span className="text-gradient-energy">pause</span>
               </h1>
               
               <p className="text-2xl md:text-3xl font-light text-pearl/90 max-w-2xl mx-auto leading-relaxed">
