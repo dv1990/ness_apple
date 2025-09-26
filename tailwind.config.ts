@@ -68,24 +68,19 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         // NESS PRO Brand Colors
-        ness: {
-          ink: "hsl(var(--ink))",
-          off: "hsl(var(--off))",
-          steel: "hsl(var(--steel))",
-          "steel-600": "hsl(var(--steel-600))",
-          "steel-300": "hsl(var(--steel-300))",
-          "steel-800": "hsl(var(--steel-800))",
-          graphite: "hsl(var(--graphite))",
-          line: "hsl(var(--line))",
-          "accent-blue": "hsl(var(--accent-blue))",
-        },
-        // Energy green colors for highlights
+        charcoal: "hsl(var(--charcoal))",
+        pearl: "hsl(var(--pearl))",
+        graphite: "hsl(var(--graphite))",
+        silver: "hsl(var(--silver))",
+        platinum: "hsl(var(--platinum))",
+        whisper: "hsl(var(--whisper))",
+        // Energy colors  
         energy: {
-          DEFAULT: "hsl(var(--energy-green))",
-          bright: "hsl(var(--energy-green-bright))",
-          dark: "hsl(var(--energy-green-dark))",
-          highlight: "hsl(var(--energy-highlight))",
-          "highlight-bright": "hsl(var(--energy-highlight-bright))",
+          DEFAULT: "hsl(var(--energy-core))",
+          bright: "hsl(var(--energy-bright))",
+          dark: "hsl(var(--energy-core))",
+          light: "hsl(var(--energy-subtle))",
+          glow: "hsl(var(--energy-glow))",
         },
         // Brand gradient colors
         "brand-glow": "hsl(var(--brand-glow))",
