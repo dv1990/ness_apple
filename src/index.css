@@ -18,9 +18,12 @@
     --graphite: 0 0% 55%;        /* #8c8c8c - Neutral gray */
     --line: 0 0% 90%;            /* #e6e6e6 - Light borders */
     --accent-blue: 210 100% 50%; /* #0080ff - Premium blue accent */
-    --energy-green: 140 85% 45%;  /* #22c55e - Energy green for highlights */
-    --energy-green-bright: 140 85% 55%; /* #34d972 - Brighter energy green */
-    --energy-green-dark: 140 85% 35%;   /* #16a34a - Darker energy green */
+    /* NESS Energy Brand Colors - Sophisticated Green Palette */
+    --energy-green: 140 70% 45%;        /* #22c55e - Primary energy green */
+    --energy-green-bright: 140 70% 55%;  /* #34d972 - Brighter energy green */
+    --energy-green-dark: 140 70% 35%;    /* #16a34a - Darker energy green */
+    --energy-green-300: 140 60% 65%;     /* Light energy green */
+    --energy-green-600: 140 80% 25%;     /* Deep energy green */
 
     /* Semantic Tokens */
     --bg: var(--off);
@@ -50,6 +53,9 @@
     --ring: var(--steel);
     --energy-highlight: var(--energy-green);
     --energy-highlight-bright: var(--energy-green-bright);
+    --energy: var(--energy-green);
+    --energy-300: var(--energy-green-300);
+    --energy-600: var(--energy-green-600);
 
     /* Apple Design System Values */
     --radius: 0.75rem;          /* 12px */
@@ -59,13 +65,16 @@
     --radius-2xl: 2.5rem;       /* 40px */
     --radius-3xl: 3rem;         /* 48px */
     
-    /* Premium Gradients */
+    /* Premium Gradients - Enhanced */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--energy)) 0%, hsl(var(--energy-600)) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--accent)) 0%, hsl(var(--primary)) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
     --gradient-premium: linear-gradient(135deg, hsl(var(--steel)) 0%, hsl(var(--steel-800)) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(var(--accent-blue)) 0%, hsl(var(--steel)) 100%);
     --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
     --gradient-subtle: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--muted)) 100%);
     
-    /* Premium Shadows */
+    /* Premium Shadows - Enhanced for Energy Brand */
+    --shadow-energy: 0 8px 32px -8px hsl(var(--energy) / 0.25);
     --shadow-premium: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
     --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.12);
     --shadow-subtle: 0 4px 16px rgba(0, 0, 0, 0.08);
@@ -232,10 +241,17 @@
     box-shadow: var(--shadow-soft);
   }
 
-  .glass-card {
+  /* Enhanced Glass Card for Energy Brand */
+  .glass-card-premium {
     @apply backdrop-blur-xl bg-card/80 border border-border/20;
     backdrop-filter: blur(20px) saturate(180%);
     box-shadow: var(--shadow-medium);
+    transition: var(--transition-smooth);
+  }
+  
+  .glass-card-premium:hover {
+    box-shadow: var(--shadow-energy);
+    transform: translateY(-2px);
   }
 
   .glass-subtle {
