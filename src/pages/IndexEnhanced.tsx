@@ -455,6 +455,104 @@ const IndexEnhanced = () => {
         </div>
       </section>
 
+      {/* The Night Everything Changed - Apple-Style Emotional Section */}
+      <section className="py-40 bg-gradient-to-b from-background to-muted/20 relative overflow-hidden">
+        <div className="max-w-6xl mx-auto px-8">
+          
+          {/* Central Story - Apple Style */}
+          <div className="text-center space-y-20">
+            
+            {/* Main Headline - Emotional Hook */}
+            <div className="space-y-8">
+              <h2 className="text-6xl md:text-7xl font-extralight text-foreground leading-[0.9] tracking-tight">
+                The night everything
+                <br />
+                <span className="text-energy font-light">changed.</span>
+              </h2>
+              
+              <div className="max-w-4xl mx-auto">
+                <p className="text-2xl md:text-3xl font-light text-muted-foreground leading-relaxed">
+                  While your neighbor's smart home went dark,
+                  <br />
+                  <span className="text-foreground">yours kept working perfectly.</span>
+                </p>
+              </div>
+            </div>
+
+            {/* Visual Contrast - Split Screen Effect */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 max-w-5xl mx-auto">
+              
+              {/* Left Side - The Problem */}
+              <FloatingCard delay={100} className="group">
+                <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-red-50/30 to-red-100/50 dark:from-red-950/30 dark:to-red-900/50 p-16 h-[400px] flex flex-col justify-center border border-red-200/30 dark:border-red-800/30">
+                  
+                  {/* Subtle Pattern Overlay */}
+                  <div className="absolute inset-0 opacity-5">
+                    <div className="w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-red-500 to-transparent"></div>
+                  </div>
+                  
+                  <div className="relative space-y-6 text-center">
+                    <div className="w-16 h-16 mx-auto rounded-full bg-red-100 dark:bg-red-900/50 flex items-center justify-center mb-8">
+                      <div className="w-8 h-8 rounded-full bg-red-500 opacity-60"></div>
+                    </div>
+                    
+                    <h3 className="text-2xl font-light text-red-700 dark:text-red-300 mb-4">
+                      Their house
+                    </h3>
+                    
+                    <div className="space-y-3 text-red-600 dark:text-red-400">
+                      <p className="text-lg font-light">Security system: offline</p>
+                      <p className="text-lg font-light">Climate control: failed</p>
+                      <p className="text-lg font-light">Entertainment: dead</p>
+                      <p className="text-lg font-light">Comfort: compromised</p>
+                    </div>
+                  </div>
+                </div>
+              </FloatingCard>
+
+              {/* Right Side - The Solution */}
+              <FloatingCard delay={200} className="group">
+                <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-energy-light/10 to-energy/5 p-16 h-[400px] flex flex-col justify-center border border-energy/20 shadow-energy-glow/20">
+                  
+                  {/* Subtle Pattern Overlay */}
+                  <div className="absolute inset-0 opacity-10">
+                    <div className="w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-energy to-transparent"></div>
+                  </div>
+                  
+                  <div className="relative space-y-6 text-center">
+                    <div className="w-16 h-16 mx-auto rounded-full bg-energy/10 flex items-center justify-center mb-8">
+                      <div className="w-8 h-8 rounded-full bg-energy animate-pulse"></div>
+                    </div>
+                    
+                    <h3 className="text-2xl font-light text-energy mb-4">
+                      Your home
+                    </h3>
+                    
+                    <div className="space-y-3 text-energy-dark dark:text-energy-light">
+                      <p className="text-lg font-light">Security system: protected</p>
+                      <p className="text-lg font-light">Climate control: perfect</p>
+                      <p className="text-lg font-light">Entertainment: seamless</p>
+                      <p className="text-lg font-light">Peace of mind: <em>priceless</em></p>
+                    </div>
+                  </div>
+                </div>
+              </FloatingCard>
+            </div>
+
+            {/* Single Powerful Conclusion */}
+            <div className="space-y-8">
+              <div className="w-24 h-px bg-gradient-to-r from-transparent via-energy to-transparent mx-auto"></div>
+              <p className="text-xl md:text-2xl font-light text-muted-foreground max-w-3xl mx-auto">
+                The difference isn't just technology.
+                <br />
+                <span className="text-foreground font-medium">It's confidence in what matters most.</span>
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       {/* Final CTA - Premium and Compelling */}
       <section className="py-40 relative overflow-hidden">
         {/* Background Image */}
