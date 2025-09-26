@@ -48,14 +48,13 @@ const IndexEnhanced = () => {
             {/* Hero Typography - Confident & Emotional */}
             <div className="space-y-8">
               <h1 className="font-display text-7xl md:text-8xl lg:text-9xl font-light text-pearl leading-[0.9] tracking-wide">
-                <span className="tracking-[0.02em]">Power without</span>
+                <span className="tracking-[0.02em]">Reliable</span>
                 <br />
-                <span className="text-energy-bright font-medium">pause</span>
+                <span className="text-energy-bright font-medium">backup power</span>
               </h1>
               
               <p className="text-2xl md:text-3xl font-light text-pearl/90 max-w-2xl mx-auto leading-relaxed">
-                Life doesn't pause for power cuts.
-                <span className="font-medium"> Why should you?</span>
+                Lithium battery systems for homes and businesses.
               </p>
             </div>
 
