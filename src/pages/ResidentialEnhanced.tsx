@@ -279,25 +279,30 @@ const ResidentialEnhanced = () => {
             </div>
           </div>
 
-          {/* The Narrative - Horizontal Flow with Transitions */}
-          <div className="grid lg:grid-cols-3 gap-16 mb-60">
+          {/* The Narrative - Enhanced Sequential Flow */}
+          <div className="grid lg:grid-cols-3 gap-8 mb-60 relative">
+            
+            {/* Connection Lines Between Stages */}
+            <div className="absolute top-8 left-1/3 right-1/3 h-px bg-gradient-to-r from-muted-foreground/10 via-energy/30 to-primary/30 hidden lg:block animate-fade-in" style={{ animationDelay: '1s' }}></div>
             
             {/* Moment 1: The Interruption */}
-            <div className="relative">
+            <div className="relative animate-fade-in" style={{ animationDelay: '0.2s' }}>
               <div className="max-w-sm mx-auto">
-                <div className="space-y-8">
+                <div className="space-y-8 p-6 rounded-2xl bg-gradient-to-br from-red-50/30 to-background border border-red-100/20 hover:border-red-200/30 transition-all duration-500">
                   {/* Visual Element - Clean geometric */}
                   <div className="flex justify-center">
                     <div className="relative">
-                      <div className="w-16 h-16 border border-muted-foreground/20 rounded-full flex items-center justify-center transition-all duration-1000 ease-in-out">
-                        <div className="w-10 h-10 bg-muted-foreground/10 rounded-full animate-pulse"></div>
+                      <div className="w-16 h-16 border-2 border-red-200/40 rounded-full flex items-center justify-center transition-all duration-1000 ease-in-out bg-red-50/20">
+                        <div className="w-10 h-10 bg-red-200/30 rounded-full animate-pulse"></div>
                       </div>
-                      {/* Animated line extending right on large screens */}
-                      <div className="absolute top-1/2 left-full w-8 h-px bg-gradient-to-r from-muted-foreground/20 to-transparent -translate-y-px hidden lg:block animate-fade-in"></div>
+                      {/* Progress indicator */}
+                      <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2">
+                        <div className="w-2 h-2 rounded-full bg-red-400/60"></div>
+                      </div>
                     </div>
                   </div>
                   
-                  <div className="space-y-4 text-center animate-fade-in">
+                  <div className="space-y-4 text-center">
                     <h3 className="font-display text-2xl md:text-3xl font-extralight text-foreground leading-tight tracking-tight">
                       Power interruption
                     </h3>
@@ -310,21 +315,23 @@ const ResidentialEnhanced = () => {
             </div>
 
             {/* Moment 2: The Transition */}
-            <div className="relative">
+            <div className="relative animate-fade-in" style={{ animationDelay: '0.6s' }}>
               <div className="max-w-sm mx-auto">
-                <div className="space-y-8">
+                <div className="space-y-8 p-6 rounded-2xl bg-gradient-to-br from-energy/5 to-background border border-energy/20 hover:border-energy/40 transition-all duration-500">
                   {/* Visual Element - Seamless transition */}
                   <div className="flex justify-center">
                     <div className="relative">
-                      <div className="w-16 h-16 border border-energy/40 rounded-full flex items-center justify-center bg-energy/[0.05] transition-all duration-1000 ease-in-out hover:bg-energy/[0.1] hover:scale-105">
-                        <div className="w-3 h-3 bg-energy rounded-full animate-pulse"></div>
+                      <div className="w-16 h-16 border-2 border-energy/50 rounded-full flex items-center justify-center bg-energy/10 transition-all duration-1000 ease-in-out hover:bg-energy/20 hover:scale-105">
+                        <div className="w-4 h-4 bg-energy rounded-full animate-pulse"></div>
                       </div>
-                      {/* Connection line with animation - horizontal on large screens */}
-                      <div className="absolute top-1/2 left-full w-8 h-px bg-gradient-to-r from-energy/40 to-transparent -translate-y-px hidden lg:block animate-slide-in-right"></div>
+                      {/* Progress indicator */}
+                      <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2">
+                        <div className="w-2 h-2 rounded-full bg-energy animate-pulse"></div>
+                      </div>
                     </div>
                   </div>
                   
-                  <div className="space-y-4 text-center animate-fade-in">
+                  <div className="space-y-4 text-center">
                     <h3 className="font-display text-2xl md:text-3xl font-extralight text-foreground leading-tight tracking-tight">
                       Seamless handover
                     </h3>
@@ -334,47 +341,47 @@ const ResidentialEnhanced = () => {
                     
                     {/* Timing indicator */}
                     <div className="pt-2">
-                      <div className="inline-flex items-center space-x-2 px-4 py-2 bg-energy/[0.05] rounded-full border border-energy/10 animate-scale-in">
+                      <div className="inline-flex items-center space-x-2 px-4 py-2 bg-energy/10 rounded-full border border-energy/20 animate-scale-in" style={{ animationDelay: '1s' }}>
                         <div className="w-1.5 h-1.5 bg-energy rounded-full animate-pulse"></div>
                         <span className="text-xs font-light text-energy tracking-wide">10ms response</span>
                       </div>
                     </div>
 
                     {/* Appliance Icons - No Compromise */}
-                    <div className="pt-6 animate-fade-in">
+                    <div className="pt-6 animate-fade-in" style={{ animationDelay: '1.2s' }}>
                       <div className="space-y-4">
                         <div className="grid grid-cols-2 gap-3 max-w-xs mx-auto">
-                          <div className="flex flex-col items-center space-y-2 p-3 rounded-lg bg-energy/[0.03] border border-energy/5 hover:bg-energy/[0.05] transition-all duration-300">
-                            <div className="w-6 h-6 rounded-md bg-energy/10 flex items-center justify-center">
-                              <div className="w-3 h-3 bg-energy/60 rounded-sm"></div>
+                          <div className="flex flex-col items-center space-y-2 p-3 rounded-lg bg-energy/10 border border-energy/20 hover:bg-energy/20 transition-all duration-300">
+                            <div className="w-6 h-6 rounded-md bg-energy/20 flex items-center justify-center">
+                              <div className="w-3 h-3 bg-energy rounded-sm"></div>
                             </div>
-                            <span className="text-xs text-muted-foreground font-light">AC</span>
+                            <span className="text-xs text-energy font-medium">AC</span>
                           </div>
                           
-                          <div className="flex flex-col items-center space-y-2 p-3 rounded-lg bg-energy/[0.03] border border-energy/5 hover:bg-energy/[0.05] transition-all duration-300">
-                            <div className="w-6 h-6 rounded-md bg-energy/10 flex items-center justify-center">
-                              <div className="w-3 h-2 bg-energy/60 rounded-sm"></div>
+                          <div className="flex flex-col items-center space-y-2 p-3 rounded-lg bg-energy/10 border border-energy/20 hover:bg-energy/20 transition-all duration-300">
+                            <div className="w-6 h-6 rounded-md bg-energy/20 flex items-center justify-center">
+                              <div className="w-3 h-2 bg-energy rounded-sm"></div>
                             </div>
-                            <span className="text-xs text-muted-foreground font-light">Washing</span>
+                            <span className="text-xs text-energy font-medium">Washing</span>
                           </div>
                           
-                          <div className="flex flex-col items-center space-y-2 p-3 rounded-lg bg-energy/[0.03] border border-energy/5 hover:bg-energy/[0.05] transition-all duration-300">
-                            <div className="w-6 h-6 rounded-md bg-energy/10 flex items-center justify-center">
-                              <div className="w-2 h-3 bg-energy/60 rounded-full"></div>
+                          <div className="flex flex-col items-center space-y-2 p-3 rounded-lg bg-energy/10 border border-energy/20 hover:bg-energy/20 transition-all duration-300">
+                            <div className="w-6 h-6 rounded-md bg-energy/20 flex items-center justify-center">
+                              <div className="w-2 h-3 bg-energy rounded-full"></div>
                             </div>
-                            <span className="text-xs text-muted-foreground font-light">Hair Dryer</span>
+                            <span className="text-xs text-energy font-medium">Hair Dryer</span>
                           </div>
                           
-                          <div className="flex flex-col items-center space-y-2 p-3 rounded-lg bg-energy/[0.03] border border-energy/5 hover:bg-energy/[0.05] transition-all duration-300">
-                            <div className="w-6 h-6 rounded-md bg-energy/10 flex items-center justify-center">
-                              <div className="w-3 h-1.5 bg-energy/60 rounded-sm"></div>
+                          <div className="flex flex-col items-center space-y-2 p-3 rounded-lg bg-energy/10 border border-energy/20 hover:bg-energy/20 transition-all duration-300">
+                            <div className="w-6 h-6 rounded-md bg-energy/20 flex items-center justify-center">
+                              <div className="w-3 h-1.5 bg-energy rounded-sm"></div>
                             </div>
-                            <span className="text-xs text-muted-foreground font-light">Iron</span>
+                            <span className="text-xs text-energy font-medium">Iron</span>
                           </div>
                         </div>
                         
                         <div className="text-center">
-                          <p className="text-sm font-light text-energy tracking-wide">
+                          <p className="text-sm font-medium text-energy tracking-wide">
                             No compromise
                           </p>
                         </div>
@@ -385,27 +392,31 @@ const ResidentialEnhanced = () => {
               </div>
             </div>
 
-            {/* Moment 3: The Invisibility */}
-            <div className="relative">
+            {/* Moment 3: Peaceful Sustainable Living */}
+            <div className="relative animate-fade-in" style={{ animationDelay: '1s' }}>
               <div className="max-w-sm mx-auto">
-                <div className="space-y-8">
-                  {/* Visual Element - Perfect circle representing completion */}
+                <div className="space-y-8 p-6 rounded-2xl bg-gradient-to-br from-primary/5 to-background border border-primary/20 hover:border-primary/40 transition-all duration-500">
+                  {/* Visual Element - Perfect harmony representing sustainable living */}
                   <div className="flex justify-center">
                     <div className="relative">
-                      <div className="w-16 h-16 bg-gradient-to-br from-energy/20 to-primary/20 rounded-full flex items-center justify-center transition-all duration-1000 ease-in-out hover:scale-110">
-                        <div className="w-1 h-1 bg-foreground rounded-full animate-pulse"></div>
+                      <div className="w-16 h-16 bg-gradient-to-br from-primary/30 to-energy/30 rounded-full flex items-center justify-center transition-all duration-1000 ease-in-out hover:scale-110 shadow-lg shadow-primary/20">
+                        <div className="w-2 h-2 bg-foreground rounded-full animate-pulse"></div>
+                      </div>
+                      {/* Completion indicator */}
+                      <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2">
+                        <div className="w-2 h-2 rounded-full bg-primary"></div>
                       </div>
                     </div>
                   </div>
                   
-                  <div className="space-y-4 text-center animate-fade-in">
+                  <div className="space-y-4 text-center">
                     <h3 className="font-display text-2xl md:text-3xl font-extralight text-foreground leading-tight tracking-tight">
-                      Invisible excellence
+                      Peaceful sustainable living
                     </h3>
                     <p className="text-base font-light text-muted-foreground leading-relaxed">
                       You never notice the transition
                     </p>
-                    <p className="text-sm font-light text-primary/80 italic leading-relaxed">
+                    <p className="text-sm font-light text-primary italic leading-relaxed">
                       for your uninterrupted OTT experience
                     </p>
                   </div>
