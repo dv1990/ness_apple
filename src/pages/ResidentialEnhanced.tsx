@@ -255,82 +255,162 @@ const ResidentialEnhanced = () => {
         </div>
       </section>
 
-      {/* Steve Jobs Style: The Moment of Truth */}
-      <section className="py-40 bg-background relative overflow-hidden">
+      {/* It Just Works - Jony Ive Redesign */}
+      <section className="relative py-60 bg-background overflow-hidden">
         
-        {/* Subtle background gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-muted/5 to-transparent"></div>
+        {/* Ambient background elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-energy/[0.02] rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-primary/[0.03] rounded-full blur-3xl"></div>
+        </div>
         
-        <div className="max-w-4xl mx-auto px-8 text-center relative z-10">
+        <div className="max-w-6xl mx-auto px-8 text-center relative z-10">
           
-          {/* The Promise - Bigger, Bolder */}
-          <div className="mb-32">
-            <h2 className="text-7xl md:text-9xl font-thin text-foreground leading-[0.8] tracking-[-0.02em] mb-8">
-              It just
-            </h2>
-            <h2 className="text-7xl md:text-9xl font-thin text-primary leading-[0.8] tracking-[-0.02em]">
-              works
-            </h2>
+          {/* The Promise - Pure Typography */}
+          <div className="mb-60">
+            <div className="space-y-4">
+              <h2 className="font-display text-8xl md:text-[12rem] font-extralight text-foreground leading-[0.75] tracking-[-0.04em]">
+                It just
+              </h2>
+              <h2 className="font-display text-8xl md:text-[12rem] font-extralight text-energy leading-[0.75] tracking-[-0.04em]">
+                works
+              </h2>
+            </div>
           </div>
 
-          {/* The Story - More Dramatic Spacing */}
-          <div className="space-y-20 mb-32">
+          {/* The Narrative - Minimalist Flow */}
+          <div className="space-y-48 mb-60">
             
-            {/* Step 1: The Problem - Larger, More Dramatic */}
-            <AnimatedCard delay={300} className="transform">
-              <div className="flex items-center justify-center space-x-8 py-12">
-                <div className="text-6xl opacity-70">⚡</div>
-                <div className="text-3xl md:text-4xl font-thin text-muted-foreground">Power goes out</div>
-              </div>
-            </AnimatedCard>
-
-            {/* Dramatic Pause */}
-            <div className="flex justify-center py-8">
-              <div className="w-0.5 h-16 bg-gradient-to-b from-muted/30 to-primary/50"></div>
-            </div>
-
-            {/* Step 2: The Magic - Hero Moment */}
-            <AnimatedCard delay={600} className="transform">
-              <div className="flex items-center justify-center space-x-8 py-12">
-                <div className="text-6xl">✨</div>
-                <div className="text-3xl md:text-4xl font-thin text-foreground">NESS takes over</div>
-                <div className="text-lg font-light text-primary px-4 py-2 rounded-full bg-primary/10">
-                  in 10ms
+            {/* Moment 1: The Interruption */}
+            <div className="relative">
+              <div className="max-w-2xl mx-auto">
+                <div className="space-y-12">
+                  {/* Visual Element - Clean geometric */}
+                  <div className="flex justify-center">
+                    <div className="relative">
+                      <div className="w-20 h-20 border border-muted-foreground/20 rounded-full flex items-center justify-center">
+                        <div className="w-12 h-12 bg-muted-foreground/10 rounded-full animate-pulse"></div>
+                      </div>
+                      {/* Subtle line extending down */}
+                      <div className="absolute top-full left-1/2 w-px h-16 bg-gradient-to-b from-muted-foreground/20 to-transparent -translate-x-px"></div>
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-6">
+                    <h3 className="font-display text-4xl md:text-5xl font-extralight text-foreground leading-tight tracking-tight">
+                      Power interruption
+                    </h3>
+                    <p className="text-lg font-light text-muted-foreground leading-relaxed">
+                      The moment the grid fails
+                    </p>
+                  </div>
                 </div>
               </div>
-            </AnimatedCard>
-
-            {/* Another Dramatic Pause */}
-            <div className="flex justify-center py-8">
-              <div className="w-0.5 h-16 bg-gradient-to-b from-primary/50 to-energy/50"></div>
             </div>
 
-            {/* Step 3: The Result - Pure Joy */}
-            <AnimatedCard delay={900} className="transform">
-              <div className="flex items-center justify-center space-x-8 py-12">
-                <div className="text-6xl">🏠</div>
-                <div className="text-3xl md:text-4xl font-thin text-energy">You never notice</div>
+            {/* Moment 2: The Transition */}
+            <div className="relative">
+              <div className="max-w-2xl mx-auto">
+                <div className="space-y-12">
+                  {/* Visual Element - Seamless transition */}
+                  <div className="flex justify-center">
+                    <div className="relative">
+                      <div className="w-20 h-20 border border-energy/40 rounded-full flex items-center justify-center bg-energy/[0.05]">
+                        <div className="w-3 h-3 bg-energy rounded-full"></div>
+                      </div>
+                      {/* Connection line */}
+                      <div className="absolute top-full left-1/2 w-px h-16 bg-gradient-to-b from-energy/40 to-transparent -translate-x-px"></div>
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-6">
+                    <h3 className="font-display text-4xl md:text-5xl font-extralight text-foreground leading-tight tracking-tight">
+                      Seamless handover
+                    </h3>
+                    <p className="text-lg font-light text-muted-foreground leading-relaxed">
+                      NESS responds in 10 milliseconds
+                    </p>
+                    
+                    {/* Timing indicator */}
+                    <div className="pt-4">
+                      <div className="inline-flex items-center space-x-3 px-6 py-3 bg-energy/[0.05] rounded-full border border-energy/10">
+                        <div className="w-2 h-2 bg-energy rounded-full animate-pulse"></div>
+                        <span className="text-sm font-light text-energy tracking-wide">10ms response</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </AnimatedCard>
+            </div>
+
+            {/* Moment 3: The Invisibility */}
+            <div className="relative">
+              <div className="max-w-2xl mx-auto">
+                <div className="space-y-12">
+                  {/* Visual Element - Perfect circle representing completion */}
+                  <div className="flex justify-center">
+                    <div className="relative">
+                      <div className="w-20 h-20 bg-gradient-to-br from-energy/20 to-primary/20 rounded-full flex items-center justify-center">
+                        <div className="w-1 h-1 bg-foreground rounded-full"></div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-6">
+                    <h3 className="font-display text-4xl md:text-5xl font-extralight text-foreground leading-tight tracking-tight">
+                      Invisible excellence
+                    </h3>
+                    <p className="text-lg font-light text-muted-foreground leading-relaxed">
+                      You never notice the transition
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
-          {/* The Truth - Simplified, More Powerful */}
-          <div className="space-y-8 max-w-2xl mx-auto">
-            <p className="text-2xl font-light text-muted-foreground leading-relaxed">
-              No switches to flip.
-              <br />
-              No buttons to press.
-              <br />
-              No coal dependency.
-            </p>
+          {/* The Philosophy - Jony Ive's Design Truth */}
+          <div className="space-y-16 max-w-3xl mx-auto">
             
-            {/* The Emotional Hook - Steve's Signature Move */}
-            <div className="pt-12">
-              <p className="text-xl font-light text-primary/80 italic leading-relaxed">
-                Just pure, clean energy that makes you feel good
-                <br />
-                about every breath your children take.
+            {/* Core principle */}
+            <div className="space-y-8">
+              <p className="font-display text-3xl md:text-4xl font-extralight text-foreground leading-relaxed tracking-tight">
+                True simplicity is not the absence of complexity,
               </p>
+              <p className="font-display text-3xl md:text-4xl font-extralight text-energy leading-relaxed tracking-tight">
+                but the mastery of it.
+              </p>
+            </div>
+            
+            {/* The details */}
+            <div className="pt-16 space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+                <div className="space-y-4">
+                  <div className="text-xs text-muted-foreground uppercase tracking-[0.3em] font-light">No buttons</div>
+                  <div className="w-12 h-px bg-muted-foreground/20 mx-auto"></div>
+                </div>
+                <div className="space-y-4">
+                  <div className="text-xs text-muted-foreground uppercase tracking-[0.3em] font-light">No switches</div>
+                  <div className="w-12 h-px bg-muted-foreground/20 mx-auto"></div>
+                </div>
+                <div className="space-y-4">
+                  <div className="text-xs text-muted-foreground uppercase tracking-[0.3em] font-light">No thought</div>
+                  <div className="w-12 h-px bg-muted-foreground/20 mx-auto"></div>
+                </div>
+              </div>
+            </div>
+            
+            {/* The emotion - Apple's signature move */}
+            <div className="pt-20">
+              <div className="space-y-8">
+                <div className="w-px h-16 bg-gradient-to-b from-transparent via-energy/20 to-transparent mx-auto"></div>
+                <p className="text-xl font-light text-muted-foreground leading-relaxed italic">
+                  Just the profound satisfaction of technology
+                  <br />
+                  that truly serves you.
+                </p>
+                <div className="w-px h-16 bg-gradient-to-b from-transparent via-energy/20 to-transparent mx-auto"></div>
+              </div>
             </div>
           </div>
         </div>
