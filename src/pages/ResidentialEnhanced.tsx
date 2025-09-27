@@ -300,7 +300,7 @@ const ResidentialEnhanced = () => {
                     The moment
                   </h3>
                   <p className="text-base font-light text-muted-foreground leading-relaxed">
-                    Solar assisted living.<br />Your gift to the next generation.
+                    Your quality of life remains unaffected.<br />AC, hair dryer, steam iron — everything works.
                   </p>
                 </div>
               </div>
