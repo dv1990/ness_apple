@@ -256,170 +256,110 @@ const ResidentialEnhanced = () => {
         </div>
       </section>
 
-      {/* It Just Works - Jony Ive Redesign */}
-      <section className="relative py-60 bg-background overflow-hidden">
+      {/* It Just Works - Refined Ive Design Philosophy */}
+      <section className="relative py-48 bg-background overflow-hidden">
         
-        {/* Ambient background elements */}
+        {/* Minimal ambient elements */}
         <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-energy/[0.02] rounded-full blur-3xl"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-primary/[0.03] rounded-full blur-3xl"></div>
+          <div className="absolute top-1/3 left-1/2 w-[600px] h-[600px] bg-gradient-to-br from-primary/[0.015] to-energy/[0.01] rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2"></div>
         </div>
         
-        <div className="max-w-6xl mx-auto px-8 text-center relative z-10">
+        <div className="max-w-5xl mx-auto px-8 text-center relative z-10">
           
-          {/* The Promise - Pure Typography */}
-          <div className="mb-60">
-            <div className="space-y-4">
-              <h2 className="font-display text-8xl md:text-[12rem] font-extralight text-foreground leading-[0.75] tracking-[-0.04em]">
-                It just
+          {/* The Promise - Cleaner Typography */}
+          <div className="mb-48">
+            <div className="space-y-2">
+              <h2 className="font-display text-6xl md:text-8xl font-extralight text-foreground leading-[0.85] tracking-[-0.02em]">
+                It just works
               </h2>
-              <h2 className="font-display text-8xl md:text-[12rem] font-extralight text-energy leading-[0.75] tracking-[-0.04em]">
-                works
-              </h2>
+              <div className="w-16 h-px bg-primary/30 mx-auto mt-8"></div>
             </div>
           </div>
 
-          {/* The Narrative - Enhanced Sequential Flow */}
-          <div className="grid lg:grid-cols-3 gap-8 mb-60 relative">
+          {/* The Story - Three Moments of Truth */}
+          <div className="grid lg:grid-cols-3 gap-16 mb-48">
             
-            {/* Connection Lines Between Stages */}
-            <div className="absolute top-8 left-1/3 right-1/3 h-px bg-gradient-to-r from-muted-foreground/10 via-energy/30 to-primary/30 hidden lg:block animate-fade-in" style={{ animationDelay: '1s' }}></div>
+            {/* Subtle connection line */}
+            <div className="absolute top-16 left-1/4 right-1/4 h-px bg-gradient-to-r from-transparent via-muted-foreground/10 to-transparent hidden lg:block animate-fade-in" style={{ animationDelay: '0.8s' }}></div>
             
-            {/* Moment 1: The Interruption */}
-            <div className="relative animate-fade-in" style={{ animationDelay: '0.2s' }}>
-              <div className="max-w-sm mx-auto">
-                <div className="space-y-8 p-6 rounded-2xl bg-gradient-to-br from-red-50/30 to-background border border-red-100/20 hover:border-red-200/30 transition-all duration-500">
-                  {/* Visual Element - Clean geometric */}
-                  <div className="flex justify-center">
-                    <div className="relative">
-                      <div className="w-16 h-16 border-2 border-red-200/40 rounded-full flex items-center justify-center transition-all duration-1000 ease-in-out bg-red-50/20">
-                        <div className="w-10 h-10 bg-red-200/30 rounded-full animate-pulse"></div>
-                      </div>
-                      {/* Progress indicator */}
-                      <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2">
-                        <div className="w-2 h-2 rounded-full bg-red-400/60"></div>
-                      </div>
-                    </div>
+            {/* 01: The Interruption */}
+            <div className="relative animate-fade-in" style={{ animationDelay: '0.3s' }}>
+              <div className="space-y-12">
+                {/* Pure geometric form */}
+                <div className="flex justify-center">
+                  <div className="w-12 h-12 border border-muted-foreground/20 rounded-full flex items-center justify-center bg-background/80 backdrop-blur-sm">
+                    <div className="w-2 h-2 bg-muted-foreground/40 rounded-full"></div>
                   </div>
-                  
-                  <div className="space-y-4 text-center">
-                    <h3 className="font-display text-2xl md:text-3xl font-extralight text-foreground leading-tight tracking-tight">
-                      Power interruption
-                    </h3>
-                    <p className="text-base font-light text-muted-foreground leading-relaxed">
-                      Solar assisted living. Your gift to the next generation.
-                    </p>
+                </div>
+                
+                <div className="space-y-6 max-w-xs mx-auto">
+                  <div className="text-xs text-muted-foreground uppercase tracking-[0.3em] font-light">
+                    01
                   </div>
+                  <h3 className="font-display text-2xl font-extralight text-foreground leading-tight">
+                    The moment
+                  </h3>
+                  <p className="text-base font-light text-muted-foreground leading-relaxed">
+                    Solar assisted living.<br />Your gift to the next generation.
+                  </p>
                 </div>
               </div>
             </div>
 
-            {/* Moment 2: The Transition */}
+            {/* 02: The Transition */}
             <div className="relative animate-fade-in" style={{ animationDelay: '0.6s' }}>
-              <div className="max-w-sm mx-auto">
-                <div className="space-y-8 p-6 rounded-2xl bg-gradient-to-br from-energy/5 to-background border border-energy/20 hover:border-energy/40 transition-all duration-500">
-                  {/* Visual Element - Seamless transition */}
-                  <div className="flex justify-center">
-                    <div className="relative">
-                      <div className="w-16 h-16 border-2 border-energy/50 rounded-full flex items-center justify-center bg-energy/10 transition-all duration-1000 ease-in-out hover:bg-energy/20 hover:scale-105">
-                        <div className="w-4 h-4 bg-energy rounded-full animate-pulse"></div>
-                      </div>
-                      {/* Progress indicator */}
-                      <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2">
-                        <div className="w-2 h-2 rounded-full bg-energy animate-pulse"></div>
-                      </div>
-                    </div>
+              <div className="space-y-12">
+                {/* Active state */}
+                <div className="flex justify-center">
+                  <div className="w-12 h-12 border border-energy/40 rounded-full flex items-center justify-center bg-energy/5 backdrop-blur-sm">
+                    <div className="w-2 h-2 bg-energy rounded-full animate-pulse"></div>
                   </div>
+                </div>
+                
+                <div className="space-y-6 max-w-xs mx-auto">
+                  <div className="text-xs text-energy uppercase tracking-[0.3em] font-light">
+                    02
+                  </div>
+                  <h3 className="font-display text-2xl font-extralight text-foreground leading-tight">
+                    The response
+                  </h3>
+                  <p className="text-base font-light text-muted-foreground leading-relaxed">
+                    10 milliseconds.<br />Faster than you can blink.
+                  </p>
                   
-                  <div className="space-y-4 text-center">
-                    <h3 className="font-display text-2xl md:text-3xl font-extralight text-foreground leading-tight tracking-tight">
-                      Seamless handover
-                    </h3>
-                    <p className="text-base font-light text-muted-foreground leading-relaxed">
-                      NESS responds in 10 milliseconds
-                    </p>
-                    
-                    {/* Timing indicator */}
-                    <div className="pt-2">
-                      <div className="inline-flex items-center space-x-2 px-4 py-2 bg-energy/10 rounded-full border border-energy/20 animate-scale-in" style={{ animationDelay: '1s' }}>
-                        <div className="w-1.5 h-1.5 bg-energy rounded-full animate-pulse"></div>
-                        <span className="text-xs font-light text-energy tracking-wide">10ms response</span>
-                      </div>
-                    </div>
-
-                    {/* Appliance Icons - No Compromise */}
-                    <div className="pt-6 animate-fade-in" style={{ animationDelay: '1.2s' }}>
-                      <div className="space-y-4">
-                        <div className="grid grid-cols-2 gap-3 max-w-xs mx-auto">
-                          <div className="flex flex-col items-center space-y-2 p-3 rounded-lg bg-energy/10 border border-energy/20 hover:bg-energy/20 transition-all duration-300">
-                            <div className="w-6 h-6 rounded-md bg-energy/20 flex items-center justify-center">
-                              <div className="w-3 h-3 bg-energy rounded-sm"></div>
-                            </div>
-                            <span className="text-xs text-energy font-medium">AC</span>
-                          </div>
-                          
-                          <div className="flex flex-col items-center space-y-2 p-3 rounded-lg bg-energy/10 border border-energy/20 hover:bg-energy/20 transition-all duration-300">
-                            <div className="w-6 h-6 rounded-md bg-energy/20 flex items-center justify-center">
-                              <div className="w-3 h-2 bg-energy rounded-sm"></div>
-                            </div>
-                            <span className="text-xs text-energy font-medium">Washing</span>
-                          </div>
-                          
-                          <div className="flex flex-col items-center space-y-2 p-3 rounded-lg bg-energy/10 border border-energy/20 hover:bg-energy/20 transition-all duration-300">
-                            <div className="w-6 h-6 rounded-md bg-energy/20 flex items-center justify-center">
-                              <div className="w-2 h-3 bg-energy rounded-full"></div>
-                            </div>
-                            <span className="text-xs text-energy font-medium">Hair Dryer</span>
-                          </div>
-                          
-                          <div className="flex flex-col items-center space-y-2 p-3 rounded-lg bg-energy/10 border border-energy/20 hover:bg-energy/20 transition-all duration-300">
-                            <div className="w-6 h-6 rounded-md bg-energy/20 flex items-center justify-center">
-                              <div className="w-3 h-1.5 bg-energy rounded-sm"></div>
-                            </div>
-                            <span className="text-xs text-energy font-medium">Iron</span>
-                          </div>
-                        </div>
-                        
-                        <div className="text-center">
-                          <p className="text-sm font-medium text-energy tracking-wide">
-                            No compromise
-                          </p>
-                        </div>
-                      </div>
+                  {/* Simple elegance - no clutter */}
+                  <div className="pt-4">
+                    <div className="text-xs text-energy font-light tracking-wide opacity-60">
+                      Everything continues
                     </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Moment 3: Peaceful Sustainable Living */}
-            <div className="relative animate-fade-in" style={{ animationDelay: '1s' }}>
-              <div className="max-w-sm mx-auto">
-                <div className="space-y-8 p-6 rounded-2xl bg-gradient-to-br from-primary/5 to-background border border-primary/20 hover:border-primary/40 transition-all duration-500">
-                  {/* Visual Element - Perfect harmony representing sustainable living */}
-                  <div className="flex justify-center">
-                    <div className="relative">
-                      <div className="w-16 h-16 bg-gradient-to-br from-primary/30 to-energy/30 rounded-full flex items-center justify-center transition-all duration-1000 ease-in-out hover:scale-110 shadow-lg shadow-primary/20">
-                        <div className="w-2 h-2 bg-foreground rounded-full animate-pulse"></div>
-                      </div>
-                      {/* Completion indicator */}
-                      <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2">
-                        <div className="w-2 h-2 rounded-full bg-primary"></div>
-                      </div>
-                    </div>
+            {/* 03: The Result */}
+            <div className="relative animate-fade-in" style={{ animationDelay: '0.9s' }}>
+              <div className="space-y-12">
+                {/* Completion state */}
+                <div className="flex justify-center">
+                  <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-energy/20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                    <div className="w-2 h-2 bg-primary rounded-full"></div>
                   </div>
-                  
-                  <div className="space-y-4 text-center">
-                    <h3 className="font-display text-2xl md:text-3xl font-extralight text-foreground leading-tight tracking-tight">
-                      Peaceful sustainable living
-                    </h3>
-                    <p className="text-base font-light text-muted-foreground leading-relaxed">
-                      You never notice the transition
-                    </p>
-                    <p className="text-sm font-light text-primary italic leading-relaxed">
-                      for your uninterrupted OTT experience
-                    </p>
+                </div>
+                
+                <div className="space-y-6 max-w-xs mx-auto">
+                  <div className="text-xs text-primary uppercase tracking-[0.3em] font-light">
+                    03
                   </div>
+                  <h3 className="font-display text-2xl font-extralight text-foreground leading-tight">
+                    Invisible excellence
+                  </h3>
+                  <p className="text-base font-light text-muted-foreground leading-relaxed">
+                    You never notice the transition
+                  </p>
+                  <p className="text-sm font-light text-primary italic">
+                    for your uninterrupted OTT experience
+                  </p>
                 </div>
               </div>
             </div>
