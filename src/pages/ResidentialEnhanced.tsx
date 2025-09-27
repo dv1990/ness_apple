@@ -5,37 +5,31 @@ import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
 import { OptimizedImage } from "@/components/ui/optimized-image";
 import { LazySection } from "@/components/ui/lazy-section";
-import { 
-  MagneticButton
-} from "@/components/EnhancedInteractions";
+import { MagneticButton } from "@/components/EnhancedInteractions";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { usePerformanceTracking } from "@/lib/performance-monitor";
-import { 
-  CheckCircle,
-  ArrowRight,
-  Zap,
-  TrendingUp,
-  Heart
-} from "lucide-react";
+import { CheckCircle, ArrowRight, Zap, TrendingUp, Heart } from "lucide-react";
 
 // Import images
 import heroImage from "@/assets/hero-homeowners.jpg";
 import productImage from "@/assets/ness-pro-product.png";
 import officeInterior from "@/assets/office-interior.jpg";
 import greenFutureCity from "@/assets/green-future-city.jpg";
-
 const ResidentialEnhanced = () => {
-  const { elementRef: heroRef, isVisible: heroVisible } = useScrollAnimation();
-  const { endTracking } = usePerformanceTracking('ResidentialEnhanced');
-  
+  const {
+    elementRef: heroRef,
+    isVisible: heroVisible
+  } = useScrollAnimation();
+  const {
+    endTracking
+  } = usePerformanceTracking('ResidentialEnhanced');
   const [powerUsage, setPowerUsage] = useState([300]);
 
   // Calculate savings based on inputs
   const monthlyBill = powerUsage[0] * 8 * 30 / 1000; // Approx calculation
   const yearlySavings = monthlyBill * 12 * 0.7; // 70% savings
 
-  return (
-    <Layout>
+  return <Layout>
       {/* Hero Section - Steve Jobs Style: Pure Focus */}
       <section className="min-h-screen bg-background relative overflow-hidden flex items-center justify-center">
         
@@ -66,12 +60,9 @@ const ResidentialEnhanced = () => {
 
             {/* Single Call to Action */}
             <div className="pt-8">
-              <MagneticButton
-                variant="primary"
-                size="lg"
-                className="text-lg px-12 py-4"
-                onClick={() => document.getElementById('configurator')?.scrollIntoView({ behavior: 'smooth' })}
-              >
+              <MagneticButton variant="primary" size="lg" className="text-lg px-12 py-4" onClick={() => document.getElementById('configurator')?.scrollIntoView({
+              behavior: 'smooth'
+            })}>
                 Get NESS Home
               </MagneticButton>
             </div>
@@ -81,13 +72,7 @@ const ResidentialEnhanced = () => {
           <div className="mt-20">
             <AnimatedCard delay={600} className="max-w-sm mx-auto bg-card/5 border-0">
               <div className="p-8">
-                <OptimizedImage 
-                  src={productImage} 
-                  alt="NESS PRO Home Battery System" 
-                  className="w-full h-auto mb-6"
-                  priority
-                  sizes="(max-width: 768px) 100vw, 400px"
-                />
+                <OptimizedImage src={productImage} alt="NESS PRO Home Battery System" className="w-full h-auto mb-6" priority sizes="(max-width: 768px) 100vw, 400px" />
                 <div className="space-y-3">
                   <div className="text-4xl font-thin text-primary">48 hours</div>
                   <div className="text-sm text-muted-foreground font-light">
@@ -178,7 +163,7 @@ const ResidentialEnhanced = () => {
           {/* Simple Truth */}
           <div className="text-center mt-24">
             <AnimatedCard delay={600}>
-              <p className="text-2xl font-thin text-muted-foreground">
+              <p className="text-2xl text-muted-foreground font-medium">
                 The future is too important to compromise. 
                 Clean energy is the new luxury.
               </p>
@@ -250,12 +235,9 @@ const ResidentialEnhanced = () => {
 
           {/* Single Call to Action */}
           <div className="mt-16">
-            <MagneticButton
-              variant="primary"
-              size="lg"
-              className="text-lg px-12 py-4"
-              onClick={() => document.getElementById('configurator')?.scrollIntoView({ behavior: 'smooth' })}
-            >
+            <MagneticButton variant="primary" size="lg" className="text-lg px-12 py-4" onClick={() => document.getElementById('configurator')?.scrollIntoView({
+            behavior: 'smooth'
+          })}>
               Get Your NESS System
             </MagneticButton>
           </div>
@@ -286,10 +268,14 @@ const ResidentialEnhanced = () => {
           <div className="grid lg:grid-cols-3 gap-16 mb-48">
             
             {/* Subtle connection line */}
-            <div className="absolute top-16 left-1/4 right-1/4 h-px bg-gradient-to-r from-transparent via-muted-foreground/10 to-transparent hidden lg:block animate-fade-in" style={{ animationDelay: '0.8s' }}></div>
+            <div className="absolute top-16 left-1/4 right-1/4 h-px bg-gradient-to-r from-transparent via-muted-foreground/10 to-transparent hidden lg:block animate-fade-in" style={{
+            animationDelay: '0.8s'
+          }}></div>
             
             {/* 01: The Interruption */}
-            <div className="relative animate-fade-in" style={{ animationDelay: '0.3s' }}>
+            <div className="relative animate-fade-in" style={{
+            animationDelay: '0.3s'
+          }}>
               <div className="space-y-12">
                 {/* Pure geometric form */}
                 <div className="flex justify-center">
@@ -313,7 +299,9 @@ const ResidentialEnhanced = () => {
             </div>
 
             {/* 02: The Transition */}
-            <div className="relative animate-fade-in" style={{ animationDelay: '0.6s' }}>
+            <div className="relative animate-fade-in" style={{
+            animationDelay: '0.6s'
+          }}>
               <div className="space-y-12">
                 {/* Active state */}
                 <div className="flex justify-center">
@@ -344,7 +332,9 @@ const ResidentialEnhanced = () => {
             </div>
 
             {/* 03: The Result */}
-            <div className="relative animate-fade-in" style={{ animationDelay: '0.9s' }}>
+            <div className="relative animate-fade-in" style={{
+            animationDelay: '0.9s'
+          }}>
               <div className="space-y-12">
                 {/* Completion state */}
                 <div className="flex justify-center">
@@ -421,11 +411,7 @@ const ResidentialEnhanced = () => {
       {/* Steve Jobs Style: Powerful Single Message */}
       <section className="relative min-h-[60vh] overflow-hidden flex items-center justify-center">
         <div className="absolute inset-0">
-          <img 
-            src={greenFutureCity} 
-            alt="Green future city with sustainable energy and clean environment for children" 
-            className="w-full h-full object-cover"
-          />
+          <img src={greenFutureCity} alt="Green future city with sustainable energy and clean environment for children" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black/40"></div>
         </div>
         
@@ -509,12 +495,7 @@ const ResidentialEnhanced = () => {
               
               {/* Product Visual */}
               <div className="flex-shrink-0">
-                <OptimizedImage 
-                  src={productImage} 
-                  alt="NESS PRO Home Battery System" 
-                  className="w-40 h-auto"
-                  sizes="160px"
-                />
+                <OptimizedImage src={productImage} alt="NESS PRO Home Battery System" className="w-40 h-auto" sizes="160px" />
               </div>
 
               {/* Product Info & Benefits */}
@@ -538,11 +519,7 @@ const ResidentialEnhanced = () => {
 
               {/* Single Action */}
               <div className="flex-shrink-0 text-center">
-                <MagneticButton
-                  variant="primary"
-                  size="lg"
-                  className="text-lg px-12 py-4"
-                >
+                <MagneticButton variant="primary" size="lg" className="text-lg px-12 py-4">
                   Get NESS PRO
                 </MagneticButton>
                 <div className="text-sm text-muted-foreground mt-4">
@@ -567,11 +544,7 @@ const ResidentialEnhanced = () => {
 
             {/* Single, Clear Action */}
             <div className="space-y-8">
-              <MagneticButton 
-                variant="primary" 
-                size="lg"
-                className="text-xl px-16 py-6"
-              >
+              <MagneticButton variant="primary" size="lg" className="text-xl px-16 py-6">
                 Get NESS Home
               </MagneticButton>
               
@@ -587,8 +560,6 @@ const ResidentialEnhanced = () => {
           </div>
         </div>
       </section>
-    </Layout>
-  );
+    </Layout>;
 };
-
 export default React.memo(ResidentialEnhanced);
