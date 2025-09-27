@@ -11,6 +11,9 @@ import nessProImage from "@/assets/ness-pro-hero.png";
 import nessProProduct from "@/assets/ness-pro-product.png";
 import nessPodProduct from "@/assets/ness-pod-product.png";
 import heroHomeownersImage from "@/assets/hero-homeowners.jpg";
+import rdLaboratory from '@/assets/rd-laboratory.jpg';
+import batteryTechnology from '@/assets/battery-technology.jpg';
+import manufacturingFacility from '@/assets/manufacturing-facility.jpg';
 
 const IndexEnhanced = () => {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
@@ -114,7 +117,7 @@ const IndexEnhanced = () => {
           <div className="space-y-60">
             
             {/* Chapter 1: Philosophy */}
-            <div className="relative">
+            <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div className="max-w-2xl">
                 <div className="space-y-8">
                   <div className="flex items-center space-x-4 mb-8">
@@ -132,11 +135,35 @@ const IndexEnhanced = () => {
                   </p>
                 </div>
               </div>
+              
+              {/* Philosophy Image */}
+              <div className="relative lg:order-2">
+                <div className="aspect-[4/3] overflow-hidden rounded-sm">
+                  <img 
+                    src={heroHomeownersImage} 
+                    alt="Luxury home with NESS energy system" 
+                    className="w-full h-full object-cover opacity-60 hover:opacity-80 transition-opacity duration-700 hover:scale-105 transition-transform" 
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-r from-background/20 via-transparent to-transparent"></div>
+                </div>
+              </div>
             </div>
 
             {/* Chapter 2: Craftsmanship */}
-            <div className="relative">
-              <div className="max-w-2xl ml-auto text-right">
+            <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+              {/* Craftsmanship Image */}
+              <div className="relative lg:order-1">
+                <div className="aspect-[4/3] overflow-hidden rounded-sm">
+                  <img 
+                    src={rdLaboratory} 
+                    alt="R&D laboratory precision engineering" 
+                    className="w-full h-full object-cover opacity-60 hover:opacity-80 transition-opacity duration-700 hover:scale-105 transition-transform" 
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-l from-background/20 via-transparent to-transparent"></div>
+                </div>
+              </div>
+              
+              <div className="max-w-2xl ml-auto text-right lg:order-2">
                 <div className="space-y-8">
                   <div className="flex items-center justify-end space-x-4 mb-8">
                     <span className="text-sm text-energy/60 uppercase tracking-[0.4em] font-light">Craftsmanship</span>
@@ -156,7 +183,7 @@ const IndexEnhanced = () => {
             </div>
 
             {/* Chapter 3: Engineering */}
-            <div className="relative">
+            <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div className="max-w-2xl">
                 <div className="space-y-8">
                   <div className="flex items-center space-x-4 mb-8">
@@ -193,11 +220,35 @@ const IndexEnhanced = () => {
                   </div>
                 </div>
               </div>
+              
+              {/* Engineering Image */}
+              <div className="relative lg:order-2">
+                <div className="aspect-[4/3] overflow-hidden rounded-sm">
+                  <img 
+                    src={batteryTechnology} 
+                    alt="Advanced battery technology and precision engineering" 
+                    className="w-full h-full object-cover opacity-60 hover:opacity-80 transition-opacity duration-700 hover:scale-105 transition-transform" 
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-r from-background/20 via-transparent to-transparent"></div>
+                </div>
+              </div>
             </div>
 
             {/* Chapter 4: Trust */}
-            <div className="relative">
-              <div className="max-w-2xl ml-auto text-right">
+            <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+              {/* Trust Image */}
+              <div className="relative lg:order-1">
+                <div className="aspect-[4/3] overflow-hidden rounded-sm">
+                  <img 
+                    src={manufacturingFacility} 
+                    alt="State-of-the-art manufacturing facility ensuring quality" 
+                    className="w-full h-full object-cover opacity-60 hover:opacity-80 transition-opacity duration-700 hover:scale-105 transition-transform" 
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-l from-background/20 via-transparent to-transparent"></div>
+                </div>
+              </div>
+              
+              <div className="max-w-2xl ml-auto text-right lg:order-2">
                 <div className="space-y-8">
                   <div className="flex items-center justify-end space-x-4 mb-8">
                     <span className="text-sm text-energy/60 uppercase tracking-[0.4em] font-light">Assurance</span>
