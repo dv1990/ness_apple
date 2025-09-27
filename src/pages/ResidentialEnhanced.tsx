@@ -279,29 +279,29 @@ const ResidentialEnhanced = () => {
             </div>
           </div>
 
-          {/* The Narrative - Minimalist Flow with Transitions */}
-          <div className="space-y-48 mb-60">
+          {/* The Narrative - Horizontal Flow with Transitions */}
+          <div className="grid lg:grid-cols-3 gap-16 mb-60">
             
             {/* Moment 1: The Interruption */}
             <div className="relative">
-              <div className="max-w-2xl mx-auto">
-                <div className="space-y-12">
+              <div className="max-w-sm mx-auto">
+                <div className="space-y-8">
                   {/* Visual Element - Clean geometric */}
                   <div className="flex justify-center">
                     <div className="relative">
-                      <div className="w-20 h-20 border border-muted-foreground/20 rounded-full flex items-center justify-center transition-all duration-1000 ease-in-out">
-                        <div className="w-12 h-12 bg-muted-foreground/10 rounded-full animate-pulse"></div>
+                      <div className="w-16 h-16 border border-muted-foreground/20 rounded-full flex items-center justify-center transition-all duration-1000 ease-in-out">
+                        <div className="w-10 h-10 bg-muted-foreground/10 rounded-full animate-pulse"></div>
                       </div>
-                      {/* Animated line extending down */}
-                      <div className="absolute top-full left-1/2 w-px h-16 bg-gradient-to-b from-muted-foreground/20 to-transparent -translate-x-px animate-fade-in"></div>
+                      {/* Animated line extending right on large screens */}
+                      <div className="absolute top-1/2 left-full w-8 h-px bg-gradient-to-r from-muted-foreground/20 to-transparent -translate-y-px hidden lg:block animate-fade-in"></div>
                     </div>
                   </div>
                   
-                  <div className="space-y-6 animate-fade-in">
-                    <h3 className="font-display text-4xl md:text-5xl font-extralight text-foreground leading-tight tracking-tight">
+                  <div className="space-y-4 text-center animate-fade-in">
+                    <h3 className="font-display text-2xl md:text-3xl font-extralight text-foreground leading-tight tracking-tight">
                       Power interruption
                     </h3>
-                    <p className="text-lg font-light text-muted-foreground leading-relaxed">
+                    <p className="text-base font-light text-muted-foreground leading-relaxed">
                       The moment the grid fails
                     </p>
                   </div>
@@ -311,70 +311,70 @@ const ResidentialEnhanced = () => {
 
             {/* Moment 2: The Transition */}
             <div className="relative">
-              <div className="max-w-2xl mx-auto">
-                <div className="space-y-12">
+              <div className="max-w-sm mx-auto">
+                <div className="space-y-8">
                   {/* Visual Element - Seamless transition */}
                   <div className="flex justify-center">
                     <div className="relative">
-                      <div className="w-20 h-20 border border-energy/40 rounded-full flex items-center justify-center bg-energy/[0.05] transition-all duration-1000 ease-in-out hover:bg-energy/[0.1] hover:scale-105">
+                      <div className="w-16 h-16 border border-energy/40 rounded-full flex items-center justify-center bg-energy/[0.05] transition-all duration-1000 ease-in-out hover:bg-energy/[0.1] hover:scale-105">
                         <div className="w-3 h-3 bg-energy rounded-full animate-pulse"></div>
                       </div>
-                      {/* Connection line with animation */}
-                      <div className="absolute top-full left-1/2 w-px h-16 bg-gradient-to-b from-energy/40 to-transparent -translate-x-px animate-slide-in-right"></div>
+                      {/* Connection line with animation - horizontal on large screens */}
+                      <div className="absolute top-1/2 left-full w-8 h-px bg-gradient-to-r from-energy/40 to-transparent -translate-y-px hidden lg:block animate-slide-in-right"></div>
                     </div>
                   </div>
                   
-                  <div className="space-y-6 animate-fade-in">
-                    <h3 className="font-display text-4xl md:text-5xl font-extralight text-foreground leading-tight tracking-tight">
+                  <div className="space-y-4 text-center animate-fade-in">
+                    <h3 className="font-display text-2xl md:text-3xl font-extralight text-foreground leading-tight tracking-tight">
                       Seamless handover
                     </h3>
-                    <p className="text-lg font-light text-muted-foreground leading-relaxed">
+                    <p className="text-base font-light text-muted-foreground leading-relaxed">
                       NESS responds in 10 milliseconds
                     </p>
                     
                     {/* Timing indicator */}
-                    <div className="pt-4">
-                      <div className="inline-flex items-center space-x-3 px-6 py-3 bg-energy/[0.05] rounded-full border border-energy/10 animate-scale-in">
-                        <div className="w-2 h-2 bg-energy rounded-full animate-pulse"></div>
-                        <span className="text-sm font-light text-energy tracking-wide">10ms response</span>
+                    <div className="pt-2">
+                      <div className="inline-flex items-center space-x-2 px-4 py-2 bg-energy/[0.05] rounded-full border border-energy/10 animate-scale-in">
+                        <div className="w-1.5 h-1.5 bg-energy rounded-full animate-pulse"></div>
+                        <span className="text-xs font-light text-energy tracking-wide">10ms response</span>
                       </div>
                     </div>
 
                     {/* Appliance Icons - No Compromise */}
-                    <div className="pt-12 animate-fade-in">
-                      <div className="space-y-8">
-                        <div className="grid grid-cols-4 gap-6 max-w-sm mx-auto">
-                          <div className="flex flex-col items-center space-y-3 p-4 rounded-xl bg-energy/[0.03] border border-energy/5 hover:bg-energy/[0.05] transition-all duration-300">
-                            <div className="w-8 h-8 rounded-lg bg-energy/10 flex items-center justify-center">
-                              <div className="w-4 h-4 bg-energy/60 rounded-sm"></div>
+                    <div className="pt-6 animate-fade-in">
+                      <div className="space-y-4">
+                        <div className="grid grid-cols-2 gap-3 max-w-xs mx-auto">
+                          <div className="flex flex-col items-center space-y-2 p-3 rounded-lg bg-energy/[0.03] border border-energy/5 hover:bg-energy/[0.05] transition-all duration-300">
+                            <div className="w-6 h-6 rounded-md bg-energy/10 flex items-center justify-center">
+                              <div className="w-3 h-3 bg-energy/60 rounded-sm"></div>
                             </div>
                             <span className="text-xs text-muted-foreground font-light">AC</span>
                           </div>
                           
-                          <div className="flex flex-col items-center space-y-3 p-4 rounded-xl bg-energy/[0.03] border border-energy/5 hover:bg-energy/[0.05] transition-all duration-300">
-                            <div className="w-8 h-8 rounded-lg bg-energy/10 flex items-center justify-center">
-                              <div className="w-4 h-3 bg-energy/60 rounded-sm"></div>
+                          <div className="flex flex-col items-center space-y-2 p-3 rounded-lg bg-energy/[0.03] border border-energy/5 hover:bg-energy/[0.05] transition-all duration-300">
+                            <div className="w-6 h-6 rounded-md bg-energy/10 flex items-center justify-center">
+                              <div className="w-3 h-2 bg-energy/60 rounded-sm"></div>
                             </div>
                             <span className="text-xs text-muted-foreground font-light">Washing</span>
                           </div>
                           
-                          <div className="flex flex-col items-center space-y-3 p-4 rounded-xl bg-energy/[0.03] border border-energy/5 hover:bg-energy/[0.05] transition-all duration-300">
-                            <div className="w-8 h-8 rounded-lg bg-energy/10 flex items-center justify-center">
-                              <div className="w-3 h-4 bg-energy/60 rounded-full"></div>
+                          <div className="flex flex-col items-center space-y-2 p-3 rounded-lg bg-energy/[0.03] border border-energy/5 hover:bg-energy/[0.05] transition-all duration-300">
+                            <div className="w-6 h-6 rounded-md bg-energy/10 flex items-center justify-center">
+                              <div className="w-2 h-3 bg-energy/60 rounded-full"></div>
                             </div>
                             <span className="text-xs text-muted-foreground font-light">Hair Dryer</span>
                           </div>
                           
-                          <div className="flex flex-col items-center space-y-3 p-4 rounded-xl bg-energy/[0.03] border border-energy/5 hover:bg-energy/[0.05] transition-all duration-300">
-                            <div className="w-8 h-8 rounded-lg bg-energy/10 flex items-center justify-center">
-                              <div className="w-4 h-2 bg-energy/60 rounded-sm"></div>
+                          <div className="flex flex-col items-center space-y-2 p-3 rounded-lg bg-energy/[0.03] border border-energy/5 hover:bg-energy/[0.05] transition-all duration-300">
+                            <div className="w-6 h-6 rounded-md bg-energy/10 flex items-center justify-center">
+                              <div className="w-3 h-1.5 bg-energy/60 rounded-sm"></div>
                             </div>
                             <span className="text-xs text-muted-foreground font-light">Iron</span>
                           </div>
                         </div>
                         
                         <div className="text-center">
-                          <p className="text-lg font-light text-energy tracking-wide">
+                          <p className="text-sm font-light text-energy tracking-wide">
                             No compromise
                           </p>
                         </div>
@@ -387,22 +387,22 @@ const ResidentialEnhanced = () => {
 
             {/* Moment 3: The Invisibility */}
             <div className="relative">
-              <div className="max-w-2xl mx-auto">
-                <div className="space-y-12">
+              <div className="max-w-sm mx-auto">
+                <div className="space-y-8">
                   {/* Visual Element - Perfect circle representing completion */}
                   <div className="flex justify-center">
                     <div className="relative">
-                      <div className="w-20 h-20 bg-gradient-to-br from-energy/20 to-primary/20 rounded-full flex items-center justify-center transition-all duration-1000 ease-in-out hover:scale-110">
+                      <div className="w-16 h-16 bg-gradient-to-br from-energy/20 to-primary/20 rounded-full flex items-center justify-center transition-all duration-1000 ease-in-out hover:scale-110">
                         <div className="w-1 h-1 bg-foreground rounded-full animate-pulse"></div>
                       </div>
                     </div>
                   </div>
                   
-                  <div className="space-y-6 animate-fade-in">
-                    <h3 className="font-display text-4xl md:text-5xl font-extralight text-foreground leading-tight tracking-tight">
+                  <div className="space-y-4 text-center animate-fade-in">
+                    <h3 className="font-display text-2xl md:text-3xl font-extralight text-foreground leading-tight tracking-tight">
                       Invisible excellence
                     </h3>
-                    <p className="text-lg font-light text-muted-foreground leading-relaxed">
+                    <p className="text-base font-light text-muted-foreground leading-relaxed">
                       You never notice the transition
                     </p>
                   </div>
