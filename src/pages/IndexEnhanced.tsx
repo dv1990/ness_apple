@@ -181,8 +181,7 @@ const IndexEnhanced = () => {
                     </div>
                     
                     <p className="text-base text-muted-foreground leading-relaxed flex-1">
-                      Built with the same obsessive attention to longevity as a Swiss timepiece. 
-                      Your investment today becomes your energy independence for years to come.
+                      We test and grade every cell, then group them for perfect balance. That's how NESS delivers unmatched reliability, year after year.
                     </p>
                     
                     {/* Visual Element */}
