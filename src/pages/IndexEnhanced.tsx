@@ -2,9 +2,7 @@ import { useState, useEffect } from "react";
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { 
-  ArrowRight, Play, CheckCircle, Zap, Sparkles, Shield, Battery, Home, Star, Quote
-} from "lucide-react";
+import { ArrowRight, Play, CheckCircle, Zap, Sparkles, Shield, Battery, Home, Star, Quote } from "lucide-react";
 import { Link } from "react-router-dom";
 import { MagneticButton, PlayButton, FloatingCard, ParallaxContainer } from "@/components/EnhancedInteractions";
 
@@ -13,10 +11,8 @@ import nessProImage from "@/assets/ness-pro-hero.png";
 import nessProProduct from "@/assets/ness-pro-product.png";
 import nessPodProduct from "@/assets/ness-pod-product.png";
 import heroHomeownersImage from "@/assets/hero-homeowners.jpg";
-
 const IndexEnhanced = () => {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
-
   useEffect(() => {
     // Add smooth scroll behavior
     document.documentElement.style.scrollBehavior = 'smooth';
@@ -24,18 +20,13 @@ const IndexEnhanced = () => {
       document.documentElement.style.scrollBehavior = 'auto';
     };
   }, []);
-
-  return (
-    <Layout>
+  return <Layout>
       {/* Hero Section - Sonos Inspired "Feel Every Play" Style */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background Image - High Impact Visual */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: `url(${heroHomeownersImage})`,
-          }}
-        />
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
+        backgroundImage: `url(${heroHomeownersImage})`
+      }} />
         
         {/* Premium Dark Overlay for Typography */}
         <div className="absolute inset-0 bg-charcoal/60"></div>
@@ -153,11 +144,7 @@ const IndexEnhanced = () => {
                     <div className="flex-shrink-0">
                       <div className="relative">
                         <div className="w-80 h-80 bg-gradient-to-br from-muted/20 to-background rounded-2xl p-8 flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
-                          <img 
-                            src={nessProProduct} 
-                            alt="NESS Pro - Beautifully designed energy solution" 
-                            className="w-full h-full object-contain"
-                          />
+                          <img src={nessProProduct} alt="NESS Pro - Beautifully designed energy solution" className="w-full h-full object-contain" />
                         </div>
                         
                         {/* Floating Elements */}
@@ -202,9 +189,9 @@ const IndexEnhanced = () => {
                     <div className="mt-auto pt-8">
                       <div className="flex items-center space-x-4">
                         <div className="flex space-x-1">
-                          {[...Array(5)].map((_, i) => (
-                            <div key={i} className={`w-2 h-8 bg-energy/30 rounded-full ${i < 4 ? 'bg-energy' : ''} group-hover:bg-energy transition-colors duration-500`} style={{ animationDelay: `${i * 100}ms` }}></div>
-                          ))}
+                          {[...Array(5)].map((_, i) => <div key={i} className={`w-2 h-8 bg-energy/30 rounded-full ${i < 4 ? 'bg-energy' : ''} group-hover:bg-energy transition-colors duration-500`} style={{
+                          animationDelay: `${i * 100}ms`
+                        }}></div>)}
                         </div>
                         <span className="text-sm text-energy font-medium">15+ Years</span>
                       </div>
@@ -232,34 +219,25 @@ const IndexEnhanced = () => {
                         <span className="text-sm font-medium text-energy uppercase tracking-wider">03</span>
                       </div>
                       
-                      <h3 className="font-display text-3xl lg:text-4xl font-light text-foreground">
-                        Quiet, seamless, invisible
-                      </h3>
+                      <h3 className="font-display text-3xl lg:text-4xl font-light text-foreground">Engineered to last for decade</h3>
                       
-                      <p className="text-lg font-light text-energy/80">
-                        Until you need it most
-                      </p>
+                      <p className="text-lg font-light text-energy/80">Warranty that you can trust 
+
+                    </p>
                     </div>
                     
-                    <p className="text-base text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-                      The ultimate technology is the one you never have to think about. 
-                      It simply works, silently and flawlessly, becoming part of your life's rhythm.
-                    </p>
+                    <p className="text-base text-muted-foreground leading-relaxed max-w-2xl mx-auto">At NESS, we believe a warranty isn’t just a piece of paper. It’s a contract of trust.
+No random claim of 10000 cycles, we standby our batteries and you 
+                  </p>
                     
                     {/* Sound Wave Visualization */}
                     <div className="pt-8">
                       <div className="flex items-center justify-center space-x-1">
-                        {[...Array(7)].map((_, i) => (
-                          <div 
-                            key={i} 
-                            className="w-1 bg-energy/60 rounded-full animate-pulse" 
-                            style={{ 
-                              height: `${12 + Math.sin(i) * 8}px`,
-                              animationDelay: `${i * 150}ms`,
-                              animationDuration: '2s'
-                            }}
-                          ></div>
-                        ))}
+                        {[...Array(7)].map((_, i) => <div key={i} className="w-1 bg-energy/60 rounded-full animate-pulse" style={{
+                        height: `${12 + Math.sin(i) * 8}px`,
+                        animationDelay: `${i * 150}ms`,
+                        animationDuration: '2s'
+                      }}></div>)}
                       </div>
                       <p className="text-xs text-muted-foreground mt-4">&lt; 25dB Silent Operation</p>
                     </div>
@@ -554,12 +532,9 @@ const IndexEnhanced = () => {
       {/* Final CTA Section - Premium */}
       <section className="py-40 relative overflow-hidden">
         {/* Background */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: `url(${heroHomeownersImage})`,
-          }}
-        />
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
+        backgroundImage: `url(${heroHomeownersImage})`
+      }} />
         <div className="absolute inset-0 bg-charcoal/80"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-charcoal/90 via-charcoal/70 to-charcoal/90"></div>
         
@@ -599,8 +574,6 @@ const IndexEnhanced = () => {
         </div>
       </section>
 
-    </Layout>
-  );
+    </Layout>;
 };
-
 export default IndexEnhanced;
