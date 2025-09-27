@@ -219,7 +219,7 @@ const IndexEnhanced = () => {
                         <span className="text-sm font-medium text-energy uppercase tracking-wider">03</span>
                       </div>
                       
-                      <h3 className="font-display text-3xl lg:text-4xl font-light text-foreground">Engineered to last for decade</h3>
+                      <h3 className="font-display text-3xl lg:text-4xl font-light text-foreground">Crafted to last for decade</h3>
                       
                       <p className="text-lg font-light text-energy/80">Warranty that you can trust 
 
