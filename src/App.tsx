@@ -10,10 +10,12 @@ import { preloadImages } from "@/lib/performance-optimizations";
 import { PerformanceDashboard } from "@/components/PerformanceDashboard";
 import React, { Suspense, lazy } from 'react';
 
-// Lazy load non-critical pages for better initial load performance
-const IndexEnhanced = lazy(() => import("./pages/IndexEnhanced"));
+// Import critical pages immediately for better initial load
+import IndexEnhanced from "./pages/IndexEnhanced";
+import ResidentialEnhanced from "./pages/ResidentialEnhanced";
+
+// Lazy load only non-critical pages
 const InstallersEnhanced = lazy(() => import("./pages/InstallersEnhanced"));
-const ResidentialEnhanced = lazy(() => import("./pages/ResidentialEnhanced"));
 const CommercialEnhanced = lazy(() => import("./pages/CommercialEnhanced"));
 const TechnologyEnhanced = lazy(() => import("./pages/TechnologyEnhanced"));
 const ContactEnhanced = lazy(() => import("./pages/ContactEnhanced"));
@@ -44,12 +46,17 @@ const queryClient = new QueryClient();
 // Initialize performance monitoring and preload critical resources
 performanceMonitor.markFeature('app-load');
 
-// Preload critical images for faster perceived performance
+// Import critical images for immediate availability
+import heroHomeowners from "@/assets/hero-homeowners.jpg";
+import heroIndustrial from "@/assets/hero-industrial-installation.jpg";
+import nessPro from "@/assets/ness-pro-product.png";
+
+// Preload critical images using correct paths
 if (typeof window !== 'undefined') {
   preloadImages([
-    '/src/assets/hero-homeowners.jpg',
-    '/src/assets/hero-industrial-installation.jpg',
-    '/src/assets/ness-pro-product.png'
+    heroHomeowners,
+    heroIndustrial,
+    nessPro
   ]);
 }
 
@@ -63,20 +70,25 @@ const PageLoadingFallback = () => (
   </div>
 );
 
-// Route preloader configuration
+// Import additional images for route preloading
+import officeInterior from "@/assets/office-interior.jpg";
+import nessUnitsHero from "@/assets/ness-units-hero.png";
+import manufacturingFacility from "@/assets/manufacturing-facility.jpg";
+
+// Route preloader configuration with correct image paths
 const routeConfig = [
   {
     path: '/',
-    preloadImages: ['/src/assets/hero-homeowners.jpg'],
+    preloadImages: [heroHomeowners],
     priority: true
   },
   {
     path: '/residential',
-    preloadImages: ['/src/assets/ness-pro-product.png', '/src/assets/office-interior.jpg']
+    preloadImages: [nessPro, officeInterior]
   },
   {
     path: '/commercial',
-    preloadImages: ['/src/assets/ness-units-hero.png', '/src/assets/manufacturing-facility.jpg']
+    preloadImages: [nessUnitsHero, manufacturingFacility]
   }
 ];
 
