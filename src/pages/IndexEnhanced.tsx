@@ -10,6 +10,8 @@ import { MagneticButton, PlayButton, FloatingCard, ParallaxContainer } from "@/c
 
 // Import product images
 import nessProImage from "@/assets/ness-pro-hero.png";
+import nessProProduct from "@/assets/ness-pro-product.png";
+import nessPodProduct from "@/assets/ness-pod-product.png";
 import heroHomeownersImage from "@/assets/hero-homeowners.jpg";
 
 const IndexEnhanced = () => {
@@ -91,22 +93,36 @@ const IndexEnhanced = () => {
             </h2>
           </div>
 
-          {/* Luxury Features - Clean List */}
-          <div className="space-y-12 max-w-3xl mx-auto text-left">
+          {/* Luxury Features - Clean List with Product Showcase */}
+          <div className="space-y-16 max-w-5xl mx-auto">
             
-            {/* Feature 1 */}
-            <FloatingCard delay={100} className="flex items-start space-x-6 p-8">
-              <div className="w-3 h-3 rounded-full bg-energy mt-3 flex-shrink-0"></div>
-              <div>
-                <h3 className="text-2xl font-light text-foreground mb-2">Beautifully designed</h3>
-                <p className="text-xl font-light text-muted-foreground">
-                  Like a statement piece
-                </p>
+            {/* Feature 1 - Beautifully designed with Product Visual */}
+            <FloatingCard delay={100} className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center p-12">
+              <div className="space-y-6">
+                <div className="flex items-start space-x-4">
+                  <div className="w-3 h-3 rounded-full bg-energy mt-3 flex-shrink-0"></div>
+                  <div>
+                    <h3 className="text-3xl font-light text-foreground mb-4">Beautifully designed</h3>
+                    <p className="text-xl font-light text-muted-foreground">
+                      Like a statement piece
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="relative">
+                <div className="relative bg-gradient-to-br from-energy/5 to-energy/10 rounded-3xl p-8 overflow-hidden">
+                  <img 
+                    src={nessProProduct} 
+                    alt="NESS Pro - Beautifully designed battery system" 
+                    className="w-full h-auto object-contain max-h-80"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-energy/5 to-transparent rounded-3xl"></div>
+                </div>
               </div>
             </FloatingCard>
 
             {/* Feature 2 */}
-            <FloatingCard delay={200} className="flex items-start space-x-6 p-8">
+            <FloatingCard delay={200} className="flex items-start space-x-6 p-8 max-w-3xl mx-auto">
               <div className="w-3 h-3 rounded-full bg-energy mt-3 flex-shrink-0"></div>
               <div>
                 <h3 className="text-2xl font-light text-foreground mb-2">Engineered to last</h3>
@@ -117,7 +133,7 @@ const IndexEnhanced = () => {
             </FloatingCard>
 
             {/* Feature 3 */}
-            <FloatingCard delay={300} className="flex items-start space-x-6 p-8">
+            <FloatingCard delay={300} className="flex items-start space-x-6 p-8 max-w-3xl mx-auto">
               <div className="w-3 h-3 rounded-full bg-energy mt-3 flex-shrink-0"></div>
               <div>
                 <h3 className="text-2xl font-light text-foreground mb-2">Quiet, seamless, invisible</h3>
