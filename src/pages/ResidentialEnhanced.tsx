@@ -302,7 +302,7 @@ const ResidentialEnhanced = () => {
                       Power interruption
                     </h3>
                     <p className="text-base font-light text-muted-foreground leading-relaxed">
-                      The moment the grid fails
+                      Solar assisted living. Your gift to the next generation.
                     </p>
                   </div>
                 </div>
