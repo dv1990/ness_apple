@@ -80,87 +80,136 @@ const IndexEnhanced = () => {
         </div>
       </section>
 
-      {/* Energy as Luxury Section - Steve Jobs Style */}
-      <section className="py-32 bg-background">
-        <div className="max-w-5xl mx-auto px-8 text-center">
+      {/* Energy as Luxury Section - Steve Jobs Cinematic Style */}
+      <section className="py-40 bg-background">
+        <div className="max-w-7xl mx-auto px-8">
           
-          {/* Main Statement - Steve Jobs Minimalism */}
-          <div className="space-y-16 mb-24">
-            <h2 className="font-display text-6xl md:text-7xl font-light text-foreground leading-tight">
+          {/* Opening Statement - Dramatic Entry */}
+          <div className="text-center mb-32">
+            <h2 className="font-display text-6xl md:text-8xl font-extralight text-foreground leading-[0.85] mb-12">
               At NESS, we treat energy
               <br />
-              <span className="text-energy">like the new luxury</span>
+              <span className="text-energy font-light">like the new luxury</span>
             </h2>
           </div>
 
-          {/* Luxury Features - Clean List with Product Showcase */}
-          <div className="space-y-16 max-w-5xl mx-auto">
-            
-            {/* Feature 1 - Beautifully designed with Product Visual */}
-            <FloatingCard delay={100} className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center p-12">
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="w-3 h-3 rounded-full bg-energy mt-3 flex-shrink-0"></div>
-                  <div>
-                    <h3 className="text-3xl font-light text-foreground mb-4">Beautifully designed</h3>
-                    <p className="text-xl font-light text-muted-foreground">
-                      Like a statement piece
-                    </p>
-                  </div>
+          {/* Hero Product - Center Stage */}
+          <div className="relative mb-40">
+            <div className="max-w-4xl mx-auto">
+              <div className="relative bg-gradient-to-b from-muted/20 to-background rounded-[3rem] p-16 overflow-hidden">
+                {/* Subtle grid pattern */}
+                <div className="absolute inset-0 opacity-5">
+                  <div className="w-full h-full" style={{
+                    backgroundImage: 'radial-gradient(circle at 25px 25px, rgba(255,255,255,0.2) 2px, transparent 0)',
+                    backgroundSize: '50px 50px'
+                  }}></div>
                 </div>
+                
+                <img 
+                  src={nessProProduct} 
+                  alt="NESS Pro - The new luxury in energy" 
+                  className="w-full h-auto object-contain max-h-96 relative z-10"
+                />
+                
+                {/* Subtle glow effect */}
+                <div className="absolute inset-0 bg-gradient-to-t from-energy/5 via-transparent to-transparent rounded-[3rem]"></div>
               </div>
-              <div className="relative">
-                <div className="relative bg-gradient-to-br from-energy/5 to-energy/10 rounded-3xl p-8 overflow-hidden">
-                  <img 
-                    src={nessProProduct} 
-                    alt="NESS Pro - Beautifully designed battery system" 
-                    className="w-full h-auto object-contain max-h-80"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-energy/5 to-transparent rounded-3xl"></div>
+            </div>
+          </div>
+
+          {/* Features - Steve Jobs Style Progressive Reveal */}
+          <div className="space-y-32">
+            
+            {/* Feature 1 - Beautifully Designed */}
+            <FloatingCard delay={100} className="max-w-5xl mx-auto">
+              <div className="text-center space-y-8">
+                <div className="w-1 h-16 bg-energy mx-auto"></div>
+                <h3 className="font-display text-5xl md:text-6xl font-light text-foreground">
+                  Beautifully designed
+                </h3>
+                <p className="text-3xl font-light text-energy max-w-2xl mx-auto">
+                  Like a statement piece
+                </p>
+                <div className="pt-8">
+                  <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                    Every curve, every surface, every detail meticulously crafted. 
+                    This isn't just energy storage — it's architectural art that elevates your space.
+                  </p>
                 </div>
               </div>
             </FloatingCard>
 
-            {/* Feature 2 */}
-            <FloatingCard delay={200} className="flex items-start space-x-6 p-8 max-w-3xl mx-auto">
-              <div className="w-3 h-3 rounded-full bg-energy mt-3 flex-shrink-0"></div>
-              <div>
-                <h3 className="text-2xl font-light text-foreground mb-2">Engineered to last</h3>
-                <p className="text-xl font-light text-muted-foreground">
+            {/* Visual Separator */}
+            <div className="flex justify-center">
+              <div className="w-32 h-px bg-gradient-to-r from-transparent via-energy/30 to-transparent"></div>
+            </div>
+
+            {/* Feature 2 - Engineered to Last */}
+            <FloatingCard delay={200} className="max-w-5xl mx-auto">
+              <div className="text-center space-y-8">
+                <div className="w-1 h-16 bg-energy mx-auto"></div>
+                <h3 className="font-display text-5xl md:text-6xl font-light text-foreground">
+                  Engineered to last
+                </h3>
+                <p className="text-3xl font-light text-energy max-w-2xl mx-auto">
                   A decade and more
                 </p>
+                <div className="pt-8">
+                  <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                    Built with the same obsessive attention to longevity as a Swiss timepiece. 
+                    Your investment today becomes your energy independence for years to come.
+                  </p>
+                </div>
               </div>
             </FloatingCard>
 
-            {/* Feature 3 */}
-            <FloatingCard delay={300} className="flex items-start space-x-6 p-8 max-w-3xl mx-auto">
-              <div className="w-3 h-3 rounded-full bg-energy mt-3 flex-shrink-0"></div>
-              <div>
-                <h3 className="text-2xl font-light text-foreground mb-2">Quiet, seamless, invisible</h3>
-                <p className="text-xl font-light text-muted-foreground">
+            {/* Visual Separator */}
+            <div className="flex justify-center">
+              <div className="w-32 h-px bg-gradient-to-r from-transparent via-energy/30 to-transparent"></div>
+            </div>
+
+            {/* Feature 3 - Quiet, Seamless, Invisible */}
+            <FloatingCard delay={300} className="max-w-5xl mx-auto">
+              <div className="text-center space-y-8">
+                <div className="w-1 h-16 bg-energy mx-auto"></div>
+                <h3 className="font-display text-5xl md:text-6xl font-light text-foreground">
+                  Quiet, seamless, invisible
+                </h3>
+                <p className="text-3xl font-light text-energy max-w-2xl mx-auto">
                   Until you need it most
                 </p>
+                <div className="pt-8">
+                  <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                    The ultimate technology is the one you never have to think about. 
+                    It simply works, silently and flawlessly, becoming part of your life's rhythm.
+                  </p>
+                </div>
               </div>
             </FloatingCard>
           </div>
 
-          {/* Final Statement */}
-          <div className="mt-24 space-y-8">
-            <div className="w-24 h-px bg-gradient-to-r from-transparent via-energy to-transparent mx-auto"></div>
-            <h3 className="font-display text-4xl md:text-5xl font-light text-foreground">
-              Own your energy.
-              <br />
-              <span className="text-energy font-medium">The ultimate luxury.</span>
-            </h3>
-          </div>
+          {/* Climactic Final Statement */}
+          <div className="mt-40 text-center space-y-16">
+            <div className="w-48 h-px bg-gradient-to-r from-transparent via-energy to-transparent mx-auto"></div>
+            
+            <div className="space-y-8">
+              <h3 className="font-display text-6xl md:text-7xl font-extralight text-foreground leading-[0.9]">
+                Own your energy.
+              </h3>
+              <p className="font-display text-4xl md:text-5xl text-energy font-light">
+                The ultimate luxury.
+              </p>
+            </div>
 
-          {/* Call to Action */}
-          <div className="mt-16">
-            <Button variant="ghost" className="btn-ghost-premium">
-              <Link to="/technology">
-                Explore the technology
-              </Link>
-            </Button>
+            {/* Premium CTA */}
+            <div className="pt-12">
+              <Button variant="ghost" className="btn-ghost-premium text-lg px-12 py-4">
+                <Link to="/technology" className="flex items-center">
+                  Explore the technology
+                  <ArrowRight className="w-5 h-5 ml-3" />
+                </Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
