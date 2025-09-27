@@ -431,12 +431,14 @@ const ResidentialEnhanced = () => {
         <div className="relative z-10 text-center max-w-3xl mx-auto px-8">
           <div className="space-y-8">
             <h2 className="text-6xl md:text-8xl font-thin text-white leading-[0.85] tracking-tight">
-              Legacy without
+              The world you
               <br />
-              <span className="text-white/60">compromise</span>
+              <span className="text-white/90 font-light">leave behind</span>
             </h2>
-            <p className="text-2xl font-light text-white/80">
-              Clean energy luxury that your children will thank you for.
+            <p className="text-2xl font-light text-white/90 leading-relaxed">
+              Every breath your children take will be cleaner because of the choice you make today.
+              <br />
+              <span className="text-white/70 text-xl italic mt-4 block">This is how love looks like in action.</span>
             </p>
           </div>
         </div>
