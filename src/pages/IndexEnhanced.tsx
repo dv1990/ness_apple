@@ -171,9 +171,52 @@ const IndexEnhanced = () => {
               </FloatingCard>
             </div>
 
-            {/* Feature 2 - Quiet, Seamless, Invisible - Wide Card */}
-            <div className="xl:col-span-3 group">
+            {/* Feature 2 - Engineered to Last */}
+            <div className="group">
               <FloatingCard delay={200} className="h-full">
+                <div className="relative bg-gradient-to-br from-background to-muted/20 border border-border/50 rounded-3xl p-10 h-full overflow-hidden hover:border-energy/30 transition-all duration-500">
+                  
+                  <div className="relative z-10 space-y-8 h-full flex flex-col">
+                    
+                    <div className="space-y-4">
+                      <div className="inline-flex items-center space-x-2">
+                        <div className="w-1 h-8 bg-energy rounded-full"></div>
+                        <span className="text-sm font-medium text-energy uppercase tracking-wider">02</span>
+                      </div>
+                      
+                      <h3 className="font-display text-3xl lg:text-4xl font-light text-foreground">
+                        Engineered to last
+                      </h3>
+                      
+                      <p className="text-lg font-light text-energy/80">
+                        A decade and more
+                      </p>
+                    </div>
+                    
+                    <p className="text-base text-muted-foreground leading-relaxed flex-1">
+                      Built with the same obsessive attention to longevity as a Swiss timepiece. 
+                      Your investment today becomes your energy independence for years to come.
+                    </p>
+                    
+                    {/* Visual Element */}
+                    <div className="mt-auto pt-8">
+                      <div className="flex items-center space-x-4">
+                        <div className="flex space-x-1">
+                          {[...Array(5)].map((_, i) => (
+                            <div key={i} className={`w-2 h-8 bg-energy/30 rounded-full ${i < 4 ? 'bg-energy' : ''} group-hover:bg-energy transition-colors duration-500`} style={{ animationDelay: `${i * 100}ms` }}></div>
+                          ))}
+                        </div>
+                        <span className="text-sm text-energy font-medium">15+ Years</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </FloatingCard>
+            </div>
+
+            {/* Feature 3 - Quiet, Seamless, Invisible - Wide Card */}
+            <div className="xl:col-span-3 group">
+              <FloatingCard delay={300} className="h-full">
                 <div className="relative bg-gradient-to-r from-background via-muted/10 to-background border border-border/50 rounded-3xl p-10 h-full overflow-hidden hover:border-energy/30 transition-all duration-500">
                   
                   {/* Animated Background */}
@@ -186,7 +229,7 @@ const IndexEnhanced = () => {
                     <div className="space-y-4">
                       <div className="inline-flex items-center space-x-2">
                         <div className="w-1 h-8 bg-energy rounded-full"></div>
-                        <span className="text-sm font-medium text-energy uppercase tracking-wider">02</span>
+                        <span className="text-sm font-medium text-energy uppercase tracking-wider">03</span>
                       </div>
                       
                       <h3 className="font-display text-3xl lg:text-4xl font-light text-foreground">
@@ -219,49 +262,6 @@ const IndexEnhanced = () => {
                         ))}
                       </div>
                       <p className="text-xs text-muted-foreground mt-4">&lt; 25dB Silent Operation</p>
-                    </div>
-                  </div>
-                </div>
-              </FloatingCard>
-            </div>
-
-            {/* Feature 3 - Engineered to Last */}
-            <div className="group">
-              <FloatingCard delay={300} className="h-full">
-                <div className="relative bg-gradient-to-br from-background to-muted/20 border border-border/50 rounded-3xl p-10 h-full overflow-hidden hover:border-energy/30 transition-all duration-500">
-                  
-                  <div className="relative z-10 space-y-8 h-full flex flex-col">
-                    
-                    <div className="space-y-4">
-                      <div className="inline-flex items-center space-x-2">
-                        <div className="w-1 h-8 bg-energy rounded-full"></div>
-                        <span className="text-sm font-medium text-energy uppercase tracking-wider">03</span>
-                      </div>
-                      
-                      <h3 className="font-display text-3xl lg:text-4xl font-light text-foreground">
-                        Engineered to last
-                      </h3>
-                      
-                      <p className="text-lg font-light text-energy/80">
-                        A decade and more
-                      </p>
-                    </div>
-                    
-                    <p className="text-base text-muted-foreground leading-relaxed flex-1">
-                      Built with the same obsessive attention to longevity as a Swiss timepiece. 
-                      Your investment today becomes your energy independence for years to come.
-                    </p>
-                    
-                    {/* Visual Element */}
-                    <div className="mt-auto pt-8">
-                      <div className="flex items-center space-x-4">
-                        <div className="flex space-x-1">
-                          {[...Array(5)].map((_, i) => (
-                            <div key={i} className={`w-2 h-8 bg-energy/30 rounded-full ${i < 4 ? 'bg-energy' : ''} group-hover:bg-energy transition-colors duration-500`} style={{ animationDelay: `${i * 100}ms` }}></div>
-                          ))}
-                        </div>
-                        <span className="text-sm text-energy font-medium">15+ Years</span>
-                      </div>
                     </div>
                   </div>
                 </div>
