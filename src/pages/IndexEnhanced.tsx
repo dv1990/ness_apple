@@ -78,66 +78,68 @@ const IndexEnhanced = () => {
         </div>
       </section>
 
-      {/* Human Benefits Section - "Hear How Sound Should Sound" Style */}
+      {/* Energy as Luxury Section - Steve Jobs Style */}
       <section className="py-32 bg-background">
         <div className="max-w-5xl mx-auto px-8 text-center">
           
-          {/* Section Header - Apple Minimalism */}
-          <div className="space-y-12 mb-24">
+          {/* Main Statement - Steve Jobs Minimalism */}
+          <div className="space-y-16 mb-24">
             <h2 className="font-display text-6xl md:text-7xl font-light text-foreground leading-tight">
-              Power that thinks
+              At NESS, we treat energy
               <br />
-              <span className="text-energy">like you do</span>
+              <span className="text-energy">like the new luxury</span>
             </h2>
-            
-            <p className="text-2xl font-light text-muted-foreground max-w-2xl mx-auto">
-              Every NESS system is thoughtfully designed to understand your life 
-              and anticipate your needs.
-            </p>
           </div>
 
-          {/* Benefits Grid - Clean & Focused */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-16 max-w-4xl mx-auto">
+          {/* Luxury Features - Clean List */}
+          <div className="space-y-12 max-w-3xl mx-auto text-left">
             
-            {/* Benefit 1 - Intelligent */}
-            <FloatingCard delay={100} className="text-center space-y-6">
-              <div className="w-20 h-20 mx-auto rounded-full bg-energy/10 flex items-center justify-center mb-8">
-                <Zap className="w-10 h-10 text-energy" />
+            {/* Feature 1 */}
+            <FloatingCard delay={100} className="flex items-start space-x-6 p-8">
+              <div className="w-3 h-3 rounded-full bg-energy mt-3 flex-shrink-0"></div>
+              <div>
+                <h3 className="text-2xl font-light text-foreground mb-2">Beautifully designed</h3>
+                <p className="text-xl font-light text-muted-foreground">
+                  Like a statement piece
+                </p>
               </div>
-              <h3 className="text-2xl font-light text-foreground">Astonishingly smart</h3>
-              <p className="text-lg font-light text-muted-foreground leading-relaxed">
-                AI learns your patterns and optimizes energy usage automatically. 
-                Like having a personal energy butler.
-              </p>
             </FloatingCard>
 
-            {/* Benefit 2 - Reliable */}
-            <FloatingCard delay={200} className="text-center space-y-6">
-              <div className="w-20 h-20 mx-auto rounded-full bg-energy/10 flex items-center justify-center mb-8">
-                <Shield className="w-10 h-10 text-energy" />
+            {/* Feature 2 */}
+            <FloatingCard delay={200} className="flex items-start space-x-6 p-8">
+              <div className="w-3 h-3 rounded-full bg-energy mt-3 flex-shrink-0"></div>
+              <div>
+                <h3 className="text-2xl font-light text-foreground mb-2">Engineered to last</h3>
+                <p className="text-xl font-light text-muted-foreground">
+                  A decade and more
+                </p>
               </div>
-              <h3 className="text-2xl font-light text-foreground">Beautifully reliable</h3>
-              <p className="text-lg font-light text-muted-foreground leading-relaxed">
-                LiFePO₄ technology with zero thermal runaway risk. 
-                Safety and longevity in perfect harmony.
-              </p>
             </FloatingCard>
 
-            {/* Benefit 3 - Seamless */}
-            <FloatingCard delay={300} className="text-center space-y-6">
-              <div className="w-20 h-20 mx-auto rounded-full bg-energy/10 flex items-center justify-center mb-8">
-                <Home className="w-10 h-10 text-energy" />
+            {/* Feature 3 */}
+            <FloatingCard delay={300} className="flex items-start space-x-6 p-8">
+              <div className="w-3 h-3 rounded-full bg-energy mt-3 flex-shrink-0"></div>
+              <div>
+                <h3 className="text-2xl font-light text-foreground mb-2">Quiet, seamless, invisible</h3>
+                <p className="text-xl font-light text-muted-foreground">
+                  Until you need it most
+                </p>
               </div>
-              <h3 className="text-2xl font-light text-foreground">Perfectly seamless</h3>
-              <p className="text-lg font-light text-muted-foreground leading-relaxed">
-                Invisible transitions between grid and battery power. 
-                Your home never skips a beat.
-              </p>
             </FloatingCard>
+          </div>
+
+          {/* Final Statement */}
+          <div className="mt-24 space-y-8">
+            <div className="w-24 h-px bg-gradient-to-r from-transparent via-energy to-transparent mx-auto"></div>
+            <h3 className="font-display text-4xl md:text-5xl font-light text-foreground">
+              Own your energy.
+              <br />
+              <span className="text-energy font-medium">The ultimate luxury.</span>
+            </h3>
           </div>
 
           {/* Call to Action */}
-          <div className="mt-24">
+          <div className="mt-16">
             <Button variant="ghost" className="btn-ghost-premium">
               <Link to="/technology">
                 Explore the technology
