@@ -11,8 +11,10 @@ import nessProImage from "@/assets/ness-pro-hero.png";
 import nessProProduct from "@/assets/ness-pro-product.png";
 import nessPodProduct from "@/assets/ness-pod-product.png";
 import heroHomeownersImage from "@/assets/hero-homeowners.jpg";
+
 const IndexEnhanced = () => {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+
   useEffect(() => {
     // Add smooth scroll behavior
     document.documentElement.style.scrollBehavior = 'smooth';
@@ -20,13 +22,15 @@ const IndexEnhanced = () => {
       document.documentElement.style.scrollBehavior = 'auto';
     };
   }, []);
-  return <Layout>
+
+  return (
+    <Layout>
       {/* Hero Section - Sonos Inspired "Feel Every Play" Style */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background Image - High Impact Visual */}
         <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
-        backgroundImage: `url(${heroHomeownersImage})`
-      }} />
+          backgroundImage: `url(${heroHomeownersImage})`
+        }} />
         
         {/* Premium Dark Overlay for Typography */}
         <div className="absolute inset-0 bg-charcoal/60"></div>
@@ -71,210 +75,187 @@ const IndexEnhanced = () => {
         </div>
       </section>
 
-      {/* Energy as Luxury Section - Fresh Modern Grid Design */}
-      <section className="py-32 bg-gradient-to-br from-background via-muted/5 to-background relative overflow-hidden">
+      {/* Energy as Luxury Section - Jony Ive Inspired Minimalism */}
+      <section className="py-40 bg-background relative overflow-hidden">
         
-        {/* Ambient Background Elements */}
-        <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-energy/3 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-1/3 right-1/4 w-64 h-64 bg-primary/5 rounded-full blur-2xl"></div>
-        </div>
-
-        <div className="max-w-8xl mx-auto px-8 relative z-10">
+        <div className="max-w-7xl mx-auto px-8 relative z-10">
           
-          {/* Dynamic Header with Offset Layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-24">
-            <div className="lg:col-span-8 lg:col-start-3">
-              <div className="space-y-8">
-                <div className="inline-flex items-center space-x-3 px-6 py-3 bg-energy/10 rounded-full border border-energy/20">
-                  <div className="w-2 h-2 bg-energy rounded-full animate-pulse"></div>
-                  <span className="text-sm font-medium text-energy uppercase tracking-wider">New Era Energy</span>
-                </div>
-                
-                <h2 className="font-display text-5xl lg:text-7xl font-light text-foreground leading-[0.9]">
-                  At NESS, we treat energy
-                  <br />
-                  <span className="text-energy bg-gradient-to-r from-energy to-energy/80 bg-clip-text text-transparent">
-                    like the new luxury
-                  </span>
-                </h2>
-              </div>
-            </div>
-          </div>
-
-          {/* Interactive Feature Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 mb-24">
-            
-            {/* Feature 1 - Beautifully Designed - Hero Card */}
-            <div className="xl:col-span-2 group">
-              <FloatingCard delay={100} className="h-full">
-                <div className="relative bg-gradient-to-br from-background to-muted/30 border border-border/50 rounded-3xl p-12 h-full overflow-hidden hover:border-energy/30 transition-all duration-500">
-                  
-                  {/* Background Pattern */}
-                  <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-500">
-                    <div className="w-full h-full bg-gradient-to-br from-energy/20 via-transparent to-primary/10"></div>
-                  </div>
-                  
-                  <div className="relative z-10 flex flex-col lg:flex-row items-center gap-12 h-full">
-                    
-                    {/* Content Side */}
-                    <div className="flex-1 space-y-6">
-                      <div className="space-y-4">
-                        <div className="inline-flex items-center space-x-2">
-                          <div className="w-1 h-8 bg-energy rounded-full"></div>
-                          <span className="text-sm font-medium text-energy uppercase tracking-wider">01</span>
-                        </div>
-                        
-                        <h3 className="font-display text-4xl lg:text-5xl font-light text-foreground">
-                          Beautifully designed
-                        </h3>
-                        
-                        <p className="text-xl font-light text-energy/80">
-                          Like a statement piece
-                        </p>
-                      </div>
-                      
-                      <p className="text-lg text-muted-foreground leading-relaxed">
-                        Every curve, every surface, every detail meticulously crafted. 
-                        This isn't just energy storage — it's architectural art that elevates your space.
-                      </p>
-                    </div>
-                    
-                    {/* Product Visual */}
-                    <div className="flex-shrink-0">
-                      <div className="relative">
-                        <div className="w-80 h-80 bg-gradient-to-br from-muted/20 to-background rounded-2xl p-8 flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
-                          <img src={nessProProduct} alt="NESS Pro - Beautifully designed energy solution" className="w-full h-full object-contain" />
-                        </div>
-                        
-                        {/* Floating Elements */}
-                        <div className="absolute -top-4 -right-4 w-12 h-12 bg-energy/10 rounded-full flex items-center justify-center group-hover:animate-pulse">
-                          <div className="w-3 h-3 bg-energy rounded-full"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </FloatingCard>
-            </div>
-
-            {/* Feature 2 - Engineered to Last */}
-            <div className="group">
-              <FloatingCard delay={200} className="h-full">
-                <div className="relative bg-gradient-to-br from-background to-muted/20 border border-border/50 rounded-3xl p-10 h-full overflow-hidden hover:border-energy/30 transition-all duration-500">
-                  
-                  <div className="relative z-10 space-y-8 h-full flex flex-col">
-                    
-                    <div className="space-y-4">
-                      <div className="inline-flex items-center space-x-2">
-                        <div className="w-1 h-8 bg-energy rounded-full"></div>
-                        <span className="text-sm font-medium text-energy uppercase tracking-wider">02</span>
-                      </div>
-                      
-                       <h3 className="font-display text-3xl lg:text-4xl font-light text-foreground">
-                         Engineered with precision detail
-                       </h3>
-                      
-                      <p className="text-lg font-light text-energy/80">
-                        A decade and more
-                      </p>
-                    </div>
-                    
-                    <p className="text-base text-muted-foreground leading-relaxed flex-1">
-                      We test and grade every cell, then group them for perfect balance. That's how NESS delivers unmatched reliability, year after year.
-                    </p>
-                    
-                    {/* Visual Element */}
-                    <div className="mt-auto pt-8">
-                      <div className="flex items-center space-x-4">
-                        <div className="flex space-x-1">
-                          {[...Array(5)].map((_, i) => <div key={i} className={`w-2 h-8 bg-energy/30 rounded-full ${i < 4 ? 'bg-energy' : ''} group-hover:bg-energy transition-colors duration-500`} style={{
-                          animationDelay: `${i * 100}ms`
-                        }}></div>)}
-                        </div>
-                        <span className="text-sm text-energy font-medium">15+ Years</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </FloatingCard>
-            </div>
-
-            {/* Feature 3 - Quiet, Seamless, Invisible - Wide Card */}
-            <div className="xl:col-span-3 group">
-              <FloatingCard delay={300} className="h-full">
-                <div className="relative bg-gradient-to-r from-background via-muted/10 to-background border border-border/50 rounded-3xl p-10 h-full overflow-hidden hover:border-energy/30 transition-all duration-500">
-                  
-                  {/* Animated Background */}
-                  <div className="absolute inset-0 opacity-5 group-hover:opacity-10 transition-opacity duration-500">
-                    <div className="w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-energy via-transparent to-primary animate-pulse"></div>
-                  </div>
-                  
-                  <div className="relative z-10 text-center space-y-8">
-                    
-                    <div className="space-y-4">
-                      <div className="inline-flex items-center space-x-2">
-                        <div className="w-1 h-8 bg-energy rounded-full"></div>
-                        <span className="text-sm font-medium text-energy uppercase tracking-wider">03</span>
-                      </div>
-                      
-                      <h3 className="font-display text-3xl lg:text-4xl font-light text-foreground">Crafted to last for decade</h3>
-                      
-                      <p className="text-lg font-light text-energy/80">Warranty that you can trust 
-
-                    </p>
-                    </div>
-                    
-                    <p className="text-base text-muted-foreground leading-relaxed max-w-2xl mx-auto">At NESS, we believe a warranty isn’t just a piece of paper. It’s a contract of trust.
-No random claim of 10000 cycles, we standby our batteries and you 
-                  </p>
-                    
-                    {/* Sound Wave Visualization */}
-                    <div className="pt-8">
-                      <div className="flex items-center justify-center space-x-1">
-                        {[...Array(7)].map((_, i) => <div key={i} className="w-1 bg-energy/60 rounded-full animate-pulse" style={{
-                        height: `${12 + Math.sin(i) * 8}px`,
-                        animationDelay: `${i * 150}ms`,
-                        animationDuration: '2s'
-                      }}></div>)}
-                      </div>
-                      <p className="text-xs text-muted-foreground mt-4">&lt; 25dB Silent Operation</p>
-                    </div>
-                  </div>
-                </div>
-              </FloatingCard>
-            </div>
-          </div>
-
-          {/* Dynamic Final Statement */}
-          <div className="relative">
-            <div className="text-center space-y-12">
+          {/* Pure Typography Header - Apple Style */}
+          <div className="text-center mb-32">
+            <div className="space-y-16">
               
-              {/* Floating accent */}
+              {/* Minimal Badge */}
               <div className="inline-flex items-center justify-center">
-                <div className="w-24 h-px bg-gradient-to-r from-transparent via-energy to-transparent"></div>
-                <div className="w-3 h-3 bg-energy rounded-full mx-4 animate-pulse"></div>
-                <div className="w-24 h-px bg-gradient-to-r from-energy via-transparent to-transparent"></div>
+                <div className="w-1 h-1 bg-energy rounded-full animate-pulse"></div>
               </div>
               
+              {/* Hero Typography - Jony Ive Style */}
               <div className="space-y-6">
-                <h3 className="font-display text-5xl lg:text-6xl font-light text-foreground">
-                  Own your energy.
-                </h3>
-                <p className="font-display text-3xl lg:text-4xl text-energy font-light bg-gradient-to-r from-energy to-energy/80 bg-clip-text text-transparent">
-                  The ultimate luxury.
+                <h2 className="font-display text-6xl md:text-7xl lg:text-8xl font-extralight text-foreground leading-[0.85] tracking-tight max-w-5xl mx-auto">
+                  At NESS, we treat energy
+                </h2>
+                <p className="font-display text-4xl md:text-5xl lg:text-6xl font-light text-energy leading-[0.9] tracking-wide">
+                  like the new luxury
                 </p>
               </div>
+              
+              {/* Subtle Divider */}
+              <div className="w-16 h-px bg-energy/20 mx-auto"></div>
+            </div>
+          </div>
 
-              {/* Enhanced CTA */}
-              <div className="pt-8">
-                <Button variant="ghost" className="group btn-ghost-premium text-lg px-16 py-6 border border-energy/20 hover:border-energy/40 hover:bg-energy/5">
-                  <Link to="/technology" className="flex items-center space-x-4">
-                    <span>Explore the technology</span>
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-                  </Link>
-                </Button>
+          {/* Minimalist Product Showcase - Single Row Focus */}
+          <div className="mb-32">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 items-center">
+              
+              {/* Product Visual - Center */}
+              <div className="lg:order-2 flex justify-center">
+                <div className="relative group">
+                  <div className="w-96 h-96 flex items-center justify-center">
+                    <img 
+                      src={nessProProduct} 
+                      alt="NESS Pro - The new luxury in energy" 
+                      className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700 ease-out" 
+                    />
+                  </div>
+                  
+                  {/* Floating Accent */}
+                  <div className="absolute -top-8 -right-8 w-3 h-3 bg-energy rounded-full opacity-60 animate-pulse"></div>
+                  <div className="absolute -bottom-8 -left-8 w-2 h-2 bg-energy/40 rounded-full"></div>
+                </div>
               </div>
+              
+              {/* Content - Right */}
+              <div className="lg:order-3 space-y-12">
+                
+                {/* Feature 1 */}
+                <div className="space-y-4 group cursor-default">
+                  <div className="flex items-center space-x-3 mb-3">
+                    <div className="w-6 h-px bg-energy group-hover:w-12 transition-all duration-500"></div>
+                    <span className="text-xs text-energy uppercase tracking-[0.3em] font-medium">01</span>
+                  </div>
+                  
+                  <h3 className="font-display text-3xl lg:text-4xl font-light text-foreground leading-tight">
+                    Beautifully designed
+                  </h3>
+                  
+                  <p className="text-lg font-light text-energy/70 leading-relaxed">
+                    Like a statement piece
+                  </p>
+                  
+                  <p className="text-base text-muted-foreground leading-relaxed max-w-md">
+                    Every curve, every surface, every detail meticulously crafted. 
+                    This isn't just energy storage — it's architectural art that elevates your space.
+                  </p>
+                </div>
+                
+                {/* Feature 2 */}
+                <div className="space-y-4 group cursor-default">
+                  <div className="flex items-center space-x-3 mb-3">
+                    <div className="w-6 h-px bg-energy group-hover:w-12 transition-all duration-500"></div>
+                    <span className="text-xs text-energy uppercase tracking-[0.3em] font-medium">02</span>
+                  </div>
+                  
+                  <h3 className="font-display text-3xl lg:text-4xl font-light text-foreground leading-tight">
+                    Engineered with precision detail
+                  </h3>
+                  
+                  <p className="text-lg font-light text-energy/70 leading-relaxed">
+                    A decade and more
+                  </p>
+                  
+                  <p className="text-base text-muted-foreground leading-relaxed max-w-md">
+                    We test and grade every cell, then group them for perfect balance. That's how NESS delivers unmatched reliability, year after year.
+                  </p>
+                </div>
+              </div>
+              
+              {/* Content - Left */}
+              <div className="lg:order-1 space-y-12">
+                
+                {/* Feature 3 */}
+                <div className="space-y-4 group cursor-default">
+                  <div className="flex items-center space-x-3 mb-3">
+                    <div className="w-6 h-px bg-energy group-hover:w-12 transition-all duration-500"></div>
+                    <span className="text-xs text-energy uppercase tracking-[0.3em] font-medium">03</span>
+                  </div>
+                  
+                  <h3 className="font-display text-3xl lg:text-4xl font-light text-foreground leading-tight">
+                    Crafted to last for decade
+                  </h3>
+                  
+                  <p className="text-lg font-light text-energy/70 leading-relaxed">
+                    Warranty that you can trust
+                  </p>
+                  
+                  <p className="text-base text-muted-foreground leading-relaxed max-w-md">
+                    At NESS, we believe a warranty isn't just a piece of paper. It's a contract of trust.
+                    No random claim of 10000 cycles, we standby our batteries and you
+                  </p>
+                  
+                  {/* Minimal Visualization */}
+                  <div className="pt-4">
+                    <div className="flex items-center space-x-2">
+                      <div className="flex space-x-1">
+                        {[...Array(4)].map((_, i) => (
+                          <div 
+                            key={i} 
+                            className="w-1 h-6 bg-energy/30 group-hover:bg-energy transition-colors duration-700" 
+                            style={{ animationDelay: `${i * 200}ms` }}
+                          />
+                        ))}
+                      </div>
+                      <span className="text-xs text-energy/60 font-light ml-3">15+ Years</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Minimal Final Statement - Jony Ive Conclusion */}
+          <div className="text-center space-y-16">
+            
+            {/* Pure Typography */}
+            <div className="space-y-8 max-w-4xl mx-auto">
+              <h3 className="font-display text-5xl md:text-6xl lg:text-7xl font-extralight text-foreground leading-[0.85] tracking-tight">
+                Own your energy.
+              </h3>
+              <p className="font-display text-3xl md:text-4xl lg:text-5xl font-light text-energy leading-[0.9]">
+                The ultimate luxury.
+              </p>
+            </div>
+
+            {/* Subtle CTA */}
+            <div className="pt-16">
+              <Link 
+                to="/technology" 
+                className="group inline-flex items-center space-x-4 text-lg font-light text-foreground hover:text-energy transition-colors duration-500"
+              >
+                <span className="tracking-wide">Explore the technology</span>
+                <div className="w-8 h-px bg-current group-hover:w-12 transition-all duration-500"></div>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-500" />
+              </Link>
+            </div>
+            
+            {/* Silent Operation Indicator */}
+            <div className="pt-20">
+              <div className="flex items-center justify-center space-x-1">
+                {[...Array(5)].map((_, i) => (
+                  <div 
+                    key={i} 
+                    className="w-px bg-energy/40 animate-pulse" 
+                    style={{
+                      height: `${8 + Math.sin(i) * 4}px`,
+                      animationDelay: `${i * 300}ms`,
+                      animationDuration: '3s'
+                    }}
+                  />
+                ))}
+              </div>
+              <p className="text-xs text-muted-foreground mt-4 font-light tracking-wide">
+                &lt; 25dB Silent Operation
+              </p>
             </div>
           </div>
         </div>
@@ -532,8 +513,8 @@ No random claim of 10000 cycles, we standby our batteries and you 
       <section className="py-40 relative overflow-hidden">
         {/* Background */}
         <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
-        backgroundImage: `url(${heroHomeownersImage})`
-      }} />
+          backgroundImage: `url(${heroHomeownersImage})`
+        }} />
         <div className="absolute inset-0 bg-charcoal/80"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-charcoal/90 via-charcoal/70 to-charcoal/90"></div>
         
@@ -573,6 +554,8 @@ No random claim of 10000 cycles, we standby our batteries and you 
         </div>
       </section>
 
-    </Layout>;
+    </Layout>
+  );
 };
+
 export default IndexEnhanced;
