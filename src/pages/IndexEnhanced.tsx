@@ -171,9 +171,9 @@ const IndexEnhanced = () => {
                         <span className="text-sm font-medium text-energy uppercase tracking-wider">02</span>
                       </div>
                       
-                      <h3 className="font-display text-3xl lg:text-4xl font-light text-foreground">
-                        Engineered to last
-                      </h3>
+                       <h3 className="font-display text-3xl lg:text-4xl font-light text-foreground">
+                         Engineered to last with precision detail
+                       </h3>
                       
                       <p className="text-lg font-light text-energy/80">
                         A decade and more
