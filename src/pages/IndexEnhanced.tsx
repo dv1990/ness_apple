@@ -172,7 +172,7 @@ const IndexEnhanced = () => {
                       </div>
                       
                        <h3 className="font-display text-3xl lg:text-4xl font-light text-foreground">
-                         Engineered to last with precision detail
+                         Engineered with precision detail
                        </h3>
                       
                       <p className="text-lg font-light text-energy/80">
