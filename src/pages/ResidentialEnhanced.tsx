@@ -1,11 +1,15 @@
+import React, { useState } from 'react';
 import Layout from "@/components/Layout";
 import { AnimatedCard } from "@/components/ui/animated-card";
 import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
+import { OptimizedImage } from "@/components/ui/optimized-image";
+import { LazySection } from "@/components/ui/lazy-section";
 import { 
   MagneticButton
 } from "@/components/EnhancedInteractions";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { usePerformanceTracking } from "@/lib/performance-monitor";
 import { 
   CheckCircle,
   ArrowRight,
@@ -13,7 +17,6 @@ import {
   TrendingUp,
   Heart
 } from "lucide-react";
-import { useState } from "react";
 
 // Import images
 import heroImage from "@/assets/hero-homeowners.jpg";
@@ -23,6 +26,7 @@ import greenFutureCity from "@/assets/green-future-city.jpg";
 
 const ResidentialEnhanced = () => {
   const { elementRef: heroRef, isVisible: heroVisible } = useScrollAnimation();
+  const { endTracking } = usePerformanceTracking('ResidentialEnhanced');
   
   const [powerUsage, setPowerUsage] = useState([300]);
 
@@ -77,10 +81,12 @@ const ResidentialEnhanced = () => {
           <div className="mt-20">
             <AnimatedCard delay={600} className="max-w-sm mx-auto bg-card/5 border-0">
               <div className="p-8">
-                <img 
+                <OptimizedImage 
                   src={productImage} 
                   alt="NESS PRO Home Battery System" 
                   className="w-full h-auto mb-6"
+                  priority
+                  sizes="(max-width: 768px) 100vw, 400px"
                 />
                 <div className="space-y-3">
                   <div className="text-4xl font-thin text-primary">48 hours</div>
@@ -503,10 +509,11 @@ const ResidentialEnhanced = () => {
               
               {/* Product Visual */}
               <div className="flex-shrink-0">
-                <img 
+                <OptimizedImage 
                   src={productImage} 
                   alt="NESS PRO Home Battery System" 
                   className="w-40 h-auto"
+                  sizes="160px"
                 />
               </div>
 
@@ -584,4 +591,4 @@ const ResidentialEnhanced = () => {
   );
 };
 
-export default ResidentialEnhanced;
+export default React.memo(ResidentialEnhanced);

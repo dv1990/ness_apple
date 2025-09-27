@@ -3,6 +3,8 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { performanceMonitor } from "@/lib/performance-monitor";
+import { ScrollProgressBar } from "@/components/ScrollProgressBar";
 import IndexEnhanced from "./pages/IndexEnhanced";
 import InstallersEnhanced from "./pages/InstallersEnhanced";
 import ResidentialEnhanced from "./pages/ResidentialEnhanced";
@@ -31,11 +33,15 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
+// Initialize performance monitoring
+performanceMonitor.markFeature('app-load');
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      <ScrollProgressBar />
       <BrowserRouter>
         <Routes>
           {/* Overview (Landing) */}
