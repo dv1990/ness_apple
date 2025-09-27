@@ -1,5 +1,9 @@
+import React from 'react';
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
+import { OptimizedImage } from "@/components/ui/optimized-image";
+import { LazySection } from "@/components/ui/lazy-section";
+import { usePerformanceTracking } from "@/lib/performance-monitor";
 import { ArrowRight, Heart, Home, Building2, Factory, Play, Download, Lightbulb, Users, Clock, CheckCircle, Zap, Shield, Brain } from "lucide-react";
 import batteryTechnology from "@/assets/battery-technology.jpg";
 import aiSoftware from "@/assets/ai-software.jpg";
@@ -12,6 +16,9 @@ import solisLogo from "@/assets/solis-logo.png";
 import fimerLogo from "@/assets/fimer-logo.png";
 
 const Technology = () => {
+  const { endTracking } = usePerformanceTracking('Technology');
+  React.useEffect(() => endTracking, [endTracking]);
+
   return (
     <Layout>
       {/* Steve Jobs-style Hero - "One More Thing" */}
@@ -71,7 +78,7 @@ const Technology = () => {
       </section>
 
       {/* "Think Different" Product Reveal */}
-      <section className="py-40 bg-white">
+      <LazySection sectionName="product-reveal" className="py-40 bg-white">
         <div className="max-w-7xl mx-auto px-8">
           
           {/* Product Hero Shot */}
@@ -88,7 +95,7 @@ const Technology = () => {
             {/* Product Image with Dramatic Reveal */}
             <div className="relative">
               <div className="aspect-[16/10] max-w-5xl mx-auto rounded-3xl overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-200/50">
-                <img 
+                <OptimizedImage 
                   src={batteryTechnology}
                   alt="Revolutionary energy storage technology"
                   className="w-full h-full object-cover"
@@ -102,10 +109,10 @@ const Technology = () => {
             </div>
           </div>
         </div>
-      </section>
+      </LazySection>
 
       {/* Three Pillars - Jobs Style */}
-      <section className="py-40 bg-gray-50">
+      <LazySection sectionName="three-pillars" className="py-40 bg-gray-50">
         <div className="max-w-7xl mx-auto px-8">
           
           <div className="text-center mb-32">
@@ -179,10 +186,10 @@ const Technology = () => {
             </div>
           </div>
         </div>
-      </section>
+      </LazySection>
 
       {/* "One More Thing" Technology Deep Dive */}
-      <section className="py-40 bg-black text-white">
+      <LazySection sectionName="technology-deep-dive" className="py-40 bg-black text-white">
         <div className="max-w-7xl mx-auto px-8">
           
           <div className="text-center mb-32">
@@ -199,7 +206,7 @@ const Technology = () => {
             {/* Technology Visual */}
             <div className="relative">
               <div className="aspect-square rounded-3xl overflow-hidden bg-gradient-to-br from-gray-900 to-black border border-gray-800">
-                <img 
+                <OptimizedImage 
                   src={aiSoftware}
                   alt="AI-powered energy intelligence"
                   className="w-full h-full object-cover opacity-80"
@@ -258,10 +265,10 @@ const Technology = () => {
             </div>
           </div>
         </div>
-      </section>
+      </LazySection>
 
       {/* Partnerships - Minimalist */}
-      <section className="py-32 bg-white">
+      <LazySection sectionName="partnerships" className="py-32 bg-white">
         <div className="max-w-7xl mx-auto px-8">
           
           <div className="text-center mb-20">
@@ -283,7 +290,7 @@ const Technology = () => {
               { name: "FIMER", logo: fimerLogo }
             ].map((partner) => (
               <div key={partner.name} className="grayscale hover:grayscale-0 transition-all duration-300">
-                <img 
+                <OptimizedImage 
                   src={partner.logo} 
                   alt={partner.name}
                   className="h-12 object-contain"
@@ -292,7 +299,7 @@ const Technology = () => {
             ))}
           </div>
         </div>
-      </section>
+       </LazySection>
 
       {/* Final CTA - Jobs Style */}
       <section className="py-40 bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white">
@@ -328,9 +335,9 @@ const Technology = () => {
             Available through certified installers worldwide
           </div>
         </div>
-      </section>
+       </section>
     </Layout>
   );
 };
 
-export default Technology;
+export default React.memo(Technology);

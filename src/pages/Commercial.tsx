@@ -1,5 +1,9 @@
+import React from 'react';
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
+import { OptimizedImage } from "@/components/ui/optimized-image";
+import { LazySection } from "@/components/ui/lazy-section";
+import { usePerformanceTracking } from "@/lib/performance-monitor";
 import { ArrowRight, Calculator, Play, TrendingUp, Clock, CheckCircle, Target, Sparkles, Building2, Factory } from "lucide-react";
 import nessUnitsHero from "@/assets/ness-units-hero.png";
 import nessPodProduct from "@/assets/ness-pod-product.png";
@@ -14,6 +18,9 @@ import dgReplacement from "@/assets/dg-replacement.jpg";
 import evCharging from "@/assets/ev-charging.jpg";
 
 const Commercial = () => {
+  const { endTracking } = usePerformanceTracking('Commercial');
+  React.useEffect(() => endTracking, [endTracking]);
+
   const products = [
     {
       id: "pod",
@@ -144,10 +151,11 @@ const Commercial = () => {
             {/* Right Visual */}
             <div className="relative">
               <div className="aspect-square relative rounded-2xl overflow-hidden">
-                <img 
+                <OptimizedImage 
                   src={nessUnitsHero} 
                   alt="NESS Battery Systems"
                   className="w-full h-full object-cover"
+                  priority={true}
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-background/10 to-background/30"></div>
               </div>
@@ -168,7 +176,7 @@ const Commercial = () => {
       </section>
 
       {/* Premium Product Showcase */}
-      <section className="py-40 bg-muted/10">
+      <LazySection sectionName="products" className="py-40 bg-muted/10">
         <div className="max-w-[1600px] mx-auto px-8">
           
           {/* Section Header */}
@@ -202,7 +210,7 @@ const Commercial = () => {
                 }`}>
                   <div className="relative group">
                     <div className="aspect-square bg-gradient-to-br from-background to-muted/20 rounded-3xl p-12 flex items-center justify-center">
-                      <img 
+                      <OptimizedImage 
                         src={product.image}
                         alt={product.name}
                         className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700 ease-out"
@@ -295,10 +303,10 @@ const Commercial = () => {
             ))}
           </div>
         </div>
-      </section>
+      </LazySection>
 
       {/* Sophisticated Metrics */}
-      <section className="py-40 bg-background">
+      <LazySection sectionName="metrics" className="py-40 bg-background">
         <div className="max-w-[1600px] mx-auto px-8">
           
           {/* Asymmetrical Layout */}
@@ -357,10 +365,10 @@ const Commercial = () => {
             </div>
           </div>
         </div>
-      </section>
+      </LazySection>
 
       {/* Refined Industry Case Studies */}
-      <section className="py-40 bg-muted/5">
+      <LazySection sectionName="case-studies" className="py-40 bg-muted/5">
         <div className="max-w-[1400px] mx-auto px-8">
           
           {/* Premium Section Header */}
@@ -474,7 +482,7 @@ const Commercial = () => {
             </button>
           </div>
         </div>
-      </section>
+       </LazySection>
 
       {/* Refined CTA */}
       <section className="py-32 bg-muted/20">
@@ -501,9 +509,9 @@ const Commercial = () => {
             </button>
           </div>
         </div>
-      </section>
+       </section>
     </Layout>
   );
 };
 
-export default Commercial;
+export default React.memo(Commercial);

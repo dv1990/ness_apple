@@ -5,12 +5,20 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { performanceMonitor } from "@/lib/performance-monitor";
 import { ScrollProgressBar } from "@/components/ScrollProgressBar";
-import IndexEnhanced from "./pages/IndexEnhanced";
-import InstallersEnhanced from "./pages/InstallersEnhanced";
-import ResidentialEnhanced from "./pages/ResidentialEnhanced";
-import CommercialEnhanced from "./pages/CommercialEnhanced";
-import TechnologyEnhanced from "./pages/TechnologyEnhanced";
-import ContactEnhanced from "./pages/ContactEnhanced";
+import { RoutePreloader } from "@/components/ui/route-preloader";
+import { preloadImages } from "@/lib/performance-optimizations";
+import { PerformanceDashboard } from "@/components/PerformanceDashboard";
+import React, { Suspense, lazy } from 'react';
+
+// Lazy load non-critical pages for better initial load performance
+const IndexEnhanced = lazy(() => import("./pages/IndexEnhanced"));
+const InstallersEnhanced = lazy(() => import("./pages/InstallersEnhanced"));
+const ResidentialEnhanced = lazy(() => import("./pages/ResidentialEnhanced"));
+const CommercialEnhanced = lazy(() => import("./pages/CommercialEnhanced"));
+const TechnologyEnhanced = lazy(() => import("./pages/TechnologyEnhanced"));
+const ContactEnhanced = lazy(() => import("./pages/ContactEnhanced"));
+
+// Keep critical pages immediately available
 import Residential from "./pages/Residential";
 import Commercial from "./pages/Commercial";
 import Installers from "./pages/Installers";
@@ -33,8 +41,44 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
-// Initialize performance monitoring
+// Initialize performance monitoring and preload critical resources
 performanceMonitor.markFeature('app-load');
+
+// Preload critical images for faster perceived performance
+if (typeof window !== 'undefined') {
+  preloadImages([
+    '/src/assets/hero-homeowners.jpg',
+    '/src/assets/hero-industrial-installation.jpg',
+    '/src/assets/ness-pro-product.png'
+  ]);
+}
+
+// Loading fallback component
+const PageLoadingFallback = () => (
+  <div className="min-h-screen flex items-center justify-center bg-background">
+    <div className="space-y-4 text-center">
+      <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin mx-auto"></div>
+      <p className="text-sm text-muted-foreground">Loading...</p>
+    </div>
+  </div>
+);
+
+// Route preloader configuration
+const routeConfig = [
+  {
+    path: '/',
+    preloadImages: ['/src/assets/hero-homeowners.jpg'],
+    priority: true
+  },
+  {
+    path: '/residential',
+    preloadImages: ['/src/assets/ness-pro-product.png', '/src/assets/office-interior.jpg']
+  },
+  {
+    path: '/commercial',
+    preloadImages: ['/src/assets/ness-units-hero.png', '/src/assets/manufacturing-facility.jpg']
+  }
+];
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -42,8 +86,11 @@ const App = () => (
       <Toaster />
       <Sonner />
       <ScrollProgressBar />
+      <PerformanceDashboard />
       <BrowserRouter>
-        <Routes>
+        <RoutePreloader routes={routeConfig} />
+        <Suspense fallback={<PageLoadingFallback />}>
+          <Routes>
           {/* Overview (Landing) */}
           <Route path="/" element={<IndexEnhanced />} />
           
@@ -92,7 +139,8 @@ const App = () => (
           
           {/* 404 Catch-all */}
           <Route path="*" element={<NotFound />} />
-        </Routes>
+          </Routes>
+        </Suspense>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

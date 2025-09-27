@@ -1,11 +1,18 @@
+import React from 'react';
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
+import { OptimizedImage } from "@/components/ui/optimized-image";
+import { LazySection } from "@/components/ui/lazy-section";
+import { usePerformanceTracking } from "@/lib/performance-monitor";
 import { ArrowRight, Calculator, Award, Users, Wrench, BookOpen, Download, Sparkles, CheckCircle, Target, Clock, Play } from "lucide-react";
 import installerHero from "@/assets/installer-hero.jpg";
 import trainingWorkshop from "@/assets/training-workshop.jpg";
 import configuratorTool from "@/assets/configurator-tool.jpg";
 
 const Installers = () => {
+  const { endTracking } = usePerformanceTracking('Installers');
+  React.useEffect(() => endTracking, [endTracking]);
+
   const partnerTiers = [
     {
       tier: "Registered",
@@ -81,10 +88,11 @@ const Installers = () => {
       <section className="relative min-h-screen flex items-end overflow-hidden">
         {/* Hero Image */}
         <div className="absolute inset-0">
-          <img 
+          <OptimizedImage 
             src={installerHero} 
             alt="Professional installer"
             className="w-full h-full object-cover"
+            priority={true}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
           <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-transparent w-1/2"></div>
@@ -142,7 +150,7 @@ const Installers = () => {
       </section>
 
       {/* Partnership Excellence */}
-      <section className="py-40">
+      <LazySection sectionName="partnerships" className="py-40">
         <div className="max-w-[1600px] mx-auto px-8">
           
           {/* Section Header */}
@@ -234,10 +242,10 @@ const Installers = () => {
             ))}
           </div>
         </div>
-      </section>
+      </LazySection>
 
       {/* Advanced Configurator Showcase */}
-      <section className="py-40 bg-muted/20">
+      <LazySection sectionName="configurator" className="py-40 bg-muted/20">
         <div className="max-w-[1600px] mx-auto px-8">
           <div className="grid lg:grid-cols-12 gap-16 items-center">
             
@@ -291,7 +299,7 @@ const Installers = () => {
             {/* Visual */}
             <div className="lg:col-span-7">
               <div className="relative rounded-2xl overflow-hidden">
-                <img 
+                <OptimizedImage 
                   src={configuratorTool}
                   alt="System configurator tool"
                   className="w-full h-full object-cover"
@@ -301,10 +309,10 @@ const Installers = () => {
             </div>
           </div>
         </div>
-      </section>
+      </LazySection>
 
       {/* Resources Grid */}
-      <section className="py-40">
+      <LazySection sectionName="resources" className="py-40">
         <div className="max-w-[1600px] mx-auto px-8">
           
           {/* Header */}
@@ -349,17 +357,17 @@ const Installers = () => {
             ))}
           </div>
         </div>
-      </section>
+      </LazySection>
 
       {/* Training Excellence */}
-      <section className="py-40 bg-muted/20">
+      <LazySection sectionName="training" className="py-40 bg-muted/20">
         <div className="max-w-[1600px] mx-auto px-8">
           <div className="grid lg:grid-cols-12 gap-16 items-center">
             
             {/* Visual */}
             <div className="lg:col-span-7">
               <div className="relative rounded-2xl overflow-hidden">
-                <img 
+                <OptimizedImage 
                   src={trainingWorkshop}
                   alt="Training workshop"
                   className="w-full h-full object-cover"
@@ -419,7 +427,7 @@ const Installers = () => {
             </div>
           </div>
         </div>
-      </section>
+       </LazySection>
 
       {/* Premium CTA */}
       <section className="py-32">
@@ -445,9 +453,9 @@ const Installers = () => {
             </button>
           </div>
         </div>
-      </section>
+       </section>
     </Layout>
   );
 };
 
-export default Installers;
+export default React.memo(Installers);
