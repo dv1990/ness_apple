@@ -405,6 +405,9 @@ const ResidentialEnhanced = () => {
                     <p className="text-base font-light text-muted-foreground leading-relaxed">
                       You never notice the transition
                     </p>
+                    <p className="text-sm font-light text-primary/80 italic leading-relaxed">
+                      for your uninterrupted OTT experience
+                    </p>
                   </div>
                 </div>
               </div>
