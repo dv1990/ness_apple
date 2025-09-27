@@ -15,6 +15,10 @@ import heroImage from "@/assets/hero-homeowners.jpg";
 import productImage from "@/assets/ness-pro-product.png";
 import officeInterior from "@/assets/office-interior.jpg";
 import greenFutureCity from "@/assets/green-future-city.jpg";
+// Product images
+import nessCubeProduct from "@/assets/ness-cube-product.png";
+import nessPodProduct from "@/assets/ness-pod-product.png";
+import nessProProduct from "@/assets/ness-pro-product.png";
 const ResidentialEnhanced = () => {
   const {
     elementRef: heroRef,
@@ -235,12 +239,191 @@ const ResidentialEnhanced = () => {
 
           {/* Single Call to Action */}
           <div className="mt-16">
-            <MagneticButton variant="primary" size="lg" className="text-lg px-12 py-4" onClick={() => document.getElementById('configurator')?.scrollIntoView({
+            <MagneticButton variant="primary" size="lg" className="text-lg px-12 py-4" onClick={() => document.getElementById('products')?.scrollIntoView({
             behavior: 'smooth'
           })}>
               Get Your NESS System
             </MagneticButton>
           </div>
+        </div>
+      </section>
+
+      {/* Product Selection Section */}
+      <section id="products" className="py-32 bg-gradient-to-br from-background via-background to-muted/5">
+        <div className="max-w-7xl mx-auto px-8">
+          
+          {/* Section Header */}
+          <div className="text-center mb-20">
+            <h2 className="text-5xl md:text-7xl font-thin text-foreground mb-8 tracking-tight leading-[0.85]">
+              One system.
+              <br />
+              <span className="text-primary">Perfect for you.</span>
+            </h2>
+            <p className="text-xl font-light text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+              Choose the NESS system that fits your home's energy needs perfectly.
+            </p>
+          </div>
+
+          {/* Product Grid */}
+          <div className="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto">
+            
+            {/* NESS UPS */}
+            <AnimatedCard delay={200} className="group">
+              <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-3xl p-8 text-center h-full flex flex-col">
+                <div className="mb-8">
+                  <OptimizedImage 
+                    src={nessCubeProduct} 
+                    alt="NESS UPS - Compact backup power solution" 
+                    className="w-full h-48 object-contain mx-auto mb-6"
+                    sizes="(max-width: 768px) 100vw, 400px"
+                  />
+                  <h3 className="text-3xl font-thin text-foreground mb-6">NESS UPS</h3>
+                </div>
+                
+                <div className="flex-1 space-y-6">
+                  <div className="grid grid-cols-3 gap-4 text-center">
+                    <div>
+                      <div className="text-2xl font-light text-primary">12hrs</div>
+                      <div className="text-sm text-muted-foreground">Backup power</div>
+                    </div>
+                    <div>
+                      <div className="text-2xl font-light text-primary">5ms</div>
+                      <div className="text-sm text-muted-foreground">Switch time</div>
+                    </div>
+                    <div>
+                      <div className="text-2xl font-light text-primary">5yr</div>
+                      <div className="text-sm text-muted-foreground">Warranty</div>
+                    </div>
+                  </div>
+                  
+                  <p className="text-muted-foreground font-light leading-relaxed">
+                    Essential backup power for your home's critical needs. Perfect for apartments and smaller homes.
+                  </p>
+                </div>
+                
+                <div className="mt-8 pt-6">
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Starting at ₹2.5L • Free installation
+                  </p>
+                  <Button className="w-full bg-foreground text-background hover:bg-foreground/90 rounded-full py-3">
+                    Get NESS UPS
+                  </Button>
+                </div>
+              </div>
+            </AnimatedCard>
+
+            {/* NESS AIO */}
+            <AnimatedCard delay={400} className="group">
+              <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-3xl p-8 text-center h-full flex flex-col">
+                <div className="mb-8">
+                  <OptimizedImage 
+                    src={nessPodProduct} 
+                    alt="NESS AIO - All-in-one energy solution" 
+                    className="w-full h-48 object-contain mx-auto mb-6"
+                    sizes="(max-width: 768px) 100vw, 400px"
+                  />
+                  <h3 className="text-3xl font-thin text-foreground mb-6">NESS AIO</h3>
+                </div>
+                
+                <div className="flex-1 space-y-6">
+                  <div className="grid grid-cols-3 gap-4 text-center">
+                    <div>
+                      <div className="text-2xl font-light text-primary">24hrs</div>
+                      <div className="text-sm text-muted-foreground">Backup power</div>
+                    </div>
+                    <div>
+                      <div className="text-2xl font-light text-primary">8ms</div>
+                      <div className="text-sm text-muted-foreground">Switch time</div>
+                    </div>
+                    <div>
+                      <div className="text-2xl font-light text-primary">7yr</div>
+                      <div className="text-sm text-muted-foreground">Warranty</div>
+                    </div>
+                  </div>
+                  
+                  <p className="text-muted-foreground font-light leading-relaxed">
+                    All-in-one solution combining solar and battery storage. Ideal for medium-sized homes with higher energy needs.
+                  </p>
+                </div>
+                
+                <div className="mt-8 pt-6">
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Starting at ₹4.2L • Free installation
+                  </p>
+                  <Button className="w-full bg-foreground text-background hover:bg-foreground/90 rounded-full py-3">
+                    Get NESS AIO
+                  </Button>
+                </div>
+              </div>
+            </AnimatedCard>
+
+            {/* NESS PRO */}
+            <AnimatedCard delay={600} className="group relative">
+              <div className="bg-gradient-to-br from-primary/5 to-energy/5 backdrop-blur-sm border border-primary/20 rounded-3xl p-8 text-center h-full flex flex-col relative overflow-hidden">
+                {/* Premium Badge */}
+                <div className="absolute top-4 right-4 bg-primary text-primary-foreground text-xs px-3 py-1 rounded-full">
+                  Most Popular
+                </div>
+                
+                <div className="mb-8">
+                  <OptimizedImage 
+                    src={nessProProduct} 
+                    alt="NESS PRO - Premium home energy system" 
+                    className="w-full h-48 object-contain mx-auto mb-6"
+                    sizes="(max-width: 768px) 100vw, 400px"
+                  />
+                  <h3 className="text-3xl font-thin text-foreground mb-6">NESS PRO</h3>
+                </div>
+                
+                <div className="flex-1 space-y-6">
+                  <div className="grid grid-cols-3 gap-4 text-center">
+                    <div>
+                      <div className="text-2xl font-light text-primary">48hrs</div>
+                      <div className="text-sm text-muted-foreground">Backup power</div>
+                    </div>
+                    <div>
+                      <div className="text-2xl font-light text-primary">10ms</div>
+                      <div className="text-sm text-muted-foreground">Switch time</div>
+                    </div>
+                    <div>
+                      <div className="text-2xl font-light text-primary">10yr</div>
+                      <div className="text-sm text-muted-foreground">Warranty</div>
+                    </div>
+                  </div>
+                  
+                  <p className="text-muted-foreground font-light leading-relaxed">
+                    Premium solution for complete energy independence. Perfect for larger homes and families who never want to compromise.
+                  </p>
+                </div>
+                
+                <div className="mt-8 pt-6">
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Starting at ₹6.5L • Free installation
+                  </p>
+                  <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 rounded-full py-3">
+                    Get NESS PRO
+                  </Button>
+                </div>
+              </div>
+            </AnimatedCard>
+
+          </div>
+
+          {/* Bottom CTA */}
+          <div className="text-center mt-16">
+            <p className="text-lg text-muted-foreground mb-8 font-light">
+              Not sure which system is right for you?
+            </p>
+            <MagneticButton 
+              variant="secondary" 
+              size="lg" 
+              className="text-lg px-12 py-4"
+              onClick={() => document.getElementById('configurator')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              Compare All Systems
+            </MagneticButton>
+          </div>
+
         </div>
       </section>
 
