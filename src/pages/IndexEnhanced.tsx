@@ -116,22 +116,22 @@ const IndexEnhanced = () => {
           {/* Documentary Narrative - Scrolling Story */}
           <div className="space-y-60">
             
-            {/* Chapter 1: Philosophy */}
+            {/* Chapter 1: Elegant Design */}
             <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div className="max-w-2xl">
                 <div className="space-y-8">
                   <div className="flex items-center space-x-4 mb-8">
                     <div className="w-2 h-2 bg-energy rounded-full"></div>
-                    <span className="text-sm text-energy/60 uppercase tracking-[0.4em] font-light">Philosophy</span>
+                    <span className="text-sm text-energy/60 uppercase tracking-[0.4em] font-light">Elegant Design</span>
                   </div>
                   
                   <h3 className="font-display text-5xl md:text-6xl font-extralight text-foreground leading-[0.9] tracking-tight">
-                    True luxury isn't just about what you own.
+                    Batteries are not corner storage products anymore.
                   </h3>
                   
                   <p className="text-xl font-light text-muted-foreground leading-relaxed max-w-xl">
-                    It's about the peace of mind that comes with absolute reliability. 
-                    The confidence that comes with perfect design. The satisfaction that comes with owning something truly exceptional.
+                    But something you now own with pride and rejoice everyday. 
+                    A statement of sophistication that transforms your space while powering your life with uncompromising elegance.
                   </p>
                 </div>
               </div>
