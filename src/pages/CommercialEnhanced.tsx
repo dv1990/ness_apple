@@ -100,7 +100,7 @@ const CommercialEnhanced = () => {
                   <h1 className="font-display text-[3.5rem] sm:text-[5rem] lg:text-[6.5rem] xl:text-[7.5rem] font-thin text-foreground leading-[0.85] tracking-[-0.025em]">
                     <span className="block">Transform your business</span>
                     <span className="block text-primary relative">
-                      into profitable
+                      using
                       <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-primary to-transparent rounded-full"></div>
                     </span>
                     <span className="block text-muted-foreground/70">clean energy</span>
