@@ -19,6 +19,7 @@ import { useState } from "react";
 import heroImage from "@/assets/hero-homeowners.jpg";
 import productImage from "@/assets/ness-pro-product.png";
 import officeInterior from "@/assets/office-interior.jpg";
+import greenFutureCity from "@/assets/green-future-city.jpg";
 
 const ResidentialEnhanced = () => {
   const { elementRef: heroRef, isVisible: heroVisible } = useScrollAnimation();
@@ -420,11 +421,11 @@ const ResidentialEnhanced = () => {
       <section className="relative min-h-[60vh] overflow-hidden flex items-center justify-center">
         <div className="absolute inset-0">
           <img 
-            src={officeInterior} 
-            alt="Modern home with uninterrupted power" 
+            src={greenFutureCity} 
+            alt="Green future city with sustainable energy and clean environment for children" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/60"></div>
+          <div className="absolute inset-0 bg-black/40"></div>
         </div>
         
         <div className="relative z-10 text-center max-w-3xl mx-auto px-8">
