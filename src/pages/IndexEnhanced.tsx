@@ -256,7 +256,7 @@ const IndexEnhanced = () => {
                   </div>
                   
                   <h3 className="font-display text-5xl md:text-6xl font-extralight text-foreground leading-[0.9] tracking-tight">
-                    A warranty that means something.
+                    A warranty that means Trust.
                   </h3>
                   
                   <p className="text-xl font-light text-muted-foreground leading-relaxed max-w-xl ml-auto">
