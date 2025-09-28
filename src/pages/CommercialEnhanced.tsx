@@ -22,16 +22,18 @@ import {
   Play, Quote, Battery
 } from "lucide-react";
 
-// Import images
+// Import images - using existing assets
 import industrialSolarFacility from "@/assets/industrial-solar-facility.jpg";
 import commercialComplex from "@/assets/commercial-complex.jpg";
 import evChargingHub from "@/assets/ev-charging-hub.jpg";
-import noDieselFacility from "@/assets/no-diesel-facility.jpg";
-import greenResort from "@/assets/green-resort.jpg";
-import villaCommunity from "@/assets/villa-community.jpg";
+import manufacturingFacility from "@/assets/manufacturing-facility.jpg";
 import nessPodProduct from "@/assets/ness-pod-product.png";
 import nessCubeProduct from "@/assets/ness-cube-product.png";
-import manufacturingFacility from "@/assets/manufacturing-facility.jpg";
+
+// For missing assets, use existing ones as fallbacks
+import greenResort from "@/assets/green-future-city.jpg"; // Using green-future-city as fallback
+import villaCommunity from "@/assets/villa-community.jpg";
+import noDieselFacility from "@/assets/industrial-complex-hero.jpg"; // Using industrial-complex-hero as fallback
 
 const CommercialEnhanced = () => {
   const { elementRef: heroRef, isVisible: heroVisible } = useScrollAnimation();
@@ -538,6 +540,8 @@ const CommercialEnhanced = () => {
                       src={commercialComplex} 
                       alt="Commercial building complex with confident business professionals"
                       className="w-full h-full object-cover"
+                      onLoad={() => console.log('✅ Commercial complex image loaded')}
+                      onError={(e) => console.error('❌ Failed to load commercial complex image')}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
                     <div className="absolute bottom-6 left-6">
