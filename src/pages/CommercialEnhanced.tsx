@@ -97,8 +97,8 @@ const CommercialEnhanced = () => {
             
             <div className="pt-8 md:pt-16">
               <OptimizedWebPImage
-                src="/src/assets/ness-units-hero.png"
-                alt="NESS industrial energy storage systems"
+                src="/src/assets/industrial-complex-hero.jpg"
+                alt="Modern industrial facility powered by NESS energy storage"
                 className="w-full max-w-4xl mx-auto rounded-2xl shadow-2xl"
                 priority
               />
@@ -130,6 +130,14 @@ const CommercialEnhanced = () => {
                 </div>
               </div>
               
+              <div className="pt-8 md:pt-12">
+                <OptimizedWebPImage
+                  src="/src/assets/no-diesel-facility.jpg"
+                  alt="Industrial facility operating during power outage with NESS backup power"
+                  className="w-full max-w-3xl mx-auto rounded-xl opacity-90"
+                />
+              </div>
+              
               <Button 
                 variant="outline" 
                 size="lg"
@@ -151,35 +159,50 @@ const CommercialEnhanced = () => {
               </h2>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto">
-                {capacityOptions.map((option, index) => (
-                  <div 
-                    key={option.capacity}
-                    className={`p-6 md:p-8 space-y-4 md:space-y-6 bg-background rounded-xl border transition-all duration-200 cursor-pointer hover:shadow-lg ${
-                      selectedCapacity === option.capacity ? 'ring-2 ring-primary shadow-lg' : 'hover:shadow-md'
-                    }`}
-                    onClick={() => setSelectedCapacity(option.capacity)}
-                  >
-                    <div className="space-y-3 md:space-y-4">
-                      <div className="text-2xl md:text-3xl font-bold text-primary">{option.capacity}</div>
-                      <h3 className="text-lg md:text-xl font-semibold">{option.title}</h3>
-                      <p className="text-muted-foreground text-sm md:text-base">{option.description}</p>
+                {capacityOptions.map((option, index) => {
+                  const productImages = [
+                    "/src/assets/ness-cube-product.png",
+                    "/src/assets/ness-pod-product.png", 
+                    "/src/assets/ness-pro-product.png"
+                  ];
+                  
+                  return (
+                    <div 
+                      key={option.capacity}
+                      className={`p-6 md:p-8 space-y-4 md:space-y-6 bg-background rounded-xl border transition-all duration-200 cursor-pointer hover:shadow-lg ${
+                        selectedCapacity === option.capacity ? 'ring-2 ring-primary shadow-lg' : 'hover:shadow-md'
+                      }`}
+                      onClick={() => setSelectedCapacity(option.capacity)}
+                    >
+                      <div className="w-full h-32 md:h-40 mb-4 flex items-center justify-center">
+                        <OptimizedWebPImage
+                          src={productImages[index]}
+                          alt={`NESS ${option.title} - ${option.capacity} energy storage system`}
+                          className="h-full w-auto object-contain"
+                        />
+                      </div>
+                      <div className="space-y-3 md:space-y-4">
+                        <div className="text-2xl md:text-3xl font-bold text-primary">{option.capacity}</div>
+                        <h3 className="text-lg md:text-xl font-semibold">{option.title}</h3>
+                        <p className="text-muted-foreground text-sm md:text-base">{option.description}</p>
+                      </div>
+                      <div className="space-y-1 md:space-y-2 text-xs md:text-sm text-muted-foreground">
+                        <div className="flex justify-between">
+                          <span>Power Output:</span>
+                          <span>{option.power}</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span>Runtime:</span>
+                          <span>{option.runtime}</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span>Footprint:</span>
+                          <span>{option.footprint}</span>
+                        </div>
+                      </div>
                     </div>
-                    <div className="space-y-1 md:space-y-2 text-xs md:text-sm text-muted-foreground">
-                      <div className="flex justify-between">
-                        <span>Power Output:</span>
-                        <span>{option.power}</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span>Runtime:</span>
-                        <span>{option.runtime}</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span>Footprint:</span>
-                        <span>{option.footprint}</span>
-                      </div>
-                    </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
               
               <Button 
@@ -201,9 +224,14 @@ const CommercialEnhanced = () => {
                 <span className="block text-primary">lost millions</span>
               </h2>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-4xl mx-auto">
-                <div className="p-6 md:p-8 space-y-4 md:space-y-6 bg-background rounded-xl border text-left">
-                  <div className="space-y-3 md:space-y-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-5xl mx-auto">
+                <div className="relative overflow-hidden rounded-xl bg-background border">
+                  <OptimizedWebPImage
+                    src="/src/assets/manufacturing-facility.jpg"
+                    alt="Apex Manufacturing facility with NESS energy storage"
+                    className="w-full h-48 md:h-56 object-cover"
+                  />
+                  <div className="p-6 md:p-8 space-y-3 md:space-y-4">
                     <h3 className="text-lg md:text-xl font-semibold">Apex Manufacturing</h3>
                     <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
                       "Full production during Chennai floods. Our NESS system kept us running 
@@ -213,8 +241,13 @@ const CommercialEnhanced = () => {
                   </div>
                 </div>
 
-                <div className="p-6 md:p-8 space-y-4 md:space-y-6 bg-background rounded-xl border text-left">
-                  <div className="space-y-3 md:space-y-4">
+                <div className="relative overflow-hidden rounded-xl bg-background border">
+                  <OptimizedWebPImage
+                    src="/src/assets/office-interior.jpg"
+                    alt="TechPark Bangalore powered by NESS energy storage"
+                    className="w-full h-48 md:h-56 object-cover"
+                  />
+                  <div className="p-6 md:p-8 space-y-3 md:space-y-4">
                     <h3 className="text-lg md:text-xl font-semibold">TechPark Bangalore</h3>
                     <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
                       "Zero tenant complaints during the 6-hour grid failure. 
