@@ -28,7 +28,7 @@ export default defineConfig(({ mode }) => ({
           'enhanced-pages': [
             'src/pages/ResidentialEnhanced',
             'src/pages/CommercialEnhanced',
-            'src/pages/TechnologyEnhanced'
+            'src/pages/InstallersEnhanced'
           ]
         }
       }
