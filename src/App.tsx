@@ -3,13 +3,9 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { serviceWorkerManager } from "@/lib/service-worker-manager";
-import { intelligentPrefetcher } from "@/lib/intelligent-prefetcher";
-import { criticalCSSInjector } from "@/lib/critical-css-injector";
-import { ultraPerformanceOptimizer } from "@/lib/ultra-performance-optimizer";
 import { ScrollProgressBar } from "@/components/ScrollProgressBar";
 import { RouteLazyLoader } from "@/components/ui/route-lazy-loader";
-import React, { Suspense, lazy, useEffect } from 'react';
+import React, { Suspense, lazy } from 'react';
 
 // Apple-level code splitting - Critical path only
 import IndexEnhanced from "./pages/IndexEnhanced";
@@ -64,25 +60,7 @@ const PageLoadingFallback = () => (
 const routeConfig = [];
 
 const App = () => {
-  // Simplified initialization for development
-  useEffect(() => {
-    // Only enable basic performance monitoring in development
-    if (process.env.NODE_ENV === 'production') {
-      const initializePerformance = async () => {
-        await Promise.all([
-          serviceWorkerManager.register(),
-          serviceWorkerManager.preloadCriticalAssets(),
-          ultraPerformanceOptimizer.initialize()
-        ]);
-        await serviceWorkerManager.clearOldCaches();
-        setTimeout(() => {
-          ultraPerformanceOptimizer.generatePerformanceReport();
-        }, 2000);
-      };
-      initializePerformance();
-    }
-  }, []);
-
+  // No performance optimizations in development - keep it simple
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
