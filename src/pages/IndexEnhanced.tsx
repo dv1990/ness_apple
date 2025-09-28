@@ -2,15 +2,17 @@ import { useState, useEffect } from "react";
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Play, CheckCircle, Zap, Sparkles, Shield, Battery, Home, Star, Quote } from "lucide-react";
+// Optimized imports for performance
+import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { MagneticButton, PlayButton, FloatingCard, ParallaxContainer } from "@/components/EnhancedInteractions";
+import { PlayIcon, CheckIcon, ZapIcon, SparklesIcon, ShieldIcon, BatteryIcon, HomeIcon, StarIcon, QuoteIcon } from "@/components/ui/icons";
 
-// Import product images
+// Import optimized WebP images
+import heroHomeownersWebp from "@/assets-webp/hero-homeowners.webp";
 import nessProImage from "@/assets/ness-pro-hero.png";
 import nessProProduct from "@/assets/ness-pro-product.png";
 import nessPodProduct from "@/assets/ness-pod-product.png";
-import heroHomeownersImage from "@/assets/hero-homeowners.jpg";
 import rdLaboratory from '@/assets/rd-laboratory.jpg';
 import batteryTechnology from '@/assets/battery-technology.jpg';
 import manufacturingFacility from '@/assets/manufacturing-facility.jpg';
@@ -19,6 +21,11 @@ const IndexEnhanced = () => {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
 
   useEffect(() => {
+    // Initialize critical resource loading for instant performance
+    import('@/lib/critical-resource-loader').then(({ initializeCriticalLoading }) => {
+      initializeCriticalLoading();
+    });
+    
     // Add smooth scroll behavior
     document.documentElement.style.scrollBehavior = 'smooth';
     return () => {
@@ -30,9 +37,9 @@ const IndexEnhanced = () => {
     <Layout>
       {/* Hero Section - Sonos Inspired "Feel Every Play" Style */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Image - High Impact Visual */}
+        {/* Background Image - High Impact Visual - Optimized WebP */}
         <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
-          backgroundImage: `url(${heroHomeownersImage})`
+          backgroundImage: `url(${heroHomeownersWebp})`
         }} />
         
         {/* Premium Dark Overlay for Typography */}
@@ -140,7 +147,7 @@ const IndexEnhanced = () => {
               <div className="relative lg:order-2">
                 <div className="aspect-[4/3] overflow-hidden rounded-sm">
                   <img 
-                    src={heroHomeownersImage} 
+                    src={heroHomeownersWebp} 
                     alt="Luxury home with NESS energy system" 
                     className="w-full h-full object-cover opacity-60 hover:opacity-80 transition-opacity duration-700 hover:scale-105 transition-transform" 
                   />
@@ -345,7 +352,7 @@ const IndexEnhanced = () => {
           <div className="text-center space-y-16">
             
             <div className="space-y-8">
-              <Quote className="w-16 h-16 mx-auto text-energy/30" />
+              <QuoteIcon className="w-16 h-16 mx-auto text-energy/30" />
               
               <blockquote className="font-display text-4xl md:text-5xl font-light text-foreground leading-relaxed">
                 "It's an engineering approach to peace of mind."
@@ -355,7 +362,7 @@ const IndexEnhanced = () => {
             {/* Expert Credentials */}
             <div className="space-y-4">
               <div className="w-20 h-20 mx-auto rounded-full bg-energy/10 flex items-center justify-center">
-                <Battery className="w-10 h-10 text-energy" />
+                <BatteryIcon className="w-10 h-10 text-energy" />
               </div>
               
               <div>
@@ -492,7 +499,7 @@ const IndexEnhanced = () => {
           {/* Section Header */}
           <div className="text-center mb-20">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-energy/10 text-energy rounded-full text-sm font-medium mb-6">
-              <Star className="w-4 h-4 fill-current" />
+              <StarIcon className="w-4 h-4 fill-current" />
               <span>Stories from our community</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-light text-foreground mb-6">
@@ -589,7 +596,7 @@ const IndexEnhanced = () => {
       <section className="py-40 relative overflow-hidden">
         {/* Background */}
         <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
-          backgroundImage: `url(${heroHomeownersImage})`
+          backgroundImage: `url(${heroHomeownersWebp})`
         }} />
         <div className="absolute inset-0 bg-charcoal/80"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-charcoal/90 via-charcoal/70 to-charcoal/90"></div>
