@@ -3,17 +3,12 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { performanceMonitor } from "@/lib/performance-monitor";
-import { performanceBudgetMonitor } from "@/lib/performance-budget";
-import { initializeApplePerformance } from "@/lib/apple-performance";
 import { serviceWorkerManager } from "@/lib/service-worker-manager";
 import { intelligentPrefetcher } from "@/lib/intelligent-prefetcher";
 import { criticalCSSInjector } from "@/lib/critical-css-injector";
+import { ultraPerformanceOptimizer } from "@/lib/ultra-performance-optimizer";
 import { ScrollProgressBar } from "@/components/ScrollProgressBar";
-import { RoutePreloader } from "@/components/ui/route-preloader";
 import { RouteLazyLoader } from "@/components/ui/route-lazy-loader";
-import { preloadCriticalImages } from "@/lib/image-optimizer";
-import { PerformanceDashboard } from "@/components/PerformanceDashboard";
 import React, { Suspense, lazy, useEffect } from 'react';
 
 // Apple-level code splitting - Critical path only
@@ -49,8 +44,6 @@ const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
 
-import { initializePerformanceEnhancements } from "@/lib/performance-enhancements";
-
 // Preload critical images for instant loading
 const criticalImages = [
   '/src/assets/ness-pro-product.png',
@@ -71,32 +64,26 @@ const PageLoadingFallback = () => (
 const routeConfig = [];
 
 const App = () => {
-  // Apple-level performance initialization
+  // Ultra Performance initialization
   useEffect(() => {
-    // Critical CSS injection for instant first paint
-    criticalCSSInjector.inject();
-    criticalCSSInjector.preloadFonts();
-    
-    // Initialize performance monitoring after DOM is ready
-    performanceMonitor.markFeature('app-load');
-    performanceBudgetMonitor.reportOptimizations();
-    initializePerformanceEnhancements();
-    initializeApplePerformance();
-    
-    // Advanced performance features
-    serviceWorkerManager.register();
-    serviceWorkerManager.preloadCriticalAssets();
-    
-    // Start intelligent prefetching
-    intelligentPrefetcher.prefetchRoute('/residential-enhanced');
-    
-    // Preload critical images
-    preloadCriticalImages(criticalImages);
-    
-    // Optimize images after load
-    setTimeout(() => {
-      criticalCSSInjector.optimizeImages();
-    }, 100);
+    const initializePerformance = async () => {
+      // Initialize performance optimizations in parallel
+      await Promise.all([
+        serviceWorkerManager.register(),
+        serviceWorkerManager.preloadCriticalAssets(),
+        ultraPerformanceOptimizer.initialize()
+      ]);
+
+      // Clear old caches after initialization
+      await serviceWorkerManager.clearOldCaches();
+
+      // Generate performance report after 2 seconds
+      setTimeout(() => {
+        ultraPerformanceOptimizer.generatePerformanceReport();
+      }, 2000);
+    };
+
+    initializePerformance();
   }, []);
 
   return (
