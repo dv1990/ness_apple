@@ -27,13 +27,21 @@ export default defineConfig(({ mode }) => ({
         }
       }
     },
-    // Optimize assets
-    assetsInlineLimit: 4096,
-    reportCompressedSize: false,
-    chunkSizeWarningLimit: 1000
+    // Optimize assets aggressively
+    assetsInlineLimit: 2048, // Inline smaller assets for faster loading
+    reportCompressedSize: false, // Faster builds
+    chunkSizeWarningLimit: 800, // Strict chunk size limits
+    // Enable modern browser optimizations
+    target: 'esnext',
+    minify: 'esbuild'
   },
-  // Aggressive optimization
+  // Aggressive optimization with image handling
   optimizeDeps: {
-    include: ['react', 'react-dom', 'react-router-dom']
+    include: ['react', 'react-dom', 'react-router-dom'],
+    exclude: ['@radix-ui/react-*'] // Let Radix components lazy load
+  },
+  // Enable modern features
+  esbuild: {
+    drop: mode === 'production' ? ['console', 'debugger'] : []
   }
 }));

@@ -7,9 +7,9 @@ import { performanceMonitor } from "@/lib/performance-monitor";
 import { performanceBudgetMonitor } from "@/lib/performance-budget";
 import { ScrollProgressBar } from "@/components/ScrollProgressBar";
 import { RoutePreloader } from "@/components/ui/route-preloader";
-import { preloadImages } from "@/lib/performance-optimizations";
+import { preloadCriticalImages } from "@/lib/image-optimizer";
 import { PerformanceDashboard } from "@/components/PerformanceDashboard";
-import React, { Suspense, lazy } from 'react';
+import React, { Suspense, lazy, useEffect } from 'react';
 
 // Apple-level code splitting - Load only what's immediately needed
 import IndexEnhanced from "./pages/IndexEnhanced";
@@ -44,11 +44,20 @@ const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
 
+import { initializePerformanceEnhancements } from "@/lib/performance-enhancements";
+
 // Apple-level performance initialization
 performanceMonitor.markFeature('app-load');
 performanceBudgetMonitor.reportOptimizations();
+initializePerformanceEnhancements();
 
-// Loading fallback component
+// Preload critical images for instant loading
+const criticalImages = [
+  '/src/assets/ness-pro-product.png',
+  '/src/assets/hero-homeowners.jpg'
+];
+
+// Loading fallback component with skeleton
 const PageLoadingFallback = () => (
   <div className="min-h-screen flex items-center justify-center bg-background">
     <div className="space-y-4 text-center">
@@ -61,14 +70,20 @@ const PageLoadingFallback = () => (
 // Simplified route config - images loaded on demand
 const routeConfig = [];
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <ScrollProgressBar />
-      <BrowserRouter>
-        <Suspense fallback={<PageLoadingFallback />}>
+const App = () => {
+  // Preload critical images on app mount
+  useEffect(() => {
+    preloadCriticalImages(criticalImages);
+  }, []);
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <ScrollProgressBar />
+        <BrowserRouter>
+          <Suspense fallback={<PageLoadingFallback />}>
           <Routes>
           {/* Overview (Landing) */}
           <Route path="/" element={<IndexEnhanced />} />
@@ -124,5 +139,6 @@ const App = () => (
     </TooltipProvider>
   </QueryClientProvider>
 );
+};
 
 export default App;
