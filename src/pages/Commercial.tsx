@@ -394,6 +394,68 @@ const Commercial = () => {
         </div>
       </LazySection>
 
+      {/* Every Dream Needs Energy */}
+      <LazySection sectionName="dreams" className="py-40 bg-gradient-to-br from-primary/5 via-background to-background">
+        <div className="max-w-5xl mx-auto px-8 text-center">
+          
+          <div className="space-y-16">
+            <div className="space-y-8">
+              <div className="inline-flex items-center space-x-2">
+                <div className="w-1 h-1 rounded-full bg-primary"></div>
+                <span className="text-sm font-mono text-muted-foreground uppercase tracking-[0.2em]">
+                  The Foundation
+                </span>
+              </div>
+              
+              <h2 className="text-6xl md:text-8xl font-extralight text-foreground leading-[0.85] tracking-tight">
+                Every dream
+                <br />
+                <span className="text-primary font-medium">needs energy.</span>
+              </h2>
+              
+              <p className="text-2xl font-light text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                Behind every breakthrough. Every innovation. Every success story.
+                <br />
+                <span className="text-foreground font-medium">There's reliable power making it possible.</span>
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-12 pt-16">
+              
+              <div className="space-y-6">
+                <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto">
+                  <Sparkles className="w-8 h-8 text-primary" />
+                </div>
+                <h3 className="text-2xl font-extralight text-foreground">Innovation</h3>
+                <p className="text-muted-foreground font-light leading-relaxed">
+                  R&D labs need uninterrupted power. Breakthrough discoveries can't wait for the grid to stabilize.
+                </p>
+              </div>
+
+              <div className="space-y-6">
+                <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto">
+                  <Target className="w-8 h-8 text-primary" />
+                </div>
+                <h3 className="text-2xl font-extralight text-foreground">Precision</h3>
+                <p className="text-muted-foreground font-light leading-relaxed">
+                  Manufacturing tolerances measured in microns. One power fluctuation ruins months of work.
+                </p>
+              </div>
+
+              <div className="space-y-6">
+                <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto">
+                  <Clock className="w-8 h-8 text-primary" />
+                </div>
+                <h3 className="text-2xl font-extralight text-foreground">Time</h3>
+                <p className="text-muted-foreground font-light leading-relaxed">
+                  Market windows close fast. Delayed launches cost millions. Reliable power keeps you first.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </LazySection>
+
       {/* Refined Industry Case Studies */}
       <LazySection sectionName="case-studies" className="py-40 bg-muted/5">
         <div className="max-w-[1400px] mx-auto px-8">
