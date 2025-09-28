@@ -15,4 +15,31 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    // Apple-level performance optimizations
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          // Core libraries
+          'react-vendor': ['react', 'react-dom'],
+          'ui-vendor': ['@radix-ui/react-slot', '@radix-ui/react-tooltip'],
+          'router': ['react-router-dom'],
+          // Separate heavy components
+          'enhanced-pages': [
+            'src/pages/ResidentialEnhanced',
+            'src/pages/CommercialEnhanced',
+            'src/pages/TechnologyEnhanced'
+          ]
+        }
+      }
+    },
+    // Optimize assets
+    assetsInlineLimit: 4096,
+    reportCompressedSize: false,
+    chunkSizeWarningLimit: 1000
+  },
+  // Aggressive optimization
+  optimizeDeps: {
+    include: ['react', 'react-dom', 'react-router-dom']
+  }
 }));

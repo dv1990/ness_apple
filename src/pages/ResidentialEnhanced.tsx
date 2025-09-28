@@ -1,18 +1,10 @@
 import React from 'react';
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
-import { OptimizedImage } from "@/components/ui/optimized-image";
-import { usePerformanceTracking } from "@/lib/performance-monitor";
+import { DynamicImage } from "@/components/ui/dynamic-image";
 import { ArrowRight } from "lucide-react";
 
-// Import images
-import heroImage from "@/assets/hero-homeowners.jpg";
-import nessCubeProduct from "@/assets/ness-cube-product.png";
-import nessPodProduct from "@/assets/ness-pod-product.png";
-import nessProProduct from "@/assets/ness-pro-product.png";
-
 const ResidentialEnhanced = () => {
-  const { endTracking } = usePerformanceTracking('ResidentialEnhanced');
 
   return (
     <Layout>
@@ -110,11 +102,11 @@ const ResidentialEnhanced = () => {
               <div className="bg-white/60 backdrop-blur-sm rounded-3xl p-12 h-full flex flex-col border border-platinum/30 hover:shadow-[0_32px_64px_-16px_rgba(20,20,20,0.1)] transition-all duration-500">
                 
                 <div className="text-center mb-12">
-                  <OptimizedImage 
-                    src={nessCubeProduct} 
+                  <DynamicImage 
+                    src="/src/assets/ness-cube-product.png" 
                     alt="NESS UPS" 
                     className="w-full h-40 object-contain mx-auto mb-8"
-                    sizes="(max-width: 768px) 100vw, 400px"
+                    priority={false}
                   />
                   <h3 className="text-title text-charcoal font-light mb-4">NESS UPS</h3>
                   <p className="text-caption text-silver uppercase tracking-[0.1em]">Essential</p>
@@ -155,11 +147,11 @@ const ResidentialEnhanced = () => {
               <div className="bg-white/60 backdrop-blur-sm rounded-3xl p-12 h-full flex flex-col border border-platinum/30 hover:shadow-[0_32px_64px_-16px_rgba(20,20,20,0.1)] transition-all duration-500">
                 
                 <div className="text-center mb-12">
-                  <OptimizedImage 
-                    src={nessPodProduct} 
+                  <DynamicImage 
+                    src="/src/assets/ness-pod-product.png" 
                     alt="NESS AIO" 
                     className="w-full h-40 object-contain mx-auto mb-8"
-                    sizes="(max-width: 768px) 100vw, 400px"
+                    priority={false}
                   />
                   <h3 className="text-title text-charcoal font-light mb-4">NESS AIO</h3>
                   <p className="text-caption text-silver uppercase tracking-[0.1em]">Complete</p>
@@ -205,11 +197,11 @@ const ResidentialEnhanced = () => {
                 </div>
 
                 <div className="text-center mb-12">
-                  <OptimizedImage 
-                    src={nessProProduct} 
+                  <DynamicImage 
+                    src="/src/assets/ness-pro-product.png" 
                     alt="NESS PRO" 
                     className="w-full h-40 object-contain mx-auto mb-8"
-                    sizes="(max-width: 768px) 100vw, 400px"
+                    priority={false}
                   />
                   <h3 className="text-title text-charcoal font-light mb-4">NESS PRO</h3>
                   <p className="text-caption text-energy uppercase tracking-[0.1em] font-medium">Ultimate</p>

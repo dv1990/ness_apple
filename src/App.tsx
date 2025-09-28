@@ -4,61 +4,49 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { performanceMonitor } from "@/lib/performance-monitor";
+import { performanceBudgetMonitor } from "@/lib/performance-budget";
 import { ScrollProgressBar } from "@/components/ScrollProgressBar";
 import { RoutePreloader } from "@/components/ui/route-preloader";
 import { preloadImages } from "@/lib/performance-optimizations";
 import { PerformanceDashboard } from "@/components/PerformanceDashboard";
 import React, { Suspense, lazy } from 'react';
 
-// Import critical pages immediately for better initial load
+// Apple-level code splitting - Load only what's immediately needed
 import IndexEnhanced from "./pages/IndexEnhanced";
-import ResidentialEnhanced from "./pages/ResidentialEnhanced";
 
-// Lazy load only non-critical pages
+// Aggressive lazy loading for optimal performance
+const ResidentialEnhanced = lazy(() => import("./pages/ResidentialEnhanced"));
 const InstallersEnhanced = lazy(() => import("./pages/InstallersEnhanced"));
 const CommercialEnhanced = lazy(() => import("./pages/CommercialEnhanced"));
 const TechnologyEnhanced = lazy(() => import("./pages/TechnologyEnhanced"));
 const ContactEnhanced = lazy(() => import("./pages/ContactEnhanced"));
 
-// Keep critical pages immediately available
-import Residential from "./pages/Residential";
-import Commercial from "./pages/Commercial";
-import Installers from "./pages/Installers";
-import Technology from "./pages/Technology";
-import Hiring from "./pages/Hiring";
-import FindInstaller from "./pages/FindInstaller";
-import About from "./pages/company/About";
-import News from "./pages/company/News";
-import NewsArticle from "./pages/company/NewsArticle";
-import KnowledgeHub from "./pages/KnowledgeHub";
-import KnowledgeArticle from "./pages/KnowledgeArticle";
-import Contact from "./pages/Contact";
-import ContactHomeowner from "./pages/contact/ContactHomeowner";
-import ContactDistributor from "./pages/contact/ContactDistributor";
-import ContactInstaller from "./pages/contact/ContactInstaller";
-import Troubleshooting from "./pages/Troubleshooting";
-import TroubleshootingGuide from "./pages/TroubleshootingGuide";
-import Downloads from "./pages/Downloads";
-import NotFound from "./pages/NotFound";
+// Legacy components - lazy loaded
+const Residential = lazy(() => import("./pages/Residential"));
+const Commercial = lazy(() => import("./pages/Commercial"));
+const Installers = lazy(() => import("./pages/Installers"));
+const Technology = lazy(() => import("./pages/Technology"));
+const Hiring = lazy(() => import("./pages/Hiring"));
+const FindInstaller = lazy(() => import("./pages/FindInstaller"));
+const About = lazy(() => import("./pages/company/About"));
+const News = lazy(() => import("./pages/company/News"));
+const NewsArticle = lazy(() => import("./pages/company/NewsArticle"));
+const KnowledgeHub = lazy(() => import("./pages/KnowledgeHub"));
+const KnowledgeArticle = lazy(() => import("./pages/KnowledgeArticle"));
+const Contact = lazy(() => import("./pages/Contact"));
+const ContactHomeowner = lazy(() => import("./pages/contact/ContactHomeowner"));
+const ContactDistributor = lazy(() => import("./pages/contact/ContactDistributor"));
+const ContactInstaller = lazy(() => import("./pages/contact/ContactInstaller"));
+const Troubleshooting = lazy(() => import("./pages/Troubleshooting"));
+const TroubleshootingGuide = lazy(() => import("./pages/TroubleshootingGuide"));
+const Downloads = lazy(() => import("./pages/Downloads"));
+const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
 
-// Initialize performance monitoring and preload critical resources
+// Apple-level performance initialization
 performanceMonitor.markFeature('app-load');
-
-// Import critical images for immediate availability
-import heroHomeowners from "@/assets/hero-homeowners.jpg";
-import heroIndustrial from "@/assets/hero-industrial-installation.jpg";
-import nessPro from "@/assets/ness-pro-product.png";
-
-// Preload critical images using correct paths
-if (typeof window !== 'undefined') {
-  preloadImages([
-    heroHomeowners,
-    heroIndustrial,
-    nessPro
-  ]);
-}
+performanceBudgetMonitor.reportOptimizations();
 
 // Loading fallback component
 const PageLoadingFallback = () => (
@@ -70,27 +58,8 @@ const PageLoadingFallback = () => (
   </div>
 );
 
-// Import additional images for route preloading
-import officeInterior from "@/assets/office-interior.jpg";
-import nessUnitsHero from "@/assets/ness-units-hero.png";
-import manufacturingFacility from "@/assets/manufacturing-facility.jpg";
-
-// Route preloader configuration with correct image paths
-const routeConfig = [
-  {
-    path: '/',
-    preloadImages: [heroHomeowners],
-    priority: true
-  },
-  {
-    path: '/residential',
-    preloadImages: [nessPro, officeInterior]
-  },
-  {
-    path: '/commercial',
-    preloadImages: [nessUnitsHero, manufacturingFacility]
-  }
-];
+// Simplified route config - images loaded on demand
+const routeConfig = [];
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -98,9 +67,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <ScrollProgressBar />
-      <PerformanceDashboard />
       <BrowserRouter>
-        <RoutePreloader routes={routeConfig} />
         <Suspense fallback={<PageLoadingFallback />}>
           <Routes>
           {/* Overview (Landing) */}
