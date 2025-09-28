@@ -517,10 +517,10 @@ const Commercial = () => {
           
           <div className="max-w-4xl mx-auto space-y-8">
             <h2 className="text-5xl md:text-6xl font-extralight text-foreground leading-tight tracking-tight">
-              Transform your energy infrastructure
+              Power that never fails you.
             </h2>
             <p className="text-xl font-light text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-              Join industry leaders who have revolutionized their operations with NESS systems
+              Your operations run continuously. Your costs drop immediately. Your business stays ahead.
             </p>
           </div>
 
