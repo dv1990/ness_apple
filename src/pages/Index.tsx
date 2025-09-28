@@ -18,50 +18,26 @@ import { WhyNess } from "@/components/WhyNess";
 const Index = () => {
   return (
     <Layout>
-      {/* Sonos-Inspired Hero - Human Story First */}
+      {/* Simplified Hero - One Statement, One Path */}
       <section className="relative min-h-screen flex items-center justify-center bg-background">
-        <div className="max-w-5xl mx-auto px-8 text-center">
+        <div className="max-w-4xl mx-auto px-8 text-center">
           
-          {/* Human-Centered Opening */}
-          <div className="space-y-16">
-            <div className="space-y-8">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-muted/50 rounded-full text-sm text-muted-foreground mb-8">
-                <MapPin className="w-4 h-4" />
-                <span>Now serving 500+ premium homes across India</span>
-              </div>
-              
-              <h1 className="text-5xl md:text-7xl font-light text-foreground leading-tight tracking-tight">
-                The night your street
-                <br />
-                <span className="text-energy font-medium">stayed bright</span>
-              </h1>
-              
-              <p className="text-xl md:text-2xl font-light text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                While your neighbors fumbled for candles, your family continued their evening routine.
-                <br />
-                <span className="text-foreground font-medium">This is why discerning homeowners choose NESS.</span>
-              </p>
-            </div>
+          <div className="space-y-12">
+            <h1 className="text-6xl md:text-8xl font-light text-foreground leading-tight tracking-tight">
+              Never lose power.
+              <br />
+              <span className="text-energy font-medium">Ever again.</span>
+            </h1>
+            
+            <p className="text-2xl md:text-3xl font-light text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+              While others plan around power cuts, 
+              <span className="text-foreground font-medium"> you forget they exist.</span>
+            </p>
 
-            {/* Emotional Promise */}
-            <div className="bg-card/40 backdrop-blur-xl border border-border/20 rounded-3xl p-8 max-w-2xl mx-auto">
-              <div className="flex items-center justify-center gap-2 mb-4">
-                <Heart className="w-5 h-5 text-energy fill-current" />
-                <span className="text-sm font-medium text-energy uppercase tracking-wide">Our Promise</span>
-              </div>
-              <p className="text-lg font-light text-foreground">
-                Your children will never remember a power cut. 
-                Your electricity bills will never surprise you.
-                <br />
-                <span className="text-energy font-medium">Your peace of mind is guaranteed.</span>
-              </p>
-            </div>
-
-            {/* Clear, Confident CTA */}
             <Link to="/contact">
-              <Button className="bg-energy hover:bg-energy-dark text-white px-12 py-6 text-xl font-medium rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
-                Experience NESS
-                <ArrowRight className="w-6 h-6 ml-3" />
+              <Button className="bg-energy hover:bg-energy-dark text-white px-16 py-8 text-2xl font-medium rounded-2xl shadow-2xl hover:shadow-3xl transform hover:-translate-y-2 transition-all duration-500 mt-8">
+                Begin your transformation
+                <ArrowRight className="w-8 h-8 ml-4" />
               </Button>
             </Link>
           </div>
