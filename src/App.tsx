@@ -64,26 +64,23 @@ const PageLoadingFallback = () => (
 const routeConfig = [];
 
 const App = () => {
-  // Ultra Performance initialization
+  // Simplified initialization for development
   useEffect(() => {
-    const initializePerformance = async () => {
-      // Initialize performance optimizations in parallel
-      await Promise.all([
-        serviceWorkerManager.register(),
-        serviceWorkerManager.preloadCriticalAssets(),
-        ultraPerformanceOptimizer.initialize()
-      ]);
-
-      // Clear old caches after initialization
-      await serviceWorkerManager.clearOldCaches();
-
-      // Generate performance report after 2 seconds
-      setTimeout(() => {
-        ultraPerformanceOptimizer.generatePerformanceReport();
-      }, 2000);
-    };
-
-    initializePerformance();
+    // Only enable basic performance monitoring in development
+    if (process.env.NODE_ENV === 'production') {
+      const initializePerformance = async () => {
+        await Promise.all([
+          serviceWorkerManager.register(),
+          serviceWorkerManager.preloadCriticalAssets(),
+          ultraPerformanceOptimizer.initialize()
+        ]);
+        await serviceWorkerManager.clearOldCaches();
+        setTimeout(() => {
+          ultraPerformanceOptimizer.generatePerformanceReport();
+        }, 2000);
+      };
+      initializePerformance();
+    }
   }, []);
 
   return (

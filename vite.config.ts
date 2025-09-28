@@ -8,10 +8,6 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
-    hmr: {
-      port: 8080,
-      clientPort: 8080
-    }
   },
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
@@ -19,8 +15,8 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  build: {
-    // Apple-level aggressive performance optimizations
+  build: mode === 'production' ? {
+    // Apple-level aggressive performance optimizations for production only
     rollupOptions: {
       output: {
         manualChunks: (id) => {
@@ -78,11 +74,10 @@ export default defineConfig(({ mode }) => ({
     target: 'esnext',
     minify: 'esbuild',
     cssCodeSplit: true // Split CSS per chunk
-  },
-  // Aggressive optimization with image handling
+  } : {},
+  // Simplified optimizeDeps for development
   optimizeDeps: {
     include: ['react', 'react-dom', 'react-router-dom'],
-    exclude: ['@radix-ui/react-*'] // Let Radix components lazy load
   },
   // Enable modern features
   esbuild: {
