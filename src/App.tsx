@@ -14,12 +14,12 @@ import IndexEnhanced from "./pages/IndexEnhanced";
 const ResidentialEnhanced = lazy(() => import("./pages/ResidentialEnhanced"));
 const InstallersEnhanced = lazy(() => import("./pages/InstallersEnhanced"));
 const CommercialEnhanced = lazy(() => import("./pages/CommercialEnhanced"));
+const Commercial = lazy(() => import("./pages/Commercial"));
 const TechnologyEnhanced = lazy(() => import("./pages/TechnologyEnhanced"));
 const ContactEnhanced = lazy(() => import("./pages/ContactEnhanced"));
 
 // Legacy components - lazy loaded
 const Residential = lazy(() => import("./pages/Residential"));
-const Commercial = lazy(() => import("./pages/Commercial"));
 const Installers = lazy(() => import("./pages/Installers"));
 const Technology = lazy(() => import("./pages/Technology"));
 const Hiring = lazy(() => import("./pages/Hiring"));
@@ -77,7 +77,7 @@ const App = () => {
           
           {/* Product Routes */}
           <Route path="/homeowners" element={<ResidentialEnhanced />} />
-          <Route path="/ci" element={<CommercialEnhanced />} />
+          <Route path="/ci" element={<Commercial />} />
           <Route path="/installers" element={<InstallersEnhanced />} />
           <Route path="/technology" element={<Technology />} />
           <Route path="/find-installer" element={<FindInstaller />} />
@@ -104,7 +104,7 @@ const App = () => {
           
           {/* Legacy redirects for existing routes */}
           <Route path="/residential" element={<ResidentialEnhanced />} />
-          <Route path="/commercial" element={<CommercialEnhanced />} />
+          <Route path="/commercial" element={<Commercial />} />
           <Route path="/hiring" element={<Hiring />} />
           <Route path="/knowledge-hub" element={<KnowledgeHub />} />
           <Route path="/contact/homeowner" element={<ContactHomeowner />} />
