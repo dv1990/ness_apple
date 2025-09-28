@@ -5,8 +5,8 @@ import Layout from "@/components/Layout";
 import { OptimizedWebPImage } from "@/components/ui/optimized-webp-image";
 import { ArrowRight, Shield, Target } from "lucide-react";
 
-// Import images
-import industrialHero from "@/assets/industrial-complex-hero.jpg";
+// Import images that actually exist in the project
+import industrialHero from "@/assets/industrial-solar-facility.jpg";
 import noDieselFacility from "@/assets/no-diesel-facility.jpg";
 import nessCube from "@/assets/ness-cube-product.png";
 import nessPod from "@/assets/ness-pod-product.png";
