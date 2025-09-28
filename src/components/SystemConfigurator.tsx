@@ -1,17 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
-import { Separator } from "@/components/ui/separator";
 import { 
-  Calculator, Home, Zap, Battery, Sun, IndianRupee, 
-  CheckCircle, AlertCircle, Download, Share2, 
-  Clock, TrendingUp, Leaf, Shield
+  Battery, Home, Zap, Sun, IndianRupee, 
+  Leaf
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
@@ -162,439 +157,337 @@ const SystemConfigurator = () => {
   };
 
   return (
-    <div className="max-w-6xl mx-auto p-6 space-y-8">
-      {/* Header */}
-      <div className="text-center space-y-4">
-        <div className="inline-flex items-center space-x-2 bg-primary/10 px-4 py-2 rounded-full">
-          <Calculator className="w-5 h-5 text-primary" />
-          <span className="text-primary font-medium">System Configurator</span>
+    <div className="min-h-screen bg-gradient-to-br from-background via-background to-background/95">
+      <div className="max-w-4xl mx-auto px-6 py-12">
+        {/* Emotional Header */}
+        <div className="text-center space-y-8 mb-16">
+          <div className="space-y-4">
+            <h1 className="text-5xl md:text-6xl font-extralight tracking-tight text-foreground leading-none">
+              Your Energy
+              <br />
+              <span className="bg-gradient-to-r from-primary via-primary/80 to-primary bg-clip-text text-transparent">
+                Independence
+              </span>
+            </h1>
+            <p className="text-xl text-muted-foreground font-light max-w-2xl mx-auto leading-relaxed">
+              A personal energy system designed around how you actually live
+            </p>
+          </div>
+          
+          {/* Progress Indicator */}
+          <div className="flex justify-center items-center space-x-3 mt-12">
+            {['Tell us', 'We design', 'You decide'].map((step, index) => (
+              <div key={step} className="flex items-center">
+                <div className={`w-3 h-3 rounded-full transition-all duration-500 ${
+                  index <= (activeTab === 'requirements' ? 0 : activeTab === 'appliances' || activeTab === 'system' ? 1 : 2)
+                    ? 'bg-primary scale-100' 
+                    : 'bg-muted scale-75'
+                }`} />
+                <span className="ml-2 text-sm text-muted-foreground font-medium">{step}</span>
+                {index < 2 && <div className="w-8 h-px bg-muted mx-4" />}
+              </div>
+            ))}
+          </div>
         </div>
-        <h1 className="text-4xl font-thin text-foreground">
-          Design the Perfect
-          <br />
-          <span className="text-primary">Energy System</span>
-        </h1>
-        <p className="text-muted-foreground max-w-2xl mx-auto">
-          Professional system sizing and proposal generation in minutes
-        </p>
-      </div>
 
-      {/* Configuration Tabs */}
-      <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-        <TabsList className="grid w-full grid-cols-4">
-          <TabsTrigger value="requirements" className="flex items-center space-x-2">
-            <Home className="w-4 h-4" />
-            <span className="hidden sm:inline">Requirements</span>
-          </TabsTrigger>
-          <TabsTrigger value="appliances" className="flex items-center space-x-2">
-            <Zap className="w-4 h-4" />
-            <span className="hidden sm:inline">Load Calculation</span>
-          </TabsTrigger>
-          <TabsTrigger value="system" className="flex items-center space-x-2">
-            <Battery className="w-4 h-4" />
-            <span className="hidden sm:inline">System Design</span>
-          </TabsTrigger>
-          <TabsTrigger value="results" className="flex items-center space-x-2">
-            <TrendingUp className="w-4 h-4" />
-            <span className="hidden sm:inline">Results</span>
-          </TabsTrigger>
-        </TabsList>
-
-        {/* Requirements Tab */}
-        <TabsContent value="requirements" className="space-y-6">
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center space-x-2">
-                <Home className="w-5 h-5" />
-                <span>Project Requirements</span>
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <Label>Location</Label>
-                  <Select value={config.location} onValueChange={(value) => setConfig(prev => ({...prev, location: value}))}>
-                    <SelectTrigger>
-                      <SelectValue placeholder="Select location" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="mumbai">Mumbai, Maharashtra</SelectItem>
-                      <SelectItem value="delhi">Delhi, NCR</SelectItem>
-                      <SelectItem value="bangalore">Bangalore, Karnataka</SelectItem>
-                      <SelectItem value="chennai">Chennai, Tamil Nadu</SelectItem>
-                      <SelectItem value="hyderabad">Hyderabad, Telangana</SelectItem>
-                      <SelectItem value="pune">Pune, Maharashtra</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-                
-                <div className="space-y-2">
-                  <Label>System Type</Label>
-                  <Select value={config.systemType} onValueChange={(value: 'hybrid' | 'off-grid' | 'grid-tie') => setConfig(prev => ({...prev, systemType: value}))}>
-                    <SelectTrigger>
-                      <SelectValue />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="hybrid">Hybrid (Grid + Solar + Battery)</SelectItem>
-                      <SelectItem value="off-grid">Off-Grid (Solar + Battery Only)</SelectItem>
-                      <SelectItem value="grid-tie">Grid-Tie (Solar + Grid)</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-                
-                <div className="space-y-2">
-                  <Label>Available Roof Area (sq ft)</Label>
-                  <Input 
-                    type="number" 
-                    placeholder="Enter roof area"
-                    value={config.roofArea || ''} 
-                    onChange={(e) => setConfig(prev => ({...prev, roofArea: parseInt(e.target.value) || 0}))}
-                  />
-                </div>
-                
-                <div className="space-y-2">
-                  <Label>Required Backup Hours</Label>
-                  <Select value={config.backupHours.toString()} onValueChange={(value) => setConfig(prev => ({...prev, backupHours: parseInt(value)}))}>
-                    <SelectTrigger>
-                      <SelectValue />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="4">4 Hours</SelectItem>
-                      <SelectItem value="8">8 Hours</SelectItem>
-                      <SelectItem value="12">12 Hours</SelectItem>
-                      <SelectItem value="24">24 Hours</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
+        {/* Simplified Configuration Flow */}
+        <div className="space-y-16">
+          {activeTab === 'requirements' && (
+            <div className="animate-fade-in">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl font-light text-foreground mb-4">Tell us about your space</h2>
+                <p className="text-muted-foreground font-light">We'll design the perfect system for your needs</p>
               </div>
               
-              <Button onClick={() => setActiveTab("appliances")} className="w-full">
-                Continue to Load Calculation
-                <CheckCircle className="w-4 h-4 ml-2" />
-              </Button>
-            </CardContent>
-          </Card>
-        </TabsContent>
-
-        {/* Appliances Tab */}
-        <TabsContent value="appliances" className="space-y-6">
-          <div className="grid lg:grid-cols-3 gap-6">
-            <div className="lg:col-span-2">
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center space-x-2">
-                    <Zap className="w-5 h-5" />
-                    <span>Select Appliances</span>
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  {appliances.map((appliance) => (
-                    <div key={appliance.name} className="flex items-center justify-between p-4 border rounded-lg">
-                      <div className="flex-1">
-                        <div className="font-medium">{appliance.name}</div>
-                        <div className="text-sm text-muted-foreground">
-                          {appliance.power}W × {appliance.hours}h = {appliance.power * appliance.hours / 1000}kWh/day
-                        </div>
+              <div className="max-w-2xl mx-auto space-y-8">
+                <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-3xl p-8 space-y-8">
+                  <div className="grid gap-8">
+                    <div className="space-y-3">
+                      <Label className="text-base font-medium">Where is your home?</Label>
+                      <Select value={config.location} onValueChange={(value) => setConfig(prev => ({...prev, location: value}))}>
+                        <SelectTrigger className="h-14 rounded-2xl border-border/50 bg-transparent">
+                          <SelectValue placeholder="Choose your city" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="mumbai">Mumbai, Maharashtra</SelectItem>
+                          <SelectItem value="delhi">Delhi, NCR</SelectItem>
+                          <SelectItem value="bangalore">Bangalore, Karnataka</SelectItem>
+                          <SelectItem value="chennai">Chennai, Tamil Nadu</SelectItem>
+                          <SelectItem value="hyderabad">Hyderabad, Telangana</SelectItem>
+                          <SelectItem value="pune">Pune, Maharashtra</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+                    
+                    <div className="space-y-3">
+                      <Label className="text-base font-medium">What type of system do you need?</Label>
+                      <div className="grid gap-3">
+                        {[
+                          { value: 'hybrid', label: 'Complete Independence', desc: 'Grid + Solar + Battery' },
+                          { value: 'off-grid', label: 'Full Independence', desc: 'Solar + Battery Only' },
+                          { value: 'grid-tie', label: 'Solar Savings', desc: 'Solar + Grid' }
+                        ].map((option) => (
+                          <button
+                            key={option.value}
+                            onClick={() => setConfig(prev => ({...prev, systemType: option.value as any}))}
+                            className={`p-4 rounded-2xl border-2 transition-all text-left ${
+                              config.systemType === option.value
+                                ? 'border-primary bg-primary/5'
+                                : 'border-border/30 hover:border-border/60'
+                            }`}
+                          >
+                            <div className="font-medium">{option.label}</div>
+                            <div className="text-sm text-muted-foreground">{option.desc}</div>
+                          </button>
+                        ))}
                       </div>
-                      <div className="flex items-center space-x-2">
-                        <Label className="text-sm">Qty:</Label>
-                        <Input
-                          type="number"
-                          min="0"
-                          max="10"
-                          className="w-16"
-                          value={selectedAppliances[appliance.name] || 0}
-                          onChange={(e) => handleApplianceChange(appliance.name, parseInt(e.target.value) || 0)}
+                    </div>
+                    
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div className="space-y-3">
+                        <Label className="text-base font-medium">Roof space available</Label>
+                        <Input 
+                          type="number" 
+                          placeholder="Square feet"
+                          className="h-14 rounded-2xl border-border/50 bg-transparent text-base"
+                          value={config.roofArea || ''} 
+                          onChange={(e) => setConfig(prev => ({...prev, roofArea: parseInt(e.target.value) || 0}))}
                         />
+                      </div>
+                      
+                      <div className="space-y-3">
+                        <Label className="text-base font-medium">Backup needed</Label>
+                        <Select value={config.backupHours.toString()} onValueChange={(value) => setConfig(prev => ({...prev, backupHours: parseInt(value)}))}>
+                          <SelectTrigger className="h-14 rounded-2xl border-border/50 bg-transparent">
+                            <SelectValue />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="4">4 Hours</SelectItem>
+                            <SelectItem value="8">8 Hours</SelectItem>
+                            <SelectItem value="12">12 Hours</SelectItem>
+                            <SelectItem value="24">24 Hours</SelectItem>
+                          </SelectContent>
+                        </Select>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <Button 
+                    onClick={() => setActiveTab("appliances")} 
+                    size="lg"
+                    className="w-full h-14 rounded-2xl text-base font-medium"
+                    disabled={!config.location}
+                  >
+                    Continue
+                  </Button>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {activeTab === 'appliances' && (
+            <div className="animate-fade-in">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl font-light text-foreground mb-4">What powers your day?</h2>
+                <p className="text-muted-foreground font-light">Select the appliances you use regularly</p>
+              </div>
+              
+              <div className="grid lg:grid-cols-3 gap-8">
+                <div className="lg:col-span-2 space-y-4">
+                  {appliances.map((appliance) => (
+                    <div key={appliance.name} className="bg-card/30 backdrop-blur-sm border border-border/30 rounded-2xl p-6 transition-all hover:bg-card/50">
+                      <div className="flex items-center justify-between">
+                        <div className="flex-1">
+                          <div className="font-medium text-base">{appliance.name}</div>
+                          <div className="text-sm text-muted-foreground mt-1">
+                            {appliance.power}W × {appliance.hours}h daily
+                          </div>
+                        </div>
+                        <div className="flex items-center space-x-4">
+                          <div className="text-sm text-muted-foreground">Quantity</div>
+                          <Input
+                            type="number"
+                            min="0"
+                            max="10"
+                            className="w-20 h-10 rounded-xl text-center border-border/50"
+                            value={selectedAppliances[appliance.name] || 0}
+                            onChange={(e) => handleApplianceChange(appliance.name, parseInt(e.target.value) || 0)}
+                          />
+                        </div>
                       </div>
                     </div>
                   ))}
-                </CardContent>
-              </Card>
-            </div>
-            
-            <div>
-              <Card className="sticky top-6">
-                <CardHeader>
-                  <CardTitle>Load Summary</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="space-y-2">
-                    <div className="flex justify-between">
-                      <span>Daily Load:</span>
-                      <span className="font-medium">{config.dailyLoad.toFixed(1)} kWh</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>Peak Load:</span>
-                      <span className="font-medium">{config.peakLoad.toFixed(1)} kW</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>Monthly Load:</span>
-                      <span className="font-medium">{(config.dailyLoad * 30).toFixed(0)} kWh</span>
-                    </div>
-                  </div>
-                  
-                  <Separator />
-                  
-                  <Button 
-                    onClick={() => setActiveTab("system")} 
-                    className="w-full"
-                    disabled={config.dailyLoad === 0}
-                  >
-                    Design System
-                    <Battery className="w-4 h-4 ml-2" />
-                  </Button>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </TabsContent>
-
-        {/* System Design Tab */}
-        <TabsContent value="system" className="space-y-6">
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center space-x-2">
-                <Battery className="w-5 h-5" />
-                <span>System Configuration</span>
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-8">
-                <div className="space-y-6">
-                  <div>
-                    <h3 className="text-lg font-medium mb-4">Load Requirements</h3>
-                    <div className="space-y-3">
-                      <div className="flex justify-between p-3 bg-muted/20 rounded">
-                        <span>Daily Energy Need:</span>
-                        <span className="font-medium">{config.dailyLoad.toFixed(1)} kWh</span>
-                      </div>
-                      <div className="flex justify-between p-3 bg-muted/20 rounded">
-                        <span>Peak Power Need:</span>
-                        <span className="font-medium">{config.peakLoad.toFixed(1)} kW</span>
-                      </div>
-                      <div className="flex justify-between p-3 bg-muted/20 rounded">
-                        <span>Backup Duration:</span>
-                        <span className="font-medium">{config.backupHours} hours</span>
-                      </div>
-                    </div>
-                  </div>
                 </div>
                 
                 <div className="space-y-6">
-                  <div>
-                    <h3 className="text-lg font-medium mb-4">Site Information</h3>
-                    <div className="space-y-3">
-                      <div className="flex justify-between p-3 bg-muted/20 rounded">
-                        <span>Location:</span>
-                        <span className="font-medium capitalize">{config.location || 'Not selected'}</span>
+                  <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-3xl p-6 sticky top-6">
+                    <h3 className="text-lg font-medium mb-6">Your Energy Profile</h3>
+                    <div className="space-y-4">
+                      <div className="text-center p-4 bg-primary/5 rounded-2xl border border-primary/10">
+                        <div className="text-2xl font-light text-foreground">{config.dailyLoad.toFixed(1)}</div>
+                        <div className="text-sm text-muted-foreground">kWh daily</div>
                       </div>
-                      <div className="flex justify-between p-3 bg-muted/20 rounded">
-                        <span>Roof Area:</span>
-                        <span className="font-medium">{config.roofArea} sq ft</span>
-                      </div>
-                      <div className="flex justify-between p-3 bg-muted/20 rounded">
-                        <span>System Type:</span>
-                        <span className="font-medium capitalize">{config.systemType}</span>
+                      <div className="text-center p-4 bg-card/30 rounded-2xl">
+                        <div className="text-xl font-light text-foreground">{config.peakLoad.toFixed(1)}</div>
+                        <div className="text-sm text-muted-foreground">kW peak</div>
                       </div>
                     </div>
+                    
+                    <Button 
+                      onClick={() => setActiveTab("system")} 
+                      size="lg"
+                      className="w-full mt-6 h-12 rounded-2xl font-medium"
+                      disabled={config.dailyLoad === 0}
+                    >
+                      Design My System
+                    </Button>
                   </div>
                 </div>
+              </div>
+            </div>
+          )}
+
+          {activeTab === 'system' && (
+            <div className="animate-fade-in">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl font-light text-foreground mb-4">Creating your energy system</h2>
+                <p className="text-muted-foreground font-light">Analyzing your needs and optimizing the perfect solution</p>
               </div>
               
-              <div className="text-center">
-                <Button 
-                  onClick={calculateSystem} 
-                  size="lg"
-                  disabled={!config.location || config.dailyLoad === 0 || isCalculating}
-                  className="min-w-48"
-                >
-                  {isCalculating ? (
-                    <>
-                      <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-current mr-2"></div>
-                      Calculating...
-                    </>
-                  ) : (
-                    <>
-                      Generate System Design
-                      <Calculator className="w-4 h-4 ml-2" />
-                    </>
-                  )}
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
-        </TabsContent>
-
-        {/* Results Tab */}
-        <TabsContent value="results" className="space-y-6">
-          {recommendation && (
-            <>
-              {/* System Overview */}
-              <div className="grid md:grid-cols-3 gap-6">
-                <Card>
-                  <CardContent className="p-6 text-center">
-                    <Battery className="w-12 h-12 text-primary mx-auto mb-4" />
-                    <div className="text-2xl font-bold text-foreground">{recommendation.batteryUnits}</div>
-                    <div className="text-sm text-muted-foreground">NESS Battery Units</div>
-                    <div className="text-xs text-muted-foreground mt-1">
-                      {recommendation.batteryUnits * 5.1}kWh Total
+              <div className="max-w-2xl mx-auto">
+                <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-3xl p-8">
+                  <div className="grid gap-6 mb-8">
+                    <div className="flex justify-between items-center p-4 bg-muted/10 rounded-2xl">
+                      <span className="font-medium">Daily energy need</span>
+                      <span className="text-lg font-light">{config.dailyLoad.toFixed(1)} kWh</span>
                     </div>
-                  </CardContent>
-                </Card>
-                
-                <Card>
-                  <CardContent className="p-6 text-center">
-                    <Sun className="w-12 h-12 text-primary mx-auto mb-4" />
-                    <div className="text-2xl font-bold text-foreground">{recommendation.solarPanels}</div>
-                    <div className="text-sm text-muted-foreground">Solar Panels</div>
-                    <div className="text-xs text-muted-foreground mt-1">
-                      {(recommendation.solarPanels * 0.54).toFixed(1)}kW Capacity
+                    <div className="flex justify-between items-center p-4 bg-muted/10 rounded-2xl">
+                      <span className="font-medium">Peak power need</span>
+                      <span className="text-lg font-light">{config.peakLoad.toFixed(1)} kW</span>
                     </div>
-                  </CardContent>
-                </Card>
-                
-                <Card>
-                  <CardContent className="p-6 text-center">
-                    <Zap className="w-12 h-12 text-primary mx-auto mb-4" />
-                    <div className="text-2xl font-bold text-foreground">{recommendation.inverterSize}</div>
-                    <div className="text-sm text-muted-foreground">kW Inverter</div>
-                    <div className="text-xs text-muted-foreground mt-1">
-                      Hybrid System
+                    <div className="flex justify-between items-center p-4 bg-muted/10 rounded-2xl">
+                      <span className="font-medium">Backup duration</span>
+                      <span className="text-lg font-light">{config.backupHours} hours</span>
                     </div>
-                  </CardContent>
-                </Card>
-              </div>
-
-              {/* Financial Analysis */}
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center space-x-2">
-                    <IndianRupee className="w-5 h-5" />
-                    <span>Financial Analysis</span>
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="grid md:grid-cols-2 gap-8">
-                    <div className="space-y-4">
-                      <div className="flex justify-between items-center p-4 border rounded-lg">
-                        <span>Total System Cost</span>
-                        <span className="text-2xl font-bold text-foreground">
-                          ₹{(recommendation.totalCost / 100000).toFixed(1)}L
-                        </span>
-                      </div>
-                      
-                      <div className="flex justify-between items-center p-4 border rounded-lg">
-                        <span>Monthly Savings</span>
-                        <span className="text-xl font-semibold text-primary">
-                          ₹{recommendation.monthlySavings.toLocaleString()}
-                        </span>
-                      </div>
-                      
-                      <div className="flex justify-between items-center p-4 border rounded-lg">
-                        <span>Payback Period</span>
-                        <span className="text-xl font-semibold">
-                          {recommendation.paybackPeriod} years
-                        </span>
-                      </div>
-                    </div>
-                    
-                    <div className="space-y-4">
-                      <div className="text-center p-6 bg-gradient-to-br from-primary/10 to-primary/5 rounded-lg">
-                        <Leaf className="w-8 h-8 text-primary mx-auto mb-2" />
-                        <div className="text-lg font-semibold text-foreground mb-1">
-                          {recommendation.co2Reduction} kg CO₂
-                        </div>
-                        <div className="text-sm text-muted-foreground">
-                          Reduced annually
-                        </div>
-                      </div>
-                      
-                      <div className="text-center p-4 border rounded-lg">
-                        <div className="text-sm text-muted-foreground mb-2">System Efficiency</div>
-                        <Progress value={recommendation.systemEfficiency} className="mb-2" />
-                        <div className="text-lg font-semibold">{recommendation.systemEfficiency}%</div>
-                      </div>
+                    <div className="flex justify-between items-center p-4 bg-muted/10 rounded-2xl">
+                      <span className="font-medium">Location</span>
+                      <span className="text-lg font-light capitalize">{config.location}</span>
                     </div>
                   </div>
-                </CardContent>
-              </Card>
-
-              {/* Action Buttons */}
-              <div className="flex flex-wrap gap-4 justify-center">
-                <Button onClick={generateProposal} size="lg">
-                  <Download className="w-4 h-4 mr-2" />
-                  Generate Proposal
-                </Button>
-                
-                <Button variant="outline" size="lg">
-                  <Share2 className="w-4 h-4 mr-2" />
-                  Share Configuration
-                </Button>
-                
-                <Button variant="outline" size="lg" onClick={() => setActiveTab("requirements")}>
-                  <Calculator className="w-4 h-4 mr-2" />
-                  New Configuration
-                </Button>
+                  
+                  <Button 
+                    onClick={calculateSystem} 
+                    size="lg"
+                    disabled={!config.location || config.dailyLoad === 0 || isCalculating}
+                    className="w-full h-14 rounded-2xl text-base font-medium"
+                  >
+                    {isCalculating ? (
+                      <div className="flex items-center">
+                        <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-current mr-3"></div>
+                        Designing your system...
+                      </div>
+                    ) : (
+                      'Generate My System Design'
+                    )}
+                  </Button>
+                </div>
               </div>
-
-              {/* System Benefits */}
-              <Card>
-                <CardHeader>
-                  <CardTitle>Why This System Works</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div className="space-y-3">
-                      <div className="flex items-start space-x-3">
-                        <CheckCircle className="w-5 h-5 text-primary mt-0.5" />
-                        <div>
-                          <div className="font-medium">Optimal Battery Sizing</div>
-                          <div className="text-sm text-muted-foreground">
-                            {recommendation.batteryUnits} units provide {config.backupHours}h backup with room for growth
-                          </div>
-                        </div>
-                      </div>
-                      
-                      <div className="flex items-start space-x-3">
-                        <CheckCircle className="w-5 h-5 text-primary mt-0.5" />
-                        <div>
-                          <div className="font-medium">Smart Solar Integration</div>
-                          <div className="text-sm text-muted-foreground">
-                            Solar panels maximize roof space and reduce grid dependency by 80%
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div className="space-y-3">
-                      <div className="flex items-start space-x-3">
-                        <Shield className="w-5 h-5 text-primary mt-0.5" />
-                        <div>
-                          <div className="font-medium">Future-Proof Design</div>
-                          <div className="text-sm text-muted-foreground">
-                            Modular system allows easy expansion as energy needs grow
-                          </div>
-                        </div>
-                      </div>
-                      
-                      <div className="flex items-start space-x-3">
-                        <Clock className="w-5 h-5 text-primary mt-0.5" />
-                        <div>
-                          <div className="font-medium">Quick ROI</div>
-                          <div className="text-sm text-muted-foreground">
-                            System pays for itself in {recommendation.paybackPeriod} years through savings
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </>
+            </div>
           )}
-        </TabsContent>
-      </Tabs>
+
+          {activeTab === 'results' && recommendation && (
+            <div className="animate-fade-in space-y-16">
+              <div className="text-center">
+                <h2 className="text-4xl font-extralight text-foreground mb-4">Your Perfect System</h2>
+                <p className="text-xl text-muted-foreground font-light">Designed specifically for your energy independence</p>
+              </div>
+              
+              {/* Hero System Visual */}
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-primary/10 to-primary/5 rounded-3xl blur-3xl"></div>
+                <div className="relative bg-card/50 backdrop-blur-sm border border-border/50 rounded-3xl p-12">
+                  <div className="grid md:grid-cols-3 gap-8 text-center">
+                    <div className="space-y-4">
+                      <Battery className="w-16 h-16 text-primary mx-auto" />
+                      <div className="text-4xl font-extralight text-foreground">{recommendation.batteryUnits}</div>
+                      <div className="text-muted-foreground font-medium">NESS Units</div>
+                      <div className="text-sm text-muted-foreground">{recommendation.batteryUnits * 5.1}kWh storage</div>
+                    </div>
+                    
+                    <div className="space-y-4">
+                      <Sun className="w-16 h-16 text-primary mx-auto" />
+                      <div className="text-4xl font-extralight text-foreground">{recommendation.solarPanels}</div>
+                      <div className="text-muted-foreground font-medium">Solar Panels</div>
+                      <div className="text-sm text-muted-foreground">{(recommendation.solarPanels * 0.54).toFixed(1)}kW capacity</div>
+                    </div>
+                    
+                    <div className="space-y-4">
+                      <Zap className="w-16 h-16 text-primary mx-auto" />
+                      <div className="text-4xl font-extralight text-foreground">{recommendation.inverterSize}</div>
+                      <div className="text-muted-foreground font-medium">kW Inverter</div>
+                      <div className="text-sm text-muted-foreground">Hybrid power</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Financial Story */}
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="bg-card/30 backdrop-blur-sm border border-border/30 rounded-3xl p-8">
+                  <h3 className="text-2xl font-light mb-6">Investment</h3>
+                  <div className="text-center space-y-4">
+                    <div className="text-5xl font-extralight text-foreground">
+                      ₹{(recommendation.totalCost / 100000).toFixed(1)}L
+                    </div>
+                    <div className="text-muted-foreground">Total system cost</div>
+                    <div className="text-sm text-muted-foreground bg-muted/10 p-3 rounded-xl">
+                      Pays for itself in {recommendation.paybackPeriod} years
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="bg-gradient-to-br from-primary/10 to-primary/5 backdrop-blur-sm border border-primary/20 rounded-3xl p-8">
+                  <h3 className="text-2xl font-light mb-6">Monthly Savings</h3>
+                  <div className="text-center space-y-4">
+                    <div className="text-5xl font-extralight text-primary">
+                      ₹{Math.round(recommendation.monthlySavings / 1000)}k
+                    </div>
+                    <div className="text-muted-foreground">Every month</div>
+                    <div className="text-sm text-muted-foreground bg-background/50 p-3 rounded-xl">
+                      ₹{Math.round(recommendation.monthlySavings * 12 / 100000)}L saved annually
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Environmental Impact */}
+              <div className="text-center bg-gradient-to-r from-green-500/5 via-primary/5 to-green-500/5 backdrop-blur-sm border border-green-500/10 rounded-3xl p-8">
+                <Leaf className="w-12 h-12 text-green-600 mx-auto mb-4" />
+                <div className="text-3xl font-light text-foreground mb-2">
+                  {Math.round(recommendation.co2Reduction / 1000)} tons CO₂
+                </div>
+                <div className="text-muted-foreground mb-4">prevented annually</div>
+                <div className="text-sm text-muted-foreground">
+                  Equivalent to planting {Math.round(recommendation.co2Reduction / 21)} trees every year
+                </div>
+              </div>
+
+              {/* Actions */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+                <Button onClick={generateProposal} size="lg" className="h-14 rounded-2xl font-medium flex-1">
+                  Get Detailed Proposal
+                </Button>
+                <Button variant="outline" size="lg" className="h-14 rounded-2xl font-medium" onClick={() => {
+                  setRecommendation(null);
+                  setActiveTab("requirements");
+                }}>
+                  Start Over
+                </Button>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   );
 };
