@@ -121,13 +121,12 @@ const Commercial = () => {
 
   return (
     <Layout>
-      {/* Minimalist Hero Section */}
+      {/* Simplified Hero - Business Problem First */}
       <section className="min-h-screen bg-background flex items-center">
-        <div className="max-w-[1600px] mx-auto px-8 w-full">
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
+        <div className="max-w-5xl mx-auto px-8 w-full text-center">
+          <div className="space-y-16">
             
-            {/* Left Content */}
-            <div className="space-y-12">
+            <div className="space-y-8">
               <div className="inline-flex items-center space-x-2">
                 <div className="w-1 h-1 rounded-full bg-primary"></div>
                 <span className="text-sm font-mono text-muted-foreground uppercase tracking-[0.2em]">
@@ -135,243 +134,260 @@ const Commercial = () => {
                 </span>
               </div>
 
-              <div className="space-y-8">
-                <h1 className="font-sf text-6xl md:text-8xl font-extralight text-foreground leading-[0.8] tracking-tight">
-                  Two solutions.
-                  <br />
-                  <span className="text-muted-foreground/60">Every need.</span>
-                </h1>
-                
-                <p className="text-xl font-light text-muted-foreground max-w-lg leading-relaxed">
-                  NESS POD for premium indoor spaces. NESS CUBE for industrial outdoor deployments. 
-                  Built for India's energy transformation.
-                </p>
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-6">
-                <Button className="bg-foreground text-background hover:bg-foreground/90 px-8 py-4 rounded-full font-medium text-lg">
-                  Explore Products
-                </Button>
-                <button className="group inline-flex items-center space-x-3 text-muted-foreground hover:text-foreground transition-colors duration-300">
-                  <Play className="w-5 h-5" />
-                  <span className="font-light">Watch Overview</span>
-                </button>
-              </div>
+              <h1 className="font-sf text-6xl md:text-8xl font-extralight text-foreground leading-[0.85] tracking-tight">
+                Never lose business
+                <br />
+                <span className="text-primary font-medium">to power failures.</span>
+              </h1>
+              
+              <p className="text-2xl font-light text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                While your competitors scramble during outages, your operations continue seamlessly.
+                <br />
+                <span className="text-foreground font-medium">This is the NESS advantage.</span>
+              </p>
             </div>
 
-            {/* Right Visual */}
-            <div className="relative">
-              <div className="aspect-square relative rounded-2xl overflow-hidden">
-                <OptimizedImage 
-                  src={nessUnitsHero} 
-                  alt="NESS Battery Systems"
-                  className="w-full h-full object-cover"
-                  priority={true}
-                />
-                <div className="absolute inset-0 bg-gradient-to-br from-background/10 to-background/30"></div>
-              </div>
-
-              {/* Floating Metrics */}
-              <div className="absolute -bottom-8 -left-8 bg-background/95 backdrop-blur-xl border border-muted-foreground/10 rounded-2xl p-6 space-y-3">
-                <div className="text-2xl font-extralight text-foreground">1,247</div>
-                <div className="text-xs text-muted-foreground uppercase tracking-wider">Active Installations</div>
-              </div>
-
-              <div className="absolute -top-8 -right-8 bg-background/95 backdrop-blur-xl border border-muted-foreground/10 rounded-2xl p-6 space-y-3">
-                <div className="text-2xl font-extralight text-foreground">42.8 MWh</div>
-                <div className="text-xs text-muted-foreground uppercase tracking-wider">Energy Deployed</div>
-              </div>
-            </div>
+            <Button className="bg-primary hover:bg-primary/90 text-white px-12 py-6 text-xl font-medium rounded-2xl shadow-2xl hover:shadow-3xl transform hover:-translate-y-2 transition-all duration-500">
+              Secure Your Operations
+              <ArrowRight className="w-6 h-6 ml-4" />
+            </Button>
           </div>
         </div>
       </section>
 
-      {/* Premium Product Showcase */}
-      <LazySection sectionName="products" className="py-40 bg-muted/10">
-        <div className="max-w-[1600px] mx-auto px-8">
+      {/* Progressive Disclosure - The Business Problem */}
+      <LazySection sectionName="problem" className="py-40 bg-muted/10">
+        <div className="max-w-5xl mx-auto px-8 text-center">
           
-          {/* Section Header */}
-          <div className="text-center max-w-4xl mx-auto mb-32 space-y-8">
-            <div className="inline-flex items-center space-x-2">
-              <div className="w-1 h-1 rounded-full bg-primary"></div>
-              <span className="text-sm font-mono text-muted-foreground uppercase tracking-[0.2em]">
-                Product Lines
-              </span>
+          <div className="space-y-16">
+            <div className="space-y-8">
+              <div className="inline-flex items-center space-x-2">
+                <div className="w-1 h-1 rounded-full bg-destructive"></div>
+                <span className="text-sm font-mono text-muted-foreground uppercase tracking-[0.2em]">
+                  The Hidden Cost
+                </span>
+              </div>
+              
+              <h2 className="text-6xl md:text-7xl font-extralight text-foreground leading-[0.85] tracking-tight">
+                Every minute offline
+                <br />
+                <span className="text-destructive font-medium">costs ₹2.4 lakhs</span>
+              </h2>
+              
+              <p className="text-xl font-light text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                Manufacturing downtime. Spoiled inventory. Lost customers. Missed deadlines.
+                <br />
+                <span className="text-foreground font-medium">The real cost of power cuts goes far beyond electricity bills.</span>
+              </p>
             </div>
-            
-            <h2 className="text-7xl md:text-8xl font-extralight tracking-[-0.01em] text-foreground leading-[0.75]">
-              Engineered for
-              <br />
-              <span className="text-muted-foreground/60">every environment</span>
-            </h2>
-          </div>
 
-          {/* Products Grid */}
-          <div className="space-y-40">
-            {products.map((product, index) => (
-              <div 
-                key={product.id}
-                className={`grid lg:grid-cols-12 gap-20 items-center ${
-                  index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''
-                }`}
-              >
-                {/* Product Visual */}
-                <div className={`lg:col-span-6 ${
-                  index % 2 === 1 ? 'lg:col-start-7' : ''
-                }`}>
-                  <div className="relative group">
-                    <div className="aspect-square bg-gradient-to-br from-background to-muted/20 rounded-3xl p-12 flex items-center justify-center">
-                      <OptimizedImage 
-                        src={product.image}
-                        alt={product.name}
-                        className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700 ease-out"
-                      />
-                    </div>
-                    
-                    {/* Floating Badge */}
-                    <div className="absolute top-6 left-6">
-                      <div className="bg-background/95 backdrop-blur-2xl border border-muted-foreground/10 rounded-xl px-4 py-2">
-                        <div className="text-xs text-muted-foreground uppercase tracking-wider">{product.tagline}</div>
-                      </div>
-                    </div>
-                  </div>
+            {/* The Solution - One System */}
+            <div className="bg-card/40 backdrop-blur-xl border border-border/20 rounded-3xl p-12 max-w-4xl mx-auto">
+              <div className="space-y-8">
+                <div className="inline-flex items-center space-x-2">
+                  <div className="w-1 h-1 rounded-full bg-primary"></div>
+                  <span className="text-sm font-mono text-primary uppercase tracking-[0.2em]">
+                    The Solution
+                  </span>
                 </div>
-
-                {/* Product Content */}
-                <div className={`lg:col-span-6 space-y-12 ${
-                  index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''
-                }`}>
-                  
-                  {/* Product Name */}
-                  <div className="space-y-6">
-                    <div className="flex items-center space-x-4">
-                      <div className={`w-12 h-12 rounded-2xl ${
-                        product.useCase === 'indoor' ? 'bg-blue-500/10' : 'bg-green-500/10'
-                      } flex items-center justify-center`}>
-                        {product.useCase === 'indoor' ? 
-                          <Building2 className="w-6 h-6 text-blue-600" /> : 
-                          <Factory className="w-6 h-6 text-green-600" />
-                        }
-                      </div>
-                      <h3 className="text-5xl font-extralight tracking-tight text-foreground">
-                        {product.name}
-                      </h3>
-                    </div>
-                    
-                    <div className="w-12 h-px bg-primary"></div>
-                    
-                    <p className="text-lg font-light text-muted-foreground leading-relaxed max-w-xl">
-                      {product.description}
-                    </p>
+                
+                <h3 className="text-4xl md:text-5xl font-extralight text-foreground leading-[0.9] tracking-tight">
+                  One intelligent system.
+                  <br />
+                  <span className="text-primary font-medium">Infinite scalability.</span>
+                </h3>
+                
+                <p className="text-lg font-light text-muted-foreground leading-relaxed">
+                  NESS adapts from protecting a single office (100 kWh) to powering entire industrial complexes (10+ MWh). 
+                  The same intelligence, the same reliability, scaled to your exact needs.
+                </p>
+                
+                <div className="grid md:grid-cols-3 gap-8 pt-8">
+                  <div className="text-center space-y-2">
+                    <div className="text-3xl font-extralight text-foreground">100 kWh</div>
+                    <div className="text-sm text-muted-foreground">Small Office</div>
                   </div>
-
-                  {/* Specifications */}
-                  <div className="space-y-8">
-                    <div className="space-y-3">
-                      <div className="text-xs text-muted-foreground uppercase tracking-[0.2em]">
-                        System Capacity
-                      </div>
-                      <div className="text-3xl font-extralight text-foreground">
-                        {product.capacity}
-                      </div>
-                    </div>
-
-                    <div className="space-y-4">
-                      <div className="text-xs text-muted-foreground uppercase tracking-[0.2em]">
-                        Key Features
-                      </div>
-                      <div className="grid md:grid-cols-2 gap-3">
-                        {product.features.map((feature, i) => (
-                          <div key={i} className="flex items-center space-x-3">
-                            <div className="w-1 h-1 rounded-full bg-primary"></div>
-                            <span className="text-foreground font-light">{feature}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-
-                    <div className="space-y-4">
-                      <div className="text-xs text-muted-foreground uppercase tracking-[0.2em]">
-                        Applications
-                      </div>
-                      <div className="space-y-2">
-                        {product.applications.map((app, i) => (
-                          <div key={i} className="text-foreground/80 font-light">
-                            {app}
-                          </div>
-                        ))}
-                      </div>
-                    </div>
+                  <div className="text-center space-y-2">
+                    <div className="text-3xl font-extralight text-foreground">1 MWh</div>
+                    <div className="text-sm text-muted-foreground">Manufacturing</div>
                   </div>
-
-                  {/* CTA */}
-                  <button className="group inline-flex items-center space-x-3 text-muted-foreground hover:text-foreground transition-colors duration-300">
-                    <span className="font-light">Explore {product.name}</span>
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-                  </button>
+                  <div className="text-center space-y-2">
+                    <div className="text-3xl font-extralight text-foreground">10+ MWh</div>
+                    <div className="text-sm text-muted-foreground">Industrial Complex</div>
+                  </div>
                 </div>
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </LazySection>
 
-      {/* Sophisticated Metrics */}
-      <LazySection sectionName="metrics" className="py-40 bg-background">
-        <div className="max-w-[1600px] mx-auto px-8">
+      {/* Form Factors - Two Deployment Options */}
+      <LazySection sectionName="deployment" className="py-40 bg-background">
+        <div className="max-w-6xl mx-auto px-8">
           
-          {/* Asymmetrical Layout */}
-          <div className="grid lg:grid-cols-12 gap-20 items-center">
+          <div className="text-center mb-24 space-y-8">
+            <div className="inline-flex items-center space-x-2">
+              <div className="w-1 h-1 rounded-full bg-primary"></div>
+              <span className="text-sm font-mono text-muted-foreground uppercase tracking-[0.2em]">
+                Deployment Options
+              </span>
+            </div>
             
-            {/* Left Content */}
-            <div className="lg:col-span-5 space-y-16">
-              <div className="space-y-8">
-                <div className="inline-flex items-center space-x-2">
-                  <div className="w-1 h-1 rounded-full bg-primary"></div>
-                  <span className="text-sm font-mono text-muted-foreground uppercase tracking-[0.2em]">
-                    Performance Metrics
-                  </span>
+            <h2 className="text-5xl md:text-6xl font-extralight text-foreground leading-[0.85] tracking-tight">
+              Two form factors.
+              <br />
+              <span className="text-muted-foreground/60">Every environment.</span>
+            </h2>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-16">
+            
+            {/* POD - Indoor */}
+            <div className="group cursor-pointer">
+              <div className="bg-card/20 backdrop-blur-xl border border-border/20 rounded-3xl p-8 hover:bg-card/40 transition-all duration-500 hover:-translate-y-2">
+                <div className="aspect-square bg-gradient-to-br from-blue-500/5 to-blue-500/20 rounded-2xl p-8 flex items-center justify-center mb-8">
+                  <OptimizedImage 
+                    src={nessPodProduct}
+                    alt="NESS POD"
+                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700"
+                  />
                 </div>
-
-                <h2 className="text-6xl md:text-7xl font-extralight text-foreground leading-[0.85] tracking-tight">
-                  Measurable
-                  <br />
-                  <span className="text-muted-foreground/60">impact</span>
-                </h2>
-
-                <p className="text-xl font-light text-muted-foreground leading-relaxed max-w-lg">
-                  Every system is engineered for maximum efficiency with real-time optimization and predictive analytics
-                </p>
-              </div>
-
-              <div className="flex items-center space-x-6">
-                <Button className="bg-foreground text-background hover:bg-foreground/90 px-8 py-3 rounded-full font-medium">
-                  Technical specifications
-                </Button>
+                
+                <div className="space-y-6">
+                  <div className="flex items-center space-x-3">
+                    <Building2 className="w-6 h-6 text-blue-600" />
+                    <h3 className="text-3xl font-extralight text-foreground">NESS POD</h3>
+                  </div>
+                  
+                  <p className="text-lg font-light text-muted-foreground leading-relaxed">
+                    Premium indoor installation. Silent operation, elegant design, perfect for offices, hospitals, and retail spaces.
+                  </p>
+                  
+                  <div className="flex items-center justify-between pt-4">
+                    <span className="text-2xl font-extralight text-foreground">100-500 kWh</span>
+                    <ArrowRight className="w-5 h-5 text-blue-600 group-hover:translate-x-1 transition-transform duration-300" />
+                  </div>
+                </div>
               </div>
             </div>
 
-            {/* Right Metrics Grid */}
-            <div className="lg:col-span-7 lg:col-start-6">
-              <div className="grid md:grid-cols-2 gap-8">
-                {metrics.map((metric, index) => (
-                  <div key={index} className="group space-y-6 p-8 rounded-2xl hover:bg-muted/20 transition-colors duration-500 cursor-pointer">
-                    <div className="space-y-2">
-                      <div className="text-5xl font-extralight text-foreground tracking-tight">
-                        {metric.value}
-                      </div>
-                      <div className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
-                        {metric.label}
-                      </div>
-                    </div>
-                    
-                    <div className="text-sm text-muted-foreground/80 font-light leading-relaxed">
-                      {metric.description}
-                    </div>
-                    
-                    <div className="w-8 h-px bg-muted-foreground/20 group-hover:bg-primary group-hover:w-12 transition-all duration-300"></div>
+            {/* CUBE - Outdoor */}
+            <div className="group cursor-pointer">
+              <div className="bg-card/20 backdrop-blur-xl border border-border/20 rounded-3xl p-8 hover:bg-card/40 transition-all duration-500 hover:-translate-y-2">
+                <div className="aspect-square bg-gradient-to-br from-green-500/5 to-green-500/20 rounded-2xl p-8 flex items-center justify-center mb-8">
+                  <OptimizedImage 
+                    src={nessCubeProduct}
+                    alt="NESS CUBE"
+                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
+                
+                <div className="space-y-6">
+                  <div className="flex items-center space-x-3">
+                    <Factory className="w-6 h-6 text-green-600" />
+                    <h3 className="text-3xl font-extralight text-foreground">NESS CUBE</h3>
                   </div>
-                ))}
+                  
+                  <p className="text-lg font-light text-muted-foreground leading-relaxed">
+                    Ruggedized outdoor containers. Built for harsh environments, unlimited scalability, perfect for manufacturing and utilities.
+                  </p>
+                  
+                  <div className="flex items-center justify-between pt-4">
+                    <span className="text-2xl font-extralight text-foreground">1-10+ MWh</span>
+                    <ArrowRight className="w-5 h-5 text-green-600 group-hover:translate-x-1 transition-transform duration-300" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </LazySection>
+
+      {/* Stories - Facts Tell, Stories Sell */}
+      <LazySection sectionName="stories" className="py-40 bg-background">
+        <div className="max-w-6xl mx-auto px-8">
+          
+          <div className="text-center mb-24 space-y-8">
+            <div className="inline-flex items-center space-x-2">
+              <div className="w-1 h-1 rounded-full bg-primary"></div>
+              <span className="text-sm font-mono text-muted-foreground uppercase tracking-[0.2em]">
+                Real Stories
+              </span>
+            </div>
+            
+            <h2 className="text-6xl md:text-7xl font-extralight text-foreground leading-[0.85] tracking-tight">
+              When crisis strikes,
+              <br />
+              <span className="text-primary font-medium">NESS delivers.</span>
+            </h2>
+          </div>
+
+          <div className="grid lg:grid-cols-3 gap-12">
+            
+            {/* Chennai Floods Story */}
+            <div className="bg-card/40 backdrop-blur-xl border border-border/20 rounded-3xl p-10 hover:bg-card/60 transition-all duration-500 hover:-translate-y-2">
+              <div className="space-y-8">
+                <div className="space-y-4">
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-primary rounded-full"></div>
+                    <span className="text-sm text-primary font-medium uppercase tracking-wide">Chennai Manufacturing</span>
+                  </div>
+                  
+                  <blockquote className="text-2xl font-light text-foreground leading-relaxed">
+                    "While competitors lost ₹2.4 crores during the Chennai floods, Apex Manufacturing maintained full production."
+                  </blockquote>
+                </div>
+                
+                <div className="pt-6 border-t border-border/20 space-y-3">
+                  <div className="text-primary font-medium text-lg">Zero production loss</div>
+                  <div className="text-muted-foreground text-sm">72-hour continuous operation during flooding</div>
+                  <div className="text-muted-foreground text-sm">Competitors resumed operations 4 days later</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Mumbai Hospital Story */}
+            <div className="bg-card/40 backdrop-blur-xl border border-border/20 rounded-3xl p-10 hover:bg-card/60 transition-all duration-500 hover:-translate-y-2">
+              <div className="space-y-8">
+                <div className="space-y-4">
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-primary rounded-full"></div>
+                    <span className="text-sm text-primary font-medium uppercase tracking-wide">Mumbai Healthcare</span>
+                  </div>
+                  
+                  <blockquote className="text-2xl font-light text-foreground leading-relaxed">
+                    "During the 18-hour blackout, our ICU never missed a heartbeat. Literally."
+                  </blockquote>
+                </div>
+                
+                <div className="pt-6 border-t border-border/20 space-y-3">
+                  <div className="text-primary font-medium text-lg">96 lives protected</div>
+                  <div className="text-muted-foreground text-sm">18-hour seamless backup power</div>
+                  <div className="text-muted-foreground text-sm">— Dr. Priya Menon, Chief Medical Officer</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Bangalore IT Story */}
+            <div className="bg-card/40 backdrop-blur-xl border border-border/20 rounded-3xl p-10 hover:bg-card/60 transition-all duration-500 hover:-translate-y-2">
+              <div className="space-y-8">
+                <div className="space-y-4">
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-primary rounded-full"></div>
+                    <span className="text-sm text-primary font-medium uppercase tracking-wide">Bangalore Technology</span>
+                  </div>
+                  
+                  <blockquote className="text-2xl font-light text-foreground leading-relaxed">
+                    "Our team delivered the project on time while our competitor missed their deadline due to power cuts."
+                  </blockquote>
+                </div>
+                
+                <div className="pt-6 border-t border-border/20 space-y-3">
+                  <div className="text-primary font-medium text-lg">₹1.8 crore contract won</div>
+                  <div className="text-muted-foreground text-sm">100% uptime during critical project phase</div>
+                  <div className="text-muted-foreground text-sm">— Ravi Kumar, CTO, TechnoCore Solutions</div>
+                </div>
               </div>
             </div>
           </div>
