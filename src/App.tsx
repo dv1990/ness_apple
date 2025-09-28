@@ -48,12 +48,6 @@ const queryClient = new QueryClient();
 
 import { initializePerformanceEnhancements } from "@/lib/performance-enhancements";
 
-// Apple-level performance initialization
-performanceMonitor.markFeature('app-load');
-performanceBudgetMonitor.reportOptimizations();
-initializePerformanceEnhancements();
-initializeApplePerformance();
-
 // Preload critical images for instant loading
 const criticalImages = [
   '/src/assets/ness-pro-product.png',
@@ -74,8 +68,15 @@ const PageLoadingFallback = () => (
 const routeConfig = [];
 
 const App = () => {
-  // Preload critical images on app mount
+  // Apple-level performance initialization
   useEffect(() => {
+    // Initialize performance monitoring after DOM is ready
+    performanceMonitor.markFeature('app-load');
+    performanceBudgetMonitor.reportOptimizations();
+    initializePerformanceEnhancements();
+    initializeApplePerformance();
+    
+    // Preload critical images
     preloadCriticalImages(criticalImages);
   }, []);
 
