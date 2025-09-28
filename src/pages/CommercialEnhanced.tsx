@@ -237,11 +237,13 @@ const CommercialEnhanced = () => {
           <div className="space-y-32">
             <div className="text-center space-y-12">
               <h2 className="text-7xl md:text-8xl font-extralight text-foreground leading-[0.8] tracking-[-0.03em] mb-8">
-                Your energy
-                <span className="block text-primary font-light">transformation</span>
+                Every dream
+                <span className="block text-primary font-light">needs energy.</span>
               </h2>
               <p className="text-2xl text-muted-foreground font-extralight max-w-2xl mx-auto leading-[1.4]">
-                Three moments. One journey. Complete transformation.
+                Behind every breakthrough. Every innovation. Every success story.
+                <br />
+                <span className="text-foreground font-medium">There's reliable power making it possible.</span>
               </p>
             </div>
 
