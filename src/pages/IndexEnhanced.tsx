@@ -8,8 +8,8 @@ import { Link } from "react-router-dom";
 import { MagneticButton, PlayButton, FloatingCard, ParallaxContainer } from "@/components/EnhancedInteractions";
 import { Play, Check, Zap, Sparkles, Shield, Battery, Home, Star, Quote } from "lucide-react";
 
-// Import optimized WebP images
-import heroHomeownersWebp from "@/assets-webp/hero-homeowners.webp";
+// Import actual hero image
+import heroHomeowners from "@/assets/hero-homeowners.jpg";
 import nessProImage from "@/assets/ness-pro-hero.png";
 import nessProProduct from "@/assets/ness-pro-product.png";
 import nessPodProduct from "@/assets/ness-pod-product.png";
@@ -39,7 +39,7 @@ const IndexEnhanced = () => {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background Image - High Impact Visual - Optimized WebP */}
         <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
-          backgroundImage: `url(${heroHomeownersWebp})`
+          backgroundImage: `url(${heroHomeowners})`
         }} />
         
         {/* Premium Dark Overlay for Typography */}
@@ -147,7 +147,7 @@ const IndexEnhanced = () => {
               <div className="relative lg:order-2">
                 <div className="aspect-[4/3] overflow-hidden rounded-sm">
                   <img 
-                    src={heroHomeownersWebp} 
+                    src={heroHomeowners} 
                     alt="Luxury home with NESS energy system" 
                     className="w-full h-full object-cover opacity-60 hover:opacity-80 transition-opacity duration-700 hover:scale-105 transition-transform" 
                   />
@@ -596,7 +596,7 @@ const IndexEnhanced = () => {
       <section className="py-40 relative overflow-hidden">
         {/* Background */}
         <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
-          backgroundImage: `url(${heroHomeownersWebp})`
+          backgroundImage: `url(${heroHomeowners})`
         }} />
         <div className="absolute inset-0 bg-charcoal/80"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-charcoal/90 via-charcoal/70 to-charcoal/90"></div>

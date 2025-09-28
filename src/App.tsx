@@ -40,11 +40,7 @@ const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
 
-// Preload critical images for instant loading
-const criticalImages = [
-  '/src/assets/ness-pro-product.png',
-  '/src/assets/hero-homeowners.jpg'
-];
+// Critical images preloaded per page to avoid conflicts
 
 // Loading fallback component with skeleton
 const PageLoadingFallback = () => (
