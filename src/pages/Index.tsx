@@ -207,7 +207,7 @@ const Index = () => {
             </Link>
 
             {/* NESS Pod - Business-Focused */}
-            <Link to="/commercial" className="group">
+            <Link to="/ci" className="group">
               <div className="bg-card/40 backdrop-blur-xl border border-border/20 rounded-3xl p-10 hover:bg-card/60 hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
                 <div className="mb-8">
                   <div className="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors">
@@ -248,7 +248,7 @@ const Index = () => {
             </Link>
 
             {/* NESS Cube - Industrial-Focused */}
-            <Link to="/commercial" className="group">
+            <Link to="/ci" className="group">
               <div className="bg-card/40 backdrop-blur-xl border border-border/20 rounded-3xl p-10 hover:bg-card/60 hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
                 <div className="mb-8">
                   <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
