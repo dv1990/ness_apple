@@ -15,7 +15,7 @@ import {
   Sparkles, 
   Building2, 
   Factory 
-} from "@/components/ui/icons";
+} from "lucide-react";
 import nessUnitsHero from "@/assets/ness-units-hero.png";
 import nessPodProduct from "@/assets/ness-pod-product.png";
 import nessCubeProduct from "@/assets/ness-cube-product.png";

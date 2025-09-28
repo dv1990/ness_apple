@@ -3,10 +3,10 @@ import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 // Optimized imports for performance
-import { ArrowRight } from "@/components/ui/icons";
+import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { MagneticButton, PlayButton, FloatingCard, ParallaxContainer } from "@/components/EnhancedInteractions";
-import { PlayIcon, CheckIcon, ZapIcon, SparklesIcon, ShieldIcon, BatteryIcon, HomeIcon, StarIcon, QuoteIcon } from "@/components/ui/icons";
+import { Play, Check, Zap, Sparkles, Shield, Battery, Home, Star, Quote } from "lucide-react";
 
 // Import optimized WebP images
 import heroHomeownersWebp from "@/assets-webp/hero-homeowners.webp";
@@ -352,7 +352,7 @@ const IndexEnhanced = () => {
           <div className="text-center space-y-16">
             
             <div className="space-y-8">
-              <QuoteIcon className="w-16 h-16 mx-auto text-energy/30" />
+              <Quote className="w-16 h-16 mx-auto text-energy/30" />
               
               <blockquote className="font-display text-4xl md:text-5xl font-light text-foreground leading-relaxed">
                 "It's an engineering approach to peace of mind."
@@ -362,7 +362,7 @@ const IndexEnhanced = () => {
             {/* Expert Credentials */}
             <div className="space-y-4">
               <div className="w-20 h-20 mx-auto rounded-full bg-energy/10 flex items-center justify-center">
-                <BatteryIcon className="w-10 h-10 text-energy" />
+                <Battery className="w-10 h-10 text-energy" />
               </div>
               
               <div>
@@ -499,7 +499,7 @@ const IndexEnhanced = () => {
           {/* Section Header */}
           <div className="text-center mb-20">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-energy/10 text-energy rounded-full text-sm font-medium mb-6">
-              <StarIcon className="w-4 h-4 fill-current" />
+              <Star className="w-4 h-4 fill-current" />
               <span>Stories from our community</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-light text-foreground mb-6">

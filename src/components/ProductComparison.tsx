@@ -12,7 +12,7 @@ import {
   Shield,
   Award,
   TrendingUp
-} from "@/components/ui/icons";
+} from "lucide-react";
 import nessPodImage from "@/assets/ness-pod-product.png";
 import nessProImage from "@/assets/ness-pro-product.png";
 import nessCubeImage from "@/assets/ness-cube-product.png";

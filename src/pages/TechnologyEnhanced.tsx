@@ -19,41 +19,15 @@ import {
 } from "@/components/EnhancedInteractions";
 import { useScrollAnimation, useStaggeredAnimation, useParallaxScroll } from "@/hooks/use-scroll-animation";
 import { 
-  ArrowRight, 
-  Cpu, 
-  Shield, 
-  Zap, 
-  Battery, 
-  CheckCircle, 
-  Target, 
-  Award, 
-  Clock, 
-  Play, 
-  Download,
-  BarChart3,
-  LineChart,
-  PieChart,
-  TrendingUp,
-  Activity,
-  Thermometer,
-  Eye,
-  Layers,
-  Code,
-  Gauge,
-  Lock,
-  Wifi,
-  Database,
-  Microscope,
-  Beaker,
-  TestTube
-import { 
   ArrowRight, Home, Building2, Wrench, Calculator, Phone, Mail,
   Calendar, MapPin, Zap, TrendingUp, Clock, CheckCircle, Star,
   User, MessageSquare, Video, Headphones, Target, BarChart3,
   Shield, Award, Users, Sparkles, ChevronRight, AlertCircle,
   Lightbulb, DollarSign, FileText, Send, Factory, TreePine, Heart,
-  Lock, Wifi, Database, Microscope, Beaker, TestTube
-} from "@/components/ui/icons";
+  Lock, Wifi, Database, Microscope, Beaker, TestTube, Cpu,
+  Battery, Play, Download, LineChart, PieChart, Activity, 
+  Thermometer, Eye, Layers, Code, Gauge
+} from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 

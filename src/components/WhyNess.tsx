@@ -5,7 +5,7 @@ import {
   Brain, 
   Sparkles, 
   ArrowRight 
-} from "@/components/ui/icons";
+} from "lucide-react";
 import React from "react"
 
 const features = [

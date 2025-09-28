@@ -11,7 +11,7 @@ import {
   Play, 
   Zap, 
   BatteryCharging 
-} from "@/components/ui/icons";
+} from "lucide-react";
 import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-homeowners.jpg";
 import productImage from "@/assets/ness-pro-product.png";

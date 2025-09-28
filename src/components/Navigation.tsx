@@ -14,7 +14,7 @@ import {
   Cpu,
   LayoutGrid,
   ChevronDown
-} from "@/components/ui/icons";
+} from "lucide-react";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);

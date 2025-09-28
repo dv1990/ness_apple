@@ -20,7 +20,7 @@ import {
   Building2,
   ArrowRight,
   Snowflake
-} from "@/components/ui/icons";
+} from "lucide-react";
 
 interface ConfiguratorState {
   homeSize: number;

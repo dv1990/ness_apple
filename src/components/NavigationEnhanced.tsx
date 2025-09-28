@@ -15,7 +15,7 @@ import {
   Factory,
   Users,
   Phone
-} from "@/components/ui/icons";
+} from "lucide-react";
 
 const NavigationEnhanced = () => {
   const [isOpen, setIsOpen] = useState(false);

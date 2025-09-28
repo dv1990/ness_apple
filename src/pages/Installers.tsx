@@ -17,7 +17,7 @@ import {
   Target, 
   Clock, 
   Play 
-} from "@/components/ui/icons";
+} from "lucide-react";
 import installerHero from "@/assets/installer-hero.jpg";
 import trainingWorkshop from "@/assets/training-workshop.jpg";
 import configuratorTool from "@/assets/configurator-tool.jpg";

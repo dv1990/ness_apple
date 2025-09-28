@@ -13,7 +13,7 @@ import {
   AlertTriangle,
   Gauge,
   Image
-} from "@/components/ui/icons";
+} from "lucide-react";
 
 interface PerformanceMetric {
   name: string;

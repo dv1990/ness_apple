@@ -11,7 +11,7 @@ import {
   Star, 
   CheckCircle,
   MapPin
-} from "@/components/ui/icons";
+} from "lucide-react";
 import { Link } from "react-router-dom";
 import { WhyNess } from "@/components/WhyNess";
 

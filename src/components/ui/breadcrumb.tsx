@@ -4,7 +4,7 @@ import {
   ChevronRight, 
   MoreHorizontal, 
   ChevronLeft 
-} from "@/components/ui/icons";
+} from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

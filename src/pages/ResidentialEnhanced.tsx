@@ -2,7 +2,7 @@ import React from 'react';
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { WebPImage } from "@/components/ui/webp-image";
-import { ArrowRight } from "@/components/ui/icons";
+import { ArrowRight } from "lucide-react";
 
 const ResidentialEnhanced = () => {
 

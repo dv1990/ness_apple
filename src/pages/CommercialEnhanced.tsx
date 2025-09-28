@@ -12,33 +12,15 @@ import {
   ParallaxContainer
 } from "@/components/EnhancedInteractions";
 import { useScrollAnimation, useStaggeredAnimation } from "@/hooks/use-scroll-animation";
+import { useState, useEffect } from "react";
 import { 
-  ArrowRight, 
-  CheckCircle, 
-  TrendingUp, 
-  Zap,
-  Building2,
-  DollarSign,
-  Quote,
-  Battery,
-  Shield,
-  Clock,
-  Target,
-  Sparkles,
-  Users,
-  Award,
-  BarChart3,
-  Play,
-  TreePine,
-  Heart
-} from "@/components/ui/icons";
-import { useState, useEffect } from "react";
-  BarChart3,
-  Play,
-  TreePine,
-  Heart
-} from "@/components/ui/icons";
-import { useState, useEffect } from "react";
+  ArrowRight, Home, Building2, Wrench, Calculator, Phone, Mail,
+  Calendar, MapPin, Zap, TrendingUp, Clock, CheckCircle, Star,
+  User, MessageSquare, Video, Headphones, Target, BarChart3,
+  Shield, Award, Users, Sparkles, ChevronRight, AlertCircle,
+  Lightbulb, DollarSign, FileText, Send, Factory, TreePine, Heart,
+  Play, Quote, Battery
+} from "lucide-react";
 
 // Import images
 import industrialSolarFacility from "@/assets/industrial-solar-facility.jpg";

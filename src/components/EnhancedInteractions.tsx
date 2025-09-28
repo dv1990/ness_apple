@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Play } from "@/components/ui/icons";
+import { ArrowRight, Play } from "lucide-react";
 
 // Apple-style magnetic button with subtle animations
 export const MagneticButton = ({ 

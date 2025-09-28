@@ -19,7 +19,7 @@ import {
   Zap, 
   Shield, 
   Brain 
-} from "@/components/ui/icons";
+} from "lucide-react";
 import batteryTechnology from "@/assets/battery-technology.jpg";
 import aiSoftware from "@/assets/ai-software.jpg";
 import rdLaboratory from "@/assets/rd-laboratory.jpg";
