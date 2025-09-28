@@ -23,13 +23,7 @@ export default defineConfig(({ mode }) => ({
           // Core libraries
           'react-vendor': ['react', 'react-dom'],
           'ui-vendor': ['@radix-ui/react-slot', '@radix-ui/react-tooltip'],
-          'router': ['react-router-dom'],
-          // Separate heavy components
-          'enhanced-pages': [
-            'src/pages/ResidentialEnhanced',
-            'src/pages/CommercialEnhanced',
-            'src/pages/InstallersEnhanced'
-          ]
+          'router': ['react-router-dom']
         }
       }
     },
