@@ -11,60 +11,13 @@ interface PerformanceMetrics {
   totalImages: number;
 }
 
-class ApplePerformanceMonitor {
+class WebPPerformanceTracker {
   private metrics: PerformanceMetrics = {
     loadTime: 0,
     renderTime: 0,
     imageLoadTime: 0,
     totalImages: 0
   };
-
-  private observers: Map<string, PerformanceObserver> = new Map();
-
-  constructor() {
-    this.initializeObservers();
-  }
-
-  private initializeObservers() {
-    if (typeof window === 'undefined') return;
-
-    // Largest Contentful Paint observer
-    const lcpObserver = new PerformanceObserver((list) => {
-      const entries = list.getEntries();
-      const lastEntry = entries[entries.length - 1];
-      console.info(`🎯 LCP: ${Math.round(lastEntry.startTime)}ms`);
-    });
-    lcpObserver.observe({ type: 'largest-contentful-paint', buffered: true });
-    this.observers.set('lcp', lcpObserver);
-
-    // First Input Delay observer
-    const fidObserver = new PerformanceObserver((list) => {
-      const entries = list.getEntries();
-      entries.forEach((entry) => {
-        // Cast to PerformanceEventTiming for FID measurements
-        const fidEntry = entry as any;
-        if (fidEntry.processingStart) {
-          console.info(`⚡ FID: ${Math.round(fidEntry.processingStart - fidEntry.startTime)}ms`);
-        }
-      });
-    });
-    fidObserver.observe({ type: 'first-input', buffered: true });
-    this.observers.set('fid', fidObserver);
-
-    // Cumulative Layout Shift observer
-    let clsValue = 0;
-    const clsObserver = new PerformanceObserver((list) => {
-      const entries = list.getEntries();
-      entries.forEach((entry: any) => {
-        if (!entry.hadRecentInput) {
-          clsValue += entry.value;
-        }
-      });
-      console.info(`📐 CLS: ${clsValue.toFixed(4)}`);
-    });
-    clsObserver.observe({ type: 'layout-shift', buffered: true });
-    this.observers.set('cls', clsObserver);
-  }
 
   // Track image loading performance
   trackImageLoad(src: string, startTime: number) {
@@ -90,7 +43,7 @@ class ApplePerformanceMonitor {
       ? this.metrics.imageLoadTime / this.metrics.totalImages 
       : 0;
 
-    console.group('🍎 Apple-Level Performance Metrics');
+    console.group('🍎 WebP Performance Metrics');
     console.info(`📊 Images loaded: ${this.metrics.totalImages}`);
     console.info(`🖼️ Avg image load: ${Math.round(avgImageLoad)}ms`);
     console.info(`⏱️ Total image time: ${Math.round(this.metrics.imageLoadTime)}ms`);
@@ -103,12 +56,6 @@ class ApplePerformanceMonitor {
     if (this.metrics.totalImages > 20) {
       console.warn('💡 Consider implementing virtual scrolling for image-heavy sections');
     }
-  }
-
-  // Cleanup observers
-  destroy() {
-    this.observers.forEach(observer => observer.disconnect());
-    this.observers.clear();
   }
 }
 
@@ -178,8 +125,8 @@ export const monitorBundleSize = () => {
   });
 };
 
-// Global performance monitor instance
-export const applePerformanceMonitor = new ApplePerformanceMonitor();
+// Global WebP performance tracker instance
+export const webPPerformanceTracker = new WebPPerformanceTracker();
 
 // Initialize performance enhancements
 export const initializePerformanceEnhancements = () => {
@@ -192,7 +139,7 @@ export const initializePerformanceEnhancements = () => {
   if (typeof window !== 'undefined') {
     window.addEventListener('load', () => {
       setTimeout(() => {
-        applePerformanceMonitor.reportMetrics();
+        webPPerformanceTracker.reportMetrics();
       }, 1000);
     });
   }
