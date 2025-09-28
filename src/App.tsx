@@ -5,13 +5,15 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { performanceMonitor } from "@/lib/performance-monitor";
 import { performanceBudgetMonitor } from "@/lib/performance-budget";
+import { initializeApplePerformance } from "@/lib/apple-performance";
 import { ScrollProgressBar } from "@/components/ScrollProgressBar";
 import { RoutePreloader } from "@/components/ui/route-preloader";
+import { RouteLazyLoader } from "@/components/ui/route-lazy-loader";
 import { preloadCriticalImages } from "@/lib/image-optimizer";
 import { PerformanceDashboard } from "@/components/PerformanceDashboard";
 import React, { Suspense, lazy, useEffect } from 'react';
 
-// Apple-level code splitting - Load only what's immediately needed
+// Apple-level code splitting - Critical path only
 import IndexEnhanced from "./pages/IndexEnhanced";
 
 // Aggressive lazy loading for optimal performance
@@ -50,6 +52,7 @@ import { initializePerformanceEnhancements } from "@/lib/performance-enhancement
 performanceMonitor.markFeature('app-load');
 performanceBudgetMonitor.reportOptimizations();
 initializePerformanceEnhancements();
+initializeApplePerformance();
 
 // Preload critical images for instant loading
 const criticalImages = [
@@ -83,7 +86,7 @@ const App = () => {
         <Sonner />
         <ScrollProgressBar />
         <BrowserRouter>
-          <Suspense fallback={<PageLoadingFallback />}>
+          <RouteLazyLoader>
           <Routes>
           {/* Overview (Landing) */}
           <Route path="/" element={<IndexEnhanced />} />
@@ -134,7 +137,7 @@ const App = () => {
           {/* 404 Catch-all */}
           <Route path="*" element={<NotFound />} />
           </Routes>
-        </Suspense>
+        </RouteLazyLoader>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
