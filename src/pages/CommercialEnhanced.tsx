@@ -317,19 +317,19 @@ const CommercialEnhanced = () => {
         
         <div className="relative max-w-6xl mx-auto px-8">
           <div className="space-y-32">
-            {/* Section Header - Jobs: Set the emotional stage */}
-            <div className="text-center space-y-8">
-              <h2 className="text-6xl md:text-7xl font-thin text-foreground leading-[0.9] tracking-[-0.025em]">
+            {/* Section Header - Ive: Perfect emotional introduction */}
+            <div className="text-center space-y-12">
+              <h2 className="text-7xl md:text-8xl font-extralight text-foreground leading-[0.8] tracking-[-0.03em] mb-8">
                 Your energy
-                <span className="block text-primary">transformation</span>
+                <span className="block text-primary font-light">transformation</span>
               </h2>
-              <p className="text-xl text-muted-foreground font-light max-w-3xl mx-auto leading-relaxed">
-                Three moments that change everything. From energy anxiety to energy freedom.
+              <p className="text-2xl text-muted-foreground font-extralight max-w-2xl mx-auto leading-[1.4]">
+                Three moments. One journey. Complete transformation.
               </p>
             </div>
 
-            {/* Transformation Story - Jobs: Emotional progression */}
-            <div className="space-y-24">
+            {/* Transformation Story - Ive: Purposeful emotional progression */}
+            <div className="space-y-40">
               
               {/* Moment 1: Discovery - Jobs: The revelation */}
               <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -350,16 +350,15 @@ const CommercialEnhanced = () => {
                       </div>
                     </div>
 
-                    <div className="space-y-6">
-                      <h3 className="text-4xl font-light text-foreground tracking-tight">
+                    <div className="space-y-8">
+                      <h3 className="text-5xl font-extralight text-foreground tracking-tight leading-[0.95]">
                         The moment you discover
-                        <span className="block text-blue-600">how much you'll save</span>
+                        <span className="block text-primary font-light">your savings</span>
                       </h3>
                       
-                      <p className="text-lg text-muted-foreground leading-relaxed font-light">
-                        Our energy intelligence analyzes your facility in minutes, not weeks. 
-                        You see exactly how much you'll save before we even visit. 
-                        The relief is immediate.
+                      <p className="text-xl text-muted-foreground leading-[1.6] font-extralight max-w-lg">
+                        Intelligence reveals opportunity in minutes. Clarity replaces uncertainty. 
+                        Relief arrives instantly.
                       </p>
 
                       <div className="pt-4">
@@ -403,16 +402,15 @@ const CommercialEnhanced = () => {
                       </div>
 
                       <div className="space-y-6">
-                        <h3 className="text-4xl font-light text-foreground tracking-tight">
-                          The day everything
-                          <span className="block text-green-600">just works</span>
-                        </h3>
-                        
-                        <p className="text-lg text-muted-foreground leading-relaxed font-light">
-                          One morning you arrive at work and it's done. Silent installation. 
-                          Zero disruption. Your business runs normally while we transform 
-                          your energy future behind the scenes.
-                        </p>
+                      <h3 className="text-5xl font-extralight text-foreground tracking-tight leading-[0.95]">
+                        The day everything
+                        <span className="block text-primary font-light">simply works</span>
+                      </h3>
+                      
+                      <p className="text-xl text-muted-foreground leading-[1.6] font-extralight max-w-lg">
+                        Seamless transformation. Silent precision. 
+                        Your world improves while you work.
+                      </p>
 
                         <div className="pt-4">
                           <Badge variant="outline" className="bg-green-500/5 text-green-600 border-green-500/20 font-light px-4 py-1">
@@ -454,15 +452,14 @@ const CommercialEnhanced = () => {
                     </div>
 
                     <div className="space-y-6">
-                      <h3 className="text-4xl font-light text-foreground tracking-tight">
+                      <h3 className="text-5xl font-extralight text-foreground tracking-tight leading-[0.95]">
                         The feeling when you
-                        <span className="block text-primary">never worry again</span>
+                        <span className="block text-primary font-light">never worry again</span>
                       </h3>
                       
-                      <p className="text-lg text-muted-foreground leading-relaxed font-light">
-                        Every month your electricity bill arrives 42% smaller. 
-                        Power outages become irrelevant. You sleep better knowing 
-                        your business is protected and profitable.
+                      <p className="text-xl text-muted-foreground leading-[1.6] font-extralight max-w-lg">
+                        Freedom from energy anxiety. Confidence in every decision. 
+                        Peace in knowing your future is secure.
                       </p>
 
                       <div className="pt-4">
