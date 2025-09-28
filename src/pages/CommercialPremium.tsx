@@ -1,6 +1,15 @@
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Play, TrendingUp, Shield, Building2, Factory, Zap, Target, Sparkles } from "lucide-react";
+import { 
+  ArrowRight, 
+  Play, 
+  Shield, 
+  Building2, 
+  Factory, 
+  Zap, 
+  Target,
+  Sparkles 
+} from "@/components/ui/icons";
 import nessUnitsHero from "@/assets/ness-units-hero.png";
 import nessPodProduct from "@/assets/ness-pod-product.png";
 import nessCubeProduct from "@/assets/ness-cube-product.png";

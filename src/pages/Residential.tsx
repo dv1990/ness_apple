@@ -1,7 +1,17 @@
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { Calculator, Shield, Smartphone, Users, CheckCircle, ArrowRight, Play, Zap, Snowflake, BatteryCharging } from "lucide-react";
+import { 
+  Calculator,
+  Shield, 
+  Smartphone, 
+  Users,
+  CheckCircle, 
+  ArrowRight, 
+  Play, 
+  Zap, 
+  BatteryCharging 
+} from "@/components/ui/icons";
 import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-homeowners.jpg";
 import productImage from "@/assets/ness-pro-product.png";

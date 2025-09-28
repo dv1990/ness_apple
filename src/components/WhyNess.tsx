@@ -1,5 +1,11 @@
 import { useState } from "react"
-import { Shield, Zap, Brain, Sparkles, ArrowRight } from "lucide-react"
+import { 
+  Shield, 
+  Zap, 
+  Brain, 
+  Sparkles, 
+  ArrowRight 
+} from "@/components/ui/icons";
 import React from "react"
 
 const features = [

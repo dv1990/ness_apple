@@ -1,6 +1,15 @@
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Play, Shield, Zap, Smartphone, CheckCircle, Users, Star } from "lucide-react";
+import { 
+  ArrowRight, 
+  Play, 
+  Shield, 
+  Zap, 
+  Smartphone, 
+  CheckCircle, 
+  Users,
+  Star 
+} from "@/components/ui/icons";
 import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-homeowners.jpg";
 import productImage from "@/assets/ness-pro-product.png";

@@ -1,6 +1,10 @@
 import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
-import { ChevronRight, MoreHorizontal } from "lucide-react";
+import { 
+  ChevronRight, 
+  MoreHorizontal, 
+  ChevronLeft 
+} from "@/components/ui/icons";
 
 import { cn } from "@/lib/utils";
 

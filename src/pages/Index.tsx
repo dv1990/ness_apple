@@ -1,7 +1,17 @@
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Shield, Home, Building2, Zap, Heart, Star, CheckCircle, MapPin } from "lucide-react";
+import { 
+  ArrowRight, 
+  Shield, 
+  Home, 
+  Building2, 
+  Zap, 
+  Heart, 
+  Star, 
+  CheckCircle,
+  MapPin
+} from "@/components/ui/icons";
 import { Link } from "react-router-dom";
 import { WhyNess } from "@/components/WhyNess";
 
