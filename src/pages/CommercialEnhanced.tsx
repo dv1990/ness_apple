@@ -5,6 +5,15 @@ import Layout from "@/components/Layout";
 import { OptimizedWebPImage } from "@/components/ui/optimized-webp-image";
 import { ArrowRight, Shield, Target } from "lucide-react";
 
+// Import images
+import industrialHero from "@/assets/industrial-complex-hero.jpg";
+import noDieselFacility from "@/assets/no-diesel-facility.jpg";
+import nessCube from "@/assets/ness-cube-product.png";
+import nessPod from "@/assets/ness-pod-product.png";
+import nessPro from "@/assets/ness-pro-product.png";
+import manufacturingFacility from "@/assets/manufacturing-facility.jpg";
+import officeInterior from "@/assets/office-interior.jpg";
+
 const CommercialEnhanced = () => {
   const [monthlySpend, setMonthlySpend] = useState("");
   const [selectedCapacity, setSelectedCapacity] = useState("500kWh");
@@ -97,7 +106,7 @@ const CommercialEnhanced = () => {
             
             <div className="pt-8 md:pt-16">
               <OptimizedWebPImage
-                src="/src/assets/industrial-complex-hero.jpg"
+                src={industrialHero}
                 alt="Modern industrial facility powered by NESS energy storage"
                 className="w-full max-w-4xl mx-auto rounded-2xl shadow-2xl"
                 priority
@@ -132,7 +141,7 @@ const CommercialEnhanced = () => {
               
               <div className="pt-8 md:pt-12">
                 <OptimizedWebPImage
-                  src="/src/assets/no-diesel-facility.jpg"
+                  src={noDieselFacility}
                   alt="Industrial facility operating during power outage with NESS backup power"
                   className="w-full max-w-3xl mx-auto rounded-xl opacity-90"
                 />
@@ -161,9 +170,9 @@ const CommercialEnhanced = () => {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto">
                 {capacityOptions.map((option, index) => {
                   const productImages = [
-                    "/src/assets/ness-cube-product.png",
-                    "/src/assets/ness-pod-product.png", 
-                    "/src/assets/ness-pro-product.png"
+                    nessCube,
+                    nessPod,
+                    nessPro
                   ];
                   
                   return (
@@ -227,7 +236,7 @@ const CommercialEnhanced = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-5xl mx-auto">
                 <div className="relative overflow-hidden rounded-xl bg-background border">
                   <OptimizedWebPImage
-                    src="/src/assets/manufacturing-facility.jpg"
+                    src={manufacturingFacility}
                     alt="Apex Manufacturing facility with NESS energy storage"
                     className="w-full h-48 md:h-56 object-cover"
                   />
@@ -243,7 +252,7 @@ const CommercialEnhanced = () => {
 
                 <div className="relative overflow-hidden rounded-xl bg-background border">
                   <OptimizedWebPImage
-                    src="/src/assets/office-interior.jpg"
+                    src={officeInterior}
                     alt="TechPark Bangalore powered by NESS energy storage"
                     className="w-full h-48 md:h-56 object-cover"
                   />
