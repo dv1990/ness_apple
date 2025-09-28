@@ -2,45 +2,63 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    
+    <!-- Performance Critical Meta Tags -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NESS Energy - Your Partner in Energy Independence</title>
-    <meta name="description" content="Premium energy storage solutions engineered for India's future. Experience the NESS difference with ultra-reliable battery systems." />
-    <meta name="author" content="NESS Energy" />
-    <meta name="keywords" content="energy storage, premium batteries, renewable energy, residential solar, commercial solar, energy solutions" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     
-    <!-- Apple-level Critical Resource Prioritization -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Apple Performance Optimization -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//fonts.gstatic.com" />
     
-    <!-- Critical fonts only - loaded with highest priority -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"></noscript>
+    <!-- Critical Resource Hints -->
+    <link rel="preload" href="/src/assets-webp/hero-homeowners.webp" as="image" type="image/webp" fetchpriority="high" />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" crossorigin />
     
-    <!-- Non-critical fonts - lazy loaded after main content -->
-    <link rel="prefetch" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;700;800&display=swap">
-    <link rel="prefetch" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap">
+    <!-- PWA Configuration -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#22c55e" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="NESS" />
     
-    <!-- Performance-first resource hints -->
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <!-- SEO Optimization -->
+    <title>NESS Energy Systems - Advanced Battery Storage Solutions</title>
+    <meta name="description" content="Premium battery energy storage systems for residential and commercial applications. Engineered for performance, designed for life." />
+    <meta name="keywords" content="battery storage, energy systems, solar battery, home energy, commercial energy" />
+    <link rel="canonical" href="https://nessenergy.com" />
     
-    <!-- Apple-style Meta Tags -->
-    <meta name="theme-color" content="#00C853">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-
-    <meta property="og:title" content="NESS Energy - Your Partner in Energy Independence" />
-    <meta property="og:description" content="Premium energy storage solutions engineered for India's future. Experience the NESS difference with ultra-reliable battery systems." />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@ness_energy" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <!-- Performance Monitoring -->
+    <script>
+      // Critical performance timing
+      window.NESS_PERFORMANCE = {
+        navigationStart: performance.now(),
+        criticalResourcesLoaded: false
+      };
+      
+      // Font loading optimization
+      document.documentElement.classList.add('font-loading');
+    </script>
+    
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   </head>
-
   <body>
     <div id="root"></div>
+    
+    <!-- Critical Performance Script -->
+    <script>
+      // Service Worker registration for caching
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then(() => console.info('💾 SW registered'))
+            .catch(() => console.info('💾 SW registration failed'));
+        });
+      }
+    </script>
+    
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

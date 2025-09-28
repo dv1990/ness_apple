@@ -6,6 +6,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { performanceMonitor } from "@/lib/performance-monitor";
 import { performanceBudgetMonitor } from "@/lib/performance-budget";
 import { initializeApplePerformance } from "@/lib/apple-performance";
+import { serviceWorkerManager } from "@/lib/service-worker-manager";
+import { intelligentPrefetcher } from "@/lib/intelligent-prefetcher";
+import { criticalCSSInjector } from "@/lib/critical-css-injector";
 import { ScrollProgressBar } from "@/components/ScrollProgressBar";
 import { RoutePreloader } from "@/components/ui/route-preloader";
 import { RouteLazyLoader } from "@/components/ui/route-lazy-loader";
@@ -70,14 +73,30 @@ const routeConfig = [];
 const App = () => {
   // Apple-level performance initialization
   useEffect(() => {
+    // Critical CSS injection for instant first paint
+    criticalCSSInjector.inject();
+    criticalCSSInjector.preloadFonts();
+    
     // Initialize performance monitoring after DOM is ready
     performanceMonitor.markFeature('app-load');
     performanceBudgetMonitor.reportOptimizations();
     initializePerformanceEnhancements();
     initializeApplePerformance();
     
+    // Advanced performance features
+    serviceWorkerManager.register();
+    serviceWorkerManager.preloadCriticalAssets();
+    
+    // Start intelligent prefetching
+    intelligentPrefetcher.prefetchRoute('/residential-enhanced');
+    
     // Preload critical images
     preloadCriticalImages(criticalImages);
+    
+    // Optimize images after load
+    setTimeout(() => {
+      criticalCSSInjector.optimizeImages();
+    }, 100);
   }, []);
 
   return (
