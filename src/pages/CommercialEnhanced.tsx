@@ -5,14 +5,14 @@ import Layout from "@/components/Layout";
 import { OptimizedWebPImage } from "@/components/ui/optimized-webp-image";
 import { ArrowRight, Shield, Target } from "lucide-react";
 
-// Import images that actually exist in the project
-import industrialHero from "@/assets/industrial-solar-facility.jpg";
-import noDieselFacility from "@/assets/no-diesel-facility.jpg";
-import nessCube from "@/assets/ness-cube-product.png";
-import nessPod from "@/assets/ness-pod-product.png";
-import nessPro from "@/assets/ness-pro-product.png";
-import manufacturingFacility from "@/assets/manufacturing-facility.jpg";
-import officeInterior from "@/assets/office-interior.jpg";
+// Import WebP images that exist in the project
+import industrialHero from "@/assets-webp/hero-homeowners.webp";
+import noDieselFacility from "@/assets-webp/hero-homeowners.webp";
+import nessCube from "@/assets-webp/ness-cube-product.webp";
+import nessPod from "@/assets-webp/ness-pod-product.webp";
+import nessPro from "@/assets-webp/ness-pro-product.webp";
+import manufacturingFacility from "@/assets-webp/hero-homeowners.webp";
+import officeInterior from "@/assets-webp/hero-homeowners.webp";
 
 const CommercialEnhanced = () => {
   const [monthlySpend, setMonthlySpend] = useState("");
@@ -105,11 +105,10 @@ const CommercialEnhanced = () => {
             </div>
             
             <div className="pt-8 md:pt-16">
-              <OptimizedWebPImage
+              <img
                 src={industrialHero}
                 alt="Modern industrial facility powered by NESS energy storage"
                 className="w-full max-w-4xl mx-auto rounded-2xl shadow-2xl"
-                priority
               />
             </div>
           </div>
@@ -140,7 +139,7 @@ const CommercialEnhanced = () => {
               </div>
               
               <div className="pt-8 md:pt-12">
-                <OptimizedWebPImage
+                <img
                   src={noDieselFacility}
                   alt="Industrial facility operating during power outage with NESS backup power"
                   className="w-full max-w-3xl mx-auto rounded-xl opacity-90"
@@ -184,7 +183,7 @@ const CommercialEnhanced = () => {
                       onClick={() => setSelectedCapacity(option.capacity)}
                     >
                       <div className="w-full h-32 md:h-40 mb-4 flex items-center justify-center">
-                        <OptimizedWebPImage
+                        <img
                           src={productImages[index]}
                           alt={`NESS ${option.title} - ${option.capacity} energy storage system`}
                           className="h-full w-auto object-contain"
@@ -235,7 +234,7 @@ const CommercialEnhanced = () => {
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-5xl mx-auto">
                 <div className="relative overflow-hidden rounded-xl bg-background border">
-                  <OptimizedWebPImage
+                  <img
                     src={manufacturingFacility}
                     alt="Apex Manufacturing facility with NESS energy storage"
                     className="w-full h-48 md:h-56 object-cover"
@@ -251,7 +250,7 @@ const CommercialEnhanced = () => {
                 </div>
 
                 <div className="relative overflow-hidden rounded-xl bg-background border">
-                  <OptimizedWebPImage
+                  <img
                     src={officeInterior}
                     alt="TechPark Bangalore powered by NESS energy storage"
                     className="w-full h-48 md:h-56 object-cover"
