@@ -4,7 +4,20 @@ import { Button } from "@/components/ui/button";
 import { OptimizedImage } from "@/components/ui/optimized-image";
 import { LazySection } from "@/components/ui/lazy-section";
 import { usePerformanceTracking } from "@/lib/performance-monitor";
-import { ArrowRight, Calculator, Award, Users, Wrench, BookOpen, Download, Sparkles, CheckCircle, Target, Clock, Play } from "lucide-react";
+import { 
+  ArrowRight, 
+  Calculator, 
+  Award, 
+  Users, 
+  Wrench, 
+  BookOpen, 
+  Download, 
+  Sparkles, 
+  CheckCircle, 
+  Target, 
+  Clock, 
+  Play 
+} from "@/components/ui/icons";
 import installerHero from "@/assets/installer-hero.jpg";
 import trainingWorkshop from "@/assets/training-workshop.jpg";
 import configuratorTool from "@/assets/configurator-tool.jpg";

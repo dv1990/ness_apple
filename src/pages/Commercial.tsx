@@ -4,7 +4,18 @@ import { Button } from "@/components/ui/button";
 import { OptimizedImage } from "@/components/ui/optimized-image";
 import { LazySection } from "@/components/ui/lazy-section";
 import { usePerformanceTracking } from "@/lib/performance-monitor";
-import { ArrowRight, Calculator, Play, TrendingUp, Clock, CheckCircle, Target, Sparkles, Building2, Factory } from "lucide-react";
+import { 
+  ArrowRight, 
+  Calculator, 
+  Play, 
+  TrendingUp, 
+  Clock, 
+  CheckCircle, 
+  Target, 
+  Sparkles, 
+  Building2, 
+  Factory 
+} from "@/components/ui/icons";
 import nessUnitsHero from "@/assets/ness-units-hero.png";
 import nessPodProduct from "@/assets/ness-pod-product.png";
 import nessCubeProduct from "@/assets/ness-cube-product.png";

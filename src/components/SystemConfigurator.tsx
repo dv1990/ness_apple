@@ -12,7 +12,7 @@ import {
   Calculator, Home, Zap, Battery, Sun, IndianRupee, 
   CheckCircle, AlertCircle, Download, Share2, 
   Clock, TrendingUp, Leaf, Shield
-} from "lucide-react";
+} from "@/components/ui/icons";
 import { useToast } from "@/hooks/use-toast";
 
 interface SystemConfiguration {

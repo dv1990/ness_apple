@@ -5,15 +5,15 @@ import { Badge } from '@/components/ui/badge';
 import { performanceMonitor } from '@/lib/performance-monitor';
 import { performanceBudget } from '@/lib/performance-optimizations';
 import { 
-  Gauge, 
-  Zap, 
-  Image, 
-  Clock, 
-  AlertTriangle, 
+  Activity,
+  Zap,
+  Clock,
   CheckCircle,
   TrendingUp,
-  Activity
-} from 'lucide-react';
+  AlertTriangle,
+  Gauge,
+  Image
+} from "@/components/ui/icons";
 
 interface PerformanceMetric {
   name: string;
@@ -68,7 +68,7 @@ export const PerformanceDashboard = () => {
           threshold: 1000,
           unit: 'ms',
           status: (navigation?.loadEventStart - navigation?.domContentLoadedEventEnd || 0) < 1000 ? 'good' : 'needs-improvement',
-          icon: Image
+          icon: Gauge
         }
       ];
 

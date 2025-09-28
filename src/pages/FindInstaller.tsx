@@ -17,7 +17,11 @@ import {
   Users,
   CheckCircle,
   ArrowLeft
-} from "lucide-react";
+} from "@/components/ui/icons";
+import { Link } from "react-router-dom";
+  CheckCircle,
+  ArrowLeft
+} from "@/components/ui/icons";
 import { Link } from "react-router-dom";
 
 interface CustomerData {

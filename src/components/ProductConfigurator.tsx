@@ -10,15 +10,17 @@ import {
   Zap, 
   Battery, 
   Smartphone, 
-  Snowflake, 
   Car,
   Calculator,
   CheckCircle,
   AlertCircle,
   TrendingUp,
   Shield,
-  Clock
-} from "lucide-react";
+  Clock,
+  Building2,
+  ArrowRight,
+  Snowflake
+} from "@/components/ui/icons";
 
 interface ConfiguratorState {
   homeSize: number;

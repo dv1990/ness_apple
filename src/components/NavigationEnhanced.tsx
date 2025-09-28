@@ -10,8 +10,12 @@ import {
   Wrench,
   Cpu,
   LayoutGrid,
-  ArrowRight
-} from "lucide-react";
+  ArrowRight,
+  X,
+  Factory,
+  Users,
+  Phone
+} from "@/components/ui/icons";
 
 const NavigationEnhanced = () => {
   const [isOpen, setIsOpen] = useState(false);

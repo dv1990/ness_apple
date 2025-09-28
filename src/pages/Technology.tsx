@@ -4,7 +4,22 @@ import { Button } from "@/components/ui/button";
 import { OptimizedImage } from "@/components/ui/optimized-image";
 import { LazySection } from "@/components/ui/lazy-section";
 import { usePerformanceTracking } from "@/lib/performance-monitor";
-import { ArrowRight, Heart, Home, Building2, Factory, Play, Download, Lightbulb, Users, Clock, CheckCircle, Zap, Shield, Brain } from "lucide-react";
+import { 
+  ArrowRight, 
+  Heart, 
+  Home, 
+  Building2, 
+  Factory, 
+  Play, 
+  Download, 
+  Lightbulb, 
+  Users, 
+  Clock, 
+  CheckCircle, 
+  Zap, 
+  Shield, 
+  Brain 
+} from "@/components/ui/icons";
 import batteryTechnology from "@/assets/battery-technology.jpg";
 import aiSoftware from "@/assets/ai-software.jpg";
 import rdLaboratory from "@/assets/rd-laboratory.jpg";

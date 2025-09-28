@@ -46,7 +46,14 @@ import {
   Microscope,
   Beaker,
   TestTube
-} from "lucide-react";
+import { 
+  ArrowRight, Home, Building2, Wrench, Calculator, Phone, Mail,
+  Calendar, MapPin, Zap, TrendingUp, Clock, CheckCircle, Star,
+  User, MessageSquare, Video, Headphones, Target, BarChart3,
+  Shield, Award, Users, Sparkles, ChevronRight, AlertCircle,
+  Lightbulb, DollarSign, FileText, Send, Factory, TreePine, Heart,
+  Lock, Wifi, Database, Microscope, Beaker, TestTube
+} from "@/components/ui/icons";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 

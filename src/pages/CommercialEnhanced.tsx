@@ -31,7 +31,13 @@ import {
   Play,
   TreePine,
   Heart
-} from "lucide-react";
+} from "@/components/ui/icons";
+import { useState, useEffect } from "react";
+  BarChart3,
+  Play,
+  TreePine,
+  Heart
+} from "@/components/ui/icons";
 import { useState, useEffect } from "react";
 
 // Import images

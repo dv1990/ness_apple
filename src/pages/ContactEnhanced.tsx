@@ -15,7 +15,7 @@ import {
   User, MessageSquare, Video, Headphones, Target, BarChart3,
   Shield, Award, Users, Sparkles, ChevronRight, AlertCircle,
   Lightbulb, DollarSign, FileText, Send
-} from "lucide-react";
+} from "@/components/ui/icons";
 import { cn } from "@/lib/utils";
 import { MagneticButton, FloatingCard, ProgressiveDisclosure } from "@/components/EnhancedInteractions";
 

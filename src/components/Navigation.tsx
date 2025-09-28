@@ -4,13 +4,17 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { 
   Menu, 
-  ChevronDown,
-  Home,
-  Building2,
+  X, 
+  Home, 
+  Building2, 
+  Factory, 
+  Users, 
+  Phone, 
   Wrench,
   Cpu,
-  LayoutGrid
-} from "lucide-react";
+  LayoutGrid,
+  ChevronDown
+} from "@/components/ui/icons";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);

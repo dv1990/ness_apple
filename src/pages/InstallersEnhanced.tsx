@@ -14,7 +14,8 @@ import {
   Sparkles, CheckCircle, Target, Clock, Play, Star, Quote, MapPin,
   TrendingUp, Building2, Phone, Mail, Calendar, FileText, Zap,
   ChevronRight, Upload, User, Shield, Trophy, Briefcase
-} from "lucide-react";
+} from "@/components/ui/icons";
+import { Link } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { MagneticButton, PlayButton, FloatingCard, ProgressiveDisclosure, ParallaxContainer } from "@/components/EnhancedInteractions";

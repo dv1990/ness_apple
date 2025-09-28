@@ -11,7 +11,14 @@ import {
   Factory,
   Lightbulb,
   Heart
-} from "lucide-react";
+import { 
+  Target, 
+  Award, 
+  Globe,
+  Factory,
+  Lightbulb,
+  Heart
+} from "@/components/ui/icons";
 import { Link } from "react-router-dom";
 
 const About = () => {
