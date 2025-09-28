@@ -236,6 +236,11 @@ const CommercialEnhanced = () => {
         <div className="max-w-6xl mx-auto px-8">
           <div className="space-y-32">
             <div className="text-center space-y-12">
+              <div className="inline-flex items-center space-x-2 mb-4">
+                <div className="w-4 h-4 bg-red-500 rounded-full animate-pulse"></div>
+                <span className="text-red-500 font-bold">UPDATED</span>
+                <div className="w-4 h-4 bg-red-500 rounded-full animate-pulse"></div>
+              </div>
               <h2 className="text-7xl md:text-8xl font-extralight text-foreground leading-[0.8] tracking-[-0.03em] mb-8">
                 Every dream
                 <span className="block text-primary font-light">needs energy.</span>
