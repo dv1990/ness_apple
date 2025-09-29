@@ -5,14 +5,14 @@ import Layout from "@/components/Layout";
 import { OptimizedWebPImage } from "@/components/ui/optimized-webp-image";
 import { ArrowRight, Shield, Target } from "lucide-react";
 
-// Import WebP images that exist in the project
-import industrialHero from "@/assets-webp/hero-homeowners.webp";
-import noDieselFacility from "@/assets-webp/hero-homeowners.webp";
-import nessCube from "@/assets-webp/ness-cube-product.webp";
-import nessPod from "@/assets-webp/ness-pod-product.webp";
-import nessPro from "@/assets-webp/ness-pro-product.webp";
-import manufacturingFacility from "@/assets-webp/hero-homeowners.webp";
-import officeInterior from "@/assets-webp/hero-homeowners.webp";
+// Import actual images that exist for commercial page
+import industrialHero from "@/assets/industrial-complex-hero.jpg";
+import noDieselFacility from "@/assets/industrial-solar-facility.jpg";
+import nessCube from "@/assets/ness-cube-product.png";
+import nessPod from "@/assets/ness-pod-product.png";
+import nessPro from "@/assets/ness-pro-product.png";
+import manufacturingFacility from "@/assets/manufacturing-facility.jpg";
+import officeInterior from "@/assets/office-interior.jpg";
 
 const CommercialEnhanced = () => {
   const [monthlySpend, setMonthlySpend] = useState("");
