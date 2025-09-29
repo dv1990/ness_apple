@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { MapPin, Zap } from "lucide-react";
+import indiaMapSvg from '@/assets/india-map.svg';
 
 interface Installation {
   lat: number;
@@ -88,15 +89,15 @@ const IndiaInstallationMap = () => {
     { lat: 13.068057001063288, lng: 77.59595402362034 },
   ];
 
-  // Convert lat/lng to SVG coordinates with accurate India bounds
+  // Convert lat/lng to SVG coordinates matching the imported map's viewBox (0 0 1000 1000)
   const latLngToSVG = (lat: number, lng: number) => {
-    // Accurate India bounds
-    const minLat = 6.5, maxLat = 35.5;
+    // India geographical bounds
+    const minLat = 6.5, maxLat = 37;
     const minLng = 68, maxLng = 97.5;
     
-    // SVG viewBox dimensions
-    const width = 500;
-    const height = 700;
+    // SVG viewBox dimensions (matching india-map.svg)
+    const width = 1000;
+    const height = 1000;
     
     const x = ((lng - minLng) / (maxLng - minLng)) * width;
     const y = height - ((lat - minLat) / (maxLat - minLat)) * height;
@@ -120,103 +121,109 @@ const IndiaInstallationMap = () => {
 
   return (
     <div className="relative w-full max-w-4xl mx-auto">
-      <svg
-        viewBox="0 0 500 700"
-        className="w-full h-auto"
-        style={{ filter: 'drop-shadow(0 4px 20px rgba(0, 0, 0, 0.1))' }}
-      >
-        {/* Accurate India map outline - Major regions */}
-        <g className="text-muted-foreground/30" stroke="currentColor" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          {/* Kashmir & North */}
-          <path d="M 180 80 L 185 75 L 195 72 L 205 70 L 215 69 L 225 70 L 232 73 L 238 78 L 242 85 L 245 93 L 247 102 L 248 112 L 248 122 L 246 132 L 243 140 L 238 147 L 232 152 L 225 155 L 218 157 L 210 158 L 202 157 L 195 154 L 190 150 L 185 145 L 182 138 L 180 130 L 179 120 L 180 110 L 181 100 L 182 90 L 180 80 Z" />
-          
-          {/* Gujarat & West Coast */}
-          <path d="M 95 280 L 92 270 L 90 260 L 89 250 L 90 240 L 93 232 L 97 225 L 102 220 L 108 217 L 115 216 L 122 217 L 128 220 L 133 225 L 137 232 L 140 240 L 142 250 L 143 260 L 143 270 L 142 280 L 140 290 L 137 298 L 133 305 L 128 310 L 122 313 L 115 314 L 108 313 L 102 310 L 97 305 L 93 298 L 90 290 L 88 280 Z" />
-          
-          {/* Main Peninsula - Western Coast */}
-          <path d="M 115 314 L 112 325 L 110 340 L 109 355 L 108 370 L 108 385 L 109 400 L 111 415 L 114 430 L 118 445 L 123 460 L 129 475 L 136 490 L 144 505 L 153 518 L 163 530 L 174 540 L 186 548" />
-          
-          {/* Southern tip */}
-          <path d="M 186 548 L 198 554 L 210 558 L 222 560 L 234 559 L 245 555 L 254 548" />
-          
-          {/* Eastern Coast */}
-          <path d="M 254 548 L 263 540 L 271 530 L 278 518 L 284 505 L 289 490 L 293 475 L 296 460 L 298 445 L 299 430 L 300 415 L 300 400 L 300 385 L 299 370 L 298 355 L 296 340 L 293 325 L 289 310 L 284 295 L 278 280 L 271 265 L 263 250 L 254 235 L 244 220 L 233 205 L 221 190 L 208 175 L 194 160 L 179 145" />
-          
-          {/* North-East connection */}
-          <path d="M 300 280 L 305 275 L 312 272 L 320 270 L 330 269 L 340 270 L 348 273 L 355 278 L 360 285 L 363 293 L 364 302 L 363 311 L 360 318 L 355 323 L 348 326 L 340 327 L 332 325 L 325 320" />
-          
-          {/* Connecting paths */}
-          <path d="M 179 145 L 185 140 L 192 137 L 200 135 L 208 135 L 216 137 L 223 141 L 229 147 L 233 155 L 236 165 L 237 175 L 237 185 L 236 195 L 233 205" />
-          
-          <path d="M 143 270 L 148 268 L 155 267 L 163 268 L 170 271 L 176 276 L 180 283 L 183 291 L 185 300 L 185 310 L 183 319 L 179 327 L 174 333 L 168 337 L 161 339 L 154 339 L 147 337 L 141 333 L 136 327 L 132 319 L 129 310 L 128 300 L 128 290" />
-        </g>
-
-        {/* Installation dots with pulse animation */}
-        {installations.map((installation, index) => {
-          const { x, y } = latLngToSVG(installation.lat, installation.lng);
-          const isAnimated = animatedDots.includes(index);
-          
-          return (
-            <g key={index} opacity={isAnimated ? 1 : 0}>
-              {/* Pulse ring */}
-              <circle
-                cx={x}
-                cy={y}
-                r="6"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1"
-                className="text-primary/40"
-                opacity={isAnimated ? 1 : 0}
-              >
-                <animate
-                  attributeName="r"
-                  from="3"
-                  to="12"
-                  dur="2s"
-                  begin={`${index * 0.03}s`}
-                  repeatCount="indefinite"
-                />
-                <animate
-                  attributeName="opacity"
-                  from="0.8"
-                  to="0"
-                  dur="2s"
-                  begin={`${index * 0.03}s`}
-                  repeatCount="indefinite"
-                />
-              </circle>
-              
-              {/* Main dot */}
-              <circle
-                cx={x}
-                cy={y}
-                r="3"
-                fill="currentColor"
-                className="text-primary"
-              >
-                <animate
-                  attributeName="r"
-                  from="0"
-                  to="3"
-                  dur="0.3s"
-                  begin={`${index * 0.03}s`}
-                  fill="freeze"
-                />
-              </circle>
-            </g>
-          );
-        })}
-      </svg>
+      <div className="relative w-full">
+        {/* Base India Map from accurate SVG */}
+        <img 
+          src={indiaMapSvg} 
+          alt="India Map" 
+          className="w-full h-auto"
+          style={{ 
+            filter: 'brightness(0.7) saturate(0.3)',
+            opacity: 0.5
+          }}
+        />
+        
+        {/* Installation Dots Overlay */}
+        <svg
+          viewBox="0 0 1000 1000"
+          className="absolute inset-0 w-full h-full"
+          preserveAspectRatio="xMidYMid meet"
+          style={{ pointerEvents: 'none' }}
+        >
+          {/* Installation dots with pulse animation */}
+          {installations.map((installation, index) => {
+            const { x, y } = latLngToSVG(installation.lat, installation.lng);
+            const isAnimated = animatedDots.includes(index);
+            
+            return (
+              <g key={index} opacity={isAnimated ? 1 : 0}>
+                {/* Pulse ring */}
+                <circle
+                  cx={x}
+                  cy={y}
+                  r="6"
+                  fill="none"
+                  stroke="hsl(var(--energy))"
+                  strokeWidth="2"
+                  opacity={isAnimated ? 1 : 0}
+                >
+                  <animate
+                    attributeName="r"
+                    from="4"
+                    to="16"
+                    dur="2s"
+                    begin={`${index * 0.03}s`}
+                    repeatCount="indefinite"
+                  />
+                  <animate
+                    attributeName="opacity"
+                    from="0.8"
+                    to="0"
+                    dur="2s"
+                    begin={`${index * 0.03}s`}
+                    repeatCount="indefinite"
+                  />
+                </circle>
+                
+                {/* Main dot */}
+                <circle
+                  cx={x}
+                  cy={y}
+                  r="4"
+                  fill="hsl(var(--energy))"
+                  filter="drop-shadow(0 0 4px hsl(var(--energy)))"
+                >
+                  <animate
+                    attributeName="r"
+                    from="0"
+                    to="4"
+                    dur="0.3s"
+                    begin={`${index * 0.03}s`}
+                    fill="freeze"
+                  />
+                </circle>
+                
+                {/* Inner glow */}
+                <circle
+                  cx={x}
+                  cy={y}
+                  r="2"
+                  fill="white"
+                  opacity="0.9"
+                >
+                  <animate
+                    attributeName="r"
+                    from="0"
+                    to="2"
+                    dur="0.3s"
+                    begin={`${index * 0.03}s`}
+                    fill="freeze"
+                  />
+                </circle>
+              </g>
+            );
+          })}
+        </svg>
+      </div>
 
       {/* Legend */}
       <div className="flex items-center justify-center space-x-8 mt-8 text-sm text-muted-foreground">
         <div className="flex items-center space-x-2">
-          <div className="w-3 h-3 rounded-full bg-primary animate-pulse"></div>
+          <div className="w-3 h-3 rounded-full bg-energy animate-pulse"></div>
           <span>Active Installation</span>
         </div>
         <div className="flex items-center space-x-2">
-          <Zap className="w-4 h-4 text-primary" />
+          <Zap className="w-4 h-4 text-energy" />
           <span>{installations.length}+ Locations</span>
         </div>
       </div>
