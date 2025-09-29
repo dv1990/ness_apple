@@ -223,6 +223,48 @@ const CommercialEnhanced = () => {
           </div>
         </section>
 
+        {/* Track Record Section */}
+        <section className="py-20 md:py-32 px-4 md:px-8 bg-muted/20">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center space-y-12 md:space-y-16">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-extralight text-foreground leading-[0.9] tracking-[-0.03em]">
+                Proven across
+                <span className="block text-primary">India</span>
+              </h2>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 max-w-4xl mx-auto">
+                <div className="space-y-3 md:space-y-4">
+                  <div className="text-4xl md:text-5xl font-bold text-primary">150+</div>
+                  <p className="text-muted-foreground text-sm md:text-base">Installations delivered</p>
+                </div>
+                <div className="space-y-3 md:space-y-4">
+                  <div className="text-4xl md:text-5xl font-bold text-primary">100MWh+</div>
+                  <p className="text-muted-foreground text-sm md:text-base">Energy delivered in 24 months</p>
+                </div>
+                <div className="space-y-3 md:space-y-4">
+                  <div className="text-4xl md:text-5xl font-bold text-primary">15+</div>
+                  <p className="text-muted-foreground text-sm md:text-base">Villages 100% solar powered</p>
+                </div>
+              </div>
+
+              <div className="max-w-3xl mx-auto space-y-6 md:space-y-8 pt-8">
+                <div className="p-6 md:p-8 bg-background rounded-xl border">
+                  <h3 className="text-xl md:text-2xl font-semibold mb-3 md:mb-4">MLINDA, Jharkhand</h3>
+                  <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
+                    15+ villages running entirely on solar batteries with zero grid dependency. 
+                    Seamless operations powering rural transformation.
+                  </p>
+                </div>
+                
+                <div className="text-base md:text-lg text-muted-foreground">
+                  <span className="text-foreground font-medium">From Himachal to Kanyakumari</span> — 
+                  NESS systems power businesses across India's diverse climates
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Proof Section */}
         <section className="py-20 md:py-32 px-4 md:px-8">
           <div className="max-w-6xl mx-auto">
