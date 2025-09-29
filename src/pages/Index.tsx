@@ -1,6 +1,7 @@
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import IndiaInstallationMap from "@/components/IndiaInstallationMap";
 import { 
   ArrowRight, 
   Shield, 
@@ -290,6 +291,38 @@ const Index = () => {
               <div className="text-4xl font-light text-gray-900 mb-2">15+</div>
               <div className="text-sm text-gray-700 font-medium tracking-wide uppercase">Year warranty</div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Nationwide Installation Map */}
+      <section className="py-32 bg-background">
+        <div className="max-w-6xl mx-auto px-8">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-energy/10 text-energy rounded-full text-sm font-medium mb-6">
+              <MapPin className="w-4 h-4" />
+              <span>Trusted across India</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-light text-foreground mb-6">
+              From <span className="text-energy font-medium">Himachal to Kanyakumari</span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto font-light">
+              150+ installations delivered • 100MWh+ energy in 24 months • 15+ villages 100% solar powered
+            </p>
+          </div>
+          
+          <IndiaInstallationMap />
+          
+          <div className="text-center mt-12">
+            <p className="text-lg text-muted-foreground mb-8">
+              Every dot represents a family or business that chose reliability and peace of mind
+            </p>
+            <Link to="/contact">
+              <Button size="lg" className="bg-energy hover:bg-energy-dark text-white px-10 py-5 text-lg font-medium rounded-xl">
+                Join our growing community
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>

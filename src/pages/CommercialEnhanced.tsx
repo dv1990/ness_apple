@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Layout from "@/components/Layout";
-import IndiaInstallationMap from "@/components/IndiaInstallationMap";
 import { OptimizedWebPImage } from "@/components/ui/optimized-webp-image";
 import { ArrowRight, Shield, Target } from "lucide-react";
 
@@ -261,14 +260,6 @@ const CommercialEnhanced = () => {
                   <span className="text-foreground font-medium">From Himachal to Kanyakumari</span> — 
                   NESS systems power businesses across India's diverse climates
                 </div>
-              </div>
-
-              {/* Installation Map */}
-              <div className="pt-12 md:pt-16">
-                <h3 className="text-2xl md:text-3xl font-light text-center mb-8 md:mb-12">
-                  Trusted across <span className="text-primary">India</span>
-                </h3>
-                <IndiaInstallationMap />
               </div>
             </div>
           </div>
