@@ -296,7 +296,7 @@ const Index = () => {
       </section>
 
       {/* Nationwide Installation Map */}
-      <section className="py-32 bg-background">
+      <section className="py-32 bg-muted/30">
         <div className="max-w-6xl mx-auto px-8">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-energy/10 text-energy rounded-full text-sm font-medium mb-6">
@@ -311,7 +311,9 @@ const Index = () => {
             </p>
           </div>
           
-          <IndiaInstallationMap />
+          <div className="bg-card/50 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-border/20">
+            <IndiaInstallationMap />
+          </div>
           
           <div className="text-center mt-12">
             <p className="text-lg text-muted-foreground mb-8">
