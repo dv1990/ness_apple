@@ -90,15 +90,16 @@ const TechnologyEnhanced = () => {
     },
     {
       title: "AI-Powered Battery Management", 
-      description: "Advanced machine learning algorithms continuously monitor and optimize every cell, predicting performance and preventing failures before they occur.",
-      specs: ["Real-time ML inference", "Predictive analytics", "Cell-level monitoring", "Adaptive algorithms"],
+      description: "Advanced machine learning algorithms trained on millions of data points from testing 30,000+ cells in our R&D lab. We predict performance and prevent failures before they occur.",
+      specs: ["Real-time ML inference", "Millions of data points", "30,000+ cells tested", "Predictive analytics"],
       image: aiSoftware,
       icon: <Cpu className="w-6 h-6" />,
       technical: {
         processing: "<10ms inference time",
         accuracy: "99.7% prediction accuracy", 
         monitoring: "1000+ parameters/second",
-        learning: "Continuous model updates"
+        dataPoints: "Millions collected over years",
+        testing: "30,000+ cells in R&D lab"
       }
     },
     {
@@ -156,8 +157,8 @@ const TechnologyEnhanced = () => {
     {
       year: "2019",
       title: "Foundation & Research",
-      description: "Established R&D lab with focus on Indian climate conditions",
-      achievements: ["Initial cell testing", "Climate analysis", "Market research"],
+      description: "Established R&D lab with focus on Indian climate conditions. Began comprehensive cell testing program.",
+      achievements: ["30,000+ cells tested", "Millions of data points collected", "Climate analysis", "Testing protocols established"],
       icon: <TestTube className="w-5 h-5" />
     },
     {
@@ -219,6 +220,16 @@ const TechnologyEnhanced = () => {
         { parameter: "Response Time", value: "<100ms for grid services", detail: "Sub-second response for grid stabilization" },
         { parameter: "Communication", value: "IEEE 2030.5, Modbus, CAN protocols", detail: "Industry-standard communication protocols" },
         { parameter: "Edge Processing", value: "Local ML inference capabilities", detail: "On-device machine learning for real-time optimization" }
+      ]
+    },
+    {
+      category: "Data Analytics & R&D",
+      icon: <Database className="w-5 h-5" />,
+      specs: [
+        { parameter: "Cell Testing", value: "30,000+ cells tested in R&D lab", detail: "Comprehensive testing program over multiple years" },
+        { parameter: "Data Collection", value: "Millions of data points collected", detail: "Years of performance and reliability data" },
+        { parameter: "Analysis", value: "Advanced statistical modeling", detail: "Predictive performance algorithms based on real-world data" },
+        { parameter: "Validation", value: "Field-proven reliability metrics", detail: "Continuous learning from deployed systems" }
       ]
     }
   ];
