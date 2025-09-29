@@ -2,8 +2,9 @@ import { useState, useEffect } from "react";
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import IndiaInstallationMap from "@/components/IndiaInstallationMap";
 // Optimized imports for performance
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 import { MagneticButton, PlayButton, FloatingCard, ParallaxContainer } from "@/components/EnhancedInteractions";
 import { Play, Check, Zap, Sparkles, Shield, Battery, Home, Star, Quote } from "lucide-react";
@@ -588,6 +589,44 @@ const IndexEnhanced = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* India Installation Map - Trust Building */}
+      <section className="py-32 bg-gradient-to-b from-background via-muted/20 to-background">
+        <div className="max-w-6xl mx-auto px-8">
+          
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-energy/10 text-energy rounded-full text-sm font-medium mb-6">
+              <MapPin className="w-4 h-4" />
+              <span>Trusted Across India</span>
+            </div>
+            <h2 className="text-5xl md:text-6xl font-extralight text-foreground mb-6 leading-tight">
+              From <span className="text-energy font-light">Himachal to Kanyakumari</span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto font-light leading-relaxed">
+              150+ installations delivered • 100MWh+ energy in 24 months • 15+ villages 100% solar powered
+            </p>
+          </div>
+          
+          {/* Map Container */}
+          <div className="glass-premium rounded-3xl p-8 md:p-12 border border-border/20 shadow-2xl">
+            <IndiaInstallationMap />
+          </div>
+          
+          {/* Bottom CTA */}
+          <div className="text-center mt-12 space-y-6">
+            <p className="text-lg text-muted-foreground font-light">
+              Every dot represents a family or business that chose <span className="text-energy font-medium">reliability and peace of mind</span>
+            </p>
+            <Link to="/contact">
+              <Button size="lg" className="bg-energy hover:bg-energy-dark text-white px-10 py-5 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all">
+                Join our growing community
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
