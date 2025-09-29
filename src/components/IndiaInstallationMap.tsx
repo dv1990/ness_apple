@@ -88,15 +88,18 @@ const IndiaInstallationMap = () => {
     { lat: 13.068057001063288, lng: 77.59595402362034 },
   ];
 
-  // Convert lat/lng to SVG coordinates
+  // Convert lat/lng to SVG coordinates with accurate India bounds
   const latLngToSVG = (lat: number, lng: number) => {
-    // India bounds: lat 8-37, lng 68-97
-    const minLat = 8, maxLat = 37;
-    const minLng = 68, maxLng = 97;
+    // Accurate India bounds
+    const minLat = 6.5, maxLat = 35.5;
+    const minLng = 68, maxLng = 97.5;
     
-    // SVG viewBox: 0 0 400 600
-    const x = ((lng - minLng) / (maxLng - minLng)) * 400;
-    const y = 600 - ((lat - minLat) / (maxLat - minLat)) * 600;
+    // SVG viewBox dimensions
+    const width = 500;
+    const height = 700;
+    
+    const x = ((lng - minLng) / (maxLng - minLng)) * width;
+    const y = height - ((lat - minLat) / (maxLat - minLat)) * height;
     
     return { x, y };
   };
@@ -116,33 +119,37 @@ const IndiaInstallationMap = () => {
   }, [installations.length]);
 
   return (
-    <div className="relative w-full max-w-5xl mx-auto">
+    <div className="relative w-full max-w-4xl mx-auto">
       <svg
-        viewBox="0 0 400 600"
+        viewBox="0 0 500 700"
         className="w-full h-auto"
         style={{ filter: 'drop-shadow(0 4px 20px rgba(0, 0, 0, 0.1))' }}
       >
-        {/* India outline - simplified line art */}
-        <path
-          d="M 200 50 L 210 55 L 220 58 L 230 65 L 235 75 L 240 90 L 245 105 L 248 120 L 250 140 L 252 160 L 253 180 L 254 200 L 255 220 L 256 240 L 257 260 L 258 280 L 259 300 L 258 320 L 256 340 L 253 360 L 248 380 L 242 395 L 235 405 L 225 412 L 215 417 L 205 420 L 195 422 L 185 423 L 175 422 L 165 420 L 155 417 L 145 412 L 138 405 L 132 395 L 127 385 L 123 373 L 120 360 L 118 345 L 117 330 L 116 315 L 115 300 L 114 285 L 113 270 L 112 255 L 111 240 L 110 225 L 109 210 L 108 195 L 107 180 L 108 165 L 110 150 L 113 138 L 117 127 L 122 117 L 128 108 L 135 100 L 143 93 L 152 87 L 162 82 L 172 77 L 182 70 L 190 62 L 195 55 L 200 50 Z"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          className="text-muted-foreground/30"
-          vectorEffect="non-scaling-stroke"
-        />
-        
-        {/* More detailed India map outline */}
-        <path
-          d="M 180 80 Q 185 75 190 72 Q 200 68 210 70 Q 220 72 228 78 Q 235 85 238 95 Q 242 110 244 125 Q 246 145 247 165 Q 248 190 248 215 Q 248 245 247 275 Q 246 305 244 335 Q 242 360 238 380 Q 235 395 228 405 Q 220 415 210 420 Q 200 424 188 424 Q 178 423 170 419 Q 160 414 153 406 Q 147 398 143 387 Q 138 373 135 357 Q 132 338 130 318 Q 128 295 127 272 Q 126 245 126 218 Q 126 188 128 158 Q 130 130 134 105 Q 138 85 145 72 Q 152 62 162 58 Q 170 55 180 58 Q 185 60 188 65 L 180 80 Z
-             M 235 420 L 240 435 L 243 450 L 244 465 L 243 480 L 240 492 L 235 502 L 228 509 L 220 514 L 210 517 L 200 518 L 190 517 L 180 514 L 172 509 L 165 502 L 160 492 L 157 480 L 156 465 L 157 450 L 160 435 L 165 420 L 170 408 L 177 398 L 185 390 L 195 385 L 205 383 L 215 385 L 225 390 L 233 398 L 238 408 L 240 418"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          className="text-foreground/20"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
+        {/* Accurate India map outline - Major regions */}
+        <g className="text-muted-foreground/30" stroke="currentColor" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          {/* Kashmir & North */}
+          <path d="M 180 80 L 185 75 L 195 72 L 205 70 L 215 69 L 225 70 L 232 73 L 238 78 L 242 85 L 245 93 L 247 102 L 248 112 L 248 122 L 246 132 L 243 140 L 238 147 L 232 152 L 225 155 L 218 157 L 210 158 L 202 157 L 195 154 L 190 150 L 185 145 L 182 138 L 180 130 L 179 120 L 180 110 L 181 100 L 182 90 L 180 80 Z" />
+          
+          {/* Gujarat & West Coast */}
+          <path d="M 95 280 L 92 270 L 90 260 L 89 250 L 90 240 L 93 232 L 97 225 L 102 220 L 108 217 L 115 216 L 122 217 L 128 220 L 133 225 L 137 232 L 140 240 L 142 250 L 143 260 L 143 270 L 142 280 L 140 290 L 137 298 L 133 305 L 128 310 L 122 313 L 115 314 L 108 313 L 102 310 L 97 305 L 93 298 L 90 290 L 88 280 Z" />
+          
+          {/* Main Peninsula - Western Coast */}
+          <path d="M 115 314 L 112 325 L 110 340 L 109 355 L 108 370 L 108 385 L 109 400 L 111 415 L 114 430 L 118 445 L 123 460 L 129 475 L 136 490 L 144 505 L 153 518 L 163 530 L 174 540 L 186 548" />
+          
+          {/* Southern tip */}
+          <path d="M 186 548 L 198 554 L 210 558 L 222 560 L 234 559 L 245 555 L 254 548" />
+          
+          {/* Eastern Coast */}
+          <path d="M 254 548 L 263 540 L 271 530 L 278 518 L 284 505 L 289 490 L 293 475 L 296 460 L 298 445 L 299 430 L 300 415 L 300 400 L 300 385 L 299 370 L 298 355 L 296 340 L 293 325 L 289 310 L 284 295 L 278 280 L 271 265 L 263 250 L 254 235 L 244 220 L 233 205 L 221 190 L 208 175 L 194 160 L 179 145" />
+          
+          {/* North-East connection */}
+          <path d="M 300 280 L 305 275 L 312 272 L 320 270 L 330 269 L 340 270 L 348 273 L 355 278 L 360 285 L 363 293 L 364 302 L 363 311 L 360 318 L 355 323 L 348 326 L 340 327 L 332 325 L 325 320" />
+          
+          {/* Connecting paths */}
+          <path d="M 179 145 L 185 140 L 192 137 L 200 135 L 208 135 L 216 137 L 223 141 L 229 147 L 233 155 L 236 165 L 237 175 L 237 185 L 236 195 L 233 205" />
+          
+          <path d="M 143 270 L 148 268 L 155 267 L 163 268 L 170 271 L 176 276 L 180 283 L 183 291 L 185 300 L 185 310 L 183 319 L 179 327 L 174 333 L 168 337 L 161 339 L 154 339 L 147 337 L 141 333 L 136 327 L 132 319 L 129 310 L 128 300 L 128 290" />
+        </g>
 
         {/* Installation dots with pulse animation */}
         {installations.map((installation, index) => {
@@ -184,14 +191,14 @@ const IndiaInstallationMap = () => {
               <circle
                 cx={x}
                 cy={y}
-                r="2.5"
+                r="3"
                 fill="currentColor"
                 className="text-primary"
               >
                 <animate
                   attributeName="r"
                   from="0"
-                  to="2.5"
+                  to="3"
                   dur="0.3s"
                   begin={`${index * 0.03}s`}
                   fill="freeze"
