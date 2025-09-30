@@ -1,25 +1,23 @@
 /**
- * Clean Development Service Worker - No Caching
+ * Production Service Worker - Basic Caching Strategy
  */
 
-// Completely disable caching in development
+const CACHE_NAME = 'ness-v1';
+
 self.addEventListener('install', (event) => {
-  console.log('💾 Clean Service Worker installed - No caching in development');
+  console.log('💾 Service Worker installed');
   self.skipWaiting();
 });
 
 self.addEventListener('activate', (event) => {
-  console.log('💾 Clean Service Worker activated - Clearing all caches');
-  
-  event.waitUntil(
-    caches.keys()
-      .then(keys => Promise.all(keys.map(key => caches.delete(key))))
-      .then(() => self.clients.claim())
-  );
+  console.log('💾 Service Worker activated');
+  event.waitUntil(self.clients.claim());
 });
 
-// Pass through all requests without any interference
+// Network-first strategy - always try network, fallback to cache
 self.addEventListener('fetch', (event) => {
-  // Let browser handle all requests normally - no caching in development
-  return;
+  event.respondWith(
+    fetch(event.request)
+      .catch(() => caches.match(event.request))
+  );
 });

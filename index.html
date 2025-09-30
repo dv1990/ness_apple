@@ -47,18 +47,6 @@
   <body>
     <div id="root"></div>
     
-    <!-- Critical Performance Script -->
-    <script>
-      // Service Worker registration for caching
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/sw.js')
-            .then(() => console.info('💾 SW registered'))
-            .catch(() => console.info('💾 SW registration failed'));
-        });
-      }
-    </script>
-    
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
