@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
@@ -36,6 +37,13 @@ import manufacturingFacility from "@/assets/manufacturing-facility.jpg";
 import officeInterior from "@/assets/office-interior.jpg";
 import nessCube from "@/assets/ness-cube-product.png";
 
+// Form validation schema
+const contactSchema = z.object({
+  company: z.string().trim().min(2, "Company name must be at least 2 characters").max(200, "Company name too long"),
+  contact: z.string().trim().min(2, "Contact name required").max(100, "Name too long"),
+  monthlySpend: z.string().trim().min(1, "Monthly spend required").max(20, "Invalid amount")
+});
+
 const CommercialEnhanced = () => {
   const [monthlySpend, setMonthlySpend] = useState("");
   const [formData, setFormData] = useState({
@@ -43,6 +51,7 @@ const CommercialEnhanced = () => {
     contact: "",
     monthlySpend: ""
   });
+  const [formErrors, setFormErrors] = useState<Record<string, string>>({});
 
   const calculateSavings = (spend: number) => {
     const annualSavings = spend * 12 * 0.42; // 42% savings
@@ -485,38 +494,63 @@ const CommercialEnhanced = () => {
           <div className="max-w-4xl mx-auto px-8 py-32">
             <div className="text-center space-y-16">
               <AppleHeadline
-                primary="Ready to never worry"
-                secondary="about power again?"
+                primary="Transform your facility's"
+                secondary="energy economics."
               />
               
               <AnimatedCard hover="glow" className="bg-card max-w-2xl mx-auto">
                 <CardContent className="pt-12 pb-12">
-                  <form className="space-y-6">
-                    <Input
-                      placeholder="Company name"
-                      className="text-lg py-6 border-2 focus:border-primary transition-colors rounded-xl"
-                      value={formData.company}
-                      onChange={(e) => setFormData(prev => ({ ...prev, company: e.target.value }))}
-                    />
-                    <Input
-                      placeholder="Your contact"
-                      className="text-lg py-6 border-2 focus:border-primary transition-colors rounded-xl"
-                      value={formData.contact}
-                      onChange={(e) => setFormData(prev => ({ ...prev, contact: e.target.value }))}
-                    />
-                    <Input
-                      placeholder="Monthly electricity spend"
-                      className="text-lg py-6 border-2 focus:border-primary transition-colors rounded-xl"
-                      value={formData.monthlySpend}
-                      onChange={(e) => setFormData(prev => ({ ...prev, monthlySpend: e.target.value }))}
-                    />
+                  <form className="space-y-6" onSubmit={(e) => {
+                    e.preventDefault();
+                    setFormErrors({});
+                    const validation = contactSchema.safeParse(formData);
+                    if (!validation.success) {
+                      const errors: Record<string, string> = {};
+                      validation.error.errors.forEach(err => {
+                        if (err.path[0]) errors[err.path[0].toString()] = err.message;
+                      });
+                      setFormErrors(errors);
+                      return;
+                    }
+                    // Handle form submission
+                    const message = `New C&I inquiry from ${encodeURIComponent(formData.company)}. Contact: ${encodeURIComponent(formData.contact)}. Monthly spend: ₹${encodeURIComponent(formData.monthlySpend)}`;
+                    window.open(`https://wa.me/919876543210?text=${message}`, '_blank');
+                  }}>
+                    <div className="space-y-2">
+                      <Input
+                        placeholder="Company name"
+                        className={`text-lg py-6 border-2 focus:border-primary transition-colors rounded-xl ${formErrors.company ? 'border-red-500' : ''}`}
+                        value={formData.company}
+                        onChange={(e) => setFormData(prev => ({ ...prev, company: e.target.value }))}
+                      />
+                      {formErrors.company && <p className="text-sm text-red-500">{formErrors.company}</p>}
+                    </div>
+                    <div className="space-y-2">
+                      <Input
+                        placeholder="Contact person name"
+                        className={`text-lg py-6 border-2 focus:border-primary transition-colors rounded-xl ${formErrors.contact ? 'border-red-500' : ''}`}
+                        value={formData.contact}
+                        onChange={(e) => setFormData(prev => ({ ...prev, contact: e.target.value }))}
+                      />
+                      {formErrors.contact && <p className="text-sm text-red-500">{formErrors.contact}</p>}
+                    </div>
+                    <div className="space-y-2">
+                      <Input
+                        placeholder="Monthly electricity spend (₹)"
+                        type="number"
+                        className={`text-lg py-6 border-2 focus:border-primary transition-colors rounded-xl ${formErrors.monthlySpend ? 'border-red-500' : ''}`}
+                        value={formData.monthlySpend}
+                        onChange={(e) => setFormData(prev => ({ ...prev, monthlySpend: e.target.value }))}
+                      />
+                      {formErrors.monthlySpend && <p className="text-sm text-red-500">{formErrors.monthlySpend}</p>}
+                    </div>
                     
                     <Button 
                       type="submit"
                       size="lg"
                       className="w-full bg-primary hover:bg-primary/90 text-white py-6 rounded-2xl text-lg hover:scale-105 transition-transform duration-300"
                     >
-                      Get free assessment in 24 hours
+                      Request Technical Consultation
                     </Button>
                   </form>
                 </CardContent>
@@ -524,7 +558,7 @@ const CommercialEnhanced = () => {
               
               <div className="flex items-center justify-center space-x-2 text-muted-foreground">
                 <Cloud className="w-4 h-4 flex-shrink-0" />
-                <span>Join 2,847 businesses saving millions</span>
+                <span>Trusted by 2,800+ industrial facilities across India</span>
               </div>
             </div>
           </div>
