@@ -70,7 +70,7 @@ const CommercialEnhanced = () => {
   return (
     <Layout>
       <div className="min-h-screen bg-background">
-        {/* Hero Section - Pure Steve Jobs Style */}
+        {/* Hero Section - Pure Steve Jobs Style for Industrial Audience */}
         <section className="min-h-screen flex items-center justify-center px-4 md:px-8 relative overflow-hidden">
           {/* Subtle gradient */}
           <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-muted/10" />
@@ -80,14 +80,14 @@ const CommercialEnhanced = () => {
               {/* The Big Idea - Ultra Minimal */}
               <div className="space-y-16 animate-fade-in">
                 <h1 className="text-7xl md:text-9xl lg:text-[12rem] font-extralight text-foreground leading-[0.85] tracking-[-0.05em]">
-                  Never
-                  <span className="block">go dark.</span>
+                  Zero
+                  <span className="block">downtime.</span>
                 </h1>
                 
                 <div className="h-px w-32 bg-primary/40 mx-auto" />
                 
                 <p className="text-2xl md:text-3xl lg:text-4xl font-light text-muted-foreground leading-relaxed max-w-4xl mx-auto">
-                  NESS
+                  Industrial energy storage that pays for itself.
                 </p>
               </div>
 
@@ -98,17 +98,17 @@ const CommercialEnhanced = () => {
                   className="bg-primary hover:bg-primary/90 text-white px-16 py-8 text-xl rounded-full"
                   onClick={() => document.getElementById('calculator')?.scrollIntoView({ behavior: 'smooth' })}
                 >
-                  See your savings
+                  Calculate ROI
                 </MagneticButton>
                 
                 <div className="flex items-center justify-center gap-8 text-sm text-muted-foreground font-light">
                   <div className="flex items-center gap-2">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                    <span>18-month payback</span>
+                    <span>42% energy cost reduction</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                    <span>25-year guarantee</span>
+                    <span>100% uptime guarantee</span>
                   </div>
                 </div>
               </div>
