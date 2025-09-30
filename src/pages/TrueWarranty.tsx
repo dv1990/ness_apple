@@ -56,7 +56,7 @@ const TrueWarranty = () => {
           <div className="text-center space-y-16">
             <div className="space-y-12">
               <blockquote className="font-display text-5xl md:text-6xl lg:text-7xl font-light text-charcoal leading-tight">
-                "At Nunam, a warranty isn't a piece of paper. It's a contract of trust."
+                "At NESS, a warranty isn't a piece of paper. It's a contract of trust."
               </blockquote>
               
               <p className="text-xl md:text-2xl font-light text-charcoal/70 max-w-3xl mx-auto leading-relaxed mt-12">
@@ -132,7 +132,7 @@ const TrueWarranty = () => {
             {/* Nunam Card */}
             <div className="bg-white rounded-2xl p-12 shadow-sm border-2 border-energy">
               <div className="space-y-8">
-                <h3 className="text-3xl font-semibold text-energy mb-12">Nunam Promise</h3>
+                <h3 className="text-3xl font-semibold text-energy mb-12">NESS Promise</h3>
                 
                 <div className="space-y-6">
                   <div className="flex items-start space-x-4 pb-6 border-b border-charcoal/10">
