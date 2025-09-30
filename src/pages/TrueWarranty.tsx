@@ -159,8 +159,8 @@ const TrueWarranty = () => {
                       <Check className="w-3 h-3 text-foreground" strokeWidth={2.5} />
                     </div>
                     <div>
-                      <p className="font-medium text-foreground text-base mb-0.5">After 5 Years</p>
-                      <p className="text-muted-foreground text-sm">Full replacement coverage</p>
+                      <p className="font-medium text-foreground text-base mb-0.5">All 10 Years</p>
+                      <p className="text-muted-foreground text-sm">Full replacement coverage or pro rata refund</p>
                     </div>
                   </div>
                   
