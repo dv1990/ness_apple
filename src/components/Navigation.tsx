@@ -13,7 +13,8 @@ import {
   Wrench,
   Cpu,
   LayoutGrid,
-  ChevronDown
+  ChevronDown,
+  Shield
 } from "lucide-react";
 
 const Navigation = () => {
@@ -28,7 +29,8 @@ const Navigation = () => {
     { label: "Home", href: "/homeowners", icon: Home },
     { label: "Business", href: "/ci", icon: Building2 },
     { label: "Installers", href: "/installers", icon: Wrench },
-    { label: "Technology", href: "/technology", icon: Cpu }
+    { label: "Technology", href: "/technology", icon: Cpu },
+    { label: "Warranty", href: "/warranty", icon: Shield }
   ];
 
   const companyItems = [
