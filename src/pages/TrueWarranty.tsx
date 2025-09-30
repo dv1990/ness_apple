@@ -45,7 +45,7 @@ const TrueWarranty = () => {
             
             <h1 className="font-extralight text-5xl sm:text-6xl md:text-8xl lg:text-9xl text-foreground leading-[0.9] tracking-tight animate-fade-in">
               Not a number.<br />
-              <span className="text-primary font-light">A promise.</span>
+              but <span className="text-primary font-light">A promise.</span>
             </h1>
             
             <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-light text-muted-foreground max-w-2xl mx-auto leading-relaxed mt-8 md:mt-16 animate-fade-in">
