@@ -14,7 +14,8 @@ import {
   X,
   Factory,
   Users,
-  Phone
+  Phone,
+  Shield
 } from "lucide-react";
 
 const NavigationEnhanced = () => {
@@ -39,6 +40,7 @@ const NavigationEnhanced = () => {
     { label: "Homeowners", href: "/homeowners", icon: Home, description: "NESS PRO for homes" },
     { label: "C&I", href: "/ci", icon: Building2, description: "POD & CUBE systems" },
     { label: "Installers", href: "/installers", icon: Wrench, description: "Partner with NESS" },
+    { label: "Warranty", href: "/warranty", icon: Shield, description: "Trust that matters" },
     { label: "Technology", href: "/technology", icon: Cpu, description: "Innovation deep dive" }
   ];
 
