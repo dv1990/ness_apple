@@ -70,57 +70,58 @@ const CommercialEnhanced = () => {
   return (
     <Layout>
       <div className="min-h-screen bg-background">
-        {/* Hero Section - Steve Jobs Style */}
-        <EmotionalHero className="min-h-screen">
-          <div className="space-y-16">
-            <AppleHeadline
-              primary="Your business never stops."
-              secondary="Why should your power?"
-              accent="Introducing intelligent energy systems that think faster than demand charges."
-            />
+        {/* Hero Section - Pure Steve Jobs Style */}
+        <section className="min-h-screen flex items-center justify-center px-4 md:px-8 relative overflow-hidden">
+          {/* Subtle gradient */}
+          <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-muted/10" />
+          
+          <div className="relative z-10 max-w-6xl mx-auto text-center">
+            <div className="space-y-24">
+              {/* The Big Idea - Ultra Minimal */}
+              <div className="space-y-16 animate-fade-in">
+                <h1 className="text-7xl md:text-9xl lg:text-[12rem] font-extralight text-foreground leading-[0.85] tracking-[-0.05em]">
+                  Never
+                  <span className="block">go dark.</span>
+                </h1>
+                
+                <div className="h-px w-32 bg-primary/40 mx-auto" />
+                
+                <p className="text-2xl md:text-3xl lg:text-4xl font-light text-muted-foreground leading-relaxed max-w-4xl mx-auto">
+                  NESS
+                </p>
+              </div>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-              <MagneticButton 
-                size="lg"
-                className="bg-primary hover:bg-primary/90 text-white px-12 py-6 text-lg rounded-2xl"
-                onClick={() => document.getElementById('calculator')?.scrollIntoView({ behavior: 'smooth' })}
-              >
-                Calculate Your Savings
-                <ArrowRight className="ml-3 w-5 h-5" />
-              </MagneticButton>
-            </div>
-
-            {/* Quick Stats - Minimalist */}
-            <div className="grid md:grid-cols-3 gap-16 pt-12 max-w-5xl mx-auto">
-              <FloatingCard delay={100}>
-                <div className="text-center space-y-2">
-                  <div className="text-6xl font-extralight text-foreground">60%</div>
-                  <div className="text-sm text-muted-foreground font-light tracking-wide">Peak Reduction</div>
+              {/* Minimal CTA */}
+              <div className="space-y-8">
+                <MagneticButton 
+                  size="lg"
+                  className="bg-primary hover:bg-primary/90 text-white px-16 py-8 text-xl rounded-full"
+                  onClick={() => document.getElementById('calculator')?.scrollIntoView({ behavior: 'smooth' })}
+                >
+                  See your savings
+                </MagneticButton>
+                
+                <div className="flex items-center justify-center gap-8 text-sm text-muted-foreground font-light">
+                  <div className="flex items-center gap-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                    <span>18-month payback</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                    <span>25-year guarantee</span>
+                  </div>
                 </div>
-              </FloatingCard>
-              <FloatingCard delay={200}>
-                <div className="text-center space-y-2">
-                  <div className="text-6xl font-extralight text-foreground">18mo</div>
-                  <div className="text-sm text-muted-foreground font-light tracking-wide">ROI Period</div>
-                </div>
-              </FloatingCard>
-              <FloatingCard delay={300}>
-                <div className="text-center space-y-2">
-                  <div className="text-6xl font-extralight text-foreground">₹2.4Cr</div>
-                  <div className="text-sm text-muted-foreground font-light tracking-wide">10-Year Value</div>
-                </div>
-              </FloatingCard>
-            </div>
-
-            <div className="pt-12">
-              <img
-                src={industrialHero}
-                alt="Modern industrial facility powered by NESS energy storage"
-                className="w-full max-w-4xl mx-auto rounded-2xl shadow-2xl"
-              />
+              </div>
             </div>
           </div>
-        </EmotionalHero>
+
+          {/* Scroll indicator */}
+          <div className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce">
+            <div className="w-6 h-10 border-2 border-muted-foreground/30 rounded-full flex items-start justify-center p-2">
+              <div className="w-1 h-2 bg-muted-foreground/30 rounded-full" />
+            </div>
+          </div>
+        </section>
 
         {/* Human Benefits - The Real Value */}
         <StorySection background="muted">
