@@ -29,8 +29,8 @@ const Navigation = () => {
     { label: "Home", href: "/homeowners", icon: Home },
     { label: "Business", href: "/ci", icon: Building2 },
     { label: "Installers", href: "/installers", icon: Wrench },
-    { label: "Technology", href: "/technology", icon: Cpu },
-    { label: "Warranty", href: "/warranty", icon: Shield }
+    { label: "Warranty", href: "/warranty", icon: Shield },
+    { label: "Technology", href: "/technology", icon: Cpu }
   ];
 
   const companyItems = [
