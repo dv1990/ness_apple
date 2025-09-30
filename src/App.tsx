@@ -57,7 +57,6 @@ const PageLoadingFallback = () => (
 const routeConfig = [];
 
 const App = () => {
-  // No performance optimizations in development - keep it simple
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
@@ -65,8 +64,8 @@ const App = () => {
         <Sonner />
         <ScrollProgressBar />
         <BrowserRouter>
-          <RouteLazyLoader>
-          <Routes>
+          <Suspense fallback={<PageLoadingFallback />}>
+            <Routes>
           {/* Overview (Landing) */}
           <Route path="/" element={<IndexEnhanced />} />
           
@@ -116,12 +115,12 @@ const App = () => {
           
           {/* 404 Catch-all */}
           <Route path="*" element={<NotFound />} />
-          </Routes>
-        </RouteLazyLoader>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+            </Routes>
+          </Suspense>
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  );
 };
 
 export default App;
