@@ -5,7 +5,7 @@ import { Check, X, AlertTriangle } from "lucide-react";
 import { Link } from "react-router-dom";
 
 // Import images
-import heroHomeowners from "@/assets/hero-homeowners.jpg";
+import warrantyHero from "@/assets/warranty-hero-trust.jpg";
 
 const TrueWarranty = () => {
   useEffect(() => {
@@ -26,7 +26,7 @@ const TrueWarranty = () => {
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20" 
-          style={{ backgroundImage: `url(${heroHomeowners})` }}
+          style={{ backgroundImage: `url(${warrantyHero})` }}
         />
         
         {/* Content */}
