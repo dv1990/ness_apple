@@ -75,77 +75,71 @@ const TrueWarranty = () => {
       </section>
 
       {/* 3) Comparison — Market vs. NESS */}
-      <section className="py-24 md:py-40 lg:py-48 bg-whisper">
+      <section className="py-24 md:py-40 lg:py-48 bg-background">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           {/* Section header */}
-          <div className="text-center mb-16 md:mb-24">
-            <h2 className="text-5xl sm:text-6xl md:text-7xl font-extralight text-foreground mb-6 leading-tight tracking-tight">
+          <div className="text-center mb-20 md:mb-32">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-extralight text-foreground mb-6 leading-tight tracking-tight">
               The difference is<br />
               <span className="font-light">crystal clear</span>
             </h2>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
             
             {/* Market Card */}
-            <div className="bg-background rounded-3xl p-10 md:p-12 shadow-sm border border-border relative overflow-hidden animate-fade-in">
-              {/* Orange accent bar */}
-              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-400 via-orange-500 to-amber-400"></div>
-              
-              <div className="space-y-8 md:space-y-10">
-                <div className="flex items-center justify-between">
-                  <h3 className="text-3xl sm:text-4xl font-semibold text-foreground">Market Standard</h3>
-                  <div className="bg-muted/60 px-5 py-2.5 rounded-full">
-                    <span className="text-xs font-medium text-muted-foreground uppercase tracking-widest">Industry Norm</span>
-                  </div>
+            <div className="bg-background rounded-2xl p-8 md:p-10 border border-border/40 animate-fade-in">
+              <div className="space-y-8">
+                <div className="pb-4 border-b border-border/50">
+                  <h3 className="text-2xl font-light text-foreground/60">Market Standard</h3>
                 </div>
                 
-                <div className="space-y-6">
-                  <div className="flex items-start space-x-4 pb-6 border-b border-border/60">
-                    <X className="w-6 h-6 text-red-500 flex-shrink-0 mt-1" />
+                <div className="space-y-5">
+                  <div className="flex items-start space-x-3">
+                    <div className="w-5 h-5 rounded-full border border-muted-foreground/30 flex-shrink-0 mt-0.5"></div>
                     <div>
-                      <p className="font-semibold text-foreground text-lg mb-1">After 5 Years</p>
-                      <p className="text-muted-foreground text-base">Repair-only, no replacement</p>
+                      <p className="font-medium text-foreground/80 text-base mb-0.5">After 5 Years</p>
+                      <p className="text-muted-foreground text-sm">Repair-only, no replacement</p>
                     </div>
                   </div>
                   
-                  <div className="flex items-start space-x-4 pb-6 border-b border-border/60">
-                    <AlertTriangle className="w-6 h-6 text-amber-500 flex-shrink-0 mt-1" />
+                  <div className="flex items-start space-x-3">
+                    <div className="w-5 h-5 rounded-full border border-muted-foreground/30 flex-shrink-0 mt-0.5"></div>
                     <div>
-                      <p className="font-semibold text-foreground text-lg mb-1">Test Conditions</p>
-                      <p className="text-muted-foreground text-base">25 °C lab cycles, gentle usage</p>
+                      <p className="font-medium text-foreground/80 text-base mb-0.5">Test Conditions</p>
+                      <p className="text-muted-foreground text-sm">25 °C lab cycles, gentle usage</p>
                     </div>
                   </div>
                   
-                  <div className="flex items-start space-x-4 pb-6 border-b border-border/60">
-                    <X className="w-6 h-6 text-red-500 flex-shrink-0 mt-1" />
+                  <div className="flex items-start space-x-3">
+                    <div className="w-5 h-5 rounded-full border border-muted-foreground/30 flex-shrink-0 mt-0.5"></div>
                     <div>
-                      <p className="font-semibold text-foreground text-lg mb-1">Fine Print</p>
-                      <p className="text-muted-foreground text-base">Complex exclusions & asterisks</p>
+                      <p className="font-medium text-foreground/80 text-base mb-0.5">Fine Print</p>
+                      <p className="text-muted-foreground text-sm">Complex exclusions & asterisks</p>
                     </div>
                   </div>
                   
-                  <div className="flex items-start space-x-4 pb-6 border-b border-border/60">
-                    <AlertTriangle className="w-6 h-6 text-amber-500 flex-shrink-0 mt-1" />
+                  <div className="flex items-start space-x-3">
+                    <div className="w-5 h-5 rounded-full border border-muted-foreground/30 flex-shrink-0 mt-0.5"></div>
                     <div>
-                      <p className="font-semibold text-foreground text-lg mb-1">Support</p>
-                      <p className="text-muted-foreground text-base">Reactive ticketing</p>
+                      <p className="font-medium text-foreground/80 text-base mb-0.5">Support</p>
+                      <p className="text-muted-foreground text-sm">Reactive ticketing</p>
                     </div>
                   </div>
                   
-                  <div className="flex items-start space-x-4 pb-6 border-b border-border/60">
-                    <X className="w-6 h-6 text-red-500 flex-shrink-0 mt-1" />
+                  <div className="flex items-start space-x-3">
+                    <div className="w-5 h-5 rounded-full border border-muted-foreground/30 flex-shrink-0 mt-0.5"></div>
                     <div>
-                      <p className="font-semibold text-foreground text-lg mb-1">Accountability</p>
-                      <p className="text-muted-foreground text-base">Blame-shift to "misuse"</p>
+                      <p className="font-medium text-foreground/80 text-base mb-0.5">Accountability</p>
+                      <p className="text-muted-foreground text-sm">Blame-shift to "misuse"</p>
                     </div>
                   </div>
                   
-                  <div className="flex items-start space-x-4">
-                    <AlertTriangle className="w-6 h-6 text-amber-500 flex-shrink-0 mt-1" />
+                  <div className="flex items-start space-x-3">
+                    <div className="w-5 h-5 rounded-full border border-muted-foreground/30 flex-shrink-0 mt-0.5"></div>
                     <div>
-                      <p className="font-semibold text-foreground text-lg mb-1">Value</p>
-                      <p className="text-muted-foreground text-base">A number on paper</p>
+                      <p className="font-medium text-foreground/80 text-base mb-0.5">Value</p>
+                      <p className="text-muted-foreground text-sm">A number on paper</p>
                     </div>
                   </div>
                 </div>
@@ -153,73 +147,70 @@ const TrueWarranty = () => {
             </div>
 
             {/* NESS Card */}
-            <div className="bg-charcoal rounded-3xl p-10 md:p-12 shadow-2xl relative overflow-hidden animate-fade-in">
-              {/* Top badge */}
-              <div className="absolute -top-px -right-px bg-foreground text-background px-8 py-3 rounded-bl-3xl">
-                <span className="text-xs font-bold uppercase tracking-widest">Our Promise</span>
-              </div>
-              
-              <div className="space-y-8 md:space-y-10 mt-8">
-                <h3 className="text-3xl sm:text-4xl font-semibold text-pearl">NESS Promise</h3>
+            <div className="bg-background rounded-2xl p-8 md:p-10 border border-foreground/20 animate-fade-in">
+              <div className="space-y-8">
+                <div className="pb-4 border-b border-foreground/20">
+                  <h3 className="text-2xl font-light text-foreground">NESS Promise</h3>
+                </div>
                 
-                <div className="space-y-6">
-                  <div className="flex items-start space-x-4 pb-6 border-b border-pearl/20">
-                    <div className="w-7 h-7 bg-pearl rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <Check className="w-5 h-5 text-charcoal" />
+                <div className="space-y-5">
+                  <div className="flex items-start space-x-3">
+                    <div className="w-5 h-5 rounded-full bg-foreground/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Check className="w-3 h-3 text-foreground" strokeWidth={2.5} />
                     </div>
                     <div>
-                      <p className="font-semibold text-pearl text-lg mb-1">After 5 Years</p>
-                      <p className="text-pearl/70 text-base">Full replacement coverage</p>
+                      <p className="font-medium text-foreground text-base mb-0.5">After 5 Years</p>
+                      <p className="text-muted-foreground text-sm">Full replacement coverage</p>
                     </div>
                   </div>
                   
-                  <div className="flex items-start space-x-4 pb-6 border-b border-pearl/20">
-                    <div className="w-7 h-7 bg-pearl rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <Check className="w-5 h-5 text-charcoal" />
+                  <div className="flex items-start space-x-3">
+                    <div className="w-5 h-5 rounded-full bg-foreground/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Check className="w-3 h-3 text-foreground" strokeWidth={2.5} />
                     </div>
                     <div>
-                      <p className="font-semibold text-pearl text-lg mb-1">Test Conditions</p>
-                      <p className="text-pearl/70 text-base">Real-world heat, real loads</p>
+                      <p className="font-medium text-foreground text-base mb-0.5">Test Conditions</p>
+                      <p className="text-muted-foreground text-sm">Real-world heat, real loads</p>
                     </div>
                   </div>
                   
-                  <div className="flex items-start space-x-4 pb-6 border-b border-pearl/20">
-                    <div className="w-7 h-7 bg-pearl rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <Check className="w-5 h-5 text-charcoal" />
+                  <div className="flex items-start space-x-3">
+                    <div className="w-5 h-5 rounded-full bg-foreground/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Check className="w-3 h-3 text-foreground" strokeWidth={2.5} />
                     </div>
                     <div>
-                      <p className="font-semibold text-pearl text-lg mb-1">Fine Print</p>
-                      <p className="text-pearl/70 text-base">Transparent, plain-language terms</p>
+                      <p className="font-medium text-foreground text-base mb-0.5">Fine Print</p>
+                      <p className="text-muted-foreground text-sm">Transparent, plain-language terms</p>
                     </div>
                   </div>
                   
-                  <div className="flex items-start space-x-4 pb-6 border-b border-pearl/20">
-                    <div className="w-7 h-7 bg-pearl rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <Check className="w-5 h-5 text-charcoal" />
+                  <div className="flex items-start space-x-3">
+                    <div className="w-5 h-5 rounded-full bg-foreground/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Check className="w-3 h-3 text-foreground" strokeWidth={2.5} />
                     </div>
                     <div>
-                      <p className="font-semibold text-pearl text-lg mb-1">Support</p>
-                      <p className="text-pearl/70 text-base">Proactive monitoring + predictive care</p>
+                      <p className="font-medium text-foreground text-base mb-0.5">Support</p>
+                      <p className="text-muted-foreground text-sm">Proactive monitoring + predictive care</p>
                     </div>
                   </div>
                   
-                  <div className="flex items-start space-x-4 pb-6 border-b border-pearl/20">
-                    <div className="w-7 h-7 bg-pearl rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <Check className="w-5 h-5 text-charcoal" />
+                  <div className="flex items-start space-x-3">
+                    <div className="w-5 h-5 rounded-full bg-foreground/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Check className="w-3 h-3 text-foreground" strokeWidth={2.5} />
                     </div>
                     <div>
-                      <p className="font-semibold text-pearl text-lg mb-1">Accountability</p>
-                      <p className="text-pearl/70 text-base">We stand with you</p>
+                      <p className="font-medium text-foreground text-base mb-0.5">Accountability</p>
+                      <p className="text-muted-foreground text-sm">We stand with you</p>
                     </div>
                   </div>
                   
-                  <div className="flex items-start space-x-4">
-                    <div className="w-7 h-7 bg-pearl rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <Check className="w-5 h-5 text-charcoal" />
+                  <div className="flex items-start space-x-3">
+                    <div className="w-5 h-5 rounded-full bg-foreground/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Check className="w-3 h-3 text-foreground" strokeWidth={2.5} />
                     </div>
                     <div>
-                      <p className="font-semibold text-pearl text-lg mb-1">Value</p>
-                      <p className="text-pearl/70 text-base">Peace of mind, guaranteed</p>
+                      <p className="font-medium text-foreground text-base mb-0.5">Value</p>
+                      <p className="text-muted-foreground text-sm">Peace of mind, guaranteed</p>
                     </div>
                   </div>
                 </div>
