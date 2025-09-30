@@ -427,7 +427,7 @@ const CommercialEnhanced = () => {
           <div id="calculator" className="max-w-4xl mx-auto px-8 py-32">
             <div className="text-center mb-16">
               <AppleHeadline
-                primary="Your business is unique."
+                primary="Your business needs are unique."
                 secondary="Your savings will be too."
               />
             </div>
