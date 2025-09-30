@@ -272,6 +272,17 @@ const IndexEnhanced = () => {
                     No random claim of 10000 cycles, we standby our batteries and you.
                   </p>
                   
+                  {/* Learn More Link */}
+                  <div className="pt-8 flex justify-end">
+                    <Link 
+                      to="/warranty" 
+                      className="group inline-flex items-center space-x-3 text-lg font-light text-foreground hover:text-energy transition-colors duration-700"
+                    >
+                      <span className="tracking-wide">Discover True Warranty</span>
+                      <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-700" />
+                    </Link>
+                  </div>
+                  
                   {/* Timeline Visual */}
                   <div className="pt-8 flex justify-end">
                     <div className="flex items-center space-x-2">

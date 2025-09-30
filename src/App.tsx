@@ -16,6 +16,7 @@ const InstallersEnhanced = lazy(() => import("./pages/InstallersEnhanced"));
 const CommercialEnhanced = lazy(() => import("./pages/CommercialEnhanced"));
 const TechnologyEnhanced = lazy(() => import("./pages/TechnologyEnhanced"));
 const ContactEnhanced = lazy(() => import("./pages/ContactEnhanced"));
+const TrueWarranty = lazy(() => import("./pages/TrueWarranty"));
 
 // Legacy components - lazy loaded
 const Residential = lazy(() => import("./pages/Residential"));
@@ -80,6 +81,7 @@ const App = () => {
           <Route path="/ci" element={<CommercialEnhanced />} />
           <Route path="/installers" element={<InstallersEnhanced />} />
           <Route path="/technology" element={<Technology />} />
+          <Route path="/warranty" element={<TrueWarranty />} />
           <Route path="/find-installer" element={<FindInstaller />} />
           
           {/* Company Routes */}
