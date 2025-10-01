@@ -1,83 +1,40 @@
 /**
- * Performance Monitoring System
- * Tracks and optimizes website performance
+ * Lightweight Performance Monitoring
+ * Essential metrics only for production
  */
 
-interface PerformanceMetrics {
-  loadTime: number;
-  renderTime: number;
-  interactionTime: number;
-  cumulativeLayoutShift: number;
-}
+// Only run in development
+const isDev = import.meta.env.DEV;
 
-class PerformanceMonitor {
-  private metrics: PerformanceMetrics = {
-    loadTime: 0,
-    renderTime: 0,
-    interactionTime: 0,
-    cumulativeLayoutShift: 0
-  };
-
-  constructor() {
-    if (typeof window !== 'undefined') {
-      this.initializeObservers();
-    }
-  }
-
-  private initializeObservers() {
-    // Cumulative Layout Shift Observer
-    if ('LayoutShiftList' in window) {
-      const observer = new PerformanceObserver((list) => {
-        for (const entry of list.getEntries()) {
-          if (!(entry as any).hadRecentInput) {
-            this.metrics.cumulativeLayoutShift += (entry as any).value;
-          }
-        }
-      });
-      observer.observe({ entryTypes: ['layout-shift'] });
-    }
-
-    // First Input Delay Observer
-    if ('PerformanceEventTiming' in window) {
-      const observer = new PerformanceObserver((list) => {
-        for (const entry of list.getEntries()) {
-          this.metrics.interactionTime = (entry as any).processingStart - entry.startTime;
-        }
-      });
-      observer.observe({ entryTypes: ['first-input'] });
-    }
-
-    // Core Web Vitals tracking
-    this.trackCoreWebVitals();
-  }
-
-  private trackCoreWebVitals() {
-    // Track when page becomes interactive
-    document.addEventListener('DOMContentLoaded', () => {
-      this.metrics.renderTime = performance.now();
-    });
-
-    window.addEventListener('load', () => {
-      this.metrics.loadTime = performance.now();
-      this.reportMetrics();
-    });
-  }
-
-  private reportMetrics() {
-    if (process.env.NODE_ENV === 'development') {
-      console.group('🚀 Performance Metrics');
-      console.log('Load Time:', `${this.metrics.loadTime.toFixed(2)}ms`);
-      console.log('Render Time:', `${this.metrics.renderTime.toFixed(2)}ms`);
-      console.log('Interaction Time:', `${this.metrics.interactionTime.toFixed(2)}ms`);
-      console.log('Cumulative Layout Shift:', this.metrics.cumulativeLayoutShift.toFixed(4));
-      console.groupEnd();
-    }
-  }
-
-  // Public method to track custom performance marks
-  public markFeature(name: string) {
-    performance.mark(`feature-${name}-start`);
+export const performanceMonitor = {
+  // Track component render (no-op in production)
+  trackComponentRender: (componentName: string) => {
+    if (!isDev) return () => {};
     
+    const startTime = performance.now();
+    return () => {
+      const renderTime = performance.now() - startTime;
+      if (renderTime > 16) {
+        console.warn(`Slow render (${renderTime.toFixed(2)}ms):`, componentName);
+      }
+    };
+  },
+
+  // Track image loading (no-op in production)
+  trackImageLoad: (src: string, startTime: number) => {
+    if (!isDev) return;
+    
+    const loadTime = performance.now() - startTime;
+    if (loadTime > 1000) {
+      console.warn(`Slow image (${loadTime.toFixed(2)}ms):`, src);
+    }
+  },
+
+  // Mark feature performance (no-op in production)
+  markFeature: (name: string) => {
+    if (!isDev) return { end: () => {} };
+    
+    performance.mark(`feature-${name}-start`);
     return {
       end: () => {
         performance.mark(`feature-${name}-end`);
@@ -85,34 +42,11 @@ class PerformanceMonitor {
       }
     };
   }
-
-  // Image loading performance tracker
-  public trackImageLoad(src: string, startTime: number) {
-    const loadTime = performance.now() - startTime;
-    if (loadTime > 1000) { // Warn about slow images
-      console.warn(`🐌 Slow image load (${loadTime.toFixed(2)}ms):`, src);
-    }
-  }
-
-  // Component render performance tracker
-  public trackComponentRender(componentName: string) {
-    const startTime = performance.now();
-    
-    return () => {
-      const renderTime = performance.now() - startTime;
-      if (renderTime > 16) { // Warn about slow renders (>1 frame at 60fps)
-        console.warn(`🐌 Slow component render (${renderTime.toFixed(2)}ms):`, componentName);
-      }
-    };
-  }
-}
-
-// Singleton instance
-export const performanceMonitor = new PerformanceMonitor();
+};
 
 // React hook for performance tracking
 export const usePerformanceTracking = (componentName: string) => {
-  if (process.env.NODE_ENV === 'development') {
+  if (isDev) {
     const endTracking = performanceMonitor.trackComponentRender(componentName);
     return { endTracking };
   }

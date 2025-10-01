@@ -4,7 +4,6 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ScrollProgressBar } from "@/components/ScrollProgressBar";
-import { RouteLazyLoader } from "@/components/ui/route-lazy-loader";
 import React, { Suspense, lazy } from 'react';
 
 // Apple-level code splitting - Critical path only

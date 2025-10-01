@@ -1,6 +1,6 @@
 /**
- * Apple-level Image Optimization System
- * Handles WebP conversion, lazy loading, and performance monitoring
+ * Image Optimization System
+ * Handles WebP conversion and lazy loading
  */
 
 // Image format detection and optimization with fallback
@@ -31,15 +31,10 @@ export const getImageWithFallback = (src: string): { webp: string; fallback: str
   };
 };
 
-// Performance monitoring for images
+// Track image load (development only)
 export const trackImageLoad = (src: string, loadTime: number) => {
-  if (typeof window !== 'undefined' && window.performance) {
-    console.info(`🖼️ Image loaded: ${src} (${loadTime}ms)`);
-    
-    // Track Core Web Vitals impact
-    if (loadTime > 2000) {
-      console.warn(`⚠️ Slow image load: ${src} took ${loadTime}ms`);
-    }
+  if (import.meta.env.DEV && loadTime > 2000) {
+    console.warn(`⚠️ Slow image load: ${src} took ${loadTime}ms`);
   }
 };
 
@@ -50,14 +45,12 @@ export const preloadCriticalImages = (imageSrcs: string[]) => {
   imageSrcs.forEach(src => {
     const optimizedSrc = getOptimizedImageSrc(src);
     
-    // Create WebP preload link
     const webpLink = document.createElement('link');
     webpLink.rel = 'preload';
     webpLink.as = 'image';
     webpLink.href = optimizedSrc;
     webpLink.type = 'image/webp';
     
-    // Create fallback preload link
     const fallbackLink = document.createElement('link');
     fallbackLink.rel = 'preload';
     fallbackLink.as = 'image';
@@ -82,22 +75,20 @@ export const createLazyLoadObserver = (callback: (entries: IntersectionObserverE
 export const getOptimalQuality = (): number => {
   if (typeof window === 'undefined') return 80;
 
-  // Check connection speed
   const connection = (navigator as any).connection;
   if (connection) {
     if (connection.effectiveType === 'slow-2g' || connection.effectiveType === '2g') {
-      return 60; // Lower quality for slow connections
+      return 60;
     }
     if (connection.effectiveType === '3g') {
       return 70;
     }
   }
 
-  // Check device pixel ratio
   const dpr = window.devicePixelRatio || 1;
   if (dpr > 2) {
-    return 85; // Higher quality for high-DPI displays
+    return 85;
   }
 
-  return 80; // Default quality
+  return 80;
 };

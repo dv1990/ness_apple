@@ -22,11 +22,6 @@ const IndexEnhanced = () => {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
 
   useEffect(() => {
-    // Initialize critical resource loading for instant performance
-    import('@/lib/critical-resource-loader').then(({ initializeCriticalLoading }) => {
-      initializeCriticalLoading();
-    });
-    
     // Add smooth scroll behavior
     document.documentElement.style.scrollBehavior = 'smooth';
     return () => {
