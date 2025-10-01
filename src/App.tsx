@@ -18,9 +18,6 @@ const ContactEnhanced = lazy(() => import("./pages/ContactEnhanced"));
 const TrueWarranty = lazy(() => import("./pages/TrueWarranty"));
 
 // Legacy components - lazy loaded
-const Residential = lazy(() => import("./pages/Residential"));
-const Commercial = lazy(() => import("./pages/Commercial"));
-const Installers = lazy(() => import("./pages/Installers"));
 const Hiring = lazy(() => import("./pages/Hiring"));
 const FindInstaller = lazy(() => import("./pages/FindInstaller"));
 const About = lazy(() => import("./pages/company/About"));
@@ -28,7 +25,6 @@ const News = lazy(() => import("./pages/company/News"));
 const NewsArticle = lazy(() => import("./pages/company/NewsArticle"));
 const KnowledgeHub = lazy(() => import("./pages/KnowledgeHub"));
 const KnowledgeArticle = lazy(() => import("./pages/KnowledgeArticle"));
-const Contact = lazy(() => import("./pages/Contact"));
 const ContactHomeowner = lazy(() => import("./pages/contact/ContactHomeowner"));
 const ContactDistributor = lazy(() => import("./pages/contact/ContactDistributor"));
 const ContactInstaller = lazy(() => import("./pages/contact/ContactInstaller"));
@@ -38,8 +34,6 @@ const Downloads = lazy(() => import("./pages/Downloads"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
-
-// Critical images preloaded per page to avoid conflicts
 
 // Loading fallback component with skeleton
 const PageLoadingFallback = () => (
