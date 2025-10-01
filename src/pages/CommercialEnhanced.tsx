@@ -30,6 +30,7 @@ import {
   MagneticButton,
   FloatingCard,
 } from "@/components/EnhancedInteractions";
+import { WebPImage } from "@/components/ui/webp-image";
 
 // Import images - they'll be lazy-loaded via WebPImage component
 import industrialHero from "@/assets/industrial-complex-hero.jpg";
@@ -311,7 +312,7 @@ const CommercialEnhanced = () => {
                 </div>
 
                 <div className="pt-6">
-                  <img
+                  <WebPImage
                     src={manufacturingFacility}
                     alt="Apex Manufacturing facility with NESS energy storage"
                     className="w-full rounded-xl"
@@ -389,7 +390,7 @@ const CommercialEnhanced = () => {
             <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
               <AnimatedCard animation="fade-up" delay={0} hover="lift">
                 <CardContent className="pt-8 space-y-6">
-                  <img
+                  <WebPImage
                     src={officeInterior}
                     alt="TechPark Bangalore powered by NESS energy storage"
                     className="w-full h-48 object-cover rounded-lg"
@@ -405,7 +406,7 @@ const CommercialEnhanced = () => {
 
               <AnimatedCard animation="fade-up" delay={100} hover="lift">
                 <CardContent className="pt-8 space-y-6">
-                  <img
+                  <WebPImage
                     src={nessCube}
                     alt="Hospital facility with NESS backup power"
                     className="w-full h-48 object-contain rounded-lg bg-muted/20"

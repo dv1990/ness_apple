@@ -8,6 +8,7 @@ import { ArrowRight, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 import { MagneticButton, PlayButton, FloatingCard, ParallaxContainer } from "@/components/EnhancedInteractions";
 import { Play, Check, Zap, Sparkles, Shield, Battery, Home, Star, Quote } from "lucide-react";
+import { WebPImage } from "@/components/ui/webp-image";
 
 // Import images - they'll be lazy-loaded via WebPImage component
 import heroHomeowners from "@/assets/hero-homeowners.jpg";
@@ -38,9 +39,12 @@ const IndexEnhanced = () => {
       {/* Hero Section - Sonos Inspired "Feel Every Play" Style */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background Image - High Impact Visual - Optimized WebP */}
-        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
-          backgroundImage: `url(${heroHomeowners})`
-        }} />
+        <WebPImage 
+          src={heroHomeowners}
+          alt="Modern home with NESS energy system"
+          className="absolute inset-0"
+          priority={true}
+        />
         
         {/* Premium Dark Overlay for Typography */}
         <div className="absolute inset-0 bg-charcoal/60"></div>
@@ -91,10 +95,10 @@ const IndexEnhanced = () => {
         {/* Floating Product - Follows the narrative */}
         <div className="fixed right-8 top-1/2 -translate-y-1/2 w-80 h-80 z-20 pointer-events-none opacity-0 animate-fade-in hidden lg:block">
           <div className="relative w-full h-full">
-            <img 
+            <WebPImage 
               src={nessProProduct} 
               alt="NESS Pro - Energy redefined" 
-              className="w-full h-full object-contain opacity-40 group-hover:opacity-60 transition-opacity duration-1000 ease-out" 
+              className="w-full h-full object-contain opacity-40 group-hover:opacity-60 transition-opacity duration-1000 ease-out"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-transparent"></div>
           </div>
@@ -146,10 +150,10 @@ const IndexEnhanced = () => {
               {/* Philosophy Image */}
               <div className="relative lg:order-2">
                 <div className="aspect-[4/3] overflow-hidden rounded-sm">
-                  <img 
+                  <WebPImage 
                     src={heroHomeowners} 
                     alt="Luxury home with NESS energy system" 
-                    className="w-full h-full object-cover opacity-60 hover:opacity-80 transition-opacity duration-700 hover:scale-105 transition-transform" 
+                    className="w-full h-full object-cover opacity-60 hover:opacity-80 transition-opacity duration-700 hover:scale-105 transition-transform"
                   />
                   <div className="absolute inset-0 bg-gradient-to-r from-background/20 via-transparent to-transparent"></div>
                 </div>
@@ -161,10 +165,10 @@ const IndexEnhanced = () => {
               {/* Craftsmanship Image */}
               <div className="relative lg:order-1">
                 <div className="aspect-[4/3] overflow-hidden rounded-sm">
-                  <img 
+                  <WebPImage 
                     src={rdLaboratory} 
                     alt="R&D laboratory precision engineering" 
-                    className="w-full h-full object-cover opacity-60 hover:opacity-80 transition-opacity duration-700 hover:scale-105 transition-transform" 
+                    className="w-full h-full object-cover opacity-60 hover:opacity-80 transition-opacity duration-700 hover:scale-105 transition-transform"
                   />
                   <div className="absolute inset-0 bg-gradient-to-l from-background/20 via-transparent to-transparent"></div>
                 </div>
@@ -231,10 +235,10 @@ const IndexEnhanced = () => {
               {/* Engineering Image */}
               <div className="relative lg:order-2">
                 <div className="aspect-[4/3] overflow-hidden rounded-sm">
-                  <img 
+                  <WebPImage 
                     src={batteryTechnology} 
                     alt="Advanced battery technology and precision engineering" 
-                    className="w-full h-full object-cover opacity-60 hover:opacity-80 transition-opacity duration-700 hover:scale-105 transition-transform" 
+                    className="w-full h-full object-cover opacity-60 hover:opacity-80 transition-opacity duration-700 hover:scale-105 transition-transform"
                   />
                   <div className="absolute inset-0 bg-gradient-to-r from-background/20 via-transparent to-transparent"></div>
                 </div>
@@ -246,10 +250,10 @@ const IndexEnhanced = () => {
               {/* Trust Image */}
               <div className="relative lg:order-1">
                 <div className="aspect-[4/3] overflow-hidden rounded-sm">
-                  <img 
+                  <WebPImage 
                     src={manufacturingFacility} 
                     alt="State-of-the-art manufacturing facility ensuring quality" 
-                    className="w-full h-full object-cover opacity-60 hover:opacity-80 transition-opacity duration-700 hover:scale-105 transition-transform" 
+                    className="w-full h-full object-cover opacity-60 hover:opacity-80 transition-opacity duration-700 hover:scale-105 transition-transform"
                   />
                   <div className="absolute inset-0 bg-gradient-to-l from-background/20 via-transparent to-transparent"></div>
                 </div>
@@ -644,9 +648,11 @@ const IndexEnhanced = () => {
       {/* Final CTA Section - Premium */}
       <section className="py-40 relative overflow-hidden">
         {/* Background */}
-        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
-          backgroundImage: `url(${heroHomeowners})`
-        }} />
+        <WebPImage 
+          src={heroHomeowners}
+          alt="Premium NESS energy system"
+          className="absolute inset-0"
+        />
         <div className="absolute inset-0 bg-charcoal/80"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-charcoal/90 via-charcoal/70 to-charcoal/90"></div>
         

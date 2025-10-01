@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
+import { WebPImage } from "@/components/ui/webp-image";
 import { Check, Shield, TrendingUp, BarChart3, Battery, Fuel } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -69,7 +70,11 @@ const TrueWarranty = () => {
               </p>
             </div>
             <div className="animate-fade-in">
-              <img src={nessPodProduct} alt="NESS Pod Battery" className="w-full h-auto" />
+              <WebPImage 
+                src={nessPodProduct} 
+                alt="NESS Pod Battery" 
+                className="w-full h-auto"
+              />
             </div>
           </div>
         </div>

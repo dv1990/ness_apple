@@ -1,6 +1,7 @@
 import React from 'react';
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
+import { WebPImage } from "@/components/ui/webp-image";
 import { OptimizedImage } from "@/components/ui/optimized-image";
 import { LazySection } from "@/components/ui/lazy-section";
 import { usePerformanceTracking } from "@/lib/performance-monitor";
@@ -488,7 +489,7 @@ const Commercial = () => {
                 {/* Refined Image Container */}
                 <div className="relative mb-8 overflow-hidden rounded-2xl">
                   <div className="aspect-[5/3] relative bg-gradient-to-br from-muted/20 to-muted/5">
-                    <img 
+                    <WebPImage 
                       src={industry.backgroundImage}
                       alt={`${industry.title} case study`}
                       className="w-full h-full object-cover group-hover:scale-102 transition-all duration-700 ease-out"
@@ -498,7 +499,7 @@ const Commercial = () => {
                     {/* Subtle Floating Icon */}
                     <div className="absolute top-4 left-4">
                       <div className="w-10 h-10 rounded-lg bg-background/95 backdrop-blur-2xl border border-muted-foreground/10 flex items-center justify-center">
-                        <img 
+                        <WebPImage 
                           src={industry.icon} 
                           alt=""
                           className="w-5 h-5 opacity-60"

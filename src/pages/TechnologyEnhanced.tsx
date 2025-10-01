@@ -30,6 +30,7 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { WebPImage } from "@/components/ui/webp-image";
 
 // Import images - they'll be lazy-loaded via WebPImage component
 import batteryTechnology from "@/assets/battery-technology.jpg";
@@ -751,7 +752,7 @@ const TechnologyEnhanced = () => {
             <div className="relative">
               <AnimatedCard animation="scale-in" delay={600}>
                 <div className="aspect-[4/3] rounded-2xl overflow-hidden">
-                  <img 
+                  <WebPImage 
                     src={systemArchitecture}
                     alt="NESS system installation process"
                     className="w-full h-full object-cover"
