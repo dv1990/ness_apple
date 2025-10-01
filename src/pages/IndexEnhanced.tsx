@@ -87,18 +87,6 @@ const IndexEnhanced = () => {
       {/* Energy as Luxury Section - Jony Ive Documentary Style */}
       <section className="py-40 bg-background relative overflow-hidden">
         
-        {/* Floating Product - Follows the narrative */}
-        <div className="fixed right-8 top-1/2 -translate-y-1/2 w-80 h-80 z-20 pointer-events-none opacity-0 animate-fade-in hidden lg:block">
-          <div className="relative w-full h-full">
-            <WebPImage 
-              src={nessProProduct} 
-              alt="NESS Pro - Energy redefined" 
-              className="w-full h-full object-contain opacity-40 group-hover:opacity-60 transition-opacity duration-1000 ease-out"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-transparent"></div>
-          </div>
-        </div>
-
         <div className="max-w-4xl mx-auto px-8 relative z-10">
           
           {/* Opening Statement */}
