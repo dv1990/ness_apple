@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { WebPImage } from "@/components/ui/webp-image";
 import { OptimizedImage } from "@/components/ui/optimized-image";
 import { LazySection } from "@/components/ui/lazy-section";
-import { usePerformanceTracking } from "@/lib/performance-monitor";
+import { usePerformanceTracking } from "@/hooks/use-performance";
 import { 
   ArrowRight, 
   Calculator, 

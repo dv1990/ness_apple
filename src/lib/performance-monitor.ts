@@ -44,11 +44,3 @@ export const performanceMonitor = {
   }
 };
 
-// React hook for performance tracking
-export const usePerformanceTracking = (componentName: string) => {
-  if (isDev) {
-    const endTracking = performanceMonitor.trackComponentRender(componentName);
-    return { endTracking };
-  }
-  return { endTracking: () => {} };
-};

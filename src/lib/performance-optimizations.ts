@@ -1,54 +1,7 @@
 /**
  * Essential Performance Utilities
- * Lightweight hooks and helpers
+ * Pure utility functions only - no React imports
  */
-
-import { useCallback, useMemo, useRef } from 'react';
-
-// Debounce hook
-export const useDebounce = <T extends any[]>(
-  callback: (...args: T) => void,
-  delay: number
-) => {
-  const timeoutRef = useRef<NodeJS.Timeout>();
-  
-  return useCallback((...args: T) => {
-    clearTimeout(timeoutRef.current);
-    timeoutRef.current = setTimeout(() => callback(...args), delay);
-  }, [callback, delay]);
-};
-
-// Throttle hook
-export const useThrottle = <T extends any[]>(
-  callback: (...args: T) => void,
-  limit: number
-) => {
-  const inThrottle = useRef(false);
-  
-  return useCallback((...args: T) => {
-    if (!inThrottle.current) {
-      callback(...args);
-      inThrottle.current = true;
-      setTimeout(() => inThrottle.current = false, limit);
-    }
-  }, [callback, limit]);
-};
-
-// List virtualization helper
-export const useVirtualization = (
-  itemCount: number,
-  itemHeight: number,
-  containerHeight: number
-) => {
-  return useMemo(() => {
-    const visibleItems = Math.ceil(containerHeight / itemHeight) + 2;
-    return {
-      itemHeight,
-      visibleItems,
-      totalHeight: itemCount * itemHeight
-    };
-  }, [itemCount, itemHeight, containerHeight]);
-};
 
 // Resource preloading
 export const preloadImage = (src: string): Promise<void> => {
@@ -100,9 +53,6 @@ export const performanceBudget = {
 };
 
 export default {
-  useDebounce,
-  useThrottle,
-  useVirtualization,
   preloadImage,
   addResourceHint,
   performanceBudget

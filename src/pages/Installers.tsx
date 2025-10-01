@@ -3,7 +3,7 @@ import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { OptimizedImage } from "@/components/ui/optimized-image";
 import { LazySection } from "@/components/ui/lazy-section";
-import { usePerformanceTracking } from "@/lib/performance-monitor";
+import { usePerformanceTracking } from "@/hooks/use-performance";
 import { 
   ArrowRight, 
   Calculator, 
