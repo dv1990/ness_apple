@@ -33,12 +33,13 @@ const IndexEnhanced = () => {
     <Layout>
       {/* Hero Section - Sonos Inspired "Feel Every Play" Style */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Image - High Impact Visual - Optimized WebP */}
-        <WebPImage 
+        {/* Background Image - High Impact Visual - Critical Resource */}
+        <img 
           src={heroHomeowners}
           alt="Modern home with NESS energy system"
-          className="absolute inset-0"
-          priority={true}
+          className="absolute inset-0 w-full h-full object-cover"
+          fetchPriority="high"
+          loading="eager"
         />
         
         {/* Premium Dark Overlay for Typography */}
