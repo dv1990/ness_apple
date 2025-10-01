@@ -1,23 +1,18 @@
 /**
- * Production Service Worker - Basic Caching Strategy
+ * Service Worker - Disabled
+ * This service worker immediately uninstalls itself
  */
 
-const CACHE_NAME = 'ness-v1';
-
-self.addEventListener('install', (event) => {
-  console.log('💾 Service Worker installed');
+self.addEventListener('install', () => {
   self.skipWaiting();
 });
 
 self.addEventListener('activate', (event) => {
-  console.log('💾 Service Worker activated');
-  event.waitUntil(self.clients.claim());
-});
-
-// Network-first strategy - always try network, fallback to cache
-self.addEventListener('fetch', (event) => {
-  event.respondWith(
-    fetch(event.request)
-      .catch(() => caches.match(event.request))
+  event.waitUntil(
+    self.registration.unregister().then(() => {
+      return self.clients.matchAll();
+    }).then((clients) => {
+      clients.forEach(client => client.navigate(client.url));
+    })
   );
 });
