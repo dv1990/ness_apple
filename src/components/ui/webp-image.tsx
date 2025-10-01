@@ -28,8 +28,10 @@ export const WebPImage: React.FC<WebPImageProps> = ({
   const getWebPSrc = useCallback((originalSrc: string): string => {
     if (originalSrc.startsWith('http')) return originalSrc;
     
-    // Replace file extension with .webp
-    const webpSrc = originalSrc.replace(/\.(jpg|jpeg|png)$/i, '.webp');
+    // Replace /assets/ with /assets-webp/ and extension with .webp
+    const webpSrc = originalSrc
+      .replace('/assets/', '/assets-webp/')
+      .replace(/\.(jpg|jpeg|png)$/i, '.webp');
     return webpSrc;
   }, []);
 
@@ -43,9 +45,9 @@ export const WebPImage: React.FC<WebPImageProps> = ({
   }, []);
 
   const handleError = useCallback(() => {
-    setHasError(true);
     // Fallback to original format if WebP fails
     if (imgRef.current && !hasError) {
+      setHasError(true);
       imgRef.current.src = getFallbackSrc(src);
     }
   }, [src, hasError, getFallbackSrc]);
