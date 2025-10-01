@@ -14,7 +14,6 @@ export default defineConfig(({ mode }) => ({
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
-    // Critical: Deduplicate React to prevent multiple instances
     dedupe: ['react', 'react-dom', 'react-router-dom']
   },
   build: {
@@ -23,9 +22,16 @@ export default defineConfig(({ mode }) => ({
     cssCodeSplit: true,
     sourcemap: false,
     chunkSizeWarningLimit: 1500,
+    terserOptions: {
+      compress: {
+        // Remove all console statements in production
+        drop_console: true,
+        drop_debugger: true,
+        pure_funcs: ['console.log', 'console.info', 'console.debug', 'console.warn']
+      }
+    },
     rollupOptions: {
       output: {
-        // Ensure React stays together
         manualChunks: {
           'react-vendor': ['react', 'react-dom', 'react-router-dom']
         }
@@ -41,7 +47,6 @@ export default defineConfig(({ mode }) => ({
       '@radix-ui/react-slot',
       '@tanstack/react-query'
     ],
-    // Force bundling to prevent multiple React instances
     force: mode === 'production'
   }
 }));

@@ -60,7 +60,6 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
 
   const handleError = useCallback((event: React.SyntheticEvent<HTMLImageElement>) => {
     setHasError(true);
-    console.warn(`Failed to load image: ${src}`);
     onError?.(event);
   }, [src, onError]);
 
