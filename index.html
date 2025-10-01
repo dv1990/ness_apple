@@ -32,13 +32,12 @@
     <!-- Performance Monitoring -->
     <script>
       // Critical performance timing
-      window.NESS_PERFORMANCE = {
-        navigationStart: performance.now(),
-        criticalResourcesLoaded: false
-      };
-      
-      // Font loading optimization
-      document.documentElement.classList.add('font-loading');
+      if (typeof window !== 'undefined') {
+        window.NESS_PERFORMANCE = {
+          navigationStart: performance.now(),
+          criticalResourcesLoaded: false
+        };
+      }
     </script>
     
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
@@ -46,39 +45,24 @@
   <body>
     <div id="root"></div>
     
-    <!-- Debug and Service Worker Cleanup -->
+    <!-- Service Worker Cleanup -->
     <script>
-      // Debug logging
-      console.log('🚀 App starting...');
-      
-      // Aggressive service worker cleanup
+      // Unregister service workers and clear caches
       if ('serviceWorker' in navigator) {
         navigator.serviceWorker.getRegistrations().then(function(registrations) {
           registrations.forEach(function(registration) {
             registration.unregister();
-            console.log('💾 Service worker unregistered');
           });
         });
         
-        // Clear all caches
         if ('caches' in window) {
           caches.keys().then(function(names) {
             names.forEach(function(name) {
               caches.delete(name);
-              console.log('🗑️ Cache deleted:', name);
             });
           });
         }
       }
-      
-      // Global error handler
-      window.addEventListener('error', function(e) {
-        console.error('❌ Global error:', e.message, e.filename, e.lineno);
-      });
-      
-      window.addEventListener('unhandledrejection', function(e) {
-        console.error('❌ Unhandled promise rejection:', e.reason);
-      });
     </script>
     
     <script type="module" src="/src/main.tsx"></script>

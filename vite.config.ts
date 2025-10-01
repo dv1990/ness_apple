@@ -14,20 +14,34 @@ export default defineConfig(({ mode }) => ({
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
+    // Critical: Deduplicate React to prevent multiple instances
+    dedupe: ['react', 'react-dom', 'react-router-dom']
   },
   build: {
-    target: 'esnext',
-    minify: 'esbuild',
+    target: 'es2015',
+    minify: 'terser',
     cssCodeSplit: true,
     sourcemap: false,
-    chunkSizeWarningLimit: 1500
+    chunkSizeWarningLimit: 1500,
+    rollupOptions: {
+      output: {
+        // Ensure React stays together
+        manualChunks: {
+          'react-vendor': ['react', 'react-dom', 'react-router-dom']
+        }
+      }
+    }
   },
-  // Simplified optimizeDeps for development
   optimizeDeps: {
-    include: ['react', 'react-dom', 'react-router-dom'],
-  },
-  // Enable modern features
-  esbuild: {
-    drop: mode === 'production' ? ['console', 'debugger'] : []
+    include: [
+      'react',
+      'react-dom',
+      'react-router-dom',
+      '@radix-ui/react-tooltip',
+      '@radix-ui/react-slot',
+      '@tanstack/react-query'
+    ],
+    // Force bundling to prevent multiple React instances
+    force: mode === 'production'
   }
 }));
