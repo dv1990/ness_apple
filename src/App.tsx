@@ -21,7 +21,6 @@ const TrueWarranty = lazy(() => import("./pages/TrueWarranty"));
 const Residential = lazy(() => import("./pages/Residential"));
 const Commercial = lazy(() => import("./pages/Commercial"));
 const Installers = lazy(() => import("./pages/Installers"));
-const Technology = lazy(() => import("./pages/Technology"));
 const Hiring = lazy(() => import("./pages/Hiring"));
 const FindInstaller = lazy(() => import("./pages/FindInstaller"));
 const About = lazy(() => import("./pages/company/About"));
@@ -75,7 +74,7 @@ const App = () => {
           <Route path="/homeowners" element={<ResidentialEnhanced />} />
           <Route path="/ci" element={<CommercialEnhanced />} />
           <Route path="/installers" element={<InstallersEnhanced />} />
-          <Route path="/technology" element={<Technology />} />
+          <Route path="/technology" element={<TechnologyEnhanced />} />
           <Route path="/warranty" element={<TrueWarranty />} />
           <Route path="/find-installer" element={<FindInstaller />} />
           
