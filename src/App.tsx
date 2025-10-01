@@ -6,15 +6,15 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ScrollProgressBar } from "@/components/ScrollProgressBar";
 import React, { Suspense, lazy } from 'react';
 
-// Apple-level code splitting - Critical path only
+// Critical pages - Eager loaded for instant navigation
 import IndexEnhanced from "./pages/IndexEnhanced";
+import ResidentialEnhanced from "./pages/ResidentialEnhanced";
+import InstallersEnhanced from "./pages/InstallersEnhanced";
+import CommercialEnhanced from "./pages/CommercialEnhanced";
+import TechnologyEnhanced from "./pages/TechnologyEnhanced";
+import ContactEnhanced from "./pages/ContactEnhanced";
 
-// Aggressive lazy loading for optimal performance
-const ResidentialEnhanced = lazy(() => import("./pages/ResidentialEnhanced"));
-const InstallersEnhanced = lazy(() => import("./pages/InstallersEnhanced"));
-const CommercialEnhanced = lazy(() => import("./pages/CommercialEnhanced"));
-const TechnologyEnhanced = lazy(() => import("./pages/TechnologyEnhanced"));
-const ContactEnhanced = lazy(() => import("./pages/ContactEnhanced"));
+// Secondary pages - Lazy loaded
 const TrueWarranty = lazy(() => import("./pages/TrueWarranty"));
 
 // Legacy components - lazy loaded
