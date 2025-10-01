@@ -31,12 +31,11 @@ import {
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-// Image paths - will be lazy-loaded via WebPImage where possible
-const batteryTechnology = "@/assets/battery-technology.jpg";
-const aiSoftware = "@/assets/ai-software.jpg";
-const rdLaboratory = "@/assets/rd-laboratory.jpg";
-const systemArchitecture = "@/assets/system-architecture.jpg";
-// Logos are small and can stay as imports
+// Import images - they'll be lazy-loaded via WebPImage component
+import batteryTechnology from "@/assets/battery-technology.jpg";
+import aiSoftware from "@/assets/ai-software.jpg";
+import rdLaboratory from "@/assets/rd-laboratory.jpg";
+import systemArchitecture from "@/assets/system-architecture.jpg";
 import deyeLogo from "@/assets/deye-logo.png";
 import studerLogo from "@/assets/studer-logo.png";
 import victronLogo from "@/assets/victron-logo.png";

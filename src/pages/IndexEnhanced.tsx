@@ -9,13 +9,13 @@ import { Link } from "react-router-dom";
 import { MagneticButton, PlayButton, FloatingCard, ParallaxContainer } from "@/components/EnhancedInteractions";
 import { Play, Check, Zap, Sparkles, Shield, Battery, Home, Star, Quote } from "lucide-react";
 
-// Image paths - will be lazy-loaded via WebPImage where possible
-const heroHomeowners = "@/assets/hero-homeowners.jpg";
-const nessProProduct = "@/assets/ness-pro-product.png";
-const nessPodProduct = "@/assets/ness-pod-product.png";
-const rdLaboratory = "@/assets/rd-laboratory.jpg";
-const batteryTechnology = "@/assets/battery-technology.jpg";
-const manufacturingFacility = "@/assets/manufacturing-facility.jpg";
+// Import images - they'll be lazy-loaded via WebPImage component
+import heroHomeowners from "@/assets/hero-homeowners.jpg";
+import nessProProduct from "@/assets/ness-pro-product.png";
+import nessPodProduct from "@/assets/ness-pod-product.png";
+import rdLaboratory from '@/assets/rd-laboratory.jpg';
+import batteryTechnology from '@/assets/battery-technology.jpg';
+import manufacturingFacility from '@/assets/manufacturing-facility.jpg';
 
 const IndexEnhanced = () => {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);

@@ -18,10 +18,9 @@ import {
   Clock, 
   Play 
 } from "lucide-react";
-// Image paths - will be lazy-loaded via WebPImage where possible
-const installerHero = "@/assets/installer-hero.jpg";
-const trainingWorkshop = "@/assets/training-workshop.jpg";
-const configuratorTool = "@/assets/configurator-tool.jpg";
+import installerHero from "@/assets/installer-hero.jpg";
+import trainingWorkshop from "@/assets/training-workshop.jpg";
+import configuratorTool from "@/assets/configurator-tool.jpg";
 
 const Installers = () => {
   const { endTracking } = usePerformanceTracking('Installers');

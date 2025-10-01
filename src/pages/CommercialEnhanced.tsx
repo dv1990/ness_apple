@@ -31,11 +31,11 @@ import {
   FloatingCard,
 } from "@/components/EnhancedInteractions";
 
-// Image paths - will be lazy-loaded via WebPImage where possible
-const industrialHero = "@/assets/industrial-complex-hero.jpg";
-const manufacturingFacility = "@/assets/manufacturing-facility.jpg";
-const officeInterior = "@/assets/office-interior.jpg";
-const nessCube = "@/assets/ness-cube-product.png";
+// Import images - they'll be lazy-loaded via WebPImage component
+import industrialHero from "@/assets/industrial-complex-hero.jpg";
+import manufacturingFacility from "@/assets/manufacturing-facility.jpg";
+import officeInterior from "@/assets/office-interior.jpg";
+import nessCube from "@/assets/ness-cube-product.png";
 
 // Form validation schema
 const contactSchema = z.object({
