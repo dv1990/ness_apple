@@ -52,9 +52,6 @@ const PageLoadingFallback = () => (
   </div>
 );
 
-// Simplified route config - images loaded on demand
-const routeConfig = [];
-
 const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
