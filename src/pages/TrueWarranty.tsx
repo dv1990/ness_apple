@@ -4,9 +4,9 @@ import { Button } from "@/components/ui/button";
 import { Check, Shield, TrendingUp, BarChart3, Battery, Fuel } from "lucide-react";
 import { Link } from "react-router-dom";
 
-// Import images
-import warrantyHero from "@/assets/warranty-hero-trust.jpg";
-import nessPodProduct from "@/assets/ness-pod-product.png";
+// Image paths - will be lazy-loaded via WebPImage where possible
+const warrantyHero = "@/assets/warranty-hero-trust.jpg";
+const nessPodProduct = "@/assets/ness-pod-product.png";
 
 const TrueWarranty = () => {
   useEffect(() => {

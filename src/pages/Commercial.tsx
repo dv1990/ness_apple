@@ -16,17 +16,18 @@ import {
   Building2, 
   Factory 
 } from "lucide-react";
-import nessUnitsHero from "@/assets/ness-units-hero.png";
-import nessPodProduct from "@/assets/ness-pod-product.png";
-import nessCubeProduct from "@/assets/ness-cube-product.png";
-import industryOffice from "@/assets/industry-office.png";
-import industryManufacturing from "@/assets/industry-manufacturing.png";
-import industryDGReplacement from "@/assets/industry-dg-replacement.png";
-import industryEVFleet from "@/assets/industry-ev-fleet.png";
-import officeInterior from "@/assets/office-interior.jpg";
-import manufacturingFacility from "@/assets/manufacturing-facility.jpg";
-import dgReplacement from "@/assets/dg-replacement.jpg";
-import evCharging from "@/assets/ev-charging.jpg";
+// Image paths - will be lazy-loaded via WebPImage where possible
+const nessUnitsHero = "@/assets/ness-units-hero.png";
+const nessPodProduct = "@/assets/ness-pod-product.png";
+const nessCubeProduct = "@/assets/ness-cube-product.png";
+const industryOffice = "@/assets/industry-office.png";
+const industryManufacturing = "@/assets/industry-manufacturing.png";
+const industryDGReplacement = "@/assets/industry-dg-replacement.png";
+const industryEVFleet = "@/assets/industry-ev-fleet.png";
+const officeInterior = "@/assets/office-interior.jpg";
+const manufacturingFacility = "@/assets/manufacturing-facility.jpg";
+const dgReplacement = "@/assets/dg-replacement.jpg";
+const evCharging = "@/assets/ev-charging.jpg";
 
 const Commercial = () => {
   const { endTracking } = usePerformanceTracking('Commercial');

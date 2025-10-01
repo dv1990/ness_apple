@@ -20,10 +20,11 @@ import { cn } from "@/lib/utils";
 import { MagneticButton, PlayButton, FloatingCard, ProgressiveDisclosure, ParallaxContainer } from "@/components/EnhancedInteractions";
 import SystemConfigurator from "@/components/SystemConfigurator";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import heroIndustrialInstallation from "@/assets/hero-industrial-installation.jpg";
-import heroResidentialInstallation from "@/assets/hero-residential-installation.jpg";
-import trainingWorkshop from "@/assets/training-workshop.jpg";
-import configuratorTool from "@/assets/configurator-tool.jpg";
+// Image paths - will be lazy-loaded via WebPImage where possible
+const heroIndustrialInstallation = "@/assets/hero-industrial-installation.jpg";
+const heroResidentialInstallation = "@/assets/hero-residential-installation.jpg";
+const trainingWorkshop = "@/assets/training-workshop.jpg";
+const configuratorTool = "@/assets/configurator-tool.jpg";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 

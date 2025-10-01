@@ -11,8 +11,9 @@ import {
   Star 
 } from "lucide-react";
 import { Link } from "react-router-dom";
-import heroImage from "@/assets/hero-homeowners.jpg";
-import productImage from "@/assets/ness-pro-product.png";
+// Image paths - will be lazy-loaded via WebPImage where possible  
+const heroImage = "@/assets/hero-homeowners.jpg";
+const productImage = "@/assets/ness-pro-product.png";
 
 const ResidentialPremium = () => {
   return (

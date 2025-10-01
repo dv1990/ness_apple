@@ -13,12 +13,13 @@ import {
   BatteryCharging 
 } from "lucide-react";
 import { Link } from "react-router-dom";
-import heroImage from "@/assets/hero-homeowners.jpg";
-import productImage from "@/assets/ness-pro-product.png";
-import ottImage from "@/assets/carousel-ott-streaming.jpg";
-import kitchenImage from "@/assets/carousel-kitchen-appliances.jpg";
-import acImage from "@/assets/carousel-ac-comfort.jpg";
-import evImage from "@/assets/carousel-ev-charging.jpg";
+// Image paths - will be lazy-loaded via WebPImage where possible
+const heroImage = "@/assets/hero-homeowners.jpg";
+const productImage = "@/assets/ness-pro-product.png";
+const ottImage = "@/assets/carousel-ott-streaming.jpg";
+const kitchenImage = "@/assets/carousel-kitchen-appliances.jpg";
+const acImage = "@/assets/carousel-ac-comfort.jpg";
+const evImage = "@/assets/carousel-ev-charging.jpg";
 
 const Residential = () => {
   return (
