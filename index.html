@@ -40,30 +40,10 @@
     <meta name="keywords" content="battery storage, energy systems, solar battery, home energy, commercial energy" />
     <link rel="canonical" href="https://nessenergy.com" />
     
-    <!-- Performance Meta -->
-    <script>
-      if (typeof window !== 'undefined') {
-        window.NESS_PERFORMANCE = { navigationStart: performance.now() };
-      }
-    </script>
-    
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   </head>
   <body>
     <div id="root"></div>
-    
-    <!-- Service Worker Cleanup -->
-    <script>
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.getRegistrations().then(registrations => {
-          registrations.forEach(registration => registration.unregister());
-        });
-        if ('caches' in window) {
-          caches.keys().then(names => names.forEach(name => caches.delete(name)));
-        }
-      }
-    </script>
-    
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
