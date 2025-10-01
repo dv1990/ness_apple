@@ -16,32 +16,11 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
-    rollupOptions: {
-      output: {
-        manualChunks: (id) => {
-          if (id.includes('node_modules')) {
-            // Keep React together - critical for context API
-            if (id.includes('react') || id.includes('react-dom') || id.includes('scheduler')) {
-              return 'vendor-react';
-            }
-            // Router
-            if (id.includes('react-router')) {
-              return 'vendor-router';
-            }
-            // UI libraries
-            if (id.includes('@radix-ui')) {
-              return 'vendor-ui';
-            }
-            // Other vendors
-            return 'vendor';
-          }
-        }
-      }
-    },
     target: 'esnext',
     minify: 'esbuild',
     cssCodeSplit: true,
-    chunkSizeWarningLimit: 1000
+    sourcemap: false,
+    chunkSizeWarningLimit: 1500
   },
   // Simplified optimizeDeps for development
   optimizeDeps: {
