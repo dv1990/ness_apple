@@ -15,66 +15,34 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  build: mode === 'production' ? {
-    // Apple-level aggressive performance optimizations for production only
+  build: {
     rollupOptions: {
       output: {
         manualChunks: (id) => {
-          // Apple-level micro-chunking strategy
           if (id.includes('node_modules')) {
-            // Core React ecosystem - Critical path
-            if (id.includes('react') || id.includes('react-dom')) {
-              return 'react-core';
+            // Keep React together - critical for context API
+            if (id.includes('react') || id.includes('react-dom') || id.includes('scheduler')) {
+              return 'vendor-react';
             }
-            // Router - Loaded after core
+            // Router
             if (id.includes('react-router')) {
-              return 'router';
+              return 'vendor-router';
             }
-            // UI framework - Progressive loading
+            // UI libraries
             if (id.includes('@radix-ui')) {
-              return 'ui-radix';
+              return 'vendor-ui';
             }
-            // Query/state management
-            if (id.includes('@tanstack') || id.includes('zustand')) {
-              return 'state-management';
-            }
-            // Icons and visual components
-            if (id.includes('lucide') || id.includes('recharts')) {
-              return 'visual-components';
-            }
-            // Everything else in vendors
+            // Other vendors
             return 'vendor';
-          }
-          
-          // Application code chunking
-          if (id.includes('/pages/')) {
-            // Extract page name for individual chunks
-            const pageName = id.split('/pages/')[1]?.split('.')[0];
-            return `page-${pageName}`;
-          }
-          
-          if (id.includes('/components/ui/')) {
-            return 'ui-components';
-          }
-          
-          if (id.includes('/components/')) {
-            return 'shared-components';
-          }
-          
-          if (id.includes('/lib/')) {
-            return 'utilities';
           }
         }
       }
     },
-    // Ultra-aggressive optimization
-    assetsInlineLimit: 1024, // Only inline very small assets
-    reportCompressedSize: false,
-    chunkSizeWarningLimit: 500, // Apple-level strict limits
     target: 'esnext',
     minify: 'esbuild',
-    cssCodeSplit: true // Split CSS per chunk
-  } : {},
+    cssCodeSplit: true,
+    chunkSizeWarningLimit: 1000
+  },
   // Simplified optimizeDeps for development
   optimizeDeps: {
     include: ['react', 'react-dom', 'react-router-dom'],
