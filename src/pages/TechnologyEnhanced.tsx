@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import PerformanceGrid from "@/components/ui/performance-grid";
 import { AnimatedCard } from "@/components/ui/animated-card";
 import { AnimatedButton } from "@/components/ui/animated-button";
-import { Battery3D } from "@/components/ui/battery-3d";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -50,7 +50,6 @@ const TechnologyEnhanced = () => {
   
   const [activeTab, setActiveTab] = useState("overview");
   const [selectedBatteryType, setSelectedBatteryType] = useState("lifepo4");
-  const [view3D, setView3D] = useState<'pack' | 'system'>('pack');
   
   // Simulated real-time metrics
   const [metrics, setMetrics] = useState({
@@ -320,33 +319,20 @@ const TechnologyEnhanced = () => {
               </FloatingElement>
             </div>
 
-            {/* Right Visual - Interactive 3D */}
+            {/* Right Visual - Hero Image */}
             <div className="relative">
               <FloatingElement delay={5} direction="left" speed={0.8}>
-                <div className="space-y-4">
-                  <div className="flex items-center justify-center space-x-4 mb-4">
-                    <Button
-                      variant={view3D === 'pack' ? 'default' : 'outline'}
-                      size="sm"
-                      onClick={() => setView3D('pack')}
-                    >
-                      Battery Pack
-                    </Button>
-                    <Button
-                      variant={view3D === 'system' ? 'default' : 'outline'}
-                      size="sm"
-                      onClick={() => setView3D('system')}
-                    >
-                      System Architecture
-                    </Button>
-                  </div>
-                  
-                  <Battery3D view={view3D} />
-                  
-                  <div className="text-center p-4 glass-premium rounded-xl">
-                    <p className="text-sm text-muted-foreground">
-                      Interactive 3D visualization • Click and drag to explore
-                    </p>
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+                  <WebPImage
+                    src={batteryTechnology}
+                    alt="NESS Battery Technology - Advanced LiFePO4 cells with intelligent management system"
+                    className="w-full h-auto"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent flex items-end p-8">
+                    <div className="space-y-2">
+                      <p className="text-white text-lg font-medium">Advanced Battery Technology</p>
+                      <p className="text-white/80 text-sm">LiFePO4 cells with intelligent management</p>
+                    </div>
                   </div>
                 </div>
               </FloatingElement>
