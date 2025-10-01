@@ -3,37 +3,32 @@
  * Handles WebP conversion, lazy loading, and performance monitoring
  */
 
-// Image format detection and optimization
+// Image format detection and optimization with fallback
 export const getOptimizedImageSrc = (originalSrc: string, quality = 80): string => {
   // If it's an external URL, return as-is
   if (originalSrc.startsWith('http')) {
     return originalSrc;
   }
 
-  // Convert to WebP path
-  const webpSrc = originalSrc.replace(/\.(jpg|jpeg|png)$/i, '.webp');
-  
-  // Map original assets to WebP versions
-  const assetMap: Record<string, string> = {
-    // Core product images
-    '/src/assets/ness-pro-product.png': '/src/assets-webp/ness-pro-product.webp',
-    '/src/assets/ness-pod-product.png': '/src/assets-webp/ness-pod-product.webp', 
-    '/src/assets/ness-cube-product.png': '/src/assets-webp/ness-cube-product.webp',
-    
-    // Hero images
-    '/src/assets/hero-homeowners.jpg': '/src/assets-webp/hero-homeowners.webp',
-    
-    // Carousel images
-    '/src/assets/carousel-ac-comfort.jpg': '/src/assets-webp/carousel-ac-comfort.webp',
-    '/src/assets/carousel-ev-charging.jpg': '/src/assets-webp/carousel-ev-charging.webp',
-    '/src/assets/carousel-kitchen-appliances.jpg': '/src/assets-webp/carousel-kitchen-appliances.webp',
-    
-    // Technology images
-    '/src/assets/ai-software.jpg': '/src/assets-webp/ai-software.webp',
-    '/src/assets/battery-technology.jpg': '/src/assets-webp/battery-technology.webp',
-  };
+  // Return original if it's already optimized or unsupported format
+  if (originalSrc.includes('.webp') || originalSrc.includes('.svg')) {
+    return originalSrc;
+  }
 
-  return assetMap[originalSrc] || webpSrc;
+  // Convert to WebP path
+  const webpSrc = originalSrc.replace(/\.(jpg|jpeg|png)$/i, '.webp')
+    .replace('/assets/', '/assets-webp/');
+  
+  return webpSrc;
+};
+
+// Get image with fallback support
+export const getImageWithFallback = (src: string): { webp: string; fallback: string } => {
+  const optimized = getOptimizedImageSrc(src);
+  return {
+    webp: optimized,
+    fallback: src
+  };
 };
 
 // Performance monitoring for images
