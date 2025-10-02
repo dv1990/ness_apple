@@ -14,8 +14,8 @@ const features = [
     title: "Safety by Design",
     shortDesc: "LFP chemistry with thermal protection",
     fullDesc:
-      "Advanced BMS ensures highest safety standards with thermal runaway protection and fire-resistant design. Your family deserves the safest clean energy technology available.",
-    benefit: "Zero fire incidents in 50,000+ installations • Peace of mind for generations",
+      "Advanced BMS ensures highest safety standards with thermal runaway protection and fire-resistant design for complete peace of mind.",
+    benefit: "Zero fire incidents in 50,000+ installations",
     metric: "99.9%",
     metricLabel: "Safety Rating",
   },
@@ -24,8 +24,8 @@ const features = [
     title: "Reliability That Lasts",
     shortDesc: "15 year+ design life with premium components",
     fullDesc:
-      "Rigorous testing and premium components ensure consistent performance in Indian conditions with industry-leading longevity. Built to last generations, not just years.",
-    benefit: "Tested in 45°C+ Indian summers • A system your children will inherit with pride",
+      "Rigorous testing and premium components ensure consistent performance in Indian conditions with industry-leading longevity.",
+    benefit: "Tested in 45°C+ Indian summers",
     metric: "15+",
     metricLabel: "Year Warranty",
   },
@@ -34,8 +34,8 @@ const features = [
     title: "Intelligence Built-In",
     shortDesc: "Smart energy management & monitoring",
     fullDesc:
-      "ToD optimization, solar prioritization, and cloud-based monitoring provide intelligent energy management. Every optimization reduces your carbon footprint.",
-    benefit: "Save up to 40% on bills • Eliminate tons of CO2 • Feel good about every kilowatt",
+      "ToD optimization, solar prioritization, and cloud-based monitoring provide intelligent energy management and control.",
+    benefit: "Save up to 40% on electricity bills",
     metric: "40%",
     metricLabel: "Bill Reduction",
   },
@@ -44,8 +44,8 @@ const features = [
     title: "Beautifully Simple",
     shortDesc: "Clean design with whisper-quiet operation",
     fullDesc:
-      "Minimalist design complements modern homes with silent operation and seamless integration. Clean energy should look as beautiful as it feels.",
-    benefit: "Quieter than a whisper at <35dB • Luxury aesthetics • Environmental consciousness made visible",
+      "Minimalist design complements modern homes with silent operation and seamless integration into any space.",
+    benefit: "Quieter than a whisper at <35dB",
     metric: "<35dB",
     metricLabel: "Noise Level",
   },
@@ -66,13 +66,13 @@ const MANUFACTURING_STORY = {
   home: {
     tagline: "Crafted for perfection. Built for life.",
     steps: [
-      "Every cell undergoes precision measurement because your children deserve only the cleanest, safest energy.",
-      "Cells are meticulously graded and sorted for perfect compatibility, creating systems that last generations.",
-      "Matched cells are grouped into balanced teams that will serve your family with pride for decades.",
-      "Expert assembly in temperature-controlled environments ensures each system becomes a family heirloom of clean energy.",
-      "Rigorous validation testing guarantees only the finest systems reach your home, worthy of your environmental values.",
-      "Advanced digital intelligence provides continuous monitoring, so you sleep peacefully knowing you're building a better tomorrow.",
-      "Delivered as a complete premium experience that transforms how good it feels to make responsible choices.",
+      "Every cell undergoes precision measurement to ensure optimal performance from day one.",
+      "Cells are meticulously graded and sorted for perfect compatibility and longevity.",
+      "Matched cells are grouped into balanced teams for consistent, reliable power delivery.",
+      "Expert assembly in temperature-controlled environments ensures premium quality.",
+      "Rigorous validation testing guarantees only the finest systems reach your home.",
+      "Advanced digital intelligence provides continuous monitoring and protection.",
+      "Delivered as a complete premium experience, engineered for your peace of mind.",
     ],
   },
 }
@@ -245,10 +245,10 @@ function LuxuryManufacturingShowcase() {
     <div className="mt-40">
       <div className="text-center mb-32">
         <h3 className="text-5xl lg:text-6xl font-extralight text-foreground mb-8 tracking-tight leading-tight">
-          Crafting Tomorrow's <span className="text-primary font-light">Clean Legacy</span>
+          The Secret Recipe Behind Every <span className="text-primary">NESS</span> Battery
         </h3>
         <p className="text-xl text-muted-foreground font-light max-w-xl mx-auto leading-relaxed">
-          Seven steps to perfection. Every detail crafted so your children inherit a cleaner world.
+          Seven steps. Zero compromises.
         </p>
       </div>
 
@@ -309,7 +309,7 @@ function LuxuryManufacturingShowcase() {
 
       <div
         key={activeStep}
-        className="text-center max-w-4xl mx-auto opacity-0 translate-y-8 animate-fade-in-up"
+        className="text-center max-w-4xl mx-auto opacity-0 translate-y-8 animate-fade-in"
       >
         <h4 className="text-4xl font-light text-foreground mb-8 tracking-tight">{currentStep.title}</h4>
 
@@ -319,7 +319,7 @@ function LuxuryManufacturingShowcase() {
 
         <button
           onClick={() => setIsPlaying(!isPlaying)}
-          className="inline-flex items-center gap-3 px-6 py-3 bg-card/60 hover:bg-card/80 rounded-full text-muted-foreground text-sm font-medium transition-all duration-300 border border-border/20"
+          className="inline-flex items-center gap-3 px-6 py-3 bg-card/60 hover:bg-card/80 rounded-full text-muted-foreground text-sm font-medium transition-all duration-300 border border-border"
         >
           {isPlaying ? "Pause" : "Continue"}
         </button>
@@ -345,14 +345,13 @@ export function WhyNess() {
   const [selectedCard, setSelectedCard] = useState<number | null>(null)
 
   return (
-    <div className="container mx-auto max-w-6xl px-6">
+    <div className="max-w-[1400px] mx-auto px-8">
       <div className="text-center mb-24">
-        <h2 className="text-5xl lg:text-6xl font-light text-balance mb-8 tracking-tight text-foreground">
-          Why your children will <span className="font-medium text-primary">thank you</span>?
+        <h2 className="text-5xl lg:text-6xl font-light mb-8 tracking-tight text-foreground">
+          Why choose <span className="font-medium text-primary">NESS</span>?
         </h2>
-        <p className="text-xl text-muted-foreground text-balance max-w-2xl mx-auto leading-relaxed font-light">
-          Four pillars of excellence that transform clean energy into the ultimate luxury, 
-          creating a legacy your family can be proud of for generations.
+        <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed font-light">
+          Four pillars of excellence that make NESS the premium choice for energy storage.
         </p>
       </div>
 
@@ -360,14 +359,14 @@ export function WhyNess() {
         {features.map((feature, index) => (
           <div
             key={feature.title}
-            className={`group relative bg-card/95 backdrop-blur-xl border border-border/40 rounded-3xl p-8 cursor-pointer transition-all duration-700 hover:-translate-y-1 hover:shadow-lg ${
+            className={`group relative bg-card backdrop-blur-xl border border-border rounded-3xl p-8 cursor-pointer transition-all duration-500 hover:-translate-y-1 hover:shadow-lg ${
               selectedCard === index
-                ? "shadow-xl scale-[1.02] border-border/70"
+                ? "shadow-2xl scale-[1.02] border-primary/20"
                 : ""
             }`}
             onClick={() => setSelectedCard(selectedCard === index ? null : index)}
           >
-            <div className="w-16 h-16 rounded-2xl bg-muted/30 flex items-center justify-center mb-8 group-hover:bg-primary/10 transition-all duration-500">
+            <div className="w-16 h-16 rounded-2xl bg-primary/5 flex items-center justify-center mb-8 group-hover:bg-primary/10 transition-all duration-500">
               <feature.icon className="w-8 h-8 text-muted-foreground group-hover:text-primary transition-colors duration-500" />
             </div>
 
@@ -377,7 +376,7 @@ export function WhyNess() {
 
             <div className="mb-8">
               <div className="text-4xl font-light text-primary mb-2 tracking-tight">{feature.metric}</div>
-              <div className="text-sm text-muted-foreground/80 font-medium uppercase tracking-wide">
+              <div className="text-sm text-muted-foreground/60 font-medium uppercase tracking-wide">
                 {feature.metricLabel}
               </div>
             </div>
@@ -385,7 +384,7 @@ export function WhyNess() {
             <div className="text-sm text-muted-foreground mb-8 font-medium">{feature.benefit}</div>
 
             {selectedCard === index && (
-              <div className="border-t border-border/30 pt-8 mt-8 animate-fade-in">
+              <div className="border-t border-border pt-8 mt-8 animate-fade-in">
                 <p className="text-muted-foreground leading-relaxed mb-6 font-light">{feature.fullDesc}</p>
                 <button className="inline-flex items-center gap-2 text-primary hover:gap-3 transition-all duration-300 font-medium">
                   Learn more
@@ -399,7 +398,7 @@ export function WhyNess() {
                 className={`w-2 h-2 rounded-full transition-all duration-500 ${
                   selectedCard === index
                     ? "bg-primary scale-150"
-                    : "bg-muted group-hover:bg-primary"
+                    : "bg-border group-hover:bg-primary"
                 }`}
               />
             </div>

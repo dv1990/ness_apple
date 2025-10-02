@@ -2,8 +2,8 @@ import Layout from "@/components/Layout";
 import { MagneticButton } from "@/components/EnhancedInteractions";
 import { Shield, Clock, Heart, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
 import { WebPImage } from "@/components/ui/webp-image";
+import { WhyNess } from "@/components/WhyNess";
 
 // Import images
 import batteryTechnology from "@/assets/battery-technology.jpg";
@@ -179,60 +179,9 @@ const TechnologyEnhanced = () => {
         </div>
       </section>
 
-      {/* One Simple Comparison - No tables, just truth */}
-      <section className="py-40 bg-background">
-        <div className="max-w-[1200px] mx-auto px-8 text-center">
-          <div className="space-y-16">
-              <h2 className="text-5xl md:text-6xl font-light text-foreground leading-tight">
-                The truth about batteries
-              </h2>
-              
-              <div className="grid md:grid-cols-3 gap-12 max-w-4xl mx-auto">
-                {/* Lead Acid */}
-                <div className="space-y-6">
-                  <div className="text-sm uppercase tracking-[0.2em] text-muted-foreground">
-                    Lead Acid
-                  </div>
-                  <div className="text-6xl font-extralight text-muted-foreground">
-                    3-5
-                  </div>
-                  <div className="text-sm text-muted-foreground">
-                    Years lifespan
-                  </div>
-                </div>
-
-                {/* Li-ion */}
-                <div className="space-y-6">
-                  <div className="text-sm uppercase tracking-[0.2em] text-muted-foreground">
-                    Li-ion NMC
-                  </div>
-                  <div className="text-6xl font-extralight text-muted-foreground">
-                    5-8
-                  </div>
-                  <div className="text-sm text-muted-foreground">
-                    Years lifespan
-                  </div>
-                </div>
-
-                {/* NESS */}
-                <div className="space-y-6">
-                  <div className="text-sm uppercase tracking-[0.2em] text-primary font-medium">
-                    NESS LiFePO4
-                  </div>
-                  <div className="text-6xl font-extralight text-primary">
-                    15+
-                  </div>
-                  <div className="text-sm text-foreground font-medium">
-                    Years lifespan
-                  </div>
-                </div>
-              </div>
-
-              <p className="text-xl font-light text-muted-foreground max-w-2xl mx-auto">
-                Chemistry matters. Choose technology that lasts.
-              </p>
-            </div>
-        </div>
+      {/* Why NESS Section */}
+      <section className="py-40 bg-muted/10">
+        <WhyNess />
       </section>
 
       {/* For Installers - Simple, Focused */}
