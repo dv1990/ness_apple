@@ -11,26 +11,6 @@ import rdLaboratory from "@/assets/rd-laboratory.jpg";
 import systemArchitecture from "@/assets/system-architecture.jpg";
 
 const TechnologyEnhanced = () => {
-  // Real-time metrics for hero
-  const [metrics, setMetrics] = useState({
-    soc: 87,
-    voltage: 51.2,
-    temperature: 28,
-    cycles: 1247
-  });
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setMetrics(prev => ({
-        soc: Math.max(85, Math.min(90, prev.soc + (Math.random() - 0.5) * 2)),
-        voltage: 51.2 + (Math.random() - 0.5) * 0.4,
-        temperature: 28 + (Math.random() - 0.5) * 2,
-        cycles: prev.cycles
-      }));
-    }, 2000);
-    
-    return () => clearInterval(interval);
-  }, []);
 
   return (
     <Layout>
@@ -55,28 +35,28 @@ const TechnologyEnhanced = () => {
               <div className="grid grid-cols-3 gap-8 md:gap-16">
                 <div className="space-y-4">
                   <div className="text-7xl md:text-8xl font-extralight text-primary tabular-nums">
-                    {metrics.soc}%
+                    10M+
                   </div>
                   <div className="text-sm md:text-base text-muted-foreground uppercase tracking-[0.2em]">
-                    Charged
+                    Data Points Collected
                   </div>
                 </div>
                 
                 <div className="space-y-4">
                   <div className="text-7xl md:text-8xl font-extralight text-foreground tabular-nums">
-                    {metrics.voltage.toFixed(1)}V
+                    100MWh+
                   </div>
                   <div className="text-sm md:text-base text-muted-foreground uppercase tracking-[0.2em]">
-                    Power
+                    Energy Delivered
                   </div>
                 </div>
                 
                 <div className="space-y-4">
                   <div className="text-7xl md:text-8xl font-extralight text-foreground tabular-nums">
-                    {metrics.temperature}°
+                    99%
                   </div>
                   <div className="text-sm md:text-base text-muted-foreground uppercase tracking-[0.2em]">
-                    Safe
+                    Uptime
                   </div>
                 </div>
               </div>
