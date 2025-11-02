@@ -5,10 +5,11 @@ import { Link } from "react-router-dom";
 import { WebPImage } from "@/components/ui/webp-image";
 import { WhyNess } from "@/components/WhyNess";
 
-// Import images
-import batteryTechnology from "@/assets/battery-technology.jpg";
-import rdLaboratory from "@/assets/rd-laboratory.jpg";
+// Import WebP images for better performance
+import batteryTechnology from "@/assets-webp/battery-technology.webp";
+import rdLaboratory from "@/assets-webp/rd-laboratory.webp";
 import systemArchitecture from "@/assets/system-architecture.jpg";
+import heroHomeowners from "@/assets-webp/hero-homeowners.webp";
 
 const TechnologyEnhanced = () => {
 
@@ -16,6 +17,15 @@ const TechnologyEnhanced = () => {
     <Layout>
       {/* Hero - Simple, Dramatic, Focused */}
       <section className="min-h-screen bg-background relative overflow-hidden flex items-center">
+        <img 
+          src={heroHomeowners} 
+          alt="Modern home with NESS energy system" 
+          className="absolute inset-0 w-full h-full object-cover opacity-20"
+          loading="eager"
+          fetchPriority="high"
+          width="1920"
+          height="1080"
+        />
         <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-primary/5"></div>
         
         <div className="relative z-10 max-w-[1400px] mx-auto px-8 py-32 w-full">
@@ -105,10 +115,13 @@ const TechnologyEnhanced = () => {
             </div>
             
             <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-              <WebPImage
+              <img
                 src={batteryTechnology}
-                alt="NESS Battery Technology"
+                alt="Advanced battery technology and precision engineering"
                 className="w-full h-auto"
+                loading="lazy"
+                width="800"
+                height="600"
               />
             </div>
           </div>
@@ -116,10 +129,13 @@ const TechnologyEnhanced = () => {
           {/* Truth 2: Longevity */}
           <div className="grid lg:grid-cols-2 gap-20 items-center mb-40">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl order-2 lg:order-1">
-              <WebPImage
+              <img
                 src={rdLaboratory}
-                alt="NESS R&D Laboratory"
+                alt="R&D laboratory precision engineering"
                 className="w-full h-auto"
+                loading="lazy"
+                width="800"
+                height="600"
               />
             </div>
 
@@ -169,10 +185,13 @@ const TechnologyEnhanced = () => {
             </div>
             
             <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-              <WebPImage
+              <img
                 src={systemArchitecture}
                 alt="NESS System Architecture"
                 className="w-full h-auto"
+                loading="lazy"
+                width="800"
+                height="600"
               />
             </div>
           </div>
