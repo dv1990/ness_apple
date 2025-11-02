@@ -117,7 +117,7 @@ const IndexEnhanced = () => {
                 <div className="space-y-8">
                   <div className="flex items-center space-x-4 mb-8">
                     <div className="w-2 h-2 bg-energy rounded-full"></div>
-                    <span className="text-sm text-energy/60 uppercase tracking-[0.4em] font-light">Elegant Design</span>
+                    <span className="text-sm text-energy-muted uppercase tracking-[0.4em] font-light">Elegant Design</span>
                   </div>
                   
                   <h3 className="font-display text-5xl md:text-6xl font-extralight text-foreground leading-[0.9] tracking-tight">
@@ -161,7 +161,7 @@ const IndexEnhanced = () => {
               <div className="max-w-2xl ml-auto text-right lg:order-2">
                 <div className="space-y-8">
                   <div className="flex items-center justify-end space-x-4 mb-8">
-                    <span className="text-sm text-energy/60 uppercase tracking-[0.4em] font-light">Craftsmanship</span>
+                    <span className="text-sm text-energy-muted uppercase tracking-[0.4em] font-light">Craftsmanship</span>
                     <div className="w-2 h-2 bg-energy rounded-full"></div>
                   </div>
                   
@@ -183,7 +183,7 @@ const IndexEnhanced = () => {
                 <div className="space-y-8">
                   <div className="flex items-center space-x-4 mb-8">
                     <div className="w-2 h-2 bg-energy rounded-full"></div>
-                    <span className="text-sm text-energy/60 uppercase tracking-[0.4em] font-light">Engineering</span>
+                    <span className="text-sm text-energy-muted uppercase tracking-[0.4em] font-light">Engineering</span>
                   </div>
                   
                   <h3 className="font-display text-5xl md:text-6xl font-extralight text-foreground leading-[0.9] tracking-tight">
@@ -210,7 +210,7 @@ const IndexEnhanced = () => {
                           />
                         ))}
                       </div>
-                      <span className="text-sm text-energy/60 font-light tracking-wide">Perfect Balance</span>
+                      <span className="text-sm text-energy-muted font-light tracking-wide">Perfect Balance</span>
                     </div>
                   </div>
                 </div>
@@ -246,7 +246,7 @@ const IndexEnhanced = () => {
               <div className="max-w-2xl ml-auto text-right lg:order-2">
                 <div className="space-y-8">
                   <div className="flex items-center justify-end space-x-4 mb-8">
-                    <span className="text-sm text-energy/60 uppercase tracking-[0.4em] font-light">Assurance</span>
+                    <span className="text-sm text-energy-muted uppercase tracking-[0.4em] font-light">Assurance</span>
                     <div className="w-2 h-2 bg-energy rounded-full"></div>
                   </div>
                   
@@ -273,7 +273,7 @@ const IndexEnhanced = () => {
                   {/* Timeline Visual */}
                   <div className="pt-8 flex justify-end">
                     <div className="flex items-center space-x-2">
-                      <span className="text-sm text-energy/60 font-light">15+ Years</span>
+                      <span className="text-sm text-energy-muted font-light">15+ Years</span>
                       <div className="flex space-x-1">
                         {[...Array(4)].map((_, i) => (
                           <div 
@@ -334,7 +334,7 @@ const IndexEnhanced = () => {
                     />
                   ))}
                 </div>
-                <p className="text-xs text-muted-foreground/60 mt-6 font-light tracking-widest uppercase">
+                <p className="text-xs text-muted-text mt-6 font-light tracking-widest uppercase">
                   Silent by Design
                 </p>
               </div>
@@ -360,7 +360,7 @@ const IndexEnhanced = () => {
 
             {/* Expert Credentials */}
             <div className="space-y-4">
-              <div className="w-20 h-20 mx-auto rounded-full bg-energy/10 flex items-center justify-center">
+              <div className="w-20 h-20 mx-auto rounded-full bg-energy-bg flex items-center justify-center">
                 <Battery className="w-10 h-10 text-energy" />
               </div>
               
@@ -458,7 +458,7 @@ const IndexEnhanced = () => {
                   </div>
                   
                   <div className="relative space-y-6 text-center">
-                    <div className="w-16 h-16 mx-auto rounded-full bg-energy/10 flex items-center justify-center mb-8">
+                    <div className="w-16 h-16 mx-auto rounded-full bg-energy-bg flex items-center justify-center mb-8">
                       <div className="w-8 h-8 rounded-full bg-energy animate-pulse"></div>
                     </div>
                     
@@ -497,7 +497,7 @@ const IndexEnhanced = () => {
           
           {/* Section Header */}
           <div className="text-center mb-20">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-energy/10 text-energy rounded-full text-sm font-medium mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-energy-bg text-energy rounded-full text-sm font-medium mb-6">
               <Star className="w-4 h-4 fill-current" />
               <span>Stories from our community</span>
             </div>
@@ -526,7 +526,7 @@ const IndexEnhanced = () => {
                 backup power—it provided peace of mind.
               </p>
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-energy/10 rounded-full flex items-center justify-center">
+                <div className="w-10 h-10 bg-energy-bg rounded-full flex items-center justify-center">
                   <span className="text-sm font-medium text-energy">AM</span>
                 </div>
                 <div>
@@ -552,7 +552,7 @@ const IndexEnhanced = () => {
                 cancelled, not a single client disappointed.
               </p>
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-energy/10 rounded-full flex items-center justify-center">
+                <div className="w-10 h-10 bg-energy-bg rounded-full flex items-center justify-center">
                   <span className="text-sm font-medium text-energy">PS</span>
                 </div>
                 <div>
@@ -578,7 +578,7 @@ const IndexEnhanced = () => {
                 Visitors can't even tell when we're on backup power.
               </p>
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-energy/10 rounded-full flex items-center justify-center">
+                <div className="w-10 h-10 bg-energy-bg rounded-full flex items-center justify-center">
                   <span className="text-sm font-medium text-energy">RK</span>
                 </div>
                 <div>
@@ -597,7 +597,7 @@ const IndexEnhanced = () => {
           
           {/* Section Header */}
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-energy/10 text-energy rounded-full text-sm font-medium mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-energy-bg text-energy rounded-full text-sm font-medium mb-6">
               <MapPin className="w-4 h-4" />
               <span>Trusted Across India</span>
             </div>
@@ -620,7 +620,7 @@ const IndexEnhanced = () => {
               Every dot represents a family or business that chose <span className="text-energy font-medium">reliability and peace of mind</span>
             </p>
             <Link to="/contact">
-              <Button size="lg" className="bg-energy hover:bg-energy-dark text-white px-10 py-5 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all">
+              <Button size="lg" className="bg-energy-contrast hover:bg-energy-dark text-white px-10 py-5 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all">
                 Join our growing community
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>

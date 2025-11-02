@@ -49,7 +49,7 @@ const Index = () => {
       <section className="py-32 bg-muted/30">
         <div className="max-w-6xl mx-auto px-8">
           <div className="text-center mb-20">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-energy/10 text-energy rounded-full text-sm font-medium mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-energy-bg text-energy rounded-full text-sm font-medium mb-6">
               <Star className="w-4 h-4 fill-current" />
               <span>Stories from our community</span>
             </div>
@@ -146,7 +146,7 @@ const Index = () => {
             <Link to="/residential" className="group">
               <div className="bg-card/40 backdrop-blur-xl border border-border/20 rounded-3xl p-10 hover:bg-card/60 hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
                 <div className="mb-8">
-                  <div className="w-16 h-16 bg-energy/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-energy/20 transition-colors">
+                  <div className="w-16 h-16 bg-energy-bg rounded-2xl flex items-center justify-center mb-6 group-hover:bg-energy/20 transition-colors">
                     <Home className="w-8 h-8 text-energy" />
                   </div>
                   <div className="space-y-2">
@@ -299,7 +299,7 @@ const Index = () => {
       <section className="py-32 bg-muted/30">
         <div className="max-w-6xl mx-auto px-8">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-energy/10 text-energy rounded-full text-sm font-medium mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-energy-bg text-energy rounded-full text-sm font-medium mb-6">
               <MapPin className="w-4 h-4" />
               <span>Trusted across India</span>
             </div>
@@ -348,7 +348,7 @@ const Index = () => {
           {/* Values Grid - Sonos-Inspired */}
           <div className="grid md:grid-cols-2 gap-16 max-w-4xl mx-auto mt-20 mb-20">
             <div className="text-left space-y-6">
-              <div className="w-12 h-12 bg-energy/10 rounded-2xl flex items-center justify-center">
+              <div className="w-12 h-12 bg-energy-bg rounded-2xl flex items-center justify-center">
                 <Heart className="w-6 h-6 text-energy" />
               </div>
               <h3 className="text-2xl font-light text-foreground">Immediate Peace</h3>
@@ -361,7 +361,7 @@ const Index = () => {
             </div>
             
             <div className="text-left space-y-6">
-              <div className="w-12 h-12 bg-energy/10 rounded-2xl flex items-center justify-center">
+              <div className="w-12 h-12 bg-energy-bg rounded-2xl flex items-center justify-center">
                 <Shield className="w-6 h-6 text-energy" />
               </div>
               <h3 className="text-2xl font-light text-foreground">Generational Legacy</h3>

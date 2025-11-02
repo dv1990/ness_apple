@@ -24,6 +24,9 @@
     --energy-bright: 142 76% 46%;    /* #22c55e - Vibrant energy */
     --energy-subtle: 142 50% 85%;    /* #dcfce7 - Subtle energy tint */
     --energy-glow: 142 76% 56%;      /* #34d399 - Energy glow */
+    --energy-muted: 142 40% 40%;     /* Accessible muted green for text */
+    --energy-accessible: 142 65% 25%; /* High contrast energy green */
+    --energy-contrast: 142 70% 22%;  /* Dark green for white text - WCAG AAA */
     
     /* Premium Gradients */
     --gradient-energy: linear-gradient(135deg, hsl(var(--energy-core)), hsl(var(--energy-bright)));
@@ -45,7 +48,8 @@
     --primary: var(--graphite);
     --primary-foreground: var(--pearl);
     --muted: var(--whisper);
-    --muted-foreground: var(--silver);
+    --muted-foreground: 0 0% 38%;    /* #616161 - WCAG AA compliant */
+    --muted-text: 0 0% 42%;          /* #6b6b6b - Accessible muted text */
     --popover: var(--pearl);
     --popover-foreground: var(--charcoal);
     --card: var(--pearl);
@@ -62,10 +66,11 @@
     --radius: 0.75rem;
 
     /* Energy Specific Tokens */
-    --energy: var(--energy-core);
+    --energy: var(--energy-accessible);
     --energy-light: var(--energy-subtle);
-    --energy-dark: var(--energy-core);
+    --energy-dark: var(--energy-accessible);
     --energy-bright: var(--energy-bright);
+    --energy-bg: 142 50% 93%;        /* Light energy background - accessible */
   }
 
   .dark {

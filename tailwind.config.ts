@@ -54,6 +54,7 @@ export default {
         muted: {
           DEFAULT: "hsl(var(--muted))",
           foreground: "hsl(var(--muted-foreground))",
+          text: "hsl(var(--muted-text))",
         },
         accent: {
           DEFAULT: "hsl(var(--accent))",
@@ -76,11 +77,14 @@ export default {
         whisper: "hsl(var(--whisper))",
         // Energy colors  
         energy: {
-          DEFAULT: "hsl(var(--energy-core))",
+          DEFAULT: "hsl(var(--energy-accessible))",
           bright: "hsl(var(--energy-bright))",
-          dark: "hsl(var(--energy-core))",
+          dark: "hsl(var(--energy-accessible))",
           light: "hsl(var(--energy-subtle))",
           glow: "hsl(var(--energy-glow))",
+          muted: "hsl(var(--energy-muted))",
+          bg: "hsl(var(--energy-bg))",
+          contrast: "hsl(var(--energy-contrast))",
         },
         // Brand gradient colors
         "brand-glow": "hsl(var(--brand-glow))",
